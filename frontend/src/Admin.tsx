@@ -216,6 +216,9 @@ export default function Admin() {
 
       <main className="mx-auto max-w-7xl px-4 py-6 space-y-6">
 
+        {/* ── Scraper Section ──────────────────────────────── */}
+        <ScraperSection />
+
         {/* ── Toolbar ──────────────────────────────────────── */}
         <div className="flex flex-wrap items-center gap-3">
           <select
@@ -422,6 +425,186 @@ export default function Admin() {
           </ol>
         </div>
       </main>
+    </div>
+  );
+}
+
+// ── Scraper Section ────────────────────────────────────────
+function ScraperSection() {
+  const [token, setToken] = useState(() => localStorage.getItem("gh_token") || "");
+  const [status, setStatus] = useState<"idle" | "running" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
+  const [selectedFirm, setSelectedFirm] = useState("");
+
+  const saveToken = (t: string) => {
+    setToken(t);
+    localStorage.setItem("gh_token", t);
+  };
+
+  const runScraper = async () => {
+    if (!token) {
+      setMessage("❌ Enter a GitHub token first");
+      setStatus("error");
+      return;
+    }
+
+    setStatus("running");
+    setMessage("Triggering scraper workflow…");
+
+    try {
+      // Trigger the GitHub Actions workflow
+      const res = await fetch(
+        "https://api.github.com/repos/otakgemuk/prop-firm-api/actions/workflows/scrape.yml/dispatches",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            Accept: "application/vnd.github.v3+json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ref: "main",
+            inputs: { firm: selectedFirm || "" },
+          }),
+        }
+      );
+
+      if (res.status === 204) {
+        setStatus("success");
+        setMessage("✅ Scraper started! It takes ~2 minutes. The page will auto-reload when done.");
+
+        // Poll for completion
+        setTimeout(() => pollForCompletion(token), 10000);
+      } else if (res.status === 401) {
+        setStatus("error");
+        setMessage("❌ Invalid token. Make sure it has 'repo' and 'workflow' scopes.");
+      } else {
+        const body = await res.json().catch(() => ({}));
+        setStatus("error");
+        setMessage(`❌ Error ${res.status}: ${body.message || "Unknown error"}`);
+      }
+    } catch (err: any) {
+      setStatus("error");
+      setMessage(`❌ Network error: ${err.message}`);
+    }
+  };
+
+  const pollForCompletion = async (t: string) => {
+    // Check if the workflow run completed
+    for (let i = 0; i < 12; i++) {
+      await new Promise((r) => setTimeout(r, 10000));
+      try {
+        const res = await fetch(
+          "https://api.github.com/repos/otakgemuk/prop-firm-api/actions/runs?per_page=1&workflow=scrape.yml",
+          { headers: { Authorization: `Bearer ${t}` } }
+        );
+        const data = await res.json();
+        const run = data.workflow_runs?.[0];
+        if (run?.status === "completed") {
+          if (run.conclusion === "success") {
+            setStatus("success");
+            setMessage("✅ Scraper finished! Reloading data…");
+            // Reload the page to show new data
+            setTimeout(() => window.location.reload(), 2000);
+          } else {
+            setStatus("error");
+            setMessage(`❌ Scraper failed: ${run.conclusion}. Check GitHub Actions for details.`);
+          }
+          return;
+        }
+      } catch {}
+    }
+    setMessage("⏳ Still running… check GitHub Actions for progress.");
+  };
+
+  return (
+    <div className="rounded-2xl border border-brand-500/30 bg-gray-900/80 p-6">
+      <div className="flex items-center justify-between mb-4">
+        <div>
+          <h2 className="text-lg font-semibold text-white">🔄 Auto-Scraper</h2>
+          <p className="text-sm text-gray-400">
+            Scrape pricing data from all firms' websites automatically
+          </p>
+        </div>
+      </div>
+
+      {/* Token input */}
+      <div className="mb-4">
+        <label className="mb-1.5 block text-sm font-medium text-gray-300">
+          GitHub Token
+          <span className="ml-2 text-xs text-gray-500">
+            (needs repo + workflow scopes)
+          </span>
+        </label>
+        <input
+          type="password"
+          value={token}
+          onChange={(e) => saveToken(e.target.value)}
+          placeholder="github_pat_..."
+          className="w-full rounded-lg border border-white/10 bg-gray-800 px-3 py-2 text-sm text-white
+                     placeholder-gray-500 focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400"
+        />
+      </div>
+
+      {/* Firm selector + Run button */}
+      <div className="flex flex-wrap items-center gap-3">
+        <select
+          value={selectedFirm}
+          onChange={(e) => setSelectedFirm(e.target.value)}
+          className="rounded-lg border border-white/10 bg-gray-800 px-3 py-2 text-sm text-white"
+        >
+          <option value="">All Firms</option>
+          <option value="topstep">Topstep</option>
+          <option value="apex-trader-funding">Apex Trader Funding</option>
+          <option value="myfundedfutures">MyFundedFutures</option>
+          <option value="tradeday">TradeDay</option>
+          <option value="lucid-trading">Lucid Trading</option>
+          <option value="take-profit-trader">Take Profit Trader</option>
+          <option value="bulenox">Bulenox</option>
+          <option value="elite-trader-funding">Elite Trader Funding</option>
+          <option value="earn2trade">Earn2Trade</option>
+          <option value="alpha-futures">Alpha Futures</option>
+        </select>
+
+        <button
+          onClick={runScraper}
+          disabled={status === "running"}
+          className="rounded-lg bg-brand-500 px-6 py-2 text-sm font-semibold text-white transition
+                     hover:bg-brand-400 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {status === "running" ? (
+            <span className="flex items-center gap-2">
+              <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+              </svg>
+              Running…
+            </span>
+          ) : (
+            "🚀 Run Scraper"
+          )}
+        </button>
+
+        <a
+          href="https://github.com/otakgemuk/prop-firm-api/actions/workflows/scrape.yml"
+          target="_blank"
+          rel="noopener"
+          className="text-sm text-gray-400 underline hover:text-brand-400"
+        >
+          View runs on GitHub →
+        </a>
+      </div>
+
+      {/* Status message */}
+      {message && (
+        <div className={`mt-4 rounded-lg px-4 py-3 text-sm ${
+          status === "success" ? "bg-emerald-500/10 text-emerald-300" :
+          status === "error" ? "bg-red-500/10 text-red-300" :
+          "bg-blue-500/10 text-blue-300"
+        }`}>
+          {message}
+        </div>
+      )}
     </div>
   );
 }

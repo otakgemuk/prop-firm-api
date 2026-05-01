@@ -1,0 +1,65 @@
+# Scraper workflow — triggered manually from the admin page
+#
+# Runs the scraper, commits any price changes back to main,
+# which triggers the deploy workflow automatically.
+
+name: Scrape Prop Firm Prices
+
+on:
+  workflow_dispatch:
+    inputs:
+      firm:
+        description: "Firm to scrape (leave empty for all)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+          cache-dependency-path: scraper/package-lock.json
+
+      - name: Install dependencies
+        working-directory: scraper
+        run: npm ci
+
+      - name: Install Playwright browsers
+        working-directory: scraper
+        run: npx playwright install --with-deps chromium
+
+      - name: Run scraper
+        working-directory: scraper
+        run: |
+          if [ -n "${{ inputs.firm }}" ]; then
+            node index.js --firm "${{ inputs.firm }}" --apply
+          else
+            node index.js --apply
+          fi
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet data/plans.json && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --stat data/plans.json || true
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "Prop Firm Bot"
+          git config user.email "bot@propfirmcompare.com"
+          git add data/plans.json
+          git commit -m "data: auto-update pricing from scraper
+
+          Triggered via admin page on $(date -u +%Y-%m-%d)"
+          git push
