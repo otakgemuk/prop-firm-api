@@ -43,6 +43,11 @@ export interface PlanRow {
   first_payout_days: number | null;
   total_cost_to_funded: number;
   active_discount_pct: number;
+  // New fields for the updated column layout
+  max_funded_accounts?: number;
+  min_trading_days?: number;
+  consistency_eval?: boolean | number;
+  consistency_funded?: boolean | number;
 }
 
 

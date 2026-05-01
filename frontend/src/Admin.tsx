@@ -200,6 +200,10 @@ const EMPTY_PLAN: PlanRow = {
   first_payout_days: null,
   total_cost_to_funded: 0,
   active_discount_pct: 0,
+  max_funded_accounts: 0,
+  min_trading_days: 0,
+  consistency_eval: false,
+  consistency_funded: false,
 };
 
 const DRAWDOWN_OPTIONS = ["end_of_day", "trailing", "static", "intraday"];
@@ -504,6 +508,30 @@ function AdminContent() {
 
               <Field label="Logo URL" value={form.logo_url || ""} 
                 onChange={(v) => updateField("logo_url", v || null)} placeholder="optional" />
+
+              {/* New fields */}
+              <Field label="Max # Funded Accounts" value={String(form.max_funded_accounts || 0)} type="number"
+                onChange={(v) => updateField("max_funded_accounts", parseInt(v) || 0)} />
+              <Field label="Min Trading Days" value={String(form.min_trading_days || 0)} type="number"
+                onChange={(v) => updateField("min_trading_days", parseInt(v) || 0)} />
+
+              <div className="flex items-end gap-3">
+                <label className="flex items-center gap-2 text-sm text-gray-300">
+                  <input type="checkbox" checked={!!form.consistency_eval}
+                    onChange={(e) => updateField("consistency_eval", e.target.checked)}
+                    className="h-4 w-4 rounded border-gray-600 bg-gray-800 text-brand-500" />
+                  Consistency Eval
+                </label>
+              </div>
+
+              <div className="flex items-end gap-3">
+                <label className="flex items-center gap-2 text-sm text-gray-300">
+                  <input type="checkbox" checked={!!form.consistency_funded}
+                    onChange={(e) => updateField("consistency_funded", e.target.checked)}
+                    className="h-4 w-4 rounded border-gray-600 bg-gray-800 text-brand-500" />
+                  Consistency Funded
+                </label>
+              </div>
             </div>
 
             {/* Computed total */}
