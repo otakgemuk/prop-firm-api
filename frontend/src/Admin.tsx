@@ -11,8 +11,10 @@ import { useState, useEffect, useCallback } from "react";
 import type { PlanRow } from "./hooks/usePlans";
 
 // ── Password gate ──────────────────────────────────────────
-// SHA-256 hash of the password. Change this to set your own password.
-const PASSWORD_HASH = "51fa9d843acd4af113c93de66ceb65e0765b0015fbaaf6a4dfc0626010ef4fb0";
+// Password hash is stored in localStorage so you can change it from the admin UI.
+// Default password: propfirm2026
+const DEFAULT_HASH = "51fa9d843acd4af113c93de66ceb65e0765b0015fbaaf6a4dfc0626010ef4fb0";
+const HASH_KEY = "admin_pw_hash";
 const SESSION_KEY = "admin_auth";
 
 async function sha256(text: string): Promise<string> {
@@ -22,16 +24,25 @@ async function sha256(text: string): Promise<string> {
   return Array.from(new Uint8Array(hash)).map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
+function getStoredHash(): string {
+  return localStorage.getItem(HASH_KEY) || DEFAULT_HASH;
+}
+
 function LoginGate({ children }: { children: React.ReactNode }) {
   const [authenticated, setAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [checking, setChecking] = useState(true);
+  const [showChange, setShowChange] = useState(false);
+  const [oldPw, setOldPw] = useState("");
+  const [newPw, setNewPw] = useState("");
+  const [newPw2, setNewPw2] = useState("");
+  const [changeMsg, setChangeMsg] = useState("");
 
   // Check if already authenticated this session
   useEffect(() => {
     const saved = sessionStorage.getItem(SESSION_KEY);
-    if (saved === PASSWORD_HASH) {
+    if (saved === "ok") {
       setAuthenticated(true);
     }
     setChecking(false);
@@ -40,13 +51,42 @@ function LoginGate({ children }: { children: React.ReactNode }) {
   const handleLogin = async () => {
     setError("");
     const hash = await sha256(password);
-    if (hash === PASSWORD_HASH) {
-      sessionStorage.setItem(SESSION_KEY, hash);
+    if (hash === getStoredHash()) {
+      sessionStorage.setItem(SESSION_KEY, "ok");
       setAuthenticated(true);
     } else {
       setError("Wrong password");
       setPassword("");
     }
+  };
+
+  const handleChangePassword = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setChangeMsg("");
+
+    // Verify old password
+    const oldHash = await sha256(oldPw);
+    if (oldHash !== getStoredHash()) {
+      setChangeMsg("❌ Current password is wrong");
+      return;
+    }
+    if (newPw.length < 6) {
+      setChangeMsg("❌ New password must be at least 6 characters");
+      return;
+    }
+    if (newPw !== newPw2) {
+      setChangeMsg("❌ Passwords don't match");
+      return;
+    }
+
+    // Save new hash
+    const newHash = await sha256(newPw);
+    localStorage.setItem(HASH_KEY, newHash);
+    setChangeMsg("✅ Password changed!");
+    setOldPw("");
+    setNewPw("");
+    setNewPw2("");
+    setTimeout(() => { setShowChange(false); setChangeMsg(""); }, 2000);
   };
 
   if (checking) return null;
@@ -87,7 +127,54 @@ function LoginGate({ children }: { children: React.ReactNode }) {
     );
   }
 
-  return <>{children}</>;
+  return (
+    <>
+      {/* Change password modal */}
+      {showChange && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+          <div className="w-full max-w-sm rounded-2xl border border-white/10 bg-gray-900 p-6">
+            <h2 className="mb-4 text-lg font-semibold text-white">Change Password</h2>
+            <form onSubmit={handleChangePassword} className="space-y-3">
+              <input type="password" value={oldPw} onChange={(e) => setOldPw(e.target.value)}
+                placeholder="Current password" autoFocus
+                className="w-full rounded-lg border border-white/10 bg-gray-800 px-4 py-2.5 text-sm text-white placeholder-gray-500" />
+              <input type="password" value={newPw} onChange={(e) => setNewPw(e.target.value)}
+                placeholder="New password (min 6 chars)"
+                className="w-full rounded-lg border border-white/10 bg-gray-800 px-4 py-2.5 text-sm text-white placeholder-gray-500" />
+              <input type="password" value={newPw2} onChange={(e) => setNewPw2(e.target.value)}
+                placeholder="Confirm new password"
+                className="w-full rounded-lg border border-white/10 bg-gray-800 px-4 py-2.5 text-sm text-white placeholder-gray-500" />
+              {changeMsg && (
+                <p className={`text-sm ${changeMsg.startsWith("✅") ? "text-emerald-400" : "text-red-400"}`}>
+                  {changeMsg}
+                </p>
+              )}
+              <div className="flex gap-2 pt-1">
+                <button type="submit"
+                  className="flex-1 rounded-lg bg-brand-500 py-2.5 text-sm font-semibold text-white hover:bg-brand-400">
+                  Save
+                </button>
+                <button type="button" onClick={() => { setShowChange(false); setChangeMsg(""); setOldPw(""); setNewPw(""); setNewPw2(""); }}
+                  className="rounded-lg border border-white/10 px-4 py-2.5 text-sm text-gray-400 hover:text-white">
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Top bar with change password link */}
+      <div className="fixed top-0 right-0 z-40 p-2">
+        <button onClick={() => setShowChange(true)}
+          className="rounded-lg px-3 py-1.5 text-xs text-gray-500 transition hover:bg-white/5 hover:text-gray-300">
+          🔑 Change Password
+        </button>
+      </div>
+
+      {children}
+    </>
+  );
 }
 
 const EMPTY_PLAN: PlanRow = {
