@@ -1,11 +1,94 @@
-// Admin.tsx — Data editor page
+// Admin.tsx — Data editor page (password protected)
 //
 // A form-based UI to manage prop firm plans.
 // Loads plans.json, lets you add/edit/remove plans,
 // then exports the updated JSON for you to commit.
+//
+// To change the password: update PASSWORD_HASH below.
+// Generate hash: echo -n "yourpassword" | sha256sum | cut -d' ' -f1
 
 import { useState, useEffect, useCallback } from "react";
 import type { PlanRow } from "./hooks/usePlans";
+
+// ── Password gate ──────────────────────────────────────────
+// SHA-256 hash of the password. Change this to set your own password.
+const PASSWORD_HASH = "51fa9d843acd4af113c93de66ceb65e0765b0015fbaaf6a4dfc0626010ef4fb0";
+const SESSION_KEY = "admin_auth";
+
+async function sha256(text: string): Promise<string> {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(text);
+  const hash = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(hash)).map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+function LoginGate({ children }: { children: React.ReactNode }) {
+  const [authenticated, setAuthenticated] = useState(false);
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [checking, setChecking] = useState(true);
+
+  // Check if already authenticated this session
+  useEffect(() => {
+    const saved = sessionStorage.getItem(SESSION_KEY);
+    if (saved === PASSWORD_HASH) {
+      setAuthenticated(true);
+    }
+    setChecking(false);
+  }, []);
+
+  const handleLogin = async () => {
+    setError("");
+    const hash = await sha256(password);
+    if (hash === PASSWORD_HASH) {
+      sessionStorage.setItem(SESSION_KEY, hash);
+      setAuthenticated(true);
+    } else {
+      setError("Wrong password");
+      setPassword("");
+    }
+  };
+
+  if (checking) return null;
+
+  if (!authenticated) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-gray-950">
+        <div className="w-full max-w-sm rounded-2xl border border-white/10 bg-gray-900/80 p-8">
+          <h1 className="mb-2 text-xl font-bold text-white text-center">
+            🔒 Admin Access
+          </h1>
+          <p className="mb-6 text-sm text-gray-400 text-center">
+            Enter password to continue
+          </p>
+          <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }}>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              autoFocus
+              className="mb-3 w-full rounded-lg border border-white/10 bg-gray-800 px-4 py-3 text-sm text-white
+                         placeholder-gray-500 focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400"
+            />
+            {error && (
+              <p className="mb-3 text-sm text-red-400">{error}</p>
+            )}
+            <button
+              type="submit"
+              className="w-full rounded-lg bg-brand-500 py-3 text-sm font-semibold text-white
+                         transition hover:bg-brand-400"
+            >
+              Enter
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
+
+  return <>{children}</>;
+}
 
 const EMPTY_PLAN: PlanRow = {
   firm_id: "",
@@ -58,7 +141,7 @@ function calcTotalCost(evalFee: number, activationFee: number, discountPct: numb
   return Math.round((evalFee + activationFee - (evalFee * discountPct) / 100) * 100) / 100;
 }
 
-export default function Admin() {
+function AdminContent() {
   const [plans, setPlans] = useState<PlanRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
@@ -619,5 +702,14 @@ function Field({
                    placeholder-gray-500 focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400"
       />
     </div>
+  );
+}
+
+// ── Default export: wrap with login gate ───────────────────
+export default function Admin() {
+  return (
+    <LoginGate>
+      <AdminContent />
+    </LoginGate>
   );
 }
