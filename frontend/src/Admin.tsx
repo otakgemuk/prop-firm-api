@@ -362,10 +362,15 @@ function AdminContent() {
       <header className="border-b border-white/10 bg-gray-950/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
           <div>
-            <h1 className="text-2xl font-bold tracking-tight text-white">
-              Prop Firm <span className="text-brand-400">Admin</span>
-            </h1>
-            <p className="text-sm text-gray-400">{plans.length} plans across {firms.length} firms</p>
+            <div className="flex items-center gap-3">
+              <img src="./logo.png" alt="MightyOx Trading" className="h-10 w-10" />
+              <div>
+                <h1 className="text-2xl font-bold tracking-tight text-white">
+                  Mighty<span className="text-brand-400">Ox</span> Trading
+                </h1>
+                <p className="text-sm text-gray-400">{plans.length} plans across {firms.length} firms</p>
+              </div>
+            </div>
           </div>
           <div className="flex gap-2">
             <a

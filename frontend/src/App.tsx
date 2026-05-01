@@ -56,13 +56,16 @@ export default function App() {
       {/* ── Header ──────────────────────────────────────────── */}
       <header className="border-b border-white/10 bg-gray-950/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight text-white">
-              Prop Firm <span className="text-brand-400">Compare</span>
-            </h1>
-            <p className="text-sm text-gray-400">
-              Find the best futures prop firm for your trading style
-            </p>
+          <div className="flex items-center gap-3">
+            <img src="./logo.png" alt="MightyOx Trading" className="h-10 w-10" />
+            <div>
+              <h1 className="text-2xl font-bold tracking-tight text-white">
+                Mighty<span className="text-brand-400">Ox</span> Trading
+              </h1>
+              <p className="text-sm text-gray-400">
+                Find the best futures prop firm for your trading style
+              </p>
+            </div>
           </div>
 
           {/* View toggle */}
