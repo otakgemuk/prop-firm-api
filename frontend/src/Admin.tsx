@@ -431,180 +431,164 @@ export default function Admin() {
 
 // ── Scraper Section ────────────────────────────────────────
 function ScraperSection() {
+  const [lastRuns, setLastRuns] = useState<any[]>([]);
   const [token, setToken] = useState(() => localStorage.getItem("gh_token") || "");
-  const [status, setStatus] = useState<"idle" | "running" | "success" | "error">("idle");
-  const [message, setMessage] = useState("");
+  const [showToken, setShowToken] = useState(false);
+  const [manualStatus, setManualStatus] = useState<"idle" | "running" | "success" | "error">("idle");
+  const [manualMsg, setManualMsg] = useState("");
   const [selectedFirm, setSelectedFirm] = useState("");
+
+  // Fetch recent workflow runs (public, no auth needed)
+  useEffect(() => {
+    fetch("https://api.github.com/repos/otakgemuk/prop-firm-api/actions/workflows/scrape-scheduled.yml/runs?per_page=3")
+      .then((r) => r.json())
+      .then((data) => setLastRuns(data.workflow_runs || []))
+      .catch(() => {});
+  }, []);
 
   const saveToken = (t: string) => {
     setToken(t);
     localStorage.setItem("gh_token", t);
   };
 
-  const runScraper = async () => {
+  const triggerManual = async () => {
     if (!token) {
-      setMessage("❌ Enter a GitHub token first");
-      setStatus("error");
+      setManualMsg("❌ Enter a GitHub token below to use manual trigger");
+      setManualStatus("error");
       return;
     }
-
-    setStatus("running");
-    setMessage("Triggering scraper workflow…");
-
+    setManualStatus("running");
+    setManualMsg("Triggering scraper…");
     try {
-      // Trigger the GitHub Actions workflow
       const res = await fetch(
         "https://api.github.com/repos/otakgemuk/prop-firm-api/actions/workflows/scrape.yml/dispatches",
         {
           method: "POST",
-          headers: {
-            Authorization: `Bearer ${token}`,
-            Accept: "application/vnd.github.v3+json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            ref: "main",
-            inputs: { firm: selectedFirm || "" },
-          }),
+          headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github.v3+json", "Content-Type": "application/json" },
+          body: JSON.stringify({ ref: "main", inputs: { firm: selectedFirm || "" } }),
         }
       );
-
       if (res.status === 204) {
-        setStatus("success");
-        setMessage("✅ Scraper started! It takes ~2 minutes. The page will auto-reload when done.");
-
-        // Poll for completion
-        setTimeout(() => pollForCompletion(token), 10000);
-      } else if (res.status === 401) {
-        setStatus("error");
-        setMessage("❌ Invalid token. Make sure it has 'repo' and 'workflow' scopes.");
+        setManualStatus("success");
+        setManualMsg("✅ Scraper started! Takes ~2 min. Site will auto-update.");
       } else {
-        const body = await res.json().catch(() => ({}));
-        setStatus("error");
-        setMessage(`❌ Error ${res.status}: ${body.message || "Unknown error"}`);
+        setManualStatus("error");
+        setManualMsg(`❌ Error ${res.status} — check your token has repo + workflow scopes`);
       }
     } catch (err: any) {
-      setStatus("error");
-      setMessage(`❌ Network error: ${err.message}`);
+      setManualStatus("error");
+      setManualMsg(`❌ ${err.message}`);
     }
-  };
-
-  const pollForCompletion = async (t: string) => {
-    // Check if the workflow run completed
-    for (let i = 0; i < 12; i++) {
-      await new Promise((r) => setTimeout(r, 10000));
-      try {
-        const res = await fetch(
-          "https://api.github.com/repos/otakgemuk/prop-firm-api/actions/runs?per_page=1&workflow=scrape.yml",
-          { headers: { Authorization: `Bearer ${t}` } }
-        );
-        const data = await res.json();
-        const run = data.workflow_runs?.[0];
-        if (run?.status === "completed") {
-          if (run.conclusion === "success") {
-            setStatus("success");
-            setMessage("✅ Scraper finished! Reloading data…");
-            // Reload the page to show new data
-            setTimeout(() => window.location.reload(), 2000);
-          } else {
-            setStatus("error");
-            setMessage(`❌ Scraper failed: ${run.conclusion}. Check GitHub Actions for details.`);
-          }
-          return;
-        }
-      } catch {}
-    }
-    setMessage("⏳ Still running… check GitHub Actions for progress.");
   };
 
   return (
     <div className="rounded-2xl border border-brand-500/30 bg-gray-900/80 p-6">
-      <div className="flex items-center justify-between mb-4">
-        <div>
-          <h2 className="text-lg font-semibold text-white">🔄 Auto-Scraper</h2>
-          <p className="text-sm text-gray-400">
-            Scrape pricing data from all firms' websites automatically
-          </p>
+      <h2 className="text-lg font-semibold text-white mb-1">🔄 Automatic Price Scraper</h2>
+      <p className="text-sm text-gray-400 mb-4">
+        Prices are scraped daily at 06:00 UTC and committed automatically. No action needed.
+      </p>
+
+      {/* Schedule status */}
+      <div className="mb-4 rounded-lg bg-emerald-500/10 border border-emerald-500/20 px-4 py-3">
+        <div className="flex items-center gap-2 mb-1">
+          <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="text-sm font-medium text-emerald-300">Auto-scraper runs daily</span>
         </div>
+        <p className="text-xs text-emerald-400/80">
+          GitHub Action scrapes all 10 firms every day. If prices change, it commits and redeploys automatically.
+        </p>
       </div>
 
-      {/* Token input */}
-      <div className="mb-4">
-        <label className="mb-1.5 block text-sm font-medium text-gray-300">
-          GitHub Token
-          <span className="ml-2 text-xs text-gray-500">
-            (needs repo + workflow scopes)
-          </span>
-        </label>
-        <input
-          type="password"
-          value={token}
-          onChange={(e) => saveToken(e.target.value)}
-          placeholder="github_pat_..."
-          className="w-full rounded-lg border border-white/10 bg-gray-800 px-3 py-2 text-sm text-white
-                     placeholder-gray-500 focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400"
-        />
-      </div>
-
-      {/* Firm selector + Run button */}
-      <div className="flex flex-wrap items-center gap-3">
-        <select
-          value={selectedFirm}
-          onChange={(e) => setSelectedFirm(e.target.value)}
-          className="rounded-lg border border-white/10 bg-gray-800 px-3 py-2 text-sm text-white"
-        >
-          <option value="">All Firms</option>
-          <option value="topstep">Topstep</option>
-          <option value="apex-trader-funding">Apex Trader Funding</option>
-          <option value="myfundedfutures">MyFundedFutures</option>
-          <option value="tradeday">TradeDay</option>
-          <option value="lucid-trading">Lucid Trading</option>
-          <option value="take-profit-trader">Take Profit Trader</option>
-          <option value="bulenox">Bulenox</option>
-          <option value="elite-trader-funding">Elite Trader Funding</option>
-          <option value="earn2trade">Earn2Trade</option>
-          <option value="alpha-futures">Alpha Futures</option>
-        </select>
-
-        <button
-          onClick={runScraper}
-          disabled={status === "running"}
-          className="rounded-lg bg-brand-500 px-6 py-2 text-sm font-semibold text-white transition
-                     hover:bg-brand-400 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          {status === "running" ? (
-            <span className="flex items-center gap-2">
-              <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-              </svg>
-              Running…
-            </span>
-          ) : (
-            "🚀 Run Scraper"
-          )}
-        </button>
-
-        <a
-          href="https://github.com/otakgemuk/prop-firm-api/actions/workflows/scrape.yml"
-          target="_blank"
-          rel="noopener"
-          className="text-sm text-gray-400 underline hover:text-brand-400"
-        >
-          View runs on GitHub →
-        </a>
-      </div>
-
-      {/* Status message */}
-      {message && (
-        <div className={`mt-4 rounded-lg px-4 py-3 text-sm ${
-          status === "success" ? "bg-emerald-500/10 text-emerald-300" :
-          status === "error" ? "bg-red-500/10 text-red-300" :
-          "bg-blue-500/10 text-blue-300"
-        }`}>
-          {message}
+      {/* Recent runs */}
+      {lastRuns.length > 0 && (
+        <div className="mb-4">
+          <h3 className="text-sm font-medium text-gray-300 mb-2">Recent Runs</h3>
+          <div className="space-y-1">
+            {lastRuns.map((run: any) => (
+              <div key={run.id} className="flex items-center gap-3 text-sm">
+                <span className={`h-2 w-2 rounded-full ${
+                  run.conclusion === "success" ? "bg-emerald-400" :
+                  run.conclusion === "failure" ? "bg-red-400" :
+                  run.status === "in_progress" ? "bg-yellow-400 animate-pulse" :
+                  "bg-gray-500"
+                }`} />
+                <span className="text-gray-400 w-32 text-xs">
+                  {new Date(run.created_at).toLocaleDateString()} {new Date(run.created_at).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+                </span>
+                <span className={`text-xs ${
+                  run.conclusion === "success" ? "text-emerald-400" :
+                  run.conclusion === "failure" ? "text-red-400" :
+                  "text-yellow-400"
+                }`}>
+                  {run.status === "in_progress" ? "Running…" : run.conclusion || run.status}
+                </span>
+                <a href={run.html_url} target="_blank" rel="noopener"
+                  className="text-xs text-gray-500 underline hover:text-brand-400">
+                  details
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       )}
+
+      {/* Manual trigger */}
+      <details className="group">
+        <summary className="cursor-pointer text-sm text-gray-400 hover:text-white transition">
+          ▸ Manual Trigger (optional)
+        </summary>
+        <div className="mt-3 space-y-3">
+          <div className="flex flex-wrap items-center gap-3">
+            <select value={selectedFirm} onChange={(e) => setSelectedFirm(e.target.value)}
+              className="rounded-lg border border-white/10 bg-gray-800 px-3 py-2 text-sm text-white">
+              <option value="">All Firms</option>
+              <option value="topstep">Topstep</option>
+              <option value="apex-trader-funding">Apex Trader Funding</option>
+              <option value="myfundedfutures">MyFundedFutures</option>
+              <option value="tradeday">TradeDay</option>
+              <option value="lucid-trading">Lucid Trading</option>
+              <option value="take-profit-trader">Take Profit Trader</option>
+              <option value="bulenox">Bulenox</option>
+              <option value="elite-trader-funding">Elite Trader Funding</option>
+              <option value="earn2trade">Earn2Trade</option>
+              <option value="alpha-futures">Alpha Futures</option>
+            </select>
+            <button onClick={triggerManual} disabled={manualStatus === "running"}
+              className="rounded-lg bg-brand-500 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-400 disabled:opacity-50">
+              {manualStatus === "running" ? "Running…" : "🚀 Run Now"}
+            </button>
+          </div>
+
+          {/* Token input (collapsed by default) */}
+          <div>
+            <button onClick={() => setShowToken(!showToken)}
+              className="text-xs text-gray-500 hover:text-gray-300">
+              {showToken ? "▾" : "▸"} GitHub Token {token ? "(saved)" : "(not set)"}
+            </button>
+            {showToken && (
+              <input type="password" value={token} onChange={(e) => saveToken(e.target.value)}
+                placeholder="github_pat_..."
+                className="mt-1 w-full rounded-lg border border-white/10 bg-gray-800 px-3 py-2 text-sm text-white placeholder-gray-500" />
+            )}
+          </div>
+
+          {manualMsg && (
+            <div className={`rounded-lg px-3 py-2 text-sm ${
+              manualStatus === "success" ? "bg-emerald-500/10 text-emerald-300" :
+              manualStatus === "error" ? "bg-red-500/10 text-red-300" :
+              "bg-blue-500/10 text-blue-300"
+            }`}>{manualMsg}</div>
+          )}
+        </div>
+      </details>
+
+      <div className="mt-3">
+        <a href="https://github.com/otakgemuk/prop-firm-api/actions/workflows/scrape-scheduled.yml"
+          target="_blank" rel="noopener"
+          className="text-xs text-gray-500 underline hover:text-brand-400">
+          View all runs on GitHub →
+        </a>
+      </div>
     </div>
   );
 }
