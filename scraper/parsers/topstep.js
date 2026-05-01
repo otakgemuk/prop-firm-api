@@ -1,7 +1,5 @@
 // Topstep parser
-// Source: topstep.com (JS-rendered, uses Playwright)
-
-const { buildPlan, fetchRendered, parseMoney } = require("../utils");
+const { buildPlan, fetchRendered, parseMoney, extractConsistencyPercent } = require("../utils");
 const cheerio = require("cheerio");
 
 const FIRM = {
@@ -34,17 +32,12 @@ async function scrape() {
 function parseFromText(text) {
   const plans = [];
 
-  // Try to extract max funded accounts
   const maxFundedMatch = text.match(/(?:up to|max(?:imum)?)\s+(\d+)\s+funded\s+account/i);
   const maxFunded = maxFundedMatch ? parseInt(maxFundedMatch[1], 10) : null;
-
-  // Try to extract min trading days
   const minDaysMatch = text.match(/(?:minimum|min)\s+(\d+)\s+(?:trading\s+)?days?/i);
   const minDays = minDaysMatch ? parseInt(minDaysMatch[1], 10) : null;
-
-  // Check for consistency rules
-  const hasConsistencyEval = /consistency\s*(?:rule|requirement|check)/i.test(text);
-  const hasConsistencyFunded = /consistency\s*(?:rule|requirement|check).*fund/i.test(text);
+  const consistencyEvalPct = extractConsistencyPercent(text, "eval");
+  const consistencyFundedPct = extractConsistencyPercent(text, "fund");
 
   const configs = [
     { size: 50000, label: "50K", target: 3000, maxLoss: 2000, drawdown: "end_of_day" },
@@ -62,17 +55,9 @@ function parseFromText(text) {
     let fee = 0;
     for (const pat of patterns) {
       const m = text.match(pat);
-      if (m) {
-        fee = parseMoney(m[1]);
-        if (fee > 0 && fee < 500) break;
-        fee = 0;
-      }
+      if (m) { fee = parseMoney(m[1]); if (fee > 0 && fee < 500) break; fee = 0; }
     }
-
-    if (!fee) {
-      const known = { 50000: 49, 100000: 99, 150000: 149 };
-      fee = known[cfg.size] || 0;
-    }
+    if (!fee) { const known = { 50000: 49, 100000: 99, 150000: 149 }; fee = known[cfg.size] || 0; }
 
     if (fee > 0) {
       plans.push(buildPlan({
@@ -90,8 +75,8 @@ function parseFromText(text) {
         payoutFrequency: "biweekly",
         maxFundedAccounts: maxFunded,
         minTradingDays: minDays,
-        consistencyEval: hasConsistencyEval || null,
-        consistencyFunded: hasConsistencyFunded || null,
+        consistencyEvalPct,
+        consistencyFundedPct,
       }));
     }
   }

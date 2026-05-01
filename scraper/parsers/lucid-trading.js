@@ -1,15 +1,8 @@
 // Lucid Trading parser
-const { buildPlan, fetchRendered, parseMoney } = require("../utils");
+const { buildPlan, fetchRendered, parseMoney, extractConsistencyPercent } = require("../utils");
 const cheerio = require("cheerio");
 
-const FIRM = {
-  firmId: "f05",
-  firmName: "Lucid Trading",
-  firmSlug: "lucid-trading",
-  websiteUrl: "https://lucidtrading.com",
-  trustpilot: 4.2,
-};
-
+const FIRM = { firmId: "f05", firmName: "Lucid Trading", firmSlug: "lucid-trading", websiteUrl: "https://lucidtrading.com", trustpilot: 4.2 };
 const CONFIGS = [
   { size: 50000,  label: "50K",  target: 3000, maxLoss: 2500, dailyLoss: 1250 },
   { size: 100000, label: "100K", target: 6000, maxLoss: 3500, dailyLoss: 2000 },
@@ -24,11 +17,10 @@ async function scrape() {
   const maxFunded = maxFundedMatch ? parseInt(maxFundedMatch[1], 10) : null;
   const minDaysMatch = text.match(/(?:minimum|min)\s+(\d+)\s+(?:trading\s+)?days?/i);
   const minDays = minDaysMatch ? parseInt(minDaysMatch[1], 10) : null;
-  const hasConsistencyEval = /consistency\s*(?:rule|requirement|check)/i.test(text);
-  const hasConsistencyFunded = /consistency\s*(?:rule|requirement|check).*fund/i.test(text);
+  const consistencyEvalPct = extractConsistencyPercent(text, "eval");
+  const consistencyFundedPct = extractConsistencyPercent(text, "fund");
 
   const plans = [];
-
   for (const cfg of CONFIGS) {
     let fee = 0;
     const m = text.match(new RegExp(`${cfg.label}[\\s\\S]{0,300}?\\$(\\d+)`, "i"));
@@ -36,21 +28,11 @@ async function scrape() {
     if (!fee) { const known = { 50000: 175, 100000: 275 }; fee = known[cfg.size]; }
 
     plans.push(buildPlan({
-      ...FIRM,
-      planId: `lucid-${cfg.label}`,
-      accountSize: cfg.size,
-      drawdownType: "trailing",
-      drawdownAmount: cfg.maxLoss,
-      dailyLossLimit: cfg.dailyLoss,
-      profitTarget: cfg.target,
-      profitSplit: 80,
-      evalFee: fee,
-      isOneTime: false,
-      payoutFrequency: "weekly",
-      maxFundedAccounts: maxFunded,
-      minTradingDays: minDays,
-      consistencyEval: hasConsistencyEval || null,
-      consistencyFunded: hasConsistencyFunded || null,
+      ...FIRM, planId: `lucid-${cfg.label}`, accountSize: cfg.size,
+      drawdownType: "trailing", drawdownAmount: cfg.maxLoss, dailyLossLimit: cfg.dailyLoss,
+      profitTarget: cfg.target, profitSplit: 80, evalFee: fee, isOneTime: false,
+      payoutFrequency: "weekly", maxFundedAccounts: maxFunded, minTradingDays: minDays,
+      consistencyEvalPct, consistencyFundedPct,
     }));
   }
   return plans;

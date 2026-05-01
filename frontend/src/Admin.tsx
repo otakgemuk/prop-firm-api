@@ -202,8 +202,8 @@ const EMPTY_PLAN: PlanRow = {
   active_discount_pct: 0,
   max_funded_accounts: 0,
   min_trading_days: 0,
-  consistency_eval: false,
-  consistency_funded: false,
+  consistency_eval: 0,
+  consistency_funded: 0,
 };
 
 const DRAWDOWN_OPTIONS = ["end_of_day", "trailing", "static", "intraday"];
@@ -515,23 +515,10 @@ function AdminContent() {
               <Field label="Min Trading Days" value={String(form.min_trading_days || 0)} type="number"
                 onChange={(v) => updateField("min_trading_days", parseInt(v) || 0)} />
 
-              <div className="flex items-end gap-3">
-                <label className="flex items-center gap-2 text-sm text-gray-300">
-                  <input type="checkbox" checked={!!form.consistency_eval}
-                    onChange={(e) => updateField("consistency_eval", e.target.checked)}
-                    className="h-4 w-4 rounded border-gray-600 bg-gray-800 text-brand-500" />
-                  Consistency Eval
-                </label>
-              </div>
-
-              <div className="flex items-end gap-3">
-                <label className="flex items-center gap-2 text-sm text-gray-300">
-                  <input type="checkbox" checked={!!form.consistency_funded}
-                    onChange={(e) => updateField("consistency_funded", e.target.checked)}
-                    className="h-4 w-4 rounded border-gray-600 bg-gray-800 text-brand-500" />
-                  Consistency Funded
-                </label>
-              </div>
+              <Field label="Consistency Eval %" value={String(form.consistency_eval || 0)} type="number"
+                onChange={(v) => updateField("consistency_eval", parseInt(v) || 0)} />
+              <Field label="Consistency Funded %" value={String(form.consistency_funded || 0)} type="number"
+                onChange={(v) => updateField("consistency_funded", parseInt(v) || 0)} />
             </div>
 
             {/* Computed total */}

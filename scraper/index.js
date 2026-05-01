@@ -114,11 +114,9 @@ async function main() {
     for (const plan of results) {
       const existing = oldDataMap.get(key(plan));
       if (existing) {
-        // Preserve plan_id
         plan.plan_id = existing.plan_id;
-        // Preserve manual fields: only overwrite with new value if new value is not null
         for (const field of FIELDS_TO_PRESERVE) {
-          if (plan[field] === null && existing[field] !== undefined) {
+          if ((plan[field] === null || plan[field] === undefined) && existing[field] != null) {
             plan[field] = existing[field];
           }
         }

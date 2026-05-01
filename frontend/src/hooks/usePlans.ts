@@ -46,8 +46,8 @@ export interface PlanRow {
   // New fields for the updated column layout
   max_funded_accounts?: number;
   min_trading_days?: number;
-  consistency_eval?: boolean | number;
-  consistency_funded?: boolean | number;
+  consistency_eval?: number | null;
+  consistency_funded?: number | null;
 }
 
 

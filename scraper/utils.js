@@ -59,8 +59,8 @@ function buildPlan({
   // New fields
   maxFundedAccounts = null,
   minTradingDays = null,
-  consistencyEval = null,
-  consistencyFunded = null,
+  consistencyEvalPct = null,
+  consistencyFundedPct = null,
 }) {
   const totalCost = Math.round(
     (evalFee + activationFee - (evalFee * discountPct) / 100) * 100
@@ -94,8 +94,8 @@ function buildPlan({
   // Only include new fields if provided (keeps existing data clean)
   if (maxFundedAccounts !== null) plan.max_funded_accounts = maxFundedAccounts;
   if (minTradingDays !== null) plan.min_trading_days = minTradingDays;
-  if (consistencyEval !== null) plan.consistency_eval = consistencyEval;
-  if (consistencyFunded !== null) plan.consistency_funded = consistencyFunded;
+  if (consistencyEvalPct !== null) plan.consistency_eval = consistencyEvalPct;
+  if (consistencyFundedPct !== null) plan.consistency_funded = consistencyFundedPct;
 
   return plan;
 }
@@ -114,4 +114,21 @@ function parsePercent(str) {
   return match ? parseInt(match[1], 10) : 0;
 }
 
-module.exports = { fetchRendered, fetchStatic, buildPlan, parseMoney, parsePercent };
+// ── Extract consistency percentage from page text ──────────
+// Looks for patterns like "40% consistency", "consistency rule: 40%", "40% Consistency Rule"
+function extractConsistencyPercent(text, context = "") {
+  // Try specific patterns
+  const patterns = [
+    new RegExp(`(\\d+)%\\s*consistency\\s*${context}`, "i"),
+    new RegExp(`consistency\\s*${context}[^\\d]*(\\d+)%`, "i"),
+    new RegExp(`consistency\\s*rule[^\\d]*(\\d+)%`, "i"),
+    new RegExp(`(\\d+)%\\s*consistency\\s*rule`, "i"),
+  ];
+  for (const pat of patterns) {
+    const m = text.match(pat);
+    if (m) return parseInt(m[1], 10);
+  }
+  return null;
+}
+
+module.exports = { fetchRendered, fetchStatic, buildPlan, parseMoney, parsePercent, extractConsistencyPercent };

@@ -120,25 +120,23 @@ const columns: ColumnDef<PlanRow, any>[] = [
     size: 90,
   }),
 
-  // 10. Consistency Eval
+  // 10. Consistency Eval (percentage)
   columnHelper.accessor("consistency_eval", {
     header: "Consistency Eval",
     cell: (info) => {
       const v = info.getValue();
-      if (v === true || v === 1) return <span className="text-emerald-400">✓</span>;
-      if (v === false || v === 0) return <span className="text-gray-500">✗</span>;
+      if (v != null && v > 0) return <span className="text-gray-300">{v}%</span>;
       return <span className="text-gray-500">—</span>;
     },
     size: 120,
   }),
 
-  // 11. Consistency Funded
+  // 11. Consistency Funded (percentage)
   columnHelper.accessor("consistency_funded", {
     header: "Consistency Funded",
     cell: (info) => {
       const v = info.getValue();
-      if (v === true || v === 1) return <span className="text-emerald-400">✓</span>;
-      if (v === false || v === 0) return <span className="text-gray-500">✗</span>;
+      if (v != null && v > 0) return <span className="text-gray-300">{v}%</span>;
       return <span className="text-gray-500">—</span>;
     },
     size: 130,

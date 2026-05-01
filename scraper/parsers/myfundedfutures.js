@@ -1,5 +1,5 @@
 // MyFundedFutures parser
-const { buildPlan, parseMoney } = require("../utils");
+const { buildPlan, parseMoney, extractConsistencyPercent } = require("../utils");
 const cheerio = require("cheerio");
 
 const FIRM = {
@@ -19,13 +19,12 @@ async function scrape() {
   const $ = cheerio.load(html);
   const text = $.text();
 
-  // Extract new fields
   const maxFundedMatch = text.match(/(?:up to|max(?:imum)?)\s+(\d+)\s+funded\s+account/i);
   const maxFunded = maxFundedMatch ? parseInt(maxFundedMatch[1], 10) : null;
   const minDaysMatch = text.match(/(?:minimum|min)\s+(\d+)\s+(?:trading\s+)?days?/i);
   const minDays = minDaysMatch ? parseInt(minDaysMatch[1], 10) : null;
-  const hasConsistencyEval = /consistency\s*(?:rule|requirement|check)/i.test(text);
-  const hasConsistencyFunded = /consistency\s*(?:rule|requirement|check).*fund/i.test(text);
+  const consistencyEvalPct = extractConsistencyPercent(text, "eval");
+  const consistencyFundedPct = extractConsistencyPercent(text, "fund");
 
   const plans = [];
   const planConfigs = [
@@ -41,23 +40,15 @@ async function scrape() {
   );
 
   const rapidMatch = pricingSection.match(/Rapid\s*[-–]\s*\$(\d+)[\s\S]*?Rapid\s*[-–]\s*\$(\d+)[\s\S]*?Rapid\s*[-–]\s*\$(\d+)[\s\S]*?Rapid\s*[-–]\s*\$(\d+)/i);
-  const rapidPrices = [];
-  if (rapidMatch) {
-    for (let i = 1; i <= 4; i++) rapidPrices.push(parseMoney(rapidMatch[i]));
-  }
+  const rapidPrices = rapidMatch ? [1,2,3,4].map(i => parseMoney(rapidMatch[i])) : [];
 
   const proMatch = pricingSection.match(/Pro\s*[-–]\s*\$(\d+)[\s\S]*?Pro\s*[-–]\s*\$(\d+)[\s\S]*?Pro\s*[-–]\s*\$(\d+)/i);
-  const proPrices = [];
-  if (proMatch) {
-    for (let i = 1; i <= 3; i++) proPrices.push(parseMoney(proMatch[i]));
-  }
+  const proPrices = proMatch ? [1,2,3].map(i => parseMoney(proMatch[i])) : [];
 
   const prices = [];
   const priceRegex = /\$(\d[\d,]*)/g;
   let match;
-  while ((match = priceRegex.exec(pricingSection)) !== null) {
-    prices.push(parseMoney(match[1]));
-  }
+  while ((match = priceRegex.exec(pricingSection)) !== null) prices.push(parseMoney(match[1]));
 
   // Rapid plans
   for (let i = 0; i < planConfigs.length; i++) {
@@ -65,56 +56,32 @@ async function scrape() {
     const fee = rapidPrices[i] || prices[i * 2 + 1] || 0;
     if (fee > 0) {
       plans.push(buildPlan({
-        ...FIRM,
-        planId: `mffu-rapid-${cfg.label}`,
-        accountSize: cfg.size,
-        planLabel: `${cfg.label} Rapid`,
-        drawdownType: cfg.drawdown,
-        drawdownAmount: cfg.maxLoss,
-        dailyLossLimit: 0,
-        profitTarget: cfg.target,
-        profitSplit: cfg.split,
-        evalFee: fee,
-        isOneTime: false,
-        payoutFrequency: cfg.freq,
-        maxFundedAccounts: maxFunded,
-        minTradingDays: minDays,
-        consistencyEval: hasConsistencyEval || null,
-        consistencyFunded: hasConsistencyFunded || null,
+        ...FIRM, planId: `mffu-rapid-${cfg.label}`, accountSize: cfg.size, planLabel: `${cfg.label} Rapid`,
+        drawdownType: cfg.drawdown, drawdownAmount: cfg.maxLoss, dailyLossLimit: 0,
+        profitTarget: cfg.target, profitSplit: cfg.split, evalFee: fee, isOneTime: false,
+        payoutFrequency: cfg.freq, maxFundedAccounts: maxFunded, minTradingDays: minDays,
+        consistencyEvalPct, consistencyFundedPct,
       }));
     }
   }
 
   // Pro plans
-  const proConfigs = planConfigs.slice(2);
-  for (let i = 0; i < proConfigs.length; i++) {
-    const cfg = proConfigs[i];
+  for (let i = 0; i < planConfigs.slice(2).length; i++) {
+    const cfg = planConfigs[i + 2];
     const fee = proPrices[i] || 0;
     if (fee > 0) {
       plans.push(buildPlan({
-        ...FIRM,
-        planId: `mffu-pro-${cfg.label}`,
-        accountSize: cfg.size,
-        planLabel: `${cfg.label} Pro`,
-        drawdownType: cfg.drawdown,
-        drawdownAmount: cfg.maxLoss,
-        dailyLossLimit: 0,
-        profitTarget: cfg.target,
-        profitSplit: cfg.split,
-        evalFee: fee,
-        isOneTime: false,
-        payoutFrequency: cfg.freq,
-        maxFundedAccounts: maxFunded,
-        minTradingDays: minDays,
-        consistencyEval: hasConsistencyEval || null,
-        consistencyFunded: hasConsistencyFunded || null,
+        ...FIRM, planId: `mffu-pro-${cfg.label}`, accountSize: cfg.size, planLabel: `${cfg.label} Pro`,
+        drawdownType: cfg.drawdown, drawdownAmount: cfg.maxLoss, dailyLossLimit: 0,
+        profitTarget: cfg.target, profitSplit: cfg.split, evalFee: fee, isOneTime: false,
+        payoutFrequency: cfg.freq, maxFundedAccounts: maxFunded, minTradingDays: minDays,
+        consistencyEvalPct, consistencyFundedPct,
       }));
     }
   }
 
   // Fallback
   if (plans.length === 0) {
-    console.warn("[myfundedfutures] Could not parse prices, using fallback data");
     const fallback = [
       { size: 25000, fee: 84, target: 1500, maxLoss: 1000 },
       { size: 50000, fee: 107, target: 3000, maxLoss: 2000 },
@@ -123,21 +90,11 @@ async function scrape() {
     ];
     for (const f of fallback) {
       plans.push(buildPlan({
-        ...FIRM,
-        planId: `mffu-${(f.size / 1000).toFixed(0)}K`,
-        accountSize: f.size,
-        drawdownType: "end_of_day",
-        drawdownAmount: f.maxLoss,
-        dailyLossLimit: 0,
-        profitTarget: f.target,
-        profitSplit: 80,
-        evalFee: f.fee,
-        isOneTime: false,
-        payoutFrequency: "biweekly",
-        maxFundedAccounts: maxFunded,
-        minTradingDays: minDays,
-        consistencyEval: hasConsistencyEval || null,
-        consistencyFunded: hasConsistencyFunded || null,
+        ...FIRM, planId: `mffu-${(f.size / 1000).toFixed(0)}K`, accountSize: f.size,
+        drawdownType: "end_of_day", drawdownAmount: f.maxLoss, dailyLossLimit: 0,
+        profitTarget: f.target, profitSplit: 80, evalFee: f.fee, isOneTime: false,
+        payoutFrequency: "biweekly", maxFundedAccounts: maxFunded, minTradingDays: minDays,
+        consistencyEvalPct, consistencyFundedPct,
       }));
     }
   }

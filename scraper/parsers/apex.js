@@ -1,7 +1,5 @@
 // Apex Trader Funding parser
-// Source: apextraderfunding.com
-
-const { buildPlan, fetchRendered, parseMoney } = require("../utils");
+const { buildPlan, fetchRendered, parseMoney, extractConsistencyPercent } = require("../utils");
 const cheerio = require("cheerio");
 
 const FIRM = {
@@ -34,17 +32,12 @@ async function scrape() {
   const $ = cheerio.load(html);
   const text = $.text();
 
-  // Try to extract max funded accounts
   const maxFundedMatch = text.match(/(?:up to|max(?:imum)?)\s+(\d+)\s+funded\s+account/i);
   const maxFunded = maxFundedMatch ? parseInt(maxFundedMatch[1], 10) : null;
-
-  // Try to extract min trading days
   const minDaysMatch = text.match(/(?:minimum|min)\s+(\d+)\s+(?:trading\s+)?days?/i);
   const minDays = minDaysMatch ? parseInt(minDaysMatch[1], 10) : null;
-
-  // Check for consistency rules
-  const hasConsistencyEval = /consistency\s*(?:rule|requirement|check)/i.test(text);
-  const hasConsistencyFunded = /consistency\s*(?:rule|requirement|check).*fund/i.test(text);
+  const consistencyEvalPct = extractConsistencyPercent(text, "eval");
+  const consistencyFundedPct = extractConsistencyPercent(text, "fund");
 
   const plans = [];
 
@@ -57,17 +50,9 @@ async function scrape() {
     let fee = 0;
     for (const pat of patterns) {
       const m = text.match(pat);
-      if (m) {
-        fee = parseMoney(m[1]);
-        if (fee > 50 && fee < 2000) break;
-        fee = 0;
-      }
+      if (m) { fee = parseMoney(m[1]); if (fee > 50 && fee < 2000) break; fee = 0; }
     }
-
-    if (!fee) {
-      const known = { 25000: 147, 50000: 167, 100000: 207, 150000: 297, 250000: 517 };
-      fee = known[cfg.size] || 0;
-    }
+    if (!fee) { const known = { 25000: 147, 50000: 167, 100000: 207, 150000: 297, 250000: 517 }; fee = known[cfg.size] || 0; }
 
     if (fee > 0) {
       plans.push(buildPlan({
@@ -84,8 +69,8 @@ async function scrape() {
         payoutFrequency: "biweekly",
         maxFundedAccounts: maxFunded,
         minTradingDays: minDays,
-        consistencyEval: hasConsistencyEval || null,
-        consistencyFunded: hasConsistencyFunded || null,
+        consistencyEvalPct,
+        consistencyFundedPct,
       }));
     }
   }
