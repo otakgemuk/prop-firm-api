@@ -4,6 +4,7 @@ const cheerio = require("cheerio");
 
 const FIRM = { firmId: "f04", firmName: "TradeDay", firmSlug: "tradeday", websiteUrl: "https://tradeday.com", trustpilot: 4.6 };
 const CONFIGS = [
+  { size: 25000,  label: "25K",  target: 1500, maxLoss: 1500, dailyLoss: 750  },
   { size: 50000,  label: "50K",  target: 3000, maxLoss: 2000, dailyLoss: 1000 },
   { size: 100000, label: "100K", target: 6000, maxLoss: 3000, dailyLoss: 2000 },
   { size: 150000, label: "150K", target: 9000, maxLoss: 4500, dailyLoss: 3000 },
@@ -26,7 +27,7 @@ async function scrape() {
     let fee = 0;
     const m = text.match(new RegExp(`${cfg.label}[\\s\\S]{0,300}?\\$(\\d+)`, "i"));
     if (m) { fee = parseMoney(m[1]); if (fee < 50 || fee > 2000) fee = 0; }
-    if (!fee) { const known = { 50000: 150, 100000: 250, 150000: 350 }; fee = known[cfg.size]; }
+    if (!fee) { const known = { 25000: 125, 50000: 150, 100000: 250, 150000: 350 }; fee = known[cfg.size]; }
 
     plans.push(buildPlan({
       ...FIRM, planId: `tradeday-${cfg.label}`, accountSize: cfg.size,
