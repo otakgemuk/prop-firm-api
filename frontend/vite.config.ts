@@ -20,11 +20,17 @@ function copyDataPlugin() {
 
 export default defineConfig({
   plugins: [react(), copyDataPlugin()],
-  // Base path for GitHub Pages: /prop-firm-api/
   base: "/prop-firm-api/",
   server: {
     port: 5173,
   },
-  // Make data/plans.json available during dev by serving from project root
   publicDir: resolve(__dirname, "../data"),
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "index.html"),
+        admin: resolve(__dirname, "admin.html"),
+      },
+    },
+  },
 });
