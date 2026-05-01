@@ -2,27 +2,9 @@
 //
 // A visual card that summarises one plan.
 // Used in the "Card View" toggle (alternative to table rows).
-// Shows: firm logo, firm name, account size, drawdown type, key metrics,
-// and a "Buy Now" CTA linking to the firm's site.
 
 import type { PlanRow } from "../hooks/usePlans";
-
-// Map drawdown_type enum → human-readable label + colour
-const DRAWDOWN_STYLES: Record<string, { label: string; color: string }> = {
-  end_of_day: { label: "EOD Trailing", color: "bg-blue-500/20 text-blue-300" },
-  trailing:   { label: "Trailing",     color: "bg-purple-500/20 text-purple-300" },
-  static:     { label: "Static",       color: "bg-emerald-500/20 text-emerald-300" },
-  intraday:   { label: "Intraday",     color: "bg-amber-500/20 text-amber-300" },
-};
-
-function formatUSD(n: number): string {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  }).format(n);
-}
+import { formatUSD, DRAWDOWN_STYLES } from "../lib/utils";
 
 export default function ComparisonCard({ plan }: { plan: PlanRow }) {
   const dd = DRAWDOWN_STYLES[plan.drawdown_type] ?? {

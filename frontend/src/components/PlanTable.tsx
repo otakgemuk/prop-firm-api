@@ -4,16 +4,8 @@
 //
 // Features:
 //   • Multi-column sorting (shift-click to add secondary sorts)
-//   • Global text search (handled by sidebar → usePlans → API)
 //   • Column-level formatting (currency, percentages, badges)
-//   • Pagination controls
 //   • Row click → opens firm website
-//
-// Architecture note:
-//   TanStack Table operates CLIENT-SIDE on the current page of data.
-//   Server-side sorting is handled by passing sort/order params to the API
-//   via the usePlans hook. This keeps the table lightweight and the DB
-//   doing the heavy lifting.
 
 import {
   useReactTable,
@@ -26,24 +18,7 @@ import {
 } from "@tanstack/react-table";
 import { useState } from "react";
 import type { PlanRow } from "../hooks/usePlans";
-
-// ── Helpers ────────────────────────────────────────────────
-
-function formatUSD(n: number): string {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  }).format(n);
-}
-
-const DRAWDOWN_BADGES: Record<string, { label: string; cls: string }> = {
-  end_of_day: { label: "EOD",      cls: "bg-blue-500/20 text-blue-300" },
-  trailing:   { label: "Trailing", cls: "bg-purple-500/20 text-purple-300" },
-  static:     { label: "Static",   cls: "bg-emerald-500/20 text-emerald-300" },
-  intraday:   { label: "Intraday", cls: "bg-amber-500/20 text-amber-300" },
-};
+import { formatUSD, DRAWDOWN_STYLES } from "../lib/utils";
 
 // ── Column definitions ─────────────────────────────────────
 
@@ -81,9 +56,9 @@ const columns: ColumnDef<PlanRow, any>[] = [
   columnHelper.accessor("drawdown_type", {
     header: "Drawdown",
     cell: (info) => {
-      const badge = DRAWDOWN_BADGES[info.getValue()] ?? { label: info.getValue(), cls: "bg-gray-500/20 text-gray-300" };
+      const badge = DRAWDOWN_STYLES[info.getValue()] ?? { label: info.getValue(), color: "bg-gray-500/20 text-gray-300" };
       return (
-        <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${badge.cls}`}>
+        <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${badge.color}`}>
           {badge.label}
         </span>
       );
@@ -182,7 +157,6 @@ interface PlanTableProps {
 }
 
 export default function PlanTable({ data, onSortingChange, serverSorting }: PlanTableProps) {
-  // TanStack Table's sorting state — synced up to parent for server-side sorting
   const [sorting, setSorting] = useState<SortingState>(serverSorting ?? []);
 
   const table = useReactTable({
@@ -196,7 +170,6 @@ export default function PlanTable({ data, onSortingChange, serverSorting }: Plan
     },
     getCoreRowModel:    getCoreRowModel(),
     getSortedRowModel:  getSortedRowModel(),
-    // We handle pagination server-side, so no client-side pagination model
   });
 
   return (
@@ -222,7 +195,6 @@ export default function PlanTable({ data, onSortingChange, serverSorting }: Plan
                       onClick={header.column.getToggleSortingHandler()}
                     >
                       {flexRender(header.column.columnDef.header, header.getContext())}
-                      {/* Sort indicator */}
                       {{ asc: " ↑", desc: " ↓" }[header.column.getIsSorted() as string] ?? null}
                     </div>
                   )}

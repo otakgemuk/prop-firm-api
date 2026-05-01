@@ -224,8 +224,10 @@ function nextPlanId(plans: PlanRow[]): string {
   return `p${String(max + 1).padStart(2, "0")}`;
 }
 
-function calcTotalCost(evalFee: number, activationFee: number, discountPct: number): number {
-  return Math.round((evalFee + activationFee - (evalFee * discountPct) / 100) * 100) / 100;
+function calcTotalCost(evalFee: number, activationFee: number, discountPct: number, monthlyFee = 0): number {
+  // Total = eval (with discount) + activation + monthly fee
+  const discountedEval = evalFee - (evalFee * discountPct) / 100;
+  return Math.round((discountedEval + activationFee + monthlyFee) * 100) / 100;
 }
 
 function AdminContent() {
@@ -265,7 +267,7 @@ function AdminContent() {
       const next = { ...prev, [field]: value };
       // Auto-calc total cost
       if (["eval_fee", "activation_fee", "active_discount_pct"].includes(field)) {
-        next.total_cost_to_funded = calcTotalCost(next.eval_fee, next.activation_fee, next.active_discount_pct);
+        next.total_cost_to_funded = calcTotalCost(next.eval_fee, next.activation_fee, next.active_discount_pct, next.monthly_fee);
       }
       // Auto-fill firm_slug from firm_name
       if (field === "firm_name") {
@@ -288,7 +290,7 @@ function AdminContent() {
       ...form,
       firm_id: form.firm_id || nextFirmId(plans),
       plan_id: form.plan_id || nextPlanId(plans),
-      total_cost_to_funded: calcTotalCost(form.eval_fee, form.activation_fee, form.active_discount_pct),
+      total_cost_to_funded: calcTotalCost(form.eval_fee, form.activation_fee, form.active_discount_pct, form.monthly_fee),
     };
     setPlans((prev) => [...prev, newPlan]);
     setForm({ ...EMPTY_PLAN });
@@ -308,7 +310,7 @@ function AdminContent() {
     const updated = [...plans];
     updated[editingIndex] = {
       ...form,
-      total_cost_to_funded: calcTotalCost(form.eval_fee, form.activation_fee, form.active_discount_pct),
+      total_cost_to_funded: calcTotalCost(form.eval_fee, form.activation_fee, form.active_discount_pct, form.monthly_fee),
     };
     setPlans(updated);
     setEditingIndex(null);
@@ -508,7 +510,7 @@ function AdminContent() {
             <div className="mt-4 rounded-lg bg-brand-600/10 px-4 py-3 text-center">
               <span className="text-sm text-brand-300">Total Cost to Funded: </span>
               <span className="text-xl font-bold text-brand-200">
-                ${calcTotalCost(form.eval_fee, form.activation_fee, form.active_discount_pct).toFixed(2)}
+                ${calcTotalCost(form.eval_fee, form.activation_fee, form.active_discount_pct, form.monthly_fee).toFixed(2)}
               </span>
             </div>
 

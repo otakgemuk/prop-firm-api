@@ -6,7 +6,7 @@
 
 import { useState, useCallback } from "react";
 import type { SortingState } from "@tanstack/react-table";
-import Sidebar from "./components/Sidebar";
+import FilterBar from "./components/FilterBar";
 import PlanTable from "./components/PlanTable";
 import ComparisonCard from "./components/ComparisonCard";
 import { usePlans, type PlanFilters } from "./hooks/usePlans";
@@ -15,22 +15,22 @@ type ViewMode = "table" | "cards";
 
 export default function App() {
   // ── Filter state (source of truth) ─────────────────────
-  const [accountSizeMin, setAccountSizeMin] = useState(0);
-  const [accountSizeMax, setAccountSizeMax] = useState(300_000);
-  const [drawdowns, setDrawdowns]           = useState<string[]>([]);
-  const [platform, setPlatform]             = useState("");
-  const [search, setSearch]                 = useState("");
-  const [sort, setSort]                     = useState<string>("total_cost");
-  const [order, setOrder]                   = useState<"asc" | "desc">("asc");
-  const [page, setPage]                     = useState(1);
-  const [viewMode, setViewMode]             = useState<ViewMode>("table");
+  const [accountSize, setAccountSize]   = useState(0);
+  const [drawdowns, setDrawdowns]       = useState<string[]>([]);
+  const [platform, setPlatform]         = useState("");
+  const [search, setSearch]             = useState("");
+  const [sortValue, setSortValue]       = useState("total_cost:asc");
+  const [page, setPage]                 = useState(1);
+  const [viewMode, setViewMode]         = useState<ViewMode>("table");
+
+  // Parse sort value "field:order"
+  const [sort, order] = sortValue.split(":") as [string, "asc" | "desc"];
 
   const filters: PlanFilters = {
-    accountSizeMin: accountSizeMin || undefined,
-    accountSizeMax: accountSizeMax < 300_000 ? accountSizeMax : undefined,
-    drawdownType:   drawdowns.length ? drawdowns : undefined,
-    platform:       platform || undefined,
-    search:         search || undefined,
+    accountSize:  accountSize || undefined,
+    drawdownType: drawdowns.length ? drawdowns : undefined,
+    platform:     platform || undefined,
+    search:       search || undefined,
     sort,
     order,
     page,
@@ -42,11 +42,9 @@ export default function App() {
   // ── Sync table column sorting → filter state ───────────
   const handleSortingChange = useCallback((sorting: SortingState) => {
     if (sorting.length > 0) {
-      setSort(sorting[0].id);
-      setOrder(sorting[0].desc ? "desc" : "asc");
+      setSortValue(`${sorting[0].id}:${sorting[0].desc ? "desc" : "asc"}`);
     } else {
-      setSort("total_cost");
-      setOrder("asc");
+      setSortValue("total_cost:asc");
     }
     setPage(1);
   }, []);
@@ -57,7 +55,15 @@ export default function App() {
       <header className="border-b border-white/10 bg-gray-950/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
           <div className="flex items-center gap-3">
-            <img src="./logo.png" alt="MightyOx Trading" className="h-10 w-10" />
+            {/* Ox logo */}
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500">
+              <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 text-white">
+                <path d="M4 4c2-2 4-2 6 0s4 2 6 0 4-2 6 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                <circle cx="8" cy="10" r="2" fill="currentColor" />
+                <circle cx="16" cy="10" r="2" fill="currentColor" />
+                <path d="M6 14c0 4 3 6 6 6s6-2 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            </div>
             <div>
               <h1 className="text-2xl font-bold tracking-tight text-white">
                 Mighty<span className="text-brand-400">Ox</span> Trading
@@ -68,113 +74,122 @@ export default function App() {
             </div>
           </div>
 
-          {/* View toggle */}
-          <div className="flex rounded-lg border border-white/10 p-0.5">
-            <button
-              onClick={() => setViewMode("table")}
-              className={`rounded-md px-3 py-1.5 text-sm font-medium transition ${
-                viewMode === "table"
-                  ? "bg-brand-500 text-white"
-                  : "text-gray-400 hover:text-white"
-              }`}
-            >
-              Table
-            </button>
-            <button
-              onClick={() => setViewMode("cards")}
-              className={`rounded-md px-3 py-1.5 text-sm font-medium transition ${
-                viewMode === "cards"
-                  ? "bg-brand-500 text-white"
-                  : "text-gray-400 hover:text-white"
-              }`}
-            >
-              Cards
-            </button>
+          <div className="flex items-center gap-3">
+            {/* Search */}
+            <div className="relative hidden sm:block">
+              <svg className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input
+                type="text"
+                value={search}
+                onChange={(e) => { setSearch(e.target.value); setPage(1); }}
+                placeholder="Search firms…"
+                className="w-48 rounded-full border border-white/10 bg-gray-800/80 py-1.5 pl-9 pr-3
+                           text-sm text-white placeholder-gray-500 focus:border-brand-400
+                           focus:outline-none focus:ring-1 focus:ring-brand-400"
+              />
+            </div>
+
+            {/* View toggle */}
+            <div className="flex rounded-full border border-white/10 p-0.5">
+              <button
+                onClick={() => setViewMode("table")}
+                className={`rounded-full px-3 py-1 text-xs font-medium transition ${
+                  viewMode === "table"
+                    ? "bg-brand-500 text-white"
+                    : "text-gray-400 hover:text-white"
+                }`}
+              >
+                Table
+              </button>
+              <button
+                onClick={() => setViewMode("cards")}
+                className={`rounded-full px-3 py-1 text-xs font-medium transition ${
+                  viewMode === "cards"
+                    ? "bg-brand-500 text-white"
+                    : "text-gray-400 hover:text-white"
+                }`}
+              >
+                Cards
+              </button>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* ── Main layout: sidebar + content ──────────────────── */}
-      <main className="mx-auto flex max-w-7xl gap-6 px-4 py-6">
-        {/* Sidebar */}
-        <div className="sticky top-6 hidden w-72 shrink-0 lg:block">
-          <Sidebar
-            accountSizeMin={accountSizeMin}
-            accountSizeMax={accountSizeMax}
-            onAccountSizeChange={(min, max) => {
-              setAccountSizeMin(min);
-              setAccountSizeMax(max);
-              setPage(1);
-            }}
-            selectedDrawdowns={drawdowns}
-            onDrawdownChange={(types) => { setDrawdowns(types); setPage(1); }}
-            selectedPlatform={platform}
-            onPlatformChange={(p) => { setPlatform(p); setPage(1); }}
-            search={search}
-            onSearchChange={(s) => { setSearch(s); setPage(1); }}
-          />
+      {/* ── Main content ────────────────────────────────────── */}
+      <main className="mx-auto max-w-7xl px-4 py-6 space-y-4">
+
+        {/* Filter bar */}
+        <FilterBar
+          selectedSize={accountSize}
+          onSizeChange={(s) => { setAccountSize(s); setPage(1); }}
+          selectedDrawdowns={drawdowns}
+          onDrawdownChange={(types) => { setDrawdowns(types); setPage(1); }}
+          selectedPlatform={platform}
+          onPlatformChange={(p) => { setPlatform(p); setPage(1); }}
+          sortValue={sortValue}
+          onSortChange={(sv) => { setSortValue(sv); setPage(1); }}
+        />
+
+        {/* Status bar */}
+        <div className="flex items-center justify-between text-sm text-gray-400">
+          {isLoading ? (
+            <span>Loading plans…</span>
+          ) : error ? (
+            <span className="text-red-400">Error: {error}</span>
+          ) : (
+            <span>
+              Showing <strong className="text-white">{data.length}</strong> of{" "}
+              <strong className="text-white">{pagination.total}</strong> plans
+            </span>
+          )}
         </div>
 
-        {/* Content area */}
-        <div className="min-w-0 flex-1">
-          {/* Status bar */}
-          <div className="mb-4 flex items-center justify-between text-sm text-gray-400">
-            {isLoading ? (
-              <span>Loading plans…</span>
-            ) : error ? (
-              <span className="text-red-400">Error: {error}</span>
-            ) : (
-              <span>
-                Showing <strong className="text-white">{data.length}</strong> of{" "}
-                <strong className="text-white">{pagination.total}</strong> plans
-              </span>
+        {/* Table or Card view */}
+        {viewMode === "table" ? (
+          <PlanTable
+            data={data}
+            onSortingChange={handleSortingChange}
+          />
+        ) : (
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {data.map((plan) => (
+              <ComparisonCard key={plan.plan_id} plan={plan} />
+            ))}
+            {data.length === 0 && !isLoading && (
+              <p className="col-span-full py-12 text-center text-gray-500">
+                No plans match your filters.
+              </p>
             )}
           </div>
+        )}
 
-          {/* Table or Card view */}
-          {viewMode === "table" ? (
-            <PlanTable
-              data={data}
-              onSortingChange={handleSortingChange}
-            />
-          ) : (
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              {data.map((plan) => (
-                <ComparisonCard key={plan.plan_id} plan={plan} />
-              ))}
-              {data.length === 0 && !isLoading && (
-                <p className="col-span-full py-12 text-center text-gray-500">
-                  No plans match your filters.
-                </p>
-              )}
-            </div>
-          )}
-
-          {/* Pagination */}
-          {pagination.pages > 1 && (
-            <div className="mt-6 flex items-center justify-center gap-2">
-              <button
-                onClick={() => setPage((p) => Math.max(1, p - 1))}
-                disabled={page === 1}
-                className="rounded-lg border border-white/10 px-3 py-1.5 text-sm text-gray-300
-                           transition hover:border-brand-400 disabled:opacity-30"
-              >
-                ← Prev
-              </button>
-              <span className="text-sm text-gray-400">
-                Page {page} of {pagination.pages}
-              </span>
-              <button
-                onClick={() => setPage((p) => Math.min(pagination.pages, p + 1))}
-                disabled={page === pagination.pages}
-                className="rounded-lg border border-white/10 px-3 py-1.5 text-sm text-gray-300
-                           transition hover:border-brand-400 disabled:opacity-30"
-              >
-                Next →
-              </button>
-            </div>
-          )}
-        </div>
+        {/* Pagination */}
+        {pagination.pages > 1 && (
+          <div className="flex items-center justify-center gap-2">
+            <button
+              onClick={() => setPage((p) => Math.max(1, p - 1))}
+              disabled={page === 1}
+              className="rounded-lg border border-white/10 px-3 py-1.5 text-sm text-gray-300
+                         transition hover:border-brand-400 disabled:opacity-30"
+            >
+              ← Prev
+            </button>
+            <span className="text-sm text-gray-400">
+              Page {page} of {pagination.pages}
+            </span>
+            <button
+              onClick={() => setPage((p) => Math.min(pagination.pages, p + 1))}
+              disabled={page === pagination.pages}
+              className="rounded-lg border border-white/10 px-3 py-1.5 text-sm text-gray-300
+                         transition hover:border-brand-400 disabled:opacity-30"
+            >
+              Next →
+            </button>
+          </div>
+        )}
       </main>
     </div>
   );

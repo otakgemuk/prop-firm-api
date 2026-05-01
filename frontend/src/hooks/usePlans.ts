@@ -4,15 +4,13 @@
 // and handles all filtering, sorting, and pagination in the browser.
 //
 // No backend needed. The JSON file is the single source of truth.
-// Edit data/plans.json → rebuild → done.
 
 import { useState, useEffect, useMemo } from "react";
 
 // ── Types ──────────────────────────────────────────────────
 
 export interface PlanFilters {
-  accountSizeMin?: number;
-  accountSizeMax?: number;
+  accountSize?: number;
   drawdownType?: string[];
   platform?: string;
   search?: string;
@@ -79,9 +77,6 @@ export function usePlans(filters: PlanFilters) {
     async function load() {
       try {
         setIsLoading(true);
-        // Vite serves files from the project root.
-        // data/plans.json is at the repo root, one level up from frontend/.
-        // In the built output, it'll be at the base path.
         const res = await fetch("./plans.json");
         if (!res.ok) throw new Error(`Failed to load plans.json: ${res.status}`);
         const json: PlanRow[] = await res.json();
@@ -100,16 +95,16 @@ export function usePlans(filters: PlanFilters) {
     return () => { cancelled = true; };
   }, []);
 
-  // Apply filters → sort → paginate (all client-side, runs on every filter change)
+  // Stable filter keys for memo dependency
+  const drawdownKey = filters.drawdownType?.slice().sort().join(",") ?? "";
+
+  // Apply filters → sort → paginate (all client-side)
   const { data, pagination } = useMemo(() => {
     let rows = [...allPlans];
 
-    // ── Filter: account size range ─────────────────────────
-    if (filters.accountSizeMin != null) {
-      rows = rows.filter((r) => r.account_size >= filters.accountSizeMin!);
-    }
-    if (filters.accountSizeMax != null) {
-      rows = rows.filter((r) => r.account_size <= filters.accountSizeMax!);
+    // ── Filter: account size (exact match when > 0) ────────
+    if (filters.accountSize && filters.accountSize > 0) {
+      rows = rows.filter((r) => r.account_size === filters.accountSize);
     }
 
     // ── Filter: drawdown types ─────────────────────────────
@@ -117,9 +112,6 @@ export function usePlans(filters: PlanFilters) {
       const set = new Set(filters.drawdownType);
       rows = rows.filter((r) => set.has(r.drawdown_type));
     }
-
-    // ── Filter: platform (not in current data, future-proof)
-    // Platforms aren't in the flat plan rows, so this is a no-op for now.
 
     // ── Filter: global search ──────────────────────────────
     if (filters.search) {
@@ -160,9 +152,8 @@ export function usePlans(filters: PlanFilters) {
     };
   }, [
     allPlans,
-    filters.accountSizeMin,
-    filters.accountSizeMax,
-    filters.drawdownType?.join(","),
+    filters.accountSize,
+    drawdownKey,
     filters.platform,
     filters.search,
     filters.sort,
