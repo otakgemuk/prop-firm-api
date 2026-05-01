@@ -744,6 +744,7 @@ function ScraperSection() {
               <option value="elite-trader-funding">Elite Trader Funding</option>
               <option value="earn2trade">Earn2Trade</option>
               <option value="alpha-futures">Alpha Futures</option>
+              <option value="tradeify">Tradeify</option>
             </select>
             <button onClick={triggerManual} disabled={manualStatus === "running"}
               className="rounded-lg bg-brand-500 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-400 disabled:opacity-50">

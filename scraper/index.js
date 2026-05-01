@@ -25,6 +25,7 @@ const parsers = {
   "elite-trader-funding": require("./parsers/elite-trader-funding"),
   "earn2trade":           require("./parsers/earn2trade"),
   "alpha-futures":        require("./parsers/alpha-futures"),
+  "tradeify":             require("./parsers/tradeify"),
 };
 
 // ── CLI args ───────────────────────────────────────────────

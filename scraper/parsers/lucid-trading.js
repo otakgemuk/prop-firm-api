@@ -4,6 +4,7 @@ const cheerio = require("cheerio");
 
 const FIRM = { firmId: "f05", firmName: "Lucid Trading", firmSlug: "lucid-trading", websiteUrl: "https://lucidtrading.com", trustpilot: 4.2 };
 const CONFIGS = [
+  { size: 25000,  label: "25K",  target: 1250, maxLoss: 1000, dailyLoss: 500  },
   { size: 50000,  label: "50K",  target: 3000, maxLoss: 2500, dailyLoss: 1250 },
   { size: 100000, label: "100K", target: 6000, maxLoss: 3500, dailyLoss: 2000 },
 ];
@@ -25,7 +26,7 @@ async function scrape() {
     let fee = 0;
     const m = text.match(new RegExp(`${cfg.label}[\\s\\S]{0,300}?\\$(\\d+)`, "i"));
     if (m) { fee = parseMoney(m[1]); if (fee < 50 || fee > 2000) fee = 0; }
-    if (!fee) { const known = { 50000: 175, 100000: 275 }; fee = known[cfg.size]; }
+    if (!fee) { const known = { 25000: 135, 50000: 175, 100000: 275 }; fee = known[cfg.size]; }
 
     plans.push(buildPlan({
       ...FIRM, planId: `lucid-${cfg.label}`, accountSize: cfg.size,
