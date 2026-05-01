@@ -1,29 +1,8 @@
 // App.tsx — Main page component
 //
-// This is the orchestrator. It:
-//   1. Holds all filter state (account size, drawdown, platform, search)
-//   2. Passes filters to the usePlans hook → triggers API fetch
-//   3. Renders the Sidebar (filters) and PlanTable (results)
-//
-// Data flow diagram:
-//
-//   ┌─────────┐     state      ┌──────────┐    query params    ┌───────────┐
-//   │ Sidebar │ ──────────────→│   App    │ ──────────────────→│ usePlans  │
-//   │ (input) │  onXxxChange   │ (parent) │  GET /api/plans?…  │  (hook)   │
-//   └─────────┘                └────┬─────┘                    └─────┬─────┘
-//                                   │                                │
-//                                   │ props (data, isLoading)        │ JSON
-//                                   ▼                                ▼
-//                              ┌──────────┐                    ┌───────────┐
-//                              │PlanTable │                    │ Express   │
-//                              │(render)  │                    │ /api/plans│
-//                              └──────────┘                    └───────────┘
-//
-// This pattern means:
-//   - The sidebar controls are "uncontrolled" locally (they own their input state)
-//   - But the FILTER VALUES are "lifted up" to App via callbacks
-//   - usePlans watches those values and refetches when they change
-//   - The table is a pure render function of the API response
+// All data comes from the local data/plans.json file via the usePlans hook.
+// Filtering, sorting, and pagination are handled entirely client-side.
+// No backend required — just edit data/plans.json and rebuild.
 
 import { useState, useCallback } from "react";
 import type { SortingState } from "@tanstack/react-table";
@@ -32,11 +11,10 @@ import PlanTable from "./components/PlanTable";
 import ComparisonCard from "./components/ComparisonCard";
 import { usePlans, type PlanFilters } from "./hooks/usePlans";
 
-// ── View toggle (table vs cards) ───────────────────────────
 type ViewMode = "table" | "cards";
 
 export default function App() {
-  // ── Filter state (source of truth for API params) ────────
+  // ── Filter state (source of truth) ─────────────────────
   const [accountSizeMin, setAccountSizeMin] = useState(0);
   const [accountSizeMax, setAccountSizeMax] = useState(300_000);
   const [drawdowns, setDrawdowns]           = useState<string[]>([]);
@@ -47,10 +25,6 @@ export default function App() {
   const [page, setPage]                     = useState(1);
   const [viewMode, setViewMode]             = useState<ViewMode>("table");
 
-  // ── Build filter object for the hook ─────────────────────
-  //
-  // Every time any of these values changes, the usePlans hook
-  // will re-fetch from /api/plans with the new query string.
   const filters: PlanFilters = {
     accountSizeMin: accountSizeMin || undefined,
     accountSizeMax: accountSizeMax < 300_000 ? accountSizeMax : undefined,
@@ -65,7 +39,7 @@ export default function App() {
 
   const { data, pagination, isLoading, error } = usePlans(filters);
 
-  // ── Sync TanStack Table sorting → API sort params ────────
+  // ── Sync table column sorting → filter state ───────────
   const handleSortingChange = useCallback((sorting: SortingState) => {
     if (sorting.length > 0) {
       setSort(sorting[0].id);
@@ -74,7 +48,7 @@ export default function App() {
       setSort("total_cost");
       setOrder("asc");
     }
-    setPage(1); // reset to page 1 on sort change
+    setPage(1);
   }, []);
 
   return (
@@ -119,7 +93,7 @@ export default function App() {
 
       {/* ── Main layout: sidebar + content ──────────────────── */}
       <main className="mx-auto flex max-w-7xl gap-6 px-4 py-6">
-        {/* Sidebar (sticky on scroll) */}
+        {/* Sidebar */}
         <div className="sticky top-6 hidden w-72 shrink-0 lg:block">
           <Sidebar
             accountSizeMin={accountSizeMin}

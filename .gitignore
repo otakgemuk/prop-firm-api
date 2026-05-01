@@ -1,7 +1,10 @@
 node_modules/
-data/
 *.db
 *.db-shm
 *.db-wal
+*.tsbuildinfo
 .env
 dist/
+
+# Backend data directory (SQLite DBs, etc.)
+backend/data/

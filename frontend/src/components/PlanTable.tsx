@@ -24,7 +24,7 @@ import {
   type SortingState,
   type ColumnDef,
 } from "@tanstack/react-table";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import type { PlanRow } from "../hooks/usePlans";
 
 // ── Helpers ────────────────────────────────────────────────

@@ -1,28 +1,22 @@
 // usePlans.ts
 //
-// Custom hook that bridges frontend filter state → backend API.
+// Client-side data hook — loads plans from local data/plans.json
+// and handles all filtering, sorting, and pagination in the browser.
 //
-// The flow:
-//   1. User interacts with sidebar filters (slider, checkboxes, dropdown)
-//   2. React state updates in the parent page component
-//   3. This hook watches those state values via the `filters` param
-//   4. On change, it builds a query string and fetches /api/plans
-//   5. Returns { data, pagination, isLoading, error } for the table
-//
-// This pattern keeps the URL as the source of truth for API params
-// and makes the component tree purely reactive.
+// No backend needed. The JSON file is the single source of truth.
+// Edit data/plans.json → rebuild → done.
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 // ── Types ──────────────────────────────────────────────────
 
 export interface PlanFilters {
   accountSizeMin?: number;
   accountSizeMax?: number;
-  drawdownType?: string[];         // ["trailing", "static"]
-  platform?: string;               // "NinjaTrader"
-  search?: string;                 // global search text
-  sort?: string;                   // column key
+  drawdownType?: string[];
+  platform?: string;
+  search?: string;
+  sort?: string;
   order?: "asc" | "desc";
   page?: number;
   limit?: number;
@@ -46,69 +40,126 @@ export interface PlanRow {
   eval_fee: number;
   activation_fee: number;
   monthly_fee: number;
-  is_one_time: boolean;
+  is_one_time: number;
   payout_frequency: string;
   first_payout_days: number | null;
   total_cost_to_funded: number;
   active_discount_pct: number;
 }
 
-interface Pagination {
-  page: number;
-  limit: number;
-  total: number;
-  pages: number;
-}
 
-interface PlansResponse {
-  data: PlanRow[];
-  pagination: Pagination;
-}
+// ── Sort key mapping ───────────────────────────────────────
+
+const SORT_KEYS: Record<string, (row: PlanRow) => number | string> = {
+  firm_name:         (r) => r.firm_name.toLowerCase(),
+  account_size:      (r) => r.account_size,
+  drawdown_type:     (r) => r.drawdown_type,
+  drawdown_amount:   (r) => r.drawdown_amount,
+  daily_loss_limit:  (r) => r.daily_loss_limit,
+  profit_target:     (r) => r.profit_target,
+  eval_fee:          (r) => r.eval_fee,
+  activation_fee:    (r) => r.activation_fee,
+  total_cost:        (r) => r.total_cost_to_funded,
+  total_cost_to_funded: (r) => r.total_cost_to_funded,
+  profit_split:      (r) => r.profit_split,
+  trustpilot:        (r) => r.trustpilot,
+};
 
 // ── Hook ───────────────────────────────────────────────────
 
 export function usePlans(filters: PlanFilters) {
-  const [data, setData]       = useState<PlanRow[]>([]);
-  const [pagination, setPagination] = useState<Pagination>({
-    page: 1, limit: 50, total: 0, pages: 0,
-  });
+  const [allPlans, setAllPlans] = useState<PlanRow[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError]         = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
-  const fetchData = useCallback(async () => {
-    setIsLoading(true);
-    setError(null);
+  // Load JSON once on mount
+  useEffect(() => {
+    let cancelled = false;
 
-    try {
-      // Build query string from filters — only include non-empty values
-      const params = new URLSearchParams();
-
-      if (filters.accountSizeMin) params.set("accountSizeMin", String(filters.accountSizeMin));
-      if (filters.accountSizeMax) params.set("accountSizeMax", String(filters.accountSizeMax));
-      if (filters.drawdownType?.length) params.set("drawdownType", filters.drawdownType.join(","));
-      if (filters.platform) params.set("platform", filters.platform);
-      if (filters.search) params.set("search", filters.search);
-      if (filters.sort) params.set("sort", filters.sort);
-      if (filters.order) params.set("order", filters.order);
-      if (filters.page) params.set("page", String(filters.page));
-      if (filters.limit) params.set("limit", String(filters.limit));
-
-      const url = `/api/plans?${params.toString()}`;
-      const res = await fetch(url);
-
-      if (!res.ok) throw new Error(`API error: ${res.status}`);
-
-      const json: PlansResponse = await res.json();
-      setData(json.data);
-      setPagination(json.pagination);
-    } catch (err: any) {
-      setError(err.message || "Failed to fetch plans");
-    } finally {
-      setIsLoading(false);
+    async function load() {
+      try {
+        setIsLoading(true);
+        // Vite serves files from the project root.
+        // data/plans.json is at the repo root, one level up from frontend/.
+        // In the built output, it'll be at the base path.
+        const res = await fetch("./plans.json");
+        if (!res.ok) throw new Error(`Failed to load plans.json: ${res.status}`);
+        const json: PlanRow[] = await res.json();
+        if (!cancelled) {
+          setAllPlans(json);
+          setError(null);
+        }
+      } catch (err: any) {
+        if (!cancelled) setError(err.message || "Failed to load data");
+      } finally {
+        if (!cancelled) setIsLoading(false);
+      }
     }
+
+    load();
+    return () => { cancelled = true; };
+  }, []);
+
+  // Apply filters → sort → paginate (all client-side, runs on every filter change)
+  const { data, pagination } = useMemo(() => {
+    let rows = [...allPlans];
+
+    // ── Filter: account size range ─────────────────────────
+    if (filters.accountSizeMin != null) {
+      rows = rows.filter((r) => r.account_size >= filters.accountSizeMin!);
+    }
+    if (filters.accountSizeMax != null) {
+      rows = rows.filter((r) => r.account_size <= filters.accountSizeMax!);
+    }
+
+    // ── Filter: drawdown types ─────────────────────────────
+    if (filters.drawdownType?.length) {
+      const set = new Set(filters.drawdownType);
+      rows = rows.filter((r) => set.has(r.drawdown_type));
+    }
+
+    // ── Filter: platform (not in current data, future-proof)
+    // Platforms aren't in the flat plan rows, so this is a no-op for now.
+
+    // ── Filter: global search ──────────────────────────────
+    if (filters.search) {
+      const q = filters.search.toLowerCase();
+      rows = rows.filter(
+        (r) =>
+          r.firm_name.toLowerCase().includes(q) ||
+          r.plan_label.toLowerCase().includes(q) ||
+          r.firm_slug.toLowerCase().includes(q)
+      );
+    }
+
+    // ── Sort ───────────────────────────────────────────────
+    const sortKey = filters.sort || "total_cost";
+    const sortFn = SORT_KEYS[sortKey] || SORT_KEYS.total_cost;
+    const dir = filters.order === "desc" ? -1 : 1;
+
+    rows.sort((a, b) => {
+      const va = sortFn(a);
+      const vb = sortFn(b);
+      if (typeof va === "string" && typeof vb === "string") {
+        return dir * va.localeCompare(vb);
+      }
+      return dir * ((va as number) - (vb as number));
+    });
+
+    // ── Paginate ───────────────────────────────────────────
+    const page = filters.page || 1;
+    const limit = filters.limit || 50;
+    const total = rows.length;
+    const pages = Math.max(1, Math.ceil(total / limit));
+    const offset = (page - 1) * limit;
+    const data = rows.slice(offset, offset + limit);
+
+    return {
+      data,
+      pagination: { page, limit, total, pages },
+    };
   }, [
-    // Serialize filter fields individually so we only refetch when
-    // a filter value actually changes (not on every render).
+    allPlans,
     filters.accountSizeMin,
     filters.accountSizeMax,
     filters.drawdownType?.join(","),
@@ -120,9 +171,5 @@ export function usePlans(filters: PlanFilters) {
     filters.limit,
   ]);
 
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-
-  return { data, pagination, isLoading, error, refetch: fetchData };
+  return { data, pagination, isLoading, error };
 }
