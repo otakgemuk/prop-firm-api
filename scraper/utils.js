@@ -56,12 +56,17 @@ function buildPlan({
   firstPayoutDays = null,
   discountPct = 0,
   logoUrl = null,
+  // New fields
+  maxFundedAccounts = null,
+  minTradingDays = null,
+  consistencyEval = null,
+  consistencyFunded = null,
 }) {
   const totalCost = Math.round(
     (evalFee + activationFee - (evalFee * discountPct) / 100) * 100
   ) / 100;
 
-  return {
+  const plan = {
     firm_id: firmId,
     firm_name: firmName,
     firm_slug: firmSlug,
@@ -85,6 +90,14 @@ function buildPlan({
     total_cost_to_funded: totalCost,
     active_discount_pct: discountPct,
   };
+
+  // Only include new fields if provided (keeps existing data clean)
+  if (maxFundedAccounts !== null) plan.max_funded_accounts = maxFundedAccounts;
+  if (minTradingDays !== null) plan.min_trading_days = minTradingDays;
+  if (consistencyEval !== null) plan.consistency_eval = consistencyEval;
+  if (consistencyFunded !== null) plan.consistency_funded = consistencyFunded;
+
+  return plan;
 }
 
 // ── Parse "$1,234" → 1234 ─────────────────────────────────

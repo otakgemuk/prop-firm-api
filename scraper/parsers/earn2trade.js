@@ -20,11 +20,19 @@ async function scrape() {
   const html = await fetchRendered("https://earn2trade.com", { waitFor: 5000 });
   const $ = cheerio.load(html);
   const text = $.text();
+
+  const maxFundedMatch = text.match(/(?:up to|max(?:imum)?)\s+(\d+)\s+funded\s+account/i);
+  const maxFunded = maxFundedMatch ? parseInt(maxFundedMatch[1], 10) : null;
+  const minDaysMatch = text.match(/(?:minimum|min)\s+(\d+)\s+(?:trading\s+)?days?/i);
+  const minDays = minDaysMatch ? parseInt(minDaysMatch[1], 10) : null;
+  const hasConsistencyEval = /consistency\s*(?:rule|requirement|check)/i.test(text);
+  const hasConsistencyFunded = /consistency\s*(?:rule|requirement|check).*fund/i.test(text);
+
   const plans = [];
 
   for (const cfg of CONFIGS) {
     let fee = 0;
-    const m = text.match(new RegExp(`${cfg.label}[\\s\\S]{0,300?\\$(\\d+)`, "i"));
+    const m = text.match(new RegExp(`${cfg.label}[\\s\\S]{0,300}?\\$(\\d+)`, "i"));
     if (m) { fee = parseMoney(m[1]); if (fee < 50 || fee > 2000) fee = 0; }
     if (!fee) { const known = { 50000: 150, 100000: 250, 150000: 350 }; fee = known[cfg.size]; }
 
@@ -40,6 +48,10 @@ async function scrape() {
       evalFee: fee,
       isOneTime: false,
       payoutFrequency: "biweekly",
+      maxFundedAccounts: maxFunded,
+      minTradingDays: minDays,
+      consistencyEval: hasConsistencyEval || null,
+      consistencyFunded: hasConsistencyFunded || null,
     }));
   }
   return plans;

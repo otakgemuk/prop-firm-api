@@ -21,7 +21,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 134.1,
-    "active_discount_pct": 10
+    "active_discount_pct": 10,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f01",
@@ -45,7 +49,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 224.1,
-    "active_discount_pct": 10
+    "active_discount_pct": 10,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f01",
@@ -69,7 +77,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 314.1,
-    "active_discount_pct": 10
+    "active_discount_pct": 10,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f02",
@@ -93,7 +105,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 117.6,
-    "active_discount_pct": 20
+    "active_discount_pct": 20,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f02",
@@ -117,7 +133,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 133.6,
-    "active_discount_pct": 20
+    "active_discount_pct": 20,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f02",
@@ -141,7 +161,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 165.6,
-    "active_discount_pct": 20
+    "active_discount_pct": 20,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f02",
@@ -165,7 +189,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 237.6,
-    "active_discount_pct": 20
+    "active_discount_pct": 20,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f02",
@@ -189,7 +217,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 413.6,
-    "active_discount_pct": 20
+    "active_discount_pct": 20,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f03",
@@ -213,7 +245,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 200,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f03",
@@ -237,7 +273,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 300,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f03",
@@ -261,7 +301,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 400,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f04",
@@ -285,7 +329,11 @@
     "payout_frequency": "weekly",
     "first_payout_days": null,
     "total_cost_to_funded": 150,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f04",
@@ -309,7 +357,11 @@
     "payout_frequency": "weekly",
     "first_payout_days": null,
     "total_cost_to_funded": 250,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f04",
@@ -333,7 +385,11 @@
     "payout_frequency": "weekly",
     "first_payout_days": null,
     "total_cost_to_funded": 350,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f05",
@@ -357,7 +413,11 @@
     "payout_frequency": "weekly",
     "first_payout_days": null,
     "total_cost_to_funded": 175,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f05",
@@ -381,7 +441,11 @@
     "payout_frequency": "weekly",
     "first_payout_days": null,
     "total_cost_to_funded": 275,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f06",
@@ -405,7 +469,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 150,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f06",
@@ -429,7 +497,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 250,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f06",
@@ -453,7 +525,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 350,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f07",
@@ -477,7 +553,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 100,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f07",
@@ -501,7 +581,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 150,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f07",
@@ -525,7 +609,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 200,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f08",
@@ -549,7 +637,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 155,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f08",
@@ -573,7 +665,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 255,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f08",
@@ -597,7 +693,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 355,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f09",
@@ -621,7 +721,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 150,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f09",
@@ -645,7 +749,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 250,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f09",
@@ -669,7 +777,11 @@
     "payout_frequency": "biweekly",
     "first_payout_days": null,
     "total_cost_to_funded": 350,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f10",
@@ -693,7 +805,11 @@
     "payout_frequency": "weekly",
     "first_payout_days": null,
     "total_cost_to_funded": 160,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f10",
@@ -717,7 +833,11 @@
     "payout_frequency": "weekly",
     "first_payout_days": null,
     "total_cost_to_funded": 260,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   },
   {
     "firm_id": "f10",
@@ -741,6 +861,10 @@
     "payout_frequency": "weekly",
     "first_payout_days": null,
     "total_cost_to_funded": 360,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": null,
+    "consistency_eval": null,
+    "consistency_funded": null
   }
 ]

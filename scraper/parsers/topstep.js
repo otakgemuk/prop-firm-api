@@ -1,11 +1,5 @@
 // Topstep parser
 // Source: topstep.com (JS-rendered, uses Playwright)
-//
-// Topstep pricing (2026): monthly subscription model
-// - Small Combine: $50K, $49/mo, $3K target, $2K max loss
-// - Medium Combine: $100K, $99/mo, $6K target, $3K max loss
-// - Large Combine: $150K, $149/mo, $9K target, $4.5K max loss
-// Plus: Standard Path (lower monthly + $129 activation) vs No Activation Fee Path (higher monthly)
 
 const { buildPlan, fetchRendered, parseMoney } = require("../utils");
 const cheerio = require("cheerio");
@@ -19,7 +13,6 @@ const FIRM = {
 };
 
 async function scrape() {
-  // Try the help center first (more structured)
   try {
     const res = await fetch("https://help.topstep.com/en/articles/9208217-topstep-pricing", {
       headers: { "User-Agent": "Mozilla/5.0 (compatible; PropFirmScraper/1.0)" },
@@ -30,11 +23,8 @@ async function scrape() {
       const text = $.text();
       return parseFromText(text);
     }
-  } catch (e) {
-    // Fall through to rendered page
-  }
+  } catch (e) {}
 
-  // Fallback: render the main site
   const html = await fetchRendered("https://www.topstep.com", { waitFor: 5000 });
   const $ = cheerio.load(html);
   const text = $.text();
@@ -44,20 +34,29 @@ async function scrape() {
 function parseFromText(text) {
   const plans = [];
 
-  // Look for pricing patterns: "$49", "$99", "$149" for monthly
-  // And account sizes: $50,000, $100,000, $150,000
+  // Try to extract max funded accounts
+  const maxFundedMatch = text.match(/(?:up to|max(?:imum)?)\s+(\d+)\s+funded\s+account/i);
+  const maxFunded = maxFundedMatch ? parseInt(maxFundedMatch[1], 10) : null;
+
+  // Try to extract min trading days
+  const minDaysMatch = text.match(/(?:minimum|min)\s+(\d+)\s+(?:trading\s+)?days?/i);
+  const minDays = minDaysMatch ? parseInt(minDaysMatch[1], 10) : null;
+
+  // Check for consistency rules
+  const hasConsistencyEval = /consistency\s*(?:rule|requirement|check)/i.test(text);
+  const hasConsistencyFunded = /consistency\s*(?:rule|requirement|check).*fund/i.test(text);
+
   const configs = [
     { size: 50000, label: "50K", target: 3000, maxLoss: 2000, drawdown: "end_of_day" },
     { size: 100000, label: "100K", target: 6000, maxLoss: 3000, drawdown: "end_of_day" },
     { size: 150000, label: "150K", target: 9000, maxLoss: 4500, drawdown: "end_of_day" },
   ];
 
-  // Try to find monthly prices near account size mentions
   for (const cfg of configs) {
     const sizeStr = cfg.size.toLocaleString();
     const patterns = [
-      new RegExp(`\\$${sizeStr}[\\s\\S]{0,200?\\$(\\d+)`, "i"),
-      new RegExp(`${cfg.label}[\\s\\S]{0,200?\\$(\\d+)`, "i"),
+      new RegExp(`\\$${sizeStr}[\\s\\S]{0,200}?\\$(\\d+)`, "i"),
+      new RegExp(`${cfg.label}[\\s\\S]{0,200}?\\$(\\d+)`, "i"),
     ];
 
     let fee = 0;
@@ -65,12 +64,11 @@ function parseFromText(text) {
       const m = text.match(pat);
       if (m) {
         fee = parseMoney(m[1]);
-        if (fee > 0 && fee < 500) break; // reasonable monthly fee
+        if (fee > 0 && fee < 500) break;
         fee = 0;
       }
     }
 
-    // Fallback to known prices
     if (!fee) {
       const known = { 50000: 49, 100000: 99, 150000: 149 };
       fee = known[cfg.size] || 0;
@@ -87,9 +85,13 @@ function parseFromText(text) {
         profitTarget: cfg.target,
         profitSplit: 80,
         evalFee: fee,
-        activationFee: 129, // Standard Path activation fee
+        activationFee: 129,
         isOneTime: false,
         payoutFrequency: "biweekly",
+        maxFundedAccounts: maxFunded,
+        minTradingDays: minDays,
+        consistencyEval: hasConsistencyEval || null,
+        consistencyFunded: hasConsistencyFunded || null,
       }));
     }
   }

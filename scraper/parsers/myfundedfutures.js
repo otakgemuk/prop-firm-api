@@ -1,6 +1,4 @@
 // MyFundedFutures parser
-// Source: help.myfundedfutures.com (structured help center pages)
-
 const { buildPlan, parseMoney } = require("../utils");
 const cheerio = require("cheerio");
 
@@ -21,13 +19,15 @@ async function scrape() {
   const $ = cheerio.load(html);
   const text = $.text();
 
+  // Extract new fields
+  const maxFundedMatch = text.match(/(?:up to|max(?:imum)?)\s+(\d+)\s+funded\s+account/i);
+  const maxFunded = maxFundedMatch ? parseInt(maxFundedMatch[1], 10) : null;
+  const minDaysMatch = text.match(/(?:minimum|min)\s+(\d+)\s+(?:trading\s+)?days?/i);
+  const minDays = minDaysMatch ? parseInt(minDaysMatch[1], 10) : null;
+  const hasConsistencyEval = /consistency\s*(?:rule|requirement|check)/i.test(text);
+  const hasConsistencyFunded = /consistency\s*(?:rule|requirement|check).*fund/i.test(text);
+
   const plans = [];
-
-  // Extract pricing table: "Account Size / Cost" section
-  // Pattern: "$25,000 ... Flex - $84 ... Rapid - $87" etc.
-  const priceBlock = text.match(/\$25,000[\s\S]*?\$150,000[\s\S]*?Rapid.*?\$347/i);
-
-  // Known plan configs from the page
   const planConfigs = [
     { size: 25000, label: "25K", target: 1500, maxLoss: 1000, drawdown: "end_of_day", split: 80, freq: "biweekly" },
     { size: 50000, label: "50K", target: 3000, maxLoss: 2000, drawdown: "end_of_day", split: 80, freq: "biweekly" },
@@ -35,23 +35,23 @@ async function scrape() {
     { size: 150000, label: "150K", target: 9000, maxLoss: 4500, drawdown: "end_of_day", split: 80, freq: "biweekly" },
   ];
 
-  // Try to extract prices from the page text
-  // Look for patterns like "Flex - $84" or "Rapid - $87"
-  const pricePatterns = [
-    { size: 25000, patterns: [/Flex\s*[-–]\s*\$(\d+)/i, /Rapid\s*[-–]\s*\$(\d+)/i] },
-    { size: 50000, patterns: [/Flex\s*[-–]\s*\$(\d+)/i, /Pro\s*[-–]\s*\$(\d+)/i, /Rapid\s*[-–]\s*\$(\d+)/i] },
-    { size: 100000, patterns: [/Pro\s*[-–]\s*\$(\d+)/i, /Rapid\s*[-–]\s*\$(\d+)/i] },
-    { size: 150000, patterns: [/Pro\s*[-–]\s*\$(\d+)/i, /Rapid\s*[-–]\s*\$(\d+)/i] },
-  ];
-
-  // Parse the pricing section more carefully
-  // The page has: "$25,000 ... $50,000 ... $100,000 ... $150,000" with prices under each
   const pricingSection = text.substring(
     text.indexOf("Account Size / Cost"),
     text.indexOf("Evaluation Accounts")
   );
 
-  // Extract all dollar amounts from the pricing section
+  const rapidMatch = pricingSection.match(/Rapid\s*[-–]\s*\$(\d+)[\s\S]*?Rapid\s*[-–]\s*\$(\d+)[\s\S]*?Rapid\s*[-–]\s*\$(\d+)[\s\S]*?Rapid\s*[-–]\s*\$(\d+)/i);
+  const rapidPrices = [];
+  if (rapidMatch) {
+    for (let i = 1; i <= 4; i++) rapidPrices.push(parseMoney(rapidMatch[i]));
+  }
+
+  const proMatch = pricingSection.match(/Pro\s*[-–]\s*\$(\d+)[\s\S]*?Pro\s*[-–]\s*\$(\d+)[\s\S]*?Pro\s*[-–]\s*\$(\d+)/i);
+  const proPrices = [];
+  if (proMatch) {
+    for (let i = 1; i <= 3; i++) proPrices.push(parseMoney(proMatch[i]));
+  }
+
   const prices = [];
   const priceRegex = /\$(\d[\d,]*)/g;
   let match;
@@ -59,24 +59,7 @@ async function scrape() {
     prices.push(parseMoney(match[1]));
   }
 
-  // Map prices to plans (prices appear in order: 25K flex, 25K rapid, 50K flex, 50K pro, 50K rapid, ...)
-  // This is fragile — may need adjustment when the page changes
-  const rapidPrices = [];
-  const proPrices = [];
-
-  // Look for Rapid plan prices specifically
-  const rapidMatch = pricingSection.match(/Rapid\s*[-–]\s*\$(\d+)[\s\S]*?Rapid\s*[-–]\s*\$(\d+)[\s\S]*?Rapid\s*[-–]\s*\$(\d+)[\s\S]*?Rapid\s*[-–]\s*\$(\d+)/i);
-  if (rapidMatch) {
-    for (let i = 1; i <= 4; i++) rapidPrices.push(parseMoney(rapidMatch[i]));
-  }
-
-  // Look for Pro plan prices
-  const proMatch = pricingSection.match(/Pro\s*[-–]\s*\$(\d+)[\s\S]*?Pro\s*[-–]\s*\$(\d+)[\s\S]*?Pro\s*[-–]\s*\$(\d+)/i);
-  if (proMatch) {
-    for (let i = 1; i <= 3; i++) proPrices.push(parseMoney(proMatch[i]));
-  }
-
-  // Build Rapid plans (available for all sizes)
+  // Rapid plans
   for (let i = 0; i < planConfigs.length; i++) {
     const cfg = planConfigs[i];
     const fee = rapidPrices[i] || prices[i * 2 + 1] || 0;
@@ -94,12 +77,16 @@ async function scrape() {
         evalFee: fee,
         isOneTime: false,
         payoutFrequency: cfg.freq,
+        maxFundedAccounts: maxFunded,
+        minTradingDays: minDays,
+        consistencyEval: hasConsistencyEval || null,
+        consistencyFunded: hasConsistencyFunded || null,
       }));
     }
   }
 
-  // Build Pro plans (100K and 150K)
-  const proConfigs = planConfigs.slice(2); // 100K, 150K
+  // Pro plans
+  const proConfigs = planConfigs.slice(2);
   for (let i = 0; i < proConfigs.length; i++) {
     const cfg = proConfigs[i];
     const fee = proPrices[i] || 0;
@@ -117,11 +104,15 @@ async function scrape() {
         evalFee: fee,
         isOneTime: false,
         payoutFrequency: cfg.freq,
+        maxFundedAccounts: maxFunded,
+        minTradingDays: minDays,
+        consistencyEval: hasConsistencyEval || null,
+        consistencyFunded: hasConsistencyFunded || null,
       }));
     }
   }
 
-  // If we couldn't parse prices, fall back to known values
+  // Fallback
   if (plans.length === 0) {
     console.warn("[myfundedfutures] Could not parse prices, using fallback data");
     const fallback = [
@@ -143,6 +134,10 @@ async function scrape() {
         evalFee: f.fee,
         isOneTime: false,
         payoutFrequency: "biweekly",
+        maxFundedAccounts: maxFunded,
+        minTradingDays: minDays,
+        consistencyEval: hasConsistencyEval || null,
+        consistencyFunded: hasConsistencyFunded || null,
       }));
     }
   }

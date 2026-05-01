@@ -1,7 +1,5 @@
 // Apex Trader Funding parser
-// Source: apextraderfunding.com (Cloudflare-protected, uses Playwright)
-//
-// One-time eval fees, EOD drawdown, 100% profit split
+// Source: apextraderfunding.com
 
 const { buildPlan, fetchRendered, parseMoney } = require("../utils");
 const cheerio = require("cheerio");
@@ -14,7 +12,6 @@ const FIRM = {
   trustpilot: 4.5,
 };
 
-// Known plan configs (stable data)
 const CONFIGS = [
   { size: 25000,  label: "25K",  target: 1500,  maxLoss: 1250, dailyLoss: 625  },
   { size: 50000,  label: "50K",  target: 3000,  maxLoss: 2500, dailyLoss: 1250 },
@@ -28,7 +25,6 @@ async function scrape() {
   try {
     html = await fetchRendered("https://apextraderfunding.com", { waitFor: 5000 });
   } catch (e) {
-    // If Playwright fails, try direct fetch
     const res = await fetch("https://apextraderfunding.com", {
       headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" },
     });
@@ -38,13 +34,24 @@ async function scrape() {
   const $ = cheerio.load(html);
   const text = $.text();
 
+  // Try to extract max funded accounts
+  const maxFundedMatch = text.match(/(?:up to|max(?:imum)?)\s+(\d+)\s+funded\s+account/i);
+  const maxFunded = maxFundedMatch ? parseInt(maxFundedMatch[1], 10) : null;
+
+  // Try to extract min trading days
+  const minDaysMatch = text.match(/(?:minimum|min)\s+(\d+)\s+(?:trading\s+)?days?/i);
+  const minDays = minDaysMatch ? parseInt(minDaysMatch[1], 10) : null;
+
+  // Check for consistency rules
+  const hasConsistencyEval = /consistency\s*(?:rule|requirement|check)/i.test(text);
+  const hasConsistencyFunded = /consistency\s*(?:rule|requirement|check).*fund/i.test(text);
+
   const plans = [];
 
   for (const cfg of CONFIGS) {
-    // Look for price near the account size label
     const patterns = [
-      new RegExp(`${cfg.label}[\\s\\S]{0,300?\\$(\\d+)`, "i"),
-      new RegExp(`\\$${cfg.size.toLocaleString()}[\\s\\S]{0,300?\\$(\\d+)`, "i"),
+      new RegExp(`${cfg.label}[\\s\\S]{0,300}?\\$(\\d+)`, "i"),
+      new RegExp(`\\$${cfg.size.toLocaleString()}[\\s\\S]{0,300}?\\$(\\d+)`, "i"),
     ];
 
     let fee = 0;
@@ -57,7 +64,6 @@ async function scrape() {
       }
     }
 
-    // Fallback to known prices
     if (!fee) {
       const known = { 25000: 147, 50000: 167, 100000: 207, 150000: 297, 250000: 517 };
       fee = known[cfg.size] || 0;
@@ -76,6 +82,10 @@ async function scrape() {
         evalFee: fee,
         isOneTime: true,
         payoutFrequency: "biweekly",
+        maxFundedAccounts: maxFunded,
+        minTradingDays: minDays,
+        consistencyEval: hasConsistencyEval || null,
+        consistencyFunded: hasConsistencyFunded || null,
       }));
     }
   }

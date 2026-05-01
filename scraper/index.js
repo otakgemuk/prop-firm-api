@@ -102,14 +102,27 @@ async function main() {
     if (changes === 0) console.log("  No changes detected.");
   }
 
-  // ── Apply (preserve existing plan_ids where possible) ────
+  // ── Apply (preserve existing plan_ids and manual fields) ──
   if (applyChanges || (!showDiff && !firmFilter)) {
-    // Merge: keep existing plan_id for matched plans
+    // Merge: keep existing plan_id and manual fields for matched plans
     const key = (p) => `${p.firm_slug}:${p.account_size}`;
-    const oldIdMap = new Map(currentData.map((p) => [key(p), p.plan_id]));
+    const oldDataMap = new Map(currentData.map((p) => [key(p), p]));
+    const FIELDS_TO_PRESERVE = [
+      "plan_id", "max_funded_accounts", "min_trading_days",
+      "consistency_eval", "consistency_funded",
+    ];
     for (const plan of results) {
-      const existingId = oldIdMap.get(key(plan));
-      if (existingId) plan.plan_id = existingId;
+      const existing = oldDataMap.get(key(plan));
+      if (existing) {
+        // Preserve plan_id
+        plan.plan_id = existing.plan_id;
+        // Preserve manual fields: only overwrite with new value if new value is not null
+        for (const field of FIELDS_TO_PRESERVE) {
+          if (plan[field] === null && existing[field] !== undefined) {
+            plan[field] = existing[field];
+          }
+        }
+      }
     }
 
     fs.writeFileSync(DATA_PATH, JSON.stringify(results, null, 2) + "\n");
