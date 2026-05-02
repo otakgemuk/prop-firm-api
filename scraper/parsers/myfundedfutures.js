@@ -55,58 +55,50 @@ async function scrape() {
   const proMatch = pricingSection.match(/Pro\s*[-–]\s*\$(\d+)[\s\S]*?Pro\s*[-–]\s*\$(\d+)[\s\S]*?Pro\s*[-–]\s*\$(\d+)/i);
   const proPrices = proMatch ? [1,2,3].map(i => parseMoney(proMatch[i])) : [];
 
-  // Fallback known prices (from help center as of March 2026)
-  const knownFlex = { 25000: 84, 50000: 107 };
-  const knownRapid = { 25000: 87, 50000: 157, 100000: 267, 150000: 347 };
-  const knownPro = { 50000: 227, 100000: 344, 150000: 477 };
+  // Builder plans (all sizes)
+  const builderMatch = pricingSection.match(/Builder\s*[-–]\s*\$(\d+)[\s\S]*?Builder\s*[-–]\s*\$(\d+)[\s\S]*?Builder\s*[-–]\s*\$(\d+)[\s\S]*?Builder\s*[-–]\s*\$(\d+)/i);
+  const builderPrices = builderMatch ? [1,2,3,4].map(i => parseMoney(builderMatch[i])) : [];
 
-  // Build Flex plans (25K, 50K)
-  const flexConfigs = allConfigs.slice(0, 2);
-  for (let i = 0; i < flexConfigs.length; i++) {
-    const cfg = flexConfigs[i];
-    const fee = flexPrices[i] || knownFlex[cfg.size] || 0;
-    if (fee > 0) {
-      plans.push(buildPlan({
-        ...FIRM, planId: `mffu-flex-${cfg.label}`, accountSize: cfg.size, planLabel: `${cfg.label} Flex`,
-        accountType: "Flex",
-        drawdownType: "end_of_day", drawdownAmount: cfg.maxLoss, dailyLossLimit: 0,
-        profitTarget: cfg.target, profitSplit: cfg.split, evalFee: fee, isOneTime: false,
-        payoutFrequency: cfg.freq, maxFundedAccounts: maxFunded, minTradingDays: minDays || 2,
-        consistencyEvalPct, consistencyFundedPct,
-      }));
-    }
-  }
+  // Fallback known prices (from website as of May 2026)
+  const knownFlex = { 25000: 84, 50000: 127 };
+  const knownRapid = { 25000: 87, 50000: 126, 100000: 267, 150000: 347 };
+  const knownBuilder = { 25000: 75, 50000: 75, 100000: 153, 150000: 225 };
+  const knownPro = { 25000: 114, 50000: 114, 100000: 344, 150000: 477 };
 
-  // Build Rapid plans (all sizes)
-  for (let i = 0; i < allConfigs.length; i++) {
-    const cfg = allConfigs[i];
-    const fee = rapidPrices[i] || knownRapid[cfg.size] || 0;
-    if (fee > 0) {
-      plans.push(buildPlan({
-        ...FIRM, planId: `mffu-rapid-${cfg.label}`, accountSize: cfg.size, planLabel: `${cfg.label} Rapid`,
-        accountType: "Rapid",
-        drawdownType: "end_of_day", drawdownAmount: cfg.maxLoss, dailyLossLimit: 0,
-        profitTarget: cfg.target, profitSplit: cfg.split, evalFee: fee, isOneTime: false,
-        payoutFrequency: cfg.freq, maxFundedAccounts: maxFunded, minTradingDays: minDays || 2,
-        consistencyEvalPct, consistencyFundedPct,
-      }));
-    }
-  }
+  // Build plans for each type
+  const TYPES = [
+    { name: "Flex",    prices: flexPrices,    known: knownFlex,    sizes: [0, 1],        freq: "weekly" },
+    { name: "Rapid",   prices: rapidPrices,   known: knownRapid,   sizes: [0,1,2,3],     freq: "biweekly" },
+    { name: "Builder", prices: builderPrices, known: knownBuilder, sizes: [0,1,2,3],     freq: "biweekly" },
+    { name: "Pro",     prices: proPrices,     known: knownPro,     sizes: [0,1,2,3],     freq: "biweekly" },
+  ];
 
-  // Build Pro plans (50K, 100K, 150K)
-  const proConfigs = allConfigs.slice(1);
-  for (let i = 0; i < proConfigs.length; i++) {
-    const cfg = proConfigs[i];
-    const fee = proPrices[i] || knownPro[cfg.size] || 0;
-    if (fee > 0) {
-      plans.push(buildPlan({
-        ...FIRM, planId: `mffu-pro-${cfg.label}`, accountSize: cfg.size, planLabel: `${cfg.label} Pro`,
-        accountType: "Pro",
-        drawdownType: "end_of_day", drawdownAmount: cfg.maxLoss, dailyLossLimit: 0,
-        profitTarget: cfg.target, profitSplit: cfg.split, evalFee: fee, isOneTime: false,
-        payoutFrequency: cfg.freq, maxFundedAccounts: maxFunded, minTradingDays: minDays || 2,
-        consistencyEvalPct, consistencyFundedPct,
-      }));
+  for (const type of TYPES) {
+    for (const idx of type.sizes) {
+      const cfg = allConfigs[idx];
+      if (!cfg) continue;
+      const fee = type.prices[idx] || type.known[cfg.size] || 0;
+      if (fee > 0) {
+        plans.push(buildPlan({
+          ...FIRM,
+          planId: `mffu-${type.name.toLowerCase()}-${cfg.label}`,
+          accountSize: cfg.size,
+          planLabel: `${cfg.label} ${type.name}`,
+          accountType: type.name,
+          drawdownType: "end_of_day",
+          drawdownAmount: cfg.maxLoss,
+          dailyLossLimit: 0,
+          profitTarget: cfg.target,
+          profitSplit: cfg.split,
+          evalFee: fee,
+          isOneTime: false,
+          payoutFrequency: type.freq,
+          maxFundedAccounts: maxFunded,
+          minTradingDays: minDays || 2,
+          consistencyEvalPct,
+          consistencyFundedPct,
+        }));
+      }
     }
   }
 

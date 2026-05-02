@@ -465,7 +465,7 @@ function AdminContent() {
                 <label className="mb-1.5 block text-sm font-medium text-gray-300">Account Type</label>
                 <select value={form.account_type || "Standard"} onChange={(e) => updateField("account_type", e.target.value)}
                   className="w-full rounded-lg border border-white/10 bg-gray-800 px-3 py-2 text-sm text-white">
-                  {["Standard", "Flex", "Rapid", "Pro", "Growth", "Select", "Intraday", "Static"].map((t) => <option key={t} value={t}>{t}</option>)}
+                  {["Standard", "No Activation", "No Scaling", "EOD", "EOD Drawdown", "Flex", "Rapid", "Builder", "Pro", "Growth", "Select", "Intraday", "1-Step Monthly", "Fast Track", "Static", "Direct to Funded", "Diamond Hands"].map((t) => <option key={t} value={t}>{t}</option>)}
                 </select>
               </div>
 

@@ -22,17 +22,23 @@ export const DRAWDOWN_STYLES: Record<string, DrawdownStyle> = {
 };
 
 export const ACCOUNT_TYPE_OPTIONS = [
-  { value: "Standard",     label: "Standard" },
-  { value: "No Activation", label: "No Activation" },
-  { value: "No Scaling",   label: "No Scaling" },
-  { value: "EOD",          label: "EOD" },
-  { value: "Flex",         label: "Flex" },
-  { value: "Rapid",        label: "Rapid" },
-  { value: "Pro",          label: "Pro" },
-  { value: "Growth",       label: "Growth" },
-  { value: "Select",       label: "Select" },
-  { value: "Intraday",     label: "Intraday" },
-  { value: "Static",       label: "Static" },
+  { value: "Standard",          label: "Standard" },
+  { value: "No Activation",     label: "No Activation" },
+  { value: "No Scaling",        label: "No Scaling" },
+  { value: "EOD",               label: "EOD" },
+  { value: "EOD Drawdown",      label: "EOD DD" },
+  { value: "Flex",              label: "Flex" },
+  { value: "Rapid",             label: "Rapid" },
+  { value: "Builder",           label: "Builder" },
+  { value: "Pro",               label: "Pro" },
+  { value: "Growth",            label: "Growth" },
+  { value: "Select",            label: "Select" },
+  { value: "Intraday",          label: "Intraday" },
+  { value: "1-Step Monthly",    label: "1-Step" },
+  { value: "Fast Track",        label: "Fast Track" },
+  { value: "Static",            label: "Static" },
+  { value: "Direct to Funded",  label: "Direct to Funded" },
+  { value: "Diamond Hands",     label: "Diamond Hands" },
 ];
 
 export const DRAWDOWN_OPTIONS = [

@@ -49,13 +49,19 @@ const columns: ColumnDef<PlanRow, any>[] = [
         "No Activation": "bg-rose-500/20 text-rose-300",
         "No Scaling": "bg-lime-500/20 text-lime-300",
         EOD: "bg-cyan-500/20 text-cyan-300",
+        "EOD Drawdown": "bg-cyan-500/20 text-cyan-300",
         Flex: "bg-sky-500/20 text-sky-300",
         Rapid: "bg-orange-500/20 text-orange-300",
+        Builder: "bg-amber-600/20 text-amber-300",
         Pro: "bg-indigo-500/20 text-indigo-300",
         Growth: "bg-emerald-500/20 text-emerald-300",
         Select: "bg-violet-500/20 text-violet-300",
         Intraday: "bg-amber-500/20 text-amber-300",
+        "1-Step Monthly": "bg-red-500/20 text-red-300",
+        "Fast Track": "bg-pink-500/20 text-pink-300",
         Static: "bg-teal-500/20 text-teal-300",
+        "Direct to Funded": "bg-yellow-500/20 text-yellow-300",
+        "Diamond Hands": "bg-fuchsia-500/20 text-fuchsia-300",
       };
       const cls = colorMap[v] ?? "bg-gray-500/20 text-gray-300";
       return (
