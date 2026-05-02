@@ -8,6 +8,7 @@
     "trustpilot": 4.5,
     "account_size": 25000,
     "plan_label": "Intraday 25K",
+    "account_type": "Intraday",
     "drawdown_type": "intraday",
     "drawdown_amount": 1000,
     "daily_loss_limit": null,
@@ -25,8 +26,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "plan_id": "p048",
-    "account_type": "Apex Intraday"
+    "plan_id": "p1000"
   },
   {
     "firm_id": "f02",
@@ -37,6 +37,7 @@
     "trustpilot": 4.5,
     "account_size": 50000,
     "plan_label": "Intraday 50K",
+    "account_type": "Intraday",
     "drawdown_type": "intraday",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -54,8 +55,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "plan_id": "p049",
-    "account_type": "Apex Intraday"
+    "plan_id": "p1001"
   },
   {
     "firm_id": "f02",
@@ -66,6 +66,7 @@
     "trustpilot": 4.5,
     "account_size": 100000,
     "plan_label": "Intraday 100K",
+    "account_type": "Intraday",
     "drawdown_type": "intraday",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -83,8 +84,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "plan_id": "p050",
-    "account_type": "Apex Intraday"
+    "plan_id": "p1002"
   },
   {
     "firm_id": "f02",
@@ -95,6 +95,7 @@
     "trustpilot": 4.5,
     "account_size": 150000,
     "plan_label": "Intraday 150K",
+    "account_type": "Intraday",
     "drawdown_type": "intraday",
     "drawdown_amount": 4000,
     "daily_loss_limit": null,
@@ -112,8 +113,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "plan_id": "p051",
-    "account_type": "Apex Intraday"
+    "plan_id": "p1003"
   },
   {
     "firm_id": "f02",
@@ -124,6 +124,7 @@
     "trustpilot": 4.5,
     "account_size": 25000,
     "plan_label": "EOD 25K",
+    "account_type": "EOD",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 1000,
     "daily_loss_limit": null,
@@ -141,8 +142,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "plan_id": "p052",
-    "account_type": "Apex EOD"
+    "plan_id": "p1004"
   },
   {
     "firm_id": "f02",
@@ -153,6 +153,7 @@
     "trustpilot": 4.5,
     "account_size": 50000,
     "plan_label": "EOD 50K",
+    "account_type": "EOD",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -170,8 +171,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "plan_id": "p053",
-    "account_type": "Apex EOD"
+    "plan_id": "p1005"
   },
   {
     "firm_id": "f02",
@@ -182,6 +182,7 @@
     "trustpilot": 4.5,
     "account_size": 100000,
     "plan_label": "EOD 100K",
+    "account_type": "EOD",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -199,8 +200,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "plan_id": "p054",
-    "account_type": "Apex EOD"
+    "plan_id": "p1006"
   },
   {
     "firm_id": "f02",
@@ -211,6 +211,7 @@
     "trustpilot": 4.5,
     "account_size": 150000,
     "plan_label": "EOD 150K",
+    "account_type": "EOD",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 4000,
     "daily_loss_limit": null,
@@ -228,8 +229,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "plan_id": "p055",
-    "account_type": "Apex EOD"
+    "plan_id": "p1007"
   },
   {
     "firm_id": "f07",
@@ -240,6 +240,7 @@
     "trustpilot": 4.0,
     "account_size": 25000,
     "plan_label": "Option 1 25K",
+    "account_type": "Option 1",
     "drawdown_type": "intraday",
     "drawdown_amount": 1500,
     "daily_loss_limit": null,
@@ -257,8 +258,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "plan_id": "p056",
-    "account_type": "Option 1 Intraday"
+    "plan_id": "p1008"
   },
   {
     "firm_id": "f07",
@@ -269,6 +269,7 @@
     "trustpilot": 4.0,
     "account_size": 50000,
     "plan_label": "Option 1 50K",
+    "account_type": "Option 1",
     "drawdown_type": "intraday",
     "drawdown_amount": 2500,
     "daily_loss_limit": null,
@@ -286,8 +287,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "plan_id": "p057",
-    "account_type": "Option 1 Intraday"
+    "plan_id": "p1009"
   },
   {
     "firm_id": "f07",
@@ -298,6 +298,7 @@
     "trustpilot": 4.0,
     "account_size": 100000,
     "plan_label": "Option 1 100K",
+    "account_type": "Option 1",
     "drawdown_type": "intraday",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -315,8 +316,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "plan_id": "p058",
-    "account_type": "Option 1 Intraday"
+    "plan_id": "p1010"
   },
   {
     "firm_id": "f07",
@@ -327,6 +327,7 @@
     "trustpilot": 4.0,
     "account_size": 150000,
     "plan_label": "Option 1 150K",
+    "account_type": "Option 1",
     "drawdown_type": "intraday",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -344,8 +345,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "plan_id": "p059",
-    "account_type": "Option 1 Intraday"
+    "plan_id": "p1011"
   },
   {
     "firm_id": "f07",
@@ -356,6 +356,7 @@
     "trustpilot": 4.0,
     "account_size": 25000,
     "plan_label": "Option 2 25K",
+    "account_type": "Option 2",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 1500,
     "daily_loss_limit": null,
@@ -373,8 +374,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "plan_id": "p060",
-    "account_type": "Option 2 EOD"
+    "plan_id": "p1012"
   },
   {
     "firm_id": "f07",
@@ -385,6 +385,7 @@
     "trustpilot": 4.0,
     "account_size": 50000,
     "plan_label": "Option 2 50K",
+    "account_type": "Option 2",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 2500,
     "daily_loss_limit": null,
@@ -402,8 +403,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "plan_id": "p061",
-    "account_type": "Option 2 EOD"
+    "plan_id": "p1013"
   },
   {
     "firm_id": "f07",
@@ -414,6 +414,7 @@
     "trustpilot": 4.0,
     "account_size": 100000,
     "plan_label": "Option 2 100K",
+    "account_type": "Option 2",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -431,8 +432,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "plan_id": "p062",
-    "account_type": "Option 2 EOD"
+    "plan_id": "p1014"
   },
   {
     "firm_id": "f07",
@@ -443,6 +443,7 @@
     "trustpilot": 4.0,
     "account_size": 150000,
     "plan_label": "Option 2 150K",
+    "account_type": "Option 2",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -460,8 +461,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "plan_id": "p063",
-    "account_type": "Option 2 EOD"
+    "plan_id": "p1015"
   },
   {
     "firm_id": "f09",
@@ -472,6 +472,7 @@
     "trustpilot": 4.2,
     "account_size": 50000,
     "plan_label": "Gauntlet 50K",
+    "account_type": "Gauntlet",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -489,8 +490,7 @@
     "min_trading_days": 10,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p064",
-    "account_type": "Gauntlet Mini"
+    "plan_id": "p1016"
   },
   {
     "firm_id": "f09",
@@ -501,6 +501,7 @@
     "trustpilot": 4.2,
     "account_size": 100000,
     "plan_label": "Gauntlet 100K",
+    "account_type": "Gauntlet",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 3500,
     "daily_loss_limit": null,
@@ -518,8 +519,7 @@
     "min_trading_days": 10,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p065",
-    "account_type": "Gauntlet Mini"
+    "plan_id": "p1017"
   },
   {
     "firm_id": "f09",
@@ -530,6 +530,7 @@
     "trustpilot": 4.2,
     "account_size": 150000,
     "plan_label": "Gauntlet 150K",
+    "account_type": "Gauntlet",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -547,8 +548,7 @@
     "min_trading_days": 10,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p066",
-    "account_type": "Gauntlet Mini"
+    "plan_id": "p1018"
   },
   {
     "firm_id": "f09",
@@ -559,6 +559,7 @@
     "trustpilot": 4.2,
     "account_size": 200000,
     "plan_label": "Gauntlet 200K",
+    "account_type": "Gauntlet",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 6000,
     "daily_loss_limit": null,
@@ -576,8 +577,7 @@
     "min_trading_days": 10,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p067",
-    "account_type": "Gauntlet Mini"
+    "plan_id": "p1019"
   },
   {
     "firm_id": "f09",
@@ -588,6 +588,7 @@
     "trustpilot": 4.2,
     "account_size": 25000,
     "plan_label": "TCP 25K",
+    "account_type": "TCP",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 1500,
     "daily_loss_limit": null,
@@ -605,8 +606,7 @@
     "min_trading_days": 10,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p068",
-    "account_type": "TCP"
+    "plan_id": "p1020"
   },
   {
     "firm_id": "f09",
@@ -617,6 +617,7 @@
     "trustpilot": 4.2,
     "account_size": 50000,
     "plan_label": "TCP 50K",
+    "account_type": "TCP",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -634,8 +635,7 @@
     "min_trading_days": 10,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p069",
-    "account_type": "TCP"
+    "plan_id": "p1021"
   },
   {
     "firm_id": "f09",
@@ -646,6 +646,7 @@
     "trustpilot": 4.2,
     "account_size": 100000,
     "plan_label": "TCP 100K",
+    "account_type": "TCP",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -663,8 +664,7 @@
     "min_trading_days": 10,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p070",
-    "account_type": "TCP"
+    "plan_id": "p1022"
   },
   {
     "firm_id": "f08",
@@ -675,6 +675,7 @@
     "trustpilot": 4.3,
     "account_size": 50000,
     "plan_label": "1-Step 50K",
+    "account_type": "1-Step",
     "drawdown_type": "intraday",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -692,8 +693,7 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p071",
-    "account_type": "1-Step"
+    "plan_id": "p1023"
   },
   {
     "firm_id": "f08",
@@ -704,6 +704,7 @@
     "trustpilot": 4.3,
     "account_size": 100000,
     "plan_label": "1-Step 100K",
+    "account_type": "1-Step",
     "drawdown_type": "intraday",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -721,8 +722,7 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p072",
-    "account_type": "1-Step"
+    "plan_id": "p1024"
   },
   {
     "firm_id": "f08",
@@ -733,6 +733,7 @@
     "trustpilot": 4.3,
     "account_size": 150000,
     "plan_label": "1-Step 150K",
+    "account_type": "1-Step",
     "drawdown_type": "intraday",
     "drawdown_amount": 5000,
     "daily_loss_limit": null,
@@ -750,8 +751,7 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p073",
-    "account_type": "1-Step"
+    "plan_id": "p1025"
   },
   {
     "firm_id": "f08",
@@ -762,6 +762,7 @@
     "trustpilot": 4.3,
     "account_size": 250000,
     "plan_label": "1-Step 250K",
+    "account_type": "1-Step",
     "drawdown_type": "intraday",
     "drawdown_amount": 6500,
     "daily_loss_limit": null,
@@ -779,8 +780,7 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p074",
-    "account_type": "1-Step"
+    "plan_id": "p1026"
   },
   {
     "firm_id": "f08",
@@ -791,6 +791,7 @@
     "trustpilot": 4.3,
     "account_size": 50000,
     "plan_label": "EOD 50K",
+    "account_type": "EOD",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -808,8 +809,7 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p075",
-    "account_type": "EOD"
+    "plan_id": "p1027"
   },
   {
     "firm_id": "f08",
@@ -820,6 +820,7 @@
     "trustpilot": 4.3,
     "account_size": 100000,
     "plan_label": "EOD 100K",
+    "account_type": "EOD",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 3500,
     "daily_loss_limit": null,
@@ -837,8 +838,7 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p076",
-    "account_type": "EOD"
+    "plan_id": "p1028"
   },
   {
     "firm_id": "f08",
@@ -849,6 +849,7 @@
     "trustpilot": 4.3,
     "account_size": 100000,
     "plan_label": "Fast Track 100K",
+    "account_type": "Fast Track",
     "drawdown_type": "intraday",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -866,8 +867,7 @@
     "min_trading_days": 3,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "plan_id": "p077",
-    "account_type": "Fast Track"
+    "plan_id": "p1029"
   },
   {
     "firm_id": "f08",
@@ -878,6 +878,7 @@
     "trustpilot": 4.3,
     "account_size": 10000,
     "plan_label": "Static 10K",
+    "account_type": "Static",
     "drawdown_type": "static",
     "drawdown_amount": 500,
     "daily_loss_limit": null,
@@ -895,8 +896,7 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p078",
-    "account_type": "Static"
+    "plan_id": "p1030"
   },
   {
     "firm_id": "f08",
@@ -907,6 +907,7 @@
     "trustpilot": 4.3,
     "account_size": 50000,
     "plan_label": "Static 50K",
+    "account_type": "Static",
     "drawdown_type": "static",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -924,8 +925,7 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p079",
-    "account_type": "Static"
+    "plan_id": "p1031"
   },
   {
     "firm_id": "f08",
@@ -936,6 +936,7 @@
     "trustpilot": 4.3,
     "account_size": 100000,
     "plan_label": "DH 100K",
+    "account_type": "DH",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 3500,
     "daily_loss_limit": null,
@@ -953,8 +954,7 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p080",
-    "account_type": "Diamond Hands"
+    "plan_id": "p1032"
   },
   {
     "firm_id": "f08",
@@ -965,6 +965,7 @@
     "trustpilot": 4.3,
     "account_size": 50000,
     "plan_label": "DTF 50K",
+    "account_type": "DTF",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 2500,
     "daily_loss_limit": null,
@@ -982,8 +983,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p081",
-    "account_type": "DTF"
+    "plan_id": "p1033"
   },
   {
     "firm_id": "f08",
@@ -994,6 +994,7 @@
     "trustpilot": 4.3,
     "account_size": 100000,
     "plan_label": "DTF 100K",
+    "account_type": "DTF",
     "drawdown_type": "static",
     "drawdown_amount": 5000,
     "daily_loss_limit": null,
@@ -1011,8 +1012,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p082",
-    "account_type": "DTF"
+    "plan_id": "p1034"
   },
   {
     "firm_id": "f12",
@@ -1023,6 +1023,7 @@
     "trustpilot": null,
     "account_size": 25000,
     "plan_label": "Apprentice 25K",
+    "account_type": "Apprentice",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 1500,
     "daily_loss_limit": null,
@@ -1040,8 +1041,7 @@
     "min_trading_days": 4,
     "consistency_eval": 30,
     "consistency_funded": 30,
-    "plan_id": "p083",
-    "account_type": "Apprentice"
+    "plan_id": "p1035"
   },
   {
     "firm_id": "f12",
@@ -1052,6 +1052,7 @@
     "trustpilot": null,
     "account_size": 50000,
     "plan_label": "Apprentice 50K",
+    "account_type": "Apprentice",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -1069,8 +1070,7 @@
     "min_trading_days": 4,
     "consistency_eval": 30,
     "consistency_funded": 30,
-    "plan_id": "p084",
-    "account_type": "Apprentice"
+    "plan_id": "p1036"
   },
   {
     "firm_id": "f12",
@@ -1081,6 +1081,7 @@
     "trustpilot": null,
     "account_size": 100000,
     "plan_label": "Apprentice 100K",
+    "account_type": "Apprentice",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -1098,8 +1099,7 @@
     "min_trading_days": 4,
     "consistency_eval": 30,
     "consistency_funded": 30,
-    "plan_id": "p085",
-    "account_type": "Apprentice"
+    "plan_id": "p1037"
   },
   {
     "firm_id": "f12",
@@ -1110,6 +1110,7 @@
     "trustpilot": null,
     "account_size": 150000,
     "plan_label": "Apprentice 150K",
+    "account_type": "Apprentice",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 4000,
     "daily_loss_limit": null,
@@ -1127,8 +1128,7 @@
     "min_trading_days": 4,
     "consistency_eval": 30,
     "consistency_funded": 30,
-    "plan_id": "p086",
-    "account_type": "Apprentice"
+    "plan_id": "p1038"
   },
   {
     "firm_id": "f12",
@@ -1139,6 +1139,7 @@
     "trustpilot": null,
     "account_size": 25000,
     "plan_label": "Elite 25K",
+    "account_type": "Elite",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 1250,
     "daily_loss_limit": null,
@@ -1156,8 +1157,7 @@
     "min_trading_days": 5,
     "consistency_eval": 40,
     "consistency_funded": 40,
-    "plan_id": "p087",
-    "account_type": "Elite"
+    "plan_id": "p1039"
   },
   {
     "firm_id": "f12",
@@ -1168,6 +1168,7 @@
     "trustpilot": null,
     "account_size": 50000,
     "plan_label": "Elite 50K",
+    "account_type": "Elite",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 2200,
     "daily_loss_limit": null,
@@ -1185,8 +1186,7 @@
     "min_trading_days": 5,
     "consistency_eval": 40,
     "consistency_funded": 40,
-    "plan_id": "p088",
-    "account_type": "Elite"
+    "plan_id": "p1040"
   },
   {
     "firm_id": "f12",
@@ -1197,6 +1197,7 @@
     "trustpilot": null,
     "account_size": 100000,
     "plan_label": "Elite 100K",
+    "account_type": "Elite",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -1214,8 +1215,7 @@
     "min_trading_days": 5,
     "consistency_eval": 40,
     "consistency_funded": 40,
-    "plan_id": "p089",
-    "account_type": "Elite"
+    "plan_id": "p1041"
   },
   {
     "firm_id": "f12",
@@ -1226,6 +1226,7 @@
     "trustpilot": null,
     "account_size": 150000,
     "plan_label": "Elite 150K",
+    "account_type": "Elite",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -1243,8 +1244,7 @@
     "min_trading_days": 5,
     "consistency_eval": 40,
     "consistency_funded": 40,
-    "plan_id": "p090",
-    "account_type": "Elite"
+    "plan_id": "p1042"
   },
   {
     "firm_id": "f05",
@@ -1255,6 +1255,7 @@
     "trustpilot": 4.2,
     "account_size": 25000,
     "plan_label": "S2F 25K",
+    "account_type": "S2F",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 1000,
     "daily_loss_limit": null,
@@ -1272,8 +1273,7 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "plan_id": "p091",
-    "account_type": "S2F"
+    "plan_id": "p1043"
   },
   {
     "firm_id": "f05",
@@ -1284,6 +1284,7 @@
     "trustpilot": 4.2,
     "account_size": 50000,
     "plan_label": "S2F 50K",
+    "account_type": "S2F",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -1301,8 +1302,7 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "plan_id": "p092",
-    "account_type": "S2F"
+    "plan_id": "p1044"
   },
   {
     "firm_id": "f05",
@@ -1313,6 +1313,7 @@
     "trustpilot": 4.2,
     "account_size": 100000,
     "plan_label": "S2F 100K",
+    "account_type": "S2F",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 3500,
     "daily_loss_limit": null,
@@ -1330,8 +1331,7 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "plan_id": "p093",
-    "account_type": "S2F"
+    "plan_id": "p1045"
   },
   {
     "firm_id": "f05",
@@ -1342,6 +1342,7 @@
     "trustpilot": 4.2,
     "account_size": 150000,
     "plan_label": "S2F 150K",
+    "account_type": "S2F",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 5000,
     "daily_loss_limit": null,
@@ -1359,8 +1360,7 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "plan_id": "p094",
-    "account_type": "S2F"
+    "plan_id": "p1046"
   },
   {
     "firm_id": "f05",
@@ -1371,6 +1371,7 @@
     "trustpilot": 4.2,
     "account_size": 25000,
     "plan_label": "LucidPro 25K",
+    "account_type": "LucidPro",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 1000,
     "daily_loss_limit": null,
@@ -1388,8 +1389,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "plan_id": "p095",
-    "account_type": "Pro"
+    "plan_id": "p1047"
   },
   {
     "firm_id": "f05",
@@ -1400,6 +1400,7 @@
     "trustpilot": 4.2,
     "account_size": 50000,
     "plan_label": "LucidPro 50K",
+    "account_type": "LucidPro",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -1417,8 +1418,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "plan_id": "p096",
-    "account_type": "Pro"
+    "plan_id": "p1048"
   },
   {
     "firm_id": "f05",
@@ -1429,6 +1429,7 @@
     "trustpilot": 4.2,
     "account_size": 100000,
     "plan_label": "LucidPro 100K",
+    "account_type": "LucidPro",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -1446,8 +1447,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "plan_id": "p097",
-    "account_type": "Pro"
+    "plan_id": "p1049"
   },
   {
     "firm_id": "f05",
@@ -1458,6 +1458,7 @@
     "trustpilot": 4.2,
     "account_size": 150000,
     "plan_label": "LucidPro 150K",
+    "account_type": "LucidPro",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -1475,8 +1476,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "plan_id": "p098",
-    "account_type": "Pro"
+    "plan_id": "p1050"
   },
   {
     "firm_id": "f05",
@@ -1487,6 +1487,7 @@
     "trustpilot": 4.2,
     "account_size": 25000,
     "plan_label": "LucidFlex 25K",
+    "account_type": "LucidFlex",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 1000,
     "daily_loss_limit": null,
@@ -1504,8 +1505,7 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p099",
-    "account_type": "Flex"
+    "plan_id": "p1051"
   },
   {
     "firm_id": "f05",
@@ -1516,6 +1516,7 @@
     "trustpilot": 4.2,
     "account_size": 50000,
     "plan_label": "LucidFlex 50K",
+    "account_type": "LucidFlex",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -1533,8 +1534,7 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p100",
-    "account_type": "Flex"
+    "plan_id": "p1052"
   },
   {
     "firm_id": "f05",
@@ -1545,6 +1545,7 @@
     "trustpilot": 4.2,
     "account_size": 100000,
     "plan_label": "LucidFlex 100K",
+    "account_type": "LucidFlex",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -1562,8 +1563,7 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p101",
-    "account_type": "Flex"
+    "plan_id": "p1053"
   },
   {
     "firm_id": "f05",
@@ -1574,6 +1574,7 @@
     "trustpilot": 4.2,
     "account_size": 150000,
     "plan_label": "LucidFlex 150K",
+    "account_type": "LucidFlex",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -1591,8 +1592,7 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p102",
-    "account_type": "Flex"
+    "plan_id": "p1054"
   },
   {
     "firm_id": "f13",
@@ -1603,6 +1603,7 @@
     "trustpilot": null,
     "account_size": 25000,
     "plan_label": "25K",
+    "account_type": "OneUp",
     "drawdown_type": "trailing",
     "drawdown_amount": 1500,
     "daily_loss_limit": null,
@@ -1620,8 +1621,7 @@
     "min_trading_days": 10,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p103",
-    "account_type": "OneUp"
+    "plan_id": "p1055"
   },
   {
     "firm_id": "f13",
@@ -1632,6 +1632,7 @@
     "trustpilot": null,
     "account_size": 50000,
     "plan_label": "50K",
+    "account_type": "OneUp",
     "drawdown_type": "trailing",
     "drawdown_amount": 2500,
     "daily_loss_limit": null,
@@ -1649,8 +1650,7 @@
     "min_trading_days": 10,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p104",
-    "account_type": "OneUp"
+    "plan_id": "p1056"
   },
   {
     "firm_id": "f13",
@@ -1661,6 +1661,7 @@
     "trustpilot": null,
     "account_size": 100000,
     "plan_label": "100K",
+    "account_type": "OneUp",
     "drawdown_type": "trailing",
     "drawdown_amount": 3500,
     "daily_loss_limit": null,
@@ -1678,8 +1679,7 @@
     "min_trading_days": 10,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p105",
-    "account_type": "OneUp"
+    "plan_id": "p1057"
   },
   {
     "firm_id": "f13",
@@ -1690,6 +1690,7 @@
     "trustpilot": null,
     "account_size": 150000,
     "plan_label": "150K",
+    "account_type": "OneUp",
     "drawdown_type": "trailing",
     "drawdown_amount": 5000,
     "daily_loss_limit": null,
@@ -1707,8 +1708,7 @@
     "min_trading_days": 10,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p106",
-    "account_type": "OneUp"
+    "plan_id": "p1058"
   },
   {
     "firm_id": "f13",
@@ -1719,6 +1719,7 @@
     "trustpilot": null,
     "account_size": 250000,
     "plan_label": "250K",
+    "account_type": "OneUp",
     "drawdown_type": "trailing",
     "drawdown_amount": 5500,
     "daily_loss_limit": null,
@@ -1736,8 +1737,7 @@
     "min_trading_days": 10,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p107",
-    "account_type": "OneUp"
+    "plan_id": "p1059"
   },
   {
     "firm_id": "f06",
@@ -1748,6 +1748,7 @@
     "trustpilot": 4.1,
     "account_size": 25000,
     "plan_label": "25K",
+    "account_type": "TakeProfit",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 1500,
     "daily_loss_limit": null,
@@ -1765,8 +1766,7 @@
     "min_trading_days": 5,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "plan_id": "p108",
-    "account_type": "TakeProfit"
+    "plan_id": "p1060"
   },
   {
     "firm_id": "f06",
@@ -1777,6 +1777,7 @@
     "trustpilot": 4.1,
     "account_size": 50000,
     "plan_label": "50K",
+    "account_type": "TakeProfit",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -1794,8 +1795,7 @@
     "min_trading_days": 5,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "plan_id": "p109",
-    "account_type": "TakeProfit"
+    "plan_id": "p1061"
   },
   {
     "firm_id": "f06",
@@ -1806,6 +1806,7 @@
     "trustpilot": 4.1,
     "account_size": 75000,
     "plan_label": "75K",
+    "account_type": "TakeProfit",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -1823,8 +1824,7 @@
     "min_trading_days": 5,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "plan_id": "p110",
-    "account_type": "TakeProfit"
+    "plan_id": "p1062"
   },
   {
     "firm_id": "f06",
@@ -1835,6 +1835,7 @@
     "trustpilot": 4.1,
     "account_size": 100000,
     "plan_label": "100K",
+    "account_type": "TakeProfit",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 6000,
     "daily_loss_limit": null,
@@ -1852,8 +1853,7 @@
     "min_trading_days": 5,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "plan_id": "p111",
-    "account_type": "TakeProfit"
+    "plan_id": "p1063"
   },
   {
     "firm_id": "f06",
@@ -1864,6 +1864,7 @@
     "trustpilot": 4.1,
     "account_size": 150000,
     "plan_label": "150K",
+    "account_type": "TakeProfit",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -1881,8 +1882,7 @@
     "min_trading_days": 5,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "plan_id": "p112",
-    "account_type": "TakeProfit"
+    "plan_id": "p1064"
   },
   {
     "firm_id": "f04",
@@ -1893,6 +1893,7 @@
     "trustpilot": 4.6,
     "account_size": 50000,
     "plan_label": "Intraday 50K",
+    "account_type": "Intraday",
     "drawdown_type": "intraday",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -1910,8 +1911,7 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p113",
-    "account_type": "Intraday"
+    "plan_id": "p1065"
   },
   {
     "firm_id": "f04",
@@ -1922,6 +1922,7 @@
     "trustpilot": 4.6,
     "account_size": 100000,
     "plan_label": "Intraday 100K",
+    "account_type": "Intraday",
     "drawdown_type": "intraday",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -1939,8 +1940,7 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p114",
-    "account_type": "Intraday"
+    "plan_id": "p1066"
   },
   {
     "firm_id": "f04",
@@ -1951,6 +1951,7 @@
     "trustpilot": 4.6,
     "account_size": 150000,
     "plan_label": "Intraday 150K",
+    "account_type": "Intraday",
     "drawdown_type": "intraday",
     "drawdown_amount": 4000,
     "daily_loss_limit": null,
@@ -1968,8 +1969,7 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p115",
-    "account_type": "Intraday"
+    "plan_id": "p1067"
   },
   {
     "firm_id": "f04",
@@ -1980,6 +1980,7 @@
     "trustpilot": 4.6,
     "account_size": 50000,
     "plan_label": "EOD 50K",
+    "account_type": "EOD",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -1997,8 +1998,7 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p116",
-    "account_type": "EOD"
+    "plan_id": "p1068"
   },
   {
     "firm_id": "f04",
@@ -2009,6 +2009,7 @@
     "trustpilot": 4.6,
     "account_size": 100000,
     "plan_label": "EOD 100K",
+    "account_type": "EOD",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -2026,8 +2027,7 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p117",
-    "account_type": "EOD"
+    "plan_id": "p1069"
   },
   {
     "firm_id": "f04",
@@ -2038,6 +2038,7 @@
     "trustpilot": 4.6,
     "account_size": 150000,
     "plan_label": "EOD 150K",
+    "account_type": "EOD",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 4000,
     "daily_loss_limit": null,
@@ -2055,8 +2056,7 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p118",
-    "account_type": "EOD"
+    "plan_id": "p1070"
   },
   {
     "firm_id": "f04",
@@ -2067,6 +2067,7 @@
     "trustpilot": 4.6,
     "account_size": 50000,
     "plan_label": "Static 50K",
+    "account_type": "Static",
     "drawdown_type": "static",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -2084,8 +2085,7 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p119",
-    "account_type": "Static"
+    "plan_id": "p1071"
   },
   {
     "firm_id": "f04",
@@ -2096,6 +2096,7 @@
     "trustpilot": 4.6,
     "account_size": 100000,
     "plan_label": "Static 100K",
+    "account_type": "Static",
     "drawdown_type": "static",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -2113,8 +2114,7 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p120",
-    "account_type": "Static"
+    "plan_id": "p1072"
   },
   {
     "firm_id": "f04",
@@ -2125,6 +2125,7 @@
     "trustpilot": 4.6,
     "account_size": 150000,
     "plan_label": "Static 150K",
+    "account_type": "Static",
     "drawdown_type": "static",
     "drawdown_amount": 4000,
     "daily_loss_limit": null,
@@ -2142,8 +2143,7 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "plan_id": "p121",
-    "account_type": "Static"
+    "plan_id": "p1073"
   },
   {
     "firm_id": "f11",
@@ -2154,6 +2154,7 @@
     "trustpilot": 4.5,
     "account_size": 25000,
     "plan_label": "Growth 25K",
+    "account_type": "Growth",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 1000,
     "daily_loss_limit": null,
@@ -2171,8 +2172,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "plan_id": "p122",
-    "account_type": "Growth"
+    "plan_id": "p1074"
   },
   {
     "firm_id": "f11",
@@ -2183,6 +2183,7 @@
     "trustpilot": 4.5,
     "account_size": 50000,
     "plan_label": "Growth 50K",
+    "account_type": "Growth",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -2200,8 +2201,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "plan_id": "p123",
-    "account_type": "Growth"
+    "plan_id": "p1075"
   },
   {
     "firm_id": "f11",
@@ -2212,6 +2212,7 @@
     "trustpilot": 4.5,
     "account_size": 100000,
     "plan_label": "Growth 100K",
+    "account_type": "Growth",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 3500,
     "daily_loss_limit": null,
@@ -2229,8 +2230,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "plan_id": "p124",
-    "account_type": "Growth"
+    "plan_id": "p1076"
   },
   {
     "firm_id": "f11",
@@ -2241,6 +2241,7 @@
     "trustpilot": 4.5,
     "account_size": 150000,
     "plan_label": "Growth 150K",
+    "account_type": "Growth",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 5000,
     "daily_loss_limit": null,
@@ -2258,8 +2259,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "plan_id": "p125",
-    "account_type": "Growth"
+    "plan_id": "p1077"
   },
   {
     "firm_id": "f11",
@@ -2270,6 +2270,7 @@
     "trustpilot": 4.5,
     "account_size": 25000,
     "plan_label": "Lightning 25K",
+    "account_type": "Lightning",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 1000,
     "daily_loss_limit": null,
@@ -2287,8 +2288,7 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "plan_id": "p126",
-    "account_type": "Lightning"
+    "plan_id": "p1078"
   },
   {
     "firm_id": "f11",
@@ -2299,6 +2299,7 @@
     "trustpilot": 4.5,
     "account_size": 50000,
     "plan_label": "Lightning 50K",
+    "account_type": "Lightning",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -2316,8 +2317,7 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "plan_id": "p127",
-    "account_type": "Lightning"
+    "plan_id": "p1079"
   },
   {
     "firm_id": "f11",
@@ -2328,6 +2328,7 @@
     "trustpilot": 4.5,
     "account_size": 100000,
     "plan_label": "Lightning 100K",
+    "account_type": "Lightning",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 4000,
     "daily_loss_limit": null,
@@ -2345,8 +2346,7 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "plan_id": "p128",
-    "account_type": "Lightning"
+    "plan_id": "p1080"
   },
   {
     "firm_id": "f11",
@@ -2357,6 +2357,7 @@
     "trustpilot": 4.5,
     "account_size": 150000,
     "plan_label": "Lightning 150K",
+    "account_type": "Lightning",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 5250,
     "daily_loss_limit": null,
@@ -2374,8 +2375,7 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "plan_id": "p129",
-    "account_type": "Lightning"
+    "plan_id": "p1081"
   },
   {
     "firm_id": "f11",
@@ -2386,6 +2386,7 @@
     "trustpilot": 4.5,
     "account_size": 25000,
     "plan_label": "Select 25K",
+    "account_type": "Select",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 1000,
     "daily_loss_limit": null,
@@ -2403,8 +2404,7 @@
     "min_trading_days": 3,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "plan_id": "p130",
-    "account_type": "Select"
+    "plan_id": "p1082"
   },
   {
     "firm_id": "f11",
@@ -2415,6 +2415,7 @@
     "trustpilot": 4.5,
     "account_size": 50000,
     "plan_label": "Select 50K",
+    "account_type": "Select",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -2432,8 +2433,7 @@
     "min_trading_days": 3,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "plan_id": "p131",
-    "account_type": "Select"
+    "plan_id": "p1083"
   },
   {
     "firm_id": "f11",
@@ -2444,6 +2444,7 @@
     "trustpilot": 4.5,
     "account_size": 100000,
     "plan_label": "Select 100K",
+    "account_type": "Select",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -2461,8 +2462,7 @@
     "min_trading_days": 3,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "plan_id": "p132",
-    "account_type": "Select"
+    "plan_id": "p1084"
   },
   {
     "firm_id": "f11",
@@ -2473,6 +2473,7 @@
     "trustpilot": 4.5,
     "account_size": 150000,
     "plan_label": "Select 150K",
+    "account_type": "Select",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -2490,8 +2491,7 @@
     "min_trading_days": 3,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "plan_id": "p133",
-    "account_type": "Select"
+    "plan_id": "p1085"
   },
   {
     "firm_id": "f14",
@@ -2502,6 +2502,7 @@
     "trustpilot": null,
     "account_size": 25000,
     "plan_label": "Standard OG 25K",
+    "account_type": "Standard OG",
     "drawdown_type": "intraday",
     "drawdown_amount": 1500,
     "daily_loss_limit": null,
@@ -2519,8 +2520,7 @@
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "plan_id": "p134",
-    "account_type": "Standard OG: 40% consistency; 15 min days; Exhibition + funded phases; $126/mo data"
+    "plan_id": "p1086"
   },
   {
     "firm_id": "f14",
@@ -2531,6 +2531,7 @@
     "trustpilot": null,
     "account_size": 25000,
     "plan_label": "Standard MAX 25K",
+    "account_type": "Standard MAX",
     "drawdown_type": "intraday",
     "drawdown_amount": 1500,
     "daily_loss_limit": null,
@@ -2548,8 +2549,7 @@
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "plan_id": "p135",
-    "account_type": "Standard MAX: Skip Exhibition; straight to funded; 40% consistency; 15 min days"
+    "plan_id": "p1087"
   },
   {
     "firm_id": "f14",
@@ -2560,6 +2560,7 @@
     "trustpilot": null,
     "account_size": 25000,
     "plan_label": "Express OG 25K",
+    "account_type": "Express OG",
     "drawdown_type": "intraday",
     "drawdown_amount": 1500,
     "daily_loss_limit": null,
@@ -2577,8 +2578,7 @@
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "plan_id": "p136",
-    "account_type": "Express OG: 15% consistency (stricter); 7 min days; Exhibition + funded phases"
+    "plan_id": "p1088"
   },
   {
     "firm_id": "f14",
@@ -2589,6 +2589,7 @@
     "trustpilot": null,
     "account_size": 25000,
     "plan_label": "Express MAX 25K",
+    "account_type": "Express MAX",
     "drawdown_type": "intraday",
     "drawdown_amount": 1500,
     "daily_loss_limit": null,
@@ -2606,8 +2607,7 @@
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "plan_id": "p137",
-    "account_type": "Express MAX: Skip Exhibition; straight to funded; 15% consistency; 7 min days; fastest"
+    "plan_id": "p1089"
   },
   {
     "firm_id": "f14",
@@ -2618,6 +2618,7 @@
     "trustpilot": null,
     "account_size": 50000,
     "plan_label": "Standard OG 50K",
+    "account_type": "Standard OG",
     "drawdown_type": "intraday",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -2635,8 +2636,7 @@
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "plan_id": "p138",
-    "account_type": "Standard OG: 40% consistency; 15 min days; Exhibition + funded phases; $126/mo data"
+    "plan_id": "p1090"
   },
   {
     "firm_id": "f14",
@@ -2647,6 +2647,7 @@
     "trustpilot": null,
     "account_size": 50000,
     "plan_label": "Standard MAX 50K",
+    "account_type": "Standard MAX",
     "drawdown_type": "intraday",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -2664,8 +2665,7 @@
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "plan_id": "p139",
-    "account_type": "Standard MAX: Skip Exhibition; straight to funded; 40% consistency; 15 min days"
+    "plan_id": "p1091"
   },
   {
     "firm_id": "f14",
@@ -2676,6 +2676,7 @@
     "trustpilot": null,
     "account_size": 50000,
     "plan_label": "Express OG 50K",
+    "account_type": "Express OG",
     "drawdown_type": "intraday",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -2693,8 +2694,7 @@
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "plan_id": "p140",
-    "account_type": "Express OG: 15% consistency (stricter); 7 min days; Exhibition + funded phases"
+    "plan_id": "p1092"
   },
   {
     "firm_id": "f14",
@@ -2705,6 +2705,7 @@
     "trustpilot": null,
     "account_size": 50000,
     "plan_label": "Express MAX 50K",
+    "account_type": "Express MAX",
     "drawdown_type": "intraday",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -2722,8 +2723,7 @@
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "plan_id": "p141",
-    "account_type": "Express MAX: Skip Exhibition; straight to funded; 15% consistency; 7 min days; fastest"
+    "plan_id": "p1093"
   },
   {
     "firm_id": "f14",
@@ -2734,6 +2734,7 @@
     "trustpilot": null,
     "account_size": 100000,
     "plan_label": "Standard OG 100K",
+    "account_type": "Standard OG",
     "drawdown_type": "intraday",
     "drawdown_amount": 3600,
     "daily_loss_limit": null,
@@ -2751,8 +2752,7 @@
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "plan_id": "p142",
-    "account_type": "Standard OG: 40% consistency; 15 min days; Exhibition + funded phases; $126/mo data"
+    "plan_id": "p1094"
   },
   {
     "firm_id": "f14",
@@ -2763,6 +2763,7 @@
     "trustpilot": null,
     "account_size": 100000,
     "plan_label": "Standard MAX 100K",
+    "account_type": "Standard MAX",
     "drawdown_type": "intraday",
     "drawdown_amount": 3600,
     "daily_loss_limit": null,
@@ -2780,8 +2781,7 @@
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "plan_id": "p143",
-    "account_type": "Standard MAX: Skip Exhibition; straight to funded; 40% consistency; 15 min days"
+    "plan_id": "p1095"
   },
   {
     "firm_id": "f14",
@@ -2792,6 +2792,7 @@
     "trustpilot": null,
     "account_size": 100000,
     "plan_label": "Express OG 100K",
+    "account_type": "Express OG",
     "drawdown_type": "intraday",
     "drawdown_amount": 3600,
     "daily_loss_limit": null,
@@ -2809,8 +2810,7 @@
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "plan_id": "p144",
-    "account_type": "Express OG: 15% consistency (stricter); 7 min days; Exhibition + funded phases"
+    "plan_id": "p1096"
   },
   {
     "firm_id": "f14",
@@ -2821,6 +2821,7 @@
     "trustpilot": null,
     "account_size": 100000,
     "plan_label": "Express MAX 100K",
+    "account_type": "Express MAX",
     "drawdown_type": "intraday",
     "drawdown_amount": 3600,
     "daily_loss_limit": null,
@@ -2838,8 +2839,7 @@
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "plan_id": "p145",
-    "account_type": "Express MAX: Skip Exhibition; straight to funded; 15% consistency; 7 min days; fastest"
+    "plan_id": "p1097"
   },
   {
     "firm_id": "f14",
@@ -2850,6 +2850,7 @@
     "trustpilot": null,
     "account_size": 150000,
     "plan_label": "Standard OG 150K",
+    "account_type": "Standard OG",
     "drawdown_type": "intraday",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -2867,8 +2868,7 @@
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "plan_id": "p146",
-    "account_type": "Standard OG: 40% consistency; 15 min days; Exhibition + funded phases; $126/mo data"
+    "plan_id": "p1098"
   },
   {
     "firm_id": "f14",
@@ -2879,6 +2879,7 @@
     "trustpilot": null,
     "account_size": 150000,
     "plan_label": "Standard MAX 150K",
+    "account_type": "Standard MAX",
     "drawdown_type": "intraday",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -2896,8 +2897,7 @@
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "plan_id": "p147",
-    "account_type": "Standard MAX: Skip Exhibition; straight to funded; 40% consistency; 15 min days"
+    "plan_id": "p1099"
   },
   {
     "firm_id": "f14",
@@ -2908,6 +2908,7 @@
     "trustpilot": null,
     "account_size": 150000,
     "plan_label": "Express OG 150K",
+    "account_type": "Express OG",
     "drawdown_type": "intraday",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -2925,8 +2926,7 @@
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "plan_id": "p148",
-    "account_type": "Express OG: 15% consistency (stricter); 7 min days; Exhibition + funded phases"
+    "plan_id": "p1100"
   },
   {
     "firm_id": "f14",
@@ -2937,6 +2937,7 @@
     "trustpilot": null,
     "account_size": 150000,
     "plan_label": "Express MAX 150K",
+    "account_type": "Express MAX",
     "drawdown_type": "intraday",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -2954,8 +2955,7 @@
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "plan_id": "p149",
-    "account_type": "Express MAX: Skip Exhibition; straight to funded; 15% consistency; 7 min days; fastest"
+    "plan_id": "p1101"
   },
   {
     "firm_id": "f14",
@@ -2966,6 +2966,7 @@
     "trustpilot": null,
     "account_size": 250000,
     "plan_label": "Standard OG 250K",
+    "account_type": "Standard OG",
     "drawdown_type": "intraday",
     "drawdown_amount": 6500,
     "daily_loss_limit": null,
@@ -2983,8 +2984,7 @@
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "plan_id": "p150",
-    "account_type": "Standard OG: 40% consistency; 15 min days; Exhibition + funded phases; $126/mo data"
+    "plan_id": "p1102"
   },
   {
     "firm_id": "f14",
@@ -2995,6 +2995,7 @@
     "trustpilot": null,
     "account_size": 250000,
     "plan_label": "Standard MAX 250K",
+    "account_type": "Standard MAX",
     "drawdown_type": "intraday",
     "drawdown_amount": 6500,
     "daily_loss_limit": null,
@@ -3012,8 +3013,7 @@
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "plan_id": "p151",
-    "account_type": "Standard MAX: Skip Exhibition; straight to funded; 40% consistency; 15 min days"
+    "plan_id": "p1103"
   },
   {
     "firm_id": "f14",
@@ -3024,6 +3024,7 @@
     "trustpilot": null,
     "account_size": 250000,
     "plan_label": "Express OG 250K",
+    "account_type": "Express OG",
     "drawdown_type": "intraday",
     "drawdown_amount": 6500,
     "daily_loss_limit": null,
@@ -3041,8 +3042,7 @@
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "plan_id": "p152",
-    "account_type": "Express OG: 15% consistency (stricter); 7 min days; Exhibition + funded phases"
+    "plan_id": "p1104"
   },
   {
     "firm_id": "f14",
@@ -3053,6 +3053,7 @@
     "trustpilot": null,
     "account_size": 250000,
     "plan_label": "Express MAX 250K",
+    "account_type": "Express MAX",
     "drawdown_type": "intraday",
     "drawdown_amount": 6500,
     "daily_loss_limit": null,
@@ -3070,8 +3071,7 @@
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "plan_id": "p153",
-    "account_type": "Express MAX: Skip Exhibition; straight to funded; 15% consistency; 7 min days; fastest"
+    "plan_id": "p1105"
   },
   {
     "firm_id": "f10",
@@ -3082,6 +3082,7 @@
     "trustpilot": 4.7,
     "account_size": 25000,
     "plan_label": "Zero 25K",
+    "account_type": "Zero",
     "drawdown_type": "eod",
     "drawdown_amount": 1000,
     "daily_loss_limit": null,
@@ -3099,8 +3100,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "plan_id": "p154",
-    "account_type": "Zero: $0 activation; no consistency eval; 90% split; 1-day pass possible"
+    "plan_id": "p1106"
   },
   {
     "firm_id": "f10",
@@ -3111,6 +3111,7 @@
     "trustpilot": 4.7,
     "account_size": 50000,
     "plan_label": "Zero 50K",
+    "account_type": "Zero",
     "drawdown_type": "eod",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -3128,8 +3129,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "plan_id": "p155",
-    "account_type": "Zero: $0 activation; no consistency eval; 90% split; 1-day pass possible"
+    "plan_id": "p1107"
   },
   {
     "firm_id": "f10",
@@ -3140,6 +3140,7 @@
     "trustpilot": 4.7,
     "account_size": 100000,
     "plan_label": "Zero 100K",
+    "account_type": "Zero",
     "drawdown_type": "eod",
     "drawdown_amount": 4000,
     "daily_loss_limit": null,
@@ -3157,8 +3158,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "plan_id": "p156",
-    "account_type": "Zero: $0 activation; no consistency eval; 90% split; 1-day pass possible"
+    "plan_id": "p1108"
   },
   {
     "firm_id": "f10",
@@ -3169,6 +3169,7 @@
     "trustpilot": 4.7,
     "account_size": 50000,
     "plan_label": "Premium (No Act) 50K",
+    "account_type": "Premium (No Act)",
     "drawdown_type": "eod",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -3186,8 +3187,7 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "plan_id": "p157",
-    "account_type": "Premium (No Act): NEW; $0 activation; 50% consistency; tiered withdrawal caps"
+    "plan_id": "p1109"
   },
   {
     "firm_id": "f10",
@@ -3198,6 +3198,7 @@
     "trustpilot": 4.7,
     "account_size": 100000,
     "plan_label": "Premium (No Act) 100K",
+    "account_type": "Premium (No Act)",
     "drawdown_type": "eod",
     "drawdown_amount": 4000,
     "daily_loss_limit": null,
@@ -3215,8 +3216,7 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "plan_id": "p158",
-    "account_type": "Premium (No Act): NEW; $0 activation; 50% consistency; tiered withdrawal caps"
+    "plan_id": "p1110"
   },
   {
     "firm_id": "f10",
@@ -3227,6 +3227,7 @@
     "trustpilot": 4.7,
     "account_size": 150000,
     "plan_label": "Premium (No Act) 150K",
+    "account_type": "Premium (No Act)",
     "drawdown_type": "eod",
     "drawdown_amount": 6000,
     "daily_loss_limit": null,
@@ -3244,8 +3245,7 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "plan_id": "p159",
-    "account_type": "Premium (No Act): NEW; $0 activation; 50% consistency; tiered withdrawal caps"
+    "plan_id": "p1111"
   },
   {
     "firm_id": "f10",
@@ -3256,6 +3256,7 @@
     "trustpilot": 4.7,
     "account_size": 50000,
     "plan_label": "Premium 50K",
+    "account_type": "Premium",
     "drawdown_type": "eod",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -3273,8 +3274,7 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "plan_id": "p160",
-    "account_type": "Premium: Replaces Standard; 50% consistency; tiered 70%\u219290%; $149 activation"
+    "plan_id": "p1112"
   },
   {
     "firm_id": "f10",
@@ -3285,6 +3285,7 @@
     "trustpilot": 4.7,
     "account_size": 100000,
     "plan_label": "Premium 100K",
+    "account_type": "Premium",
     "drawdown_type": "eod",
     "drawdown_amount": 4000,
     "daily_loss_limit": null,
@@ -3302,8 +3303,7 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "plan_id": "p161",
-    "account_type": "Premium: Replaces Standard; 50% consistency; tiered 70%\u219290%; $149 activation"
+    "plan_id": "p1113"
   },
   {
     "firm_id": "f10",
@@ -3314,6 +3314,7 @@
     "trustpilot": 4.7,
     "account_size": 150000,
     "plan_label": "Premium 150K",
+    "account_type": "Premium",
     "drawdown_type": "eod",
     "drawdown_amount": 6000,
     "daily_loss_limit": null,
@@ -3331,8 +3332,7 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "plan_id": "p162",
-    "account_type": "Premium: Replaces Standard; 50% consistency; tiered 70%\u219290%; $149 activation"
+    "plan_id": "p1114"
   },
   {
     "firm_id": "f10",
@@ -3343,6 +3343,7 @@
     "trustpilot": 4.7,
     "account_size": 50000,
     "plan_label": "Advanced 50K",
+    "account_type": "Advanced",
     "drawdown_type": "eod",
     "drawdown_amount": 1750,
     "daily_loss_limit": null,
@@ -3360,8 +3361,7 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p163",
-    "account_type": "Advanced: No consistency; 90% split day one; $149 activation"
+    "plan_id": "p1115"
   },
   {
     "firm_id": "f10",
@@ -3372,6 +3372,7 @@
     "trustpilot": 4.7,
     "account_size": 100000,
     "plan_label": "Advanced 100K",
+    "account_type": "Advanced",
     "drawdown_type": "eod",
     "drawdown_amount": 3500,
     "daily_loss_limit": null,
@@ -3389,8 +3390,7 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p164",
-    "account_type": "Advanced: No consistency; 90% split day one; $149 activation"
+    "plan_id": "p1116"
   },
   {
     "firm_id": "f10",
@@ -3401,6 +3401,7 @@
     "trustpilot": 4.7,
     "account_size": 150000,
     "plan_label": "Advanced 150K",
+    "account_type": "Advanced",
     "drawdown_type": "eod",
     "drawdown_amount": 5250,
     "daily_loss_limit": null,
@@ -3418,8 +3419,7 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p165",
-    "account_type": "Advanced: No consistency; 90% split day one; $149 activation"
+    "plan_id": "p1117"
   },
   {
     "firm_id": "f01",
@@ -3430,6 +3430,7 @@
     "trustpilot": 4.3,
     "account_size": 50000,
     "plan_label": "Standard 50K",
+    "account_type": "Standard",
     "drawdown_type": "eod",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -3447,8 +3448,7 @@
     "min_trading_days": 10,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "plan_id": "p166",
-    "account_type": "Standard Path: Lower monthly ($49/$99/$149) + $149 activation; Intraday trailing eval"
+    "plan_id": "p1118"
   },
   {
     "firm_id": "f01",
@@ -3459,6 +3459,7 @@
     "trustpilot": 4.3,
     "account_size": 100000,
     "plan_label": "Standard 100K",
+    "account_type": "Standard",
     "drawdown_type": "eod",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -3476,8 +3477,7 @@
     "min_trading_days": 10,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "plan_id": "p167",
-    "account_type": "Standard Path: Lower monthly ($49/$99/$149) + $149 activation; Intraday trailing eval"
+    "plan_id": "p1119"
   },
   {
     "firm_id": "f01",
@@ -3488,6 +3488,7 @@
     "trustpilot": 4.3,
     "account_size": 150000,
     "plan_label": "Standard 150K",
+    "account_type": "Standard",
     "drawdown_type": "eod",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -3505,8 +3506,7 @@
     "min_trading_days": 10,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "plan_id": "p168",
-    "account_type": "Standard Path: Lower monthly ($49/$99/$149) + $149 activation; Intraday trailing eval"
+    "plan_id": "p1120"
   },
   {
     "firm_id": "f01",
@@ -3517,6 +3517,7 @@
     "trustpilot": 4.3,
     "account_size": 50000,
     "plan_label": "No Activation 50K",
+    "account_type": "No Activation",
     "drawdown_type": "eod",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -3534,8 +3535,7 @@
     "min_trading_days": 10,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "plan_id": "p169",
-    "account_type": "No Activation Path: Higher monthly ($95/$149/$229) + $0 activation; Intraday trailing eval"
+    "plan_id": "p1121"
   },
   {
     "firm_id": "f01",
@@ -3546,6 +3546,7 @@
     "trustpilot": 4.3,
     "account_size": 100000,
     "plan_label": "No Activation 100K",
+    "account_type": "No Activation",
     "drawdown_type": "eod",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -3563,8 +3564,7 @@
     "min_trading_days": 10,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "plan_id": "p170",
-    "account_type": "No Activation Path: Higher monthly ($95/$149/$229) + $0 activation; Intraday trailing eval"
+    "plan_id": "p1122"
   },
   {
     "firm_id": "f01",
@@ -3575,6 +3575,7 @@
     "trustpilot": 4.3,
     "account_size": 150000,
     "plan_label": "No Activation 150K",
+    "account_type": "No Activation",
     "drawdown_type": "eod",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -3592,8 +3593,7 @@
     "min_trading_days": 10,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "plan_id": "p171",
-    "account_type": "No Activation Path: Higher monthly ($95/$149/$229) + $0 activation; Intraday trailing eval"
+    "plan_id": "p1123"
   },
   {
     "firm_id": "f15",
@@ -3604,6 +3604,7 @@
     "trustpilot": null,
     "account_size": 25000,
     "plan_label": "Classic Starter 25K",
+    "account_type": "Classic Starter",
     "drawdown_type": "eod",
     "drawdown_amount": 1500,
     "daily_loss_limit": null,
@@ -3621,8 +3622,7 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p172",
-    "account_type": "Classic Starter: EOD trailing eval; 1-1.5 (10-15\u03bc) contracts; $89/mo"
+    "plan_id": "p1124"
   },
   {
     "firm_id": "f15",
@@ -3633,6 +3633,7 @@
     "trustpilot": null,
     "account_size": 50000,
     "plan_label": "Classic Growth 50K",
+    "account_type": "Classic Growth",
     "drawdown_type": "eod",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -3650,8 +3651,7 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p173",
-    "account_type": "Classic Growth: EOD trailing eval; 3 (30\u03bc) contracts; $128/mo"
+    "plan_id": "p1125"
   },
   {
     "firm_id": "f15",
@@ -3662,6 +3662,7 @@
     "trustpilot": null,
     "account_size": 100000,
     "plan_label": "Classic Scale 100K",
+    "account_type": "Classic Scale",
     "drawdown_type": "eod",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -3679,8 +3680,7 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p174",
-    "account_type": "Classic Scale: EOD trailing eval; 6 (60\u03bc) contracts; $269/mo"
+    "plan_id": "p1126"
   },
   {
     "firm_id": "f15",
@@ -3691,6 +3691,7 @@
     "trustpilot": null,
     "account_size": 2000,
     "plan_label": "Spark Micro 2K",
+    "account_type": "Spark Micro",
     "drawdown_type": "eod",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -3708,8 +3709,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p175",
-    "account_type": "Spark Micro (NEW): 2 (20\u03bc) contracts; $0/mo + $69 activation; live funding immediately"
+    "plan_id": "p1127"
   },
   {
     "firm_id": "f15",
@@ -3720,6 +3720,7 @@
     "trustpilot": null,
     "account_size": 25000,
     "plan_label": "Spark Starter 25K",
+    "account_type": "Spark Starter",
     "drawdown_type": "eod",
     "drawdown_amount": 1000,
     "daily_loss_limit": null,
@@ -3737,8 +3738,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 30,
-    "plan_id": "p176",
-    "account_type": "Spark Starter (NEW): 2 (20\u03bc) contracts; $39/mo + $29 activation; live funding immediately"
+    "plan_id": "p1128"
   },
   {
     "firm_id": "f15",
@@ -3749,6 +3749,7 @@
     "trustpilot": null,
     "account_size": 50000,
     "plan_label": "Spark Growth 50K",
+    "account_type": "Spark Growth",
     "drawdown_type": "eod",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -3766,8 +3767,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 30,
-    "plan_id": "p177",
-    "account_type": "Spark Growth (NEW): 4 (40\u03bc) contracts; $69/mo + $29 activation; live funding immediately"
+    "plan_id": "p1129"
   },
   {
     "firm_id": "f15",
@@ -3778,6 +3778,7 @@
     "trustpilot": null,
     "account_size": 2000,
     "plan_label": "Merit 2K",
+    "account_type": "Merit",
     "drawdown_type": "eod",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -3795,8 +3796,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p178",
-    "account_type": "Merit Unique: $69 one-time; $2K starting + $2K static MDD; 25% dynamic DD; live funding immediately; no targets"
+    "plan_id": "p1130"
   },
   {
     "firm_id": "f16",
@@ -3807,6 +3807,7 @@
     "trustpilot": null,
     "account_size": 25000,
     "plan_label": "Trail 25K",
+    "account_type": "Trail",
     "drawdown_type": "eod",
     "drawdown_amount": 1500,
     "daily_loss_limit": null,
@@ -3824,8 +3825,7 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 30,
-    "plan_id": "p179",
-    "account_type": "Trail 25K: 37 eval + $130 activation; intraday trailing; 6 (60\u03bc) max contracts; 100% split on Pro"
+    "plan_id": "p1131"
   },
   {
     "firm_id": "f16",
@@ -3836,6 +3836,7 @@
     "trustpilot": null,
     "account_size": 50000,
     "plan_label": "Trail 50K",
+    "account_type": "Trail",
     "drawdown_type": "eod",
     "drawdown_amount": 2500,
     "daily_loss_limit": null,
@@ -3853,8 +3854,7 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 30,
-    "plan_id": "p180",
-    "account_type": "Trail 50K: 57 eval + $130 activation; intraday trailing; 10 (100\u03bc) max contracts; 100% split on Pro"
+    "plan_id": "p1132"
   },
   {
     "firm_id": "f16",
@@ -3865,6 +3865,7 @@
     "trustpilot": null,
     "account_size": 100000,
     "plan_label": "Trail 100K",
+    "account_type": "Trail",
     "drawdown_type": "eod",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -3882,8 +3883,7 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 30,
-    "plan_id": "p181",
-    "account_type": "Trail 100K: 85 eval + $130 activation; intraday trailing; 18 (180\u03bc) max contracts; 100% split on Pro"
+    "plan_id": "p1133"
   },
   {
     "firm_id": "f16",
@@ -3894,6 +3894,7 @@
     "trustpilot": null,
     "account_size": 25000,
     "plan_label": "Static 25K",
+    "account_type": "Static",
     "drawdown_type": "eod",
     "drawdown_amount": 750,
     "daily_loss_limit": null,
@@ -3911,8 +3912,7 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 30,
-    "plan_id": "p182",
-    "account_type": "Static 25K: 30 eval + $130 activation; fixed drawdown; 4 (40\u03bc) max contracts; 100% split on Pro"
+    "plan_id": "p1134"
   },
   {
     "firm_id": "f16",
@@ -3923,6 +3923,7 @@
     "trustpilot": null,
     "account_size": 50000,
     "plan_label": "Static 50K",
+    "account_type": "Static",
     "drawdown_type": "eod",
     "drawdown_amount": 1000,
     "daily_loss_limit": null,
@@ -3940,8 +3941,7 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 30,
-    "plan_id": "p183",
-    "account_type": "Static 50K: 40 eval + $130 activation; fixed drawdown; 6 (60\u03bc) max contracts; 100% split on Pro"
+    "plan_id": "p1135"
   },
   {
     "firm_id": "f16",
@@ -3952,6 +3952,7 @@
     "trustpilot": null,
     "account_size": 100000,
     "plan_label": "Static 100K",
+    "account_type": "Static",
     "drawdown_type": "eod",
     "drawdown_amount": 1500,
     "daily_loss_limit": null,
@@ -3969,8 +3970,7 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 30,
-    "plan_id": "p184",
-    "account_type": "Static 100K: 65 eval + $130 activation; fixed drawdown; 8 (80\u03bc) max contracts; 100% split on Pro"
+    "plan_id": "p1136"
   },
   {
     "firm_id": "f16",
@@ -3981,6 +3981,7 @@
     "trustpilot": null,
     "account_size": 25000,
     "plan_label": "S2F 25K",
+    "account_type": "S2F",
     "drawdown_type": "eod",
     "drawdown_amount": 1000,
     "daily_loss_limit": null,
@@ -3998,8 +3999,7 @@
     "min_trading_days": 10,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "plan_id": "p185",
-    "account_type": "S2F 25K: 222 one-time; no evaluation; immediate funding; 100% profit split; 2 (20\u03bc) max contracts"
+    "plan_id": "p1137"
   },
   {
     "firm_id": "f16",
@@ -4010,6 +4010,7 @@
     "trustpilot": null,
     "account_size": 50000,
     "plan_label": "S2F 50K",
+    "account_type": "S2F",
     "drawdown_type": "eod",
     "drawdown_amount": 2500,
     "daily_loss_limit": null,
@@ -4027,8 +4028,7 @@
     "min_trading_days": 10,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "plan_id": "p186",
-    "account_type": "S2F 50K: 342 one-time; no evaluation; immediate funding; 100% profit split; 10 (100\u03bc) max contracts"
+    "plan_id": "p1138"
   },
   {
     "firm_id": "f16",
@@ -4039,6 +4039,7 @@
     "trustpilot": null,
     "account_size": 150000,
     "plan_label": "S2F 150K",
+    "account_type": "S2F",
     "drawdown_type": "eod",
     "drawdown_amount": 6000,
     "daily_loss_limit": null,
@@ -4056,8 +4057,7 @@
     "min_trading_days": 10,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "plan_id": "p187",
-    "account_type": "S2F 150K: 495 one-time; no evaluation; immediate funding; 100% profit split; 24 (240\u03bc) max contracts"
+    "plan_id": "p1139"
   },
   {
     "firm_id": "f16",
@@ -4068,6 +4068,7 @@
     "trustpilot": null,
     "account_size": 50000,
     "plan_label": "S2L 50K Core",
+    "account_type": "S2L 50K Core",
     "drawdown_type": "eod",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -4085,8 +4086,7 @@
     "min_trading_days": 8,
     "consistency_eval": 25,
     "consistency_funded": null,
-    "plan_id": "p188",
-    "account_type": "S2L 50K Core: 229 one-time; 8-day eval \u2192 live brokerage account; real capital; 80/20 split; daily payouts"
+    "plan_id": "p1140"
   },
   {
     "firm_id": "f16",
@@ -4097,6 +4097,7 @@
     "trustpilot": null,
     "account_size": 150000,
     "plan_label": "S2L 150K Edge",
+    "account_type": "S2L 150K Edge",
     "drawdown_type": "eod",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -4114,8 +4115,7 @@
     "min_trading_days": 8,
     "consistency_eval": 25,
     "consistency_funded": null,
-    "plan_id": "p189",
-    "account_type": "S2L 150K Edge: 369 one-time; 8-day eval \u2192 live brokerage account; real capital; 80/20 split; daily payouts"
+    "plan_id": "p1141"
   },
   {
     "firm_id": "f16",
@@ -4126,6 +4126,7 @@
     "trustpilot": null,
     "account_size": 300000,
     "plan_label": "S2L 300K Ultra",
+    "account_type": "S2L 300K Ultra",
     "drawdown_type": "eod",
     "drawdown_amount": 7000,
     "daily_loss_limit": null,
@@ -4143,8 +4144,7 @@
     "min_trading_days": 8,
     "consistency_eval": 25,
     "consistency_funded": null,
-    "plan_id": "p190",
-    "account_type": "S2L 300K Ultra: 499 one-time; 8-day eval \u2192 live brokerage account; real capital; 80/20 split; daily payouts"
+    "plan_id": "p1142"
   },
   {
     "firm_id": "f17",
@@ -4155,6 +4155,7 @@
     "trustpilot": null,
     "account_size": 25000,
     "plan_label": "Signature Futures 25K",
+    "account_type": "Signature Futures",
     "drawdown_type": "eod",
     "drawdown_amount": 1000,
     "daily_loss_limit": null,
@@ -4172,8 +4173,7 @@
     "min_trading_days": 0,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "plan_id": "p191",
-    "account_type": "E8 Sig Futures 25K: 66 one-time; EOD trailing eval; 6% target to pass; 80% profit split funded; 2% daily pause"
+    "plan_id": "p1143"
   },
   {
     "firm_id": "f17",
@@ -4184,6 +4184,7 @@
     "trustpilot": null,
     "account_size": 50000,
     "plan_label": "Signature Futures 50K",
+    "account_type": "Signature Futures",
     "drawdown_type": "eod",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -4201,8 +4202,7 @@
     "min_trading_days": 0,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "plan_id": "p192",
-    "account_type": "E8 Sig Futures 50K: 90 one-time; EOD trailing eval; 6% target to pass; 80% profit split funded; 2% daily pause"
+    "plan_id": "p1144"
   },
   {
     "firm_id": "f17",
@@ -4213,6 +4213,7 @@
     "trustpilot": null,
     "account_size": 100000,
     "plan_label": "Signature Futures 100K",
+    "account_type": "Signature Futures",
     "drawdown_type": "eod",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -4230,8 +4231,7 @@
     "min_trading_days": 0,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "plan_id": "p193",
-    "account_type": "E8 Sig Futures 100K: 156 one-time; EOD trailing eval; 6% target to pass; 80% profit split funded; 2% daily pause"
+    "plan_id": "p1145"
   },
   {
     "firm_id": "f17",
@@ -4242,6 +4242,7 @@
     "trustpilot": null,
     "account_size": 150000,
     "plan_label": "Signature Futures 150K",
+    "account_type": "Signature Futures",
     "drawdown_type": "eod",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -4259,8 +4260,7 @@
     "min_trading_days": 0,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "plan_id": "p194",
-    "account_type": "E8 Sig Futures 150K: 234 one-time; EOD trailing eval; 6% target to pass; 80% profit split funded; 2% daily pause"
+    "plan_id": "p1146"
   },
   {
     "firm_id": "f18",
@@ -4271,6 +4271,7 @@
     "trustpilot": null,
     "account_size": 25000,
     "plan_label": "Express to Live 25K",
+    "account_type": "Express to Live",
     "drawdown_type": "eod",
     "drawdown_amount": 500,
     "daily_loss_limit": null,
@@ -4288,8 +4289,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p195",
-    "account_type": "Express to Live 25K: PRICING TBD; flagship path to live brokerage; fastest to LIVE"
+    "plan_id": "p1147"
   },
   {
     "firm_id": "f18",
@@ -4300,6 +4300,7 @@
     "trustpilot": null,
     "account_size": 50000,
     "plan_label": "Express to Live 50K",
+    "account_type": "Express to Live",
     "drawdown_type": "eod",
     "drawdown_amount": 650,
     "daily_loss_limit": null,
@@ -4317,8 +4318,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p196",
-    "account_type": "Express to Live 50K: PRICING TBD; flagship path to live brokerage; fastest to LIVE"
+    "plan_id": "p1148"
   },
   {
     "firm_id": "f18",
@@ -4329,6 +4329,7 @@
     "trustpilot": null,
     "account_size": 100000,
     "plan_label": "Express to Live 100K",
+    "account_type": "Express to Live",
     "drawdown_type": "eod",
     "drawdown_amount": 800,
     "daily_loss_limit": null,
@@ -4346,8 +4347,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p197",
-    "account_type": "Express to Live 100K: PRICING TBD; flagship path to live brokerage; fastest to LIVE"
+    "plan_id": "p1149"
   },
   {
     "firm_id": "f18",
@@ -4358,6 +4358,7 @@
     "trustpilot": null,
     "account_size": 150000,
     "plan_label": "Express to Live 150K",
+    "account_type": "Express to Live",
     "drawdown_type": "eod",
     "drawdown_amount": 1000,
     "daily_loss_limit": null,
@@ -4375,8 +4376,7 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p198",
-    "account_type": "Express to Live 150K: PRICING TBD; flagship path to live brokerage; fastest to LIVE"
+    "plan_id": "p1150"
   },
   {
     "firm_id": "f18",
@@ -4387,6 +4387,7 @@
     "trustpilot": null,
     "account_size": 50000,
     "plan_label": "Fundamental 50K",
+    "account_type": "Fundamental",
     "drawdown_type": "eod",
     "drawdown_amount": 2500,
     "daily_loss_limit": null,
@@ -4404,8 +4405,7 @@
     "min_trading_days": 3,
     "consistency_eval": null,
     "consistency_funded": 30,
-    "plan_id": "p199",
-    "account_type": "Fundamental 50K: PRICING TBD; classic intraday; unchanged structure"
+    "plan_id": "p1151"
   },
   {
     "firm_id": "f18",
@@ -4416,6 +4416,7 @@
     "trustpilot": null,
     "account_size": 100000,
     "plan_label": "Fundamental 100K",
+    "account_type": "Fundamental",
     "drawdown_type": "eod",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -4433,8 +4434,7 @@
     "min_trading_days": 3,
     "consistency_eval": null,
     "consistency_funded": 30,
-    "plan_id": "p200",
-    "account_type": "Fundamental 100K: PRICING TBD; classic intraday; unchanged structure"
+    "plan_id": "p1152"
   },
   {
     "firm_id": "f18",
@@ -4445,6 +4445,7 @@
     "trustpilot": null,
     "account_size": 150000,
     "plan_label": "Fundamental 150K",
+    "account_type": "Fundamental",
     "drawdown_type": "eod",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -4462,8 +4463,7 @@
     "min_trading_days": 3,
     "consistency_eval": null,
     "consistency_funded": 30,
-    "plan_id": "p201",
-    "account_type": "Fundamental 150K: PRICING TBD; classic intraday; unchanged structure"
+    "plan_id": "p1153"
   },
   {
     "firm_id": "f18",
@@ -4474,6 +4474,7 @@
     "trustpilot": null,
     "account_size": 50000,
     "plan_label": "Premium 50K",
+    "account_type": "Premium",
     "drawdown_type": "eod",
     "drawdown_amount": 2500,
     "daily_loss_limit": null,
@@ -4491,8 +4492,7 @@
     "min_trading_days": 3,
     "consistency_eval": null,
     "consistency_funded": 30,
-    "plan_id": "p202",
-    "account_type": "Premium 50K: PRICING TBD; swing-capable; cash account day 1; progressive 75%\u2192100%; overnight+weekend hold"
+    "plan_id": "p1154"
   },
   {
     "firm_id": "f18",
@@ -4503,6 +4503,7 @@
     "trustpilot": null,
     "account_size": 100000,
     "plan_label": "Premium 100K",
+    "account_type": "Premium",
     "drawdown_type": "eod",
     "drawdown_amount": 3000,
     "daily_loss_limit": null,
@@ -4520,8 +4521,7 @@
     "min_trading_days": 3,
     "consistency_eval": null,
     "consistency_funded": 30,
-    "plan_id": "p203",
-    "account_type": "Premium 100K: PRICING TBD; swing-capable; cash account day 1; progressive 75%\u2192100%; overnight+weekend hold"
+    "plan_id": "p1155"
   },
   {
     "firm_id": "f18",
@@ -4532,6 +4532,7 @@
     "trustpilot": null,
     "account_size": 150000,
     "plan_label": "Premium 150K",
+    "account_type": "Premium",
     "drawdown_type": "eod",
     "drawdown_amount": 4500,
     "daily_loss_limit": null,
@@ -4549,8 +4550,7 @@
     "min_trading_days": 3,
     "consistency_eval": null,
     "consistency_funded": 30,
-    "plan_id": "p204",
-    "account_type": "Premium 150K: PRICING TBD; swing-capable; cash account day 1; progressive 75%\u2192100%; overnight+weekend hold"
+    "plan_id": "p1156"
   },
   {
     "firm_id": "f03",

@@ -1,4 +1,4 @@
-[
+export const STATIC_PLANS = [
   {
     "firm_id": "f02",
     "firm_name": "Apex Trader Funding",
@@ -237,7 +237,7 @@
     "firm_slug": "bulenox",
     "logo_url": null,
     "website_url": "https://bulenox.com",
-    "trustpilot": 4.0,
+    "trustpilot": 4,
     "account_size": 25000,
     "plan_label": "Option 1 25K",
     "account_type": "Option 1",
@@ -266,7 +266,7 @@
     "firm_slug": "bulenox",
     "logo_url": null,
     "website_url": "https://bulenox.com",
-    "trustpilot": 4.0,
+    "trustpilot": 4,
     "account_size": 50000,
     "plan_label": "Option 1 50K",
     "account_type": "Option 1",
@@ -295,7 +295,7 @@
     "firm_slug": "bulenox",
     "logo_url": null,
     "website_url": "https://bulenox.com",
-    "trustpilot": 4.0,
+    "trustpilot": 4,
     "account_size": 100000,
     "plan_label": "Option 1 100K",
     "account_type": "Option 1",
@@ -324,7 +324,7 @@
     "firm_slug": "bulenox",
     "logo_url": null,
     "website_url": "https://bulenox.com",
-    "trustpilot": 4.0,
+    "trustpilot": 4,
     "account_size": 150000,
     "plan_label": "Option 1 150K",
     "account_type": "Option 1",
@@ -353,7 +353,7 @@
     "firm_slug": "bulenox",
     "logo_url": null,
     "website_url": "https://bulenox.com",
-    "trustpilot": 4.0,
+    "trustpilot": 4,
     "account_size": 25000,
     "plan_label": "Option 2 25K",
     "account_type": "Option 2",
@@ -382,7 +382,7 @@
     "firm_slug": "bulenox",
     "logo_url": null,
     "website_url": "https://bulenox.com",
-    "trustpilot": 4.0,
+    "trustpilot": 4,
     "account_size": 50000,
     "plan_label": "Option 2 50K",
     "account_type": "Option 2",
@@ -411,7 +411,7 @@
     "firm_slug": "bulenox",
     "logo_url": null,
     "website_url": "https://bulenox.com",
-    "trustpilot": 4.0,
+    "trustpilot": 4,
     "account_size": 100000,
     "plan_label": "Option 2 100K",
     "account_type": "Option 2",
@@ -440,7 +440,7 @@
     "firm_slug": "bulenox",
     "logo_url": null,
     "website_url": "https://bulenox.com",
-    "trustpilot": 4.0,
+    "trustpilot": 4,
     "account_size": 150000,
     "plan_label": "Option 2 150K",
     "account_type": "Option 2",
@@ -4579,7 +4579,7 @@
     "daily_loss_limit": 0,
     "profit_target": 1500,
     "eval_fee": 75,
-    "total_cost_to_funded": 75.0
+    "total_cost_to_funded": 75
   },
   {
     "firm_id": "f03",
@@ -4608,7 +4608,7 @@
     "daily_loss_limit": 0,
     "profit_target": 1500,
     "eval_fee": 84,
-    "total_cost_to_funded": 84.0
+    "total_cost_to_funded": 84
   },
   {
     "firm_id": "f03",
@@ -4637,7 +4637,7 @@
     "daily_loss_limit": 0,
     "profit_target": 1500,
     "eval_fee": 114,
-    "total_cost_to_funded": 114.0
+    "total_cost_to_funded": 114
   },
   {
     "firm_id": "f03",
@@ -4666,7 +4666,7 @@
     "daily_loss_limit": 0,
     "profit_target": 1500,
     "eval_fee": 87,
-    "total_cost_to_funded": 87.0
+    "total_cost_to_funded": 87
   },
   {
     "firm_id": "f03",
@@ -4695,7 +4695,7 @@
     "daily_loss_limit": 0,
     "profit_target": 3000,
     "eval_fee": 75,
-    "total_cost_to_funded": 75.0
+    "total_cost_to_funded": 75
   },
   {
     "firm_id": "f03",
@@ -4724,7 +4724,7 @@
     "daily_loss_limit": 0,
     "profit_target": 3000,
     "eval_fee": 127,
-    "total_cost_to_funded": 127.0
+    "total_cost_to_funded": 127
   },
   {
     "firm_id": "f03",
@@ -4753,7 +4753,7 @@
     "daily_loss_limit": 0,
     "profit_target": 3000,
     "eval_fee": 114,
-    "total_cost_to_funded": 114.0
+    "total_cost_to_funded": 114
   },
   {
     "firm_id": "f03",
@@ -4782,7 +4782,7 @@
     "daily_loss_limit": 0,
     "profit_target": 3000,
     "eval_fee": 126,
-    "total_cost_to_funded": 126.0
+    "total_cost_to_funded": 126
   },
   {
     "firm_id": "f03",
@@ -4811,7 +4811,7 @@
     "daily_loss_limit": 0,
     "profit_target": 6000,
     "eval_fee": 153,
-    "total_cost_to_funded": 153.0
+    "total_cost_to_funded": 153
   },
   {
     "firm_id": "f03",
@@ -4840,7 +4840,7 @@
     "daily_loss_limit": 0,
     "profit_target": 6000,
     "eval_fee": 344,
-    "total_cost_to_funded": 344.0
+    "total_cost_to_funded": 344
   },
   {
     "firm_id": "f03",
@@ -4869,7 +4869,7 @@
     "daily_loss_limit": 0,
     "profit_target": 6000,
     "eval_fee": 267,
-    "total_cost_to_funded": 267.0
+    "total_cost_to_funded": 267
   },
   {
     "firm_id": "f03",
@@ -4898,7 +4898,7 @@
     "daily_loss_limit": 0,
     "profit_target": 9000,
     "eval_fee": 225,
-    "total_cost_to_funded": 225.0
+    "total_cost_to_funded": 225
   },
   {
     "firm_id": "f03",
@@ -4927,7 +4927,7 @@
     "daily_loss_limit": 0,
     "profit_target": 9000,
     "eval_fee": 477,
-    "total_cost_to_funded": 477.0
+    "total_cost_to_funded": 477
   },
   {
     "firm_id": "f03",
@@ -4956,6 +4956,6 @@
     "daily_loss_limit": 0,
     "profit_target": 9000,
     "eval_fee": 347,
-    "total_cost_to_funded": 347.0
+    "total_cost_to_funded": 347
   }
-]
+];
