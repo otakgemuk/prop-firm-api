@@ -21,7 +21,9 @@ async function scrape() {
       const text = $.text();
       return parseFromText(text);
     }
-  } catch (e) {}
+  } catch (e) {
+    console.warn(`[topstep] Help center fetch failed, falling back to homepage: ${e.message}`);
+  }
 
   const html = await fetchRendered("https://www.topstep.com", { waitFor: 5000 });
   const $ = cheerio.load(html);

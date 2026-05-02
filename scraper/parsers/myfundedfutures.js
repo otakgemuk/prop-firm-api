@@ -37,10 +37,11 @@ async function scrape() {
   ];
 
   // Try to parse prices from the help center page
-  const pricingSection = text.substring(
-    text.indexOf("Account Size / Cost"),
-    text.indexOf("Evaluation Accounts")
-  );
+  const pricingStart = text.indexOf("Account Size / Cost");
+  const pricingEnd = text.indexOf("Evaluation Accounts");
+  const pricingSection = (pricingStart !== -1 && pricingEnd !== -1 && pricingEnd > pricingStart)
+    ? text.substring(pricingStart, pricingEnd)
+    : text; // fall back to full text if section markers not found
 
   // Flex plans (25K and 50K only)
   const flexMatch = pricingSection.match(/Flex\s*[-–]\s*\$(\d+)[\s\S]*?Flex\s*[-–]\s*\$(\d+)/i);
