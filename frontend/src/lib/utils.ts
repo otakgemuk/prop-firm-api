@@ -22,14 +22,17 @@ export const DRAWDOWN_STYLES: Record<string, DrawdownStyle> = {
 };
 
 export const ACCOUNT_TYPE_OPTIONS = [
-  { value: "Standard", label: "Standard" },
-  { value: "Flex",     label: "Flex" },
-  { value: "Rapid",    label: "Rapid" },
-  { value: "Pro",      label: "Pro" },
-  { value: "Growth",   label: "Growth" },
-  { value: "Select",   label: "Select" },
-  { value: "Intraday", label: "Intraday" },
-  { value: "Static",   label: "Static" },
+  { value: "Standard",     label: "Standard" },
+  { value: "No Activation", label: "No Activation" },
+  { value: "No Scaling",   label: "No Scaling" },
+  { value: "EOD",          label: "EOD" },
+  { value: "Flex",         label: "Flex" },
+  { value: "Rapid",        label: "Rapid" },
+  { value: "Pro",          label: "Pro" },
+  { value: "Growth",       label: "Growth" },
+  { value: "Select",       label: "Select" },
+  { value: "Intraday",     label: "Intraday" },
+  { value: "Static",       label: "Static" },
 ];
 
 export const DRAWDOWN_OPTIONS = [

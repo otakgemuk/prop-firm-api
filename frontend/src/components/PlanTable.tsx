@@ -46,6 +46,9 @@ const columns: ColumnDef<PlanRow, any>[] = [
       const v = info.getValue() || "Standard";
       const colorMap: Record<string, string> = {
         Standard: "bg-gray-500/20 text-gray-300",
+        "No Activation": "bg-rose-500/20 text-rose-300",
+        "No Scaling": "bg-lime-500/20 text-lime-300",
+        EOD: "bg-cyan-500/20 text-cyan-300",
         Flex: "bg-sky-500/20 text-sky-300",
         Rapid: "bg-orange-500/20 text-orange-300",
         Pro: "bg-indigo-500/20 text-indigo-300",

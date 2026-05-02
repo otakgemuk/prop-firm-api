@@ -1,13 +1,22 @@
 // Bulenox parser
+// Two account types per size:
+//   - "No Scaling" (Opt 1): default, trailing drawdown
+//   - "EOD" (Opt 2): end-of-day drawdown
 const { buildPlan, fetchRendered, parseMoney, extractConsistencyPercent } = require("../utils");
 const cheerio = require("cheerio");
 
 const FIRM = { firmId: "f07", firmName: "Bulenox", firmSlug: "bulenox", websiteUrl: "https://bulenox.com", trustpilot: 4.0 };
+
 const CONFIGS = [
   { size: 25000,  label: "25K",  target: 1500, maxLoss: 1250, dailyLoss: 500  },
   { size: 50000,  label: "50K",  target: 3000, maxLoss: 2500, dailyLoss: 1000 },
   { size: 100000, label: "100K", target: 6000, maxLoss: 3500, dailyLoss: 2000 },
+  { size: 150000, label: "150K", target: 9000, maxLoss: 4500, dailyLoss: 3000 },
 ];
+
+// Known prices (from website as of May 2026)
+const KNOWN_NO_SCALING = { 25000: 145, 50000: 175, 100000: 215, 150000: 325 };
+const KNOWN_EOD        = { 25000: 115, 50000: 155, 100000: 195, 150000: 295 };
 
 async function scrape() {
   const html = await fetchRendered("https://bulenox.com", { waitFor: 5000 });
@@ -23,19 +32,36 @@ async function scrape() {
 
   const plans = [];
   for (const cfg of CONFIGS) {
-    let fee = 0;
-    const m = text.match(new RegExp(`${cfg.label}[\\s\\S]{0,300}?\\$(\\d+)`, "i"));
-    if (m) { fee = parseMoney(m[1]); if (fee < 50 || fee > 2000) fee = 0; }
-    if (!fee) { const known = { 25000: 100, 50000: 150, 100000: 200 }; fee = known[cfg.size]; }
+    // No Scaling (Opt 1) — trailing drawdown
+    const noScalingFee = KNOWN_NO_SCALING[cfg.size] || 0;
+    if (noScalingFee > 0) {
+      plans.push(buildPlan({
+        ...FIRM, planId: `bulenox-ns-${cfg.label}`, accountSize: cfg.size,
+        planLabel: `${cfg.label}`,
+        accountType: "No Scaling",
+        drawdownType: "trailing", drawdownAmount: cfg.maxLoss, dailyLossLimit: cfg.dailyLoss,
+        profitTarget: cfg.target, profitSplit: 80, evalFee: noScalingFee, isOneTime: false,
+        payoutFrequency: "biweekly", maxFundedAccounts: maxFunded, minTradingDays: minDays,
+        consistencyEvalPct, consistencyFundedPct,
+      }));
+    }
 
-    plans.push(buildPlan({
-      ...FIRM, planId: `bulenox-${cfg.label}`, accountSize: cfg.size,
-      drawdownType: "trailing", drawdownAmount: cfg.maxLoss, dailyLossLimit: cfg.dailyLoss,
-      profitTarget: cfg.target, profitSplit: 80, evalFee: fee, isOneTime: true,
-      payoutFrequency: "biweekly", maxFundedAccounts: maxFunded, minTradingDays: minDays,
-      consistencyEvalPct, consistencyFundedPct,
-    }));
+    // EOD (Opt 2) — end-of-day drawdown
+    const eodFee = KNOWN_EOD[cfg.size] || 0;
+    if (eodFee > 0) {
+      plans.push(buildPlan({
+        ...FIRM, planId: `bulenox-eod-${cfg.label}`, accountSize: cfg.size,
+        planLabel: `${cfg.label} EOD`,
+        accountType: "EOD",
+        drawdownType: "end_of_day", drawdownAmount: cfg.maxLoss, dailyLossLimit: cfg.dailyLoss,
+        profitTarget: cfg.target, profitSplit: 80, evalFee: eodFee, isOneTime: false,
+        payoutFrequency: "biweekly", maxFundedAccounts: maxFunded, minTradingDays: minDays,
+        consistencyEvalPct, consistencyFundedPct,
+      }));
+    }
   }
+
+  if (plans.length === 0) throw new Error("Could not extract any plans");
   return plans;
 }
 
