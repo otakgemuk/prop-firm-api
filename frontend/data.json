@@ -6,7 +6,6 @@
     "logo_url": null,
     "website_url": "https://apextraderfunding.com",
     "trustpilot": 4.5,
-    "plan_id": "p048",
     "account_size": 25000,
     "plan_label": "Intraday 25K",
     "drawdown_type": "intraday",
@@ -21,7 +20,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 109,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 20,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 50,
+    "plan_id": "p048",
+    "account_type": "Apex Intraday"
   },
   {
     "firm_id": "f02",
@@ -30,7 +35,6 @@
     "logo_url": null,
     "website_url": "https://apextraderfunding.com",
     "trustpilot": 4.5,
-    "plan_id": "p049",
     "account_size": 50000,
     "plan_label": "Intraday 50K",
     "drawdown_type": "intraday",
@@ -45,7 +49,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 94,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 20,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 50,
+    "plan_id": "p049",
+    "account_type": "Apex Intraday"
   },
   {
     "firm_id": "f02",
@@ -54,7 +64,6 @@
     "logo_url": null,
     "website_url": "https://apextraderfunding.com",
     "trustpilot": 4.5,
-    "plan_id": "p050",
     "account_size": 100000,
     "plan_label": "Intraday 100K",
     "drawdown_type": "intraday",
@@ -69,7 +78,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 159,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 20,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 50,
+    "plan_id": "p050",
+    "account_type": "Apex Intraday"
   },
   {
     "firm_id": "f02",
@@ -78,7 +93,6 @@
     "logo_url": null,
     "website_url": "https://apextraderfunding.com",
     "trustpilot": 4.5,
-    "plan_id": "p051",
     "account_size": 150000,
     "plan_label": "Intraday 150K",
     "drawdown_type": "intraday",
@@ -93,7 +107,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 199,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 20,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 50,
+    "plan_id": "p051",
+    "account_type": "Apex Intraday"
   },
   {
     "firm_id": "f02",
@@ -102,7 +122,6 @@
     "logo_url": null,
     "website_url": "https://apextraderfunding.com",
     "trustpilot": 4.5,
-    "plan_id": "p052",
     "account_size": 25000,
     "plan_label": "EOD 25K",
     "drawdown_type": "end_of_day",
@@ -117,7 +136,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 139,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 20,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 50,
+    "plan_id": "p052",
+    "account_type": "Apex EOD"
   },
   {
     "firm_id": "f02",
@@ -126,7 +151,6 @@
     "logo_url": null,
     "website_url": "https://apextraderfunding.com",
     "trustpilot": 4.5,
-    "plan_id": "p053",
     "account_size": 50000,
     "plan_label": "EOD 50K",
     "drawdown_type": "end_of_day",
@@ -141,7 +165,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 154,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 20,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 50,
+    "plan_id": "p053",
+    "account_type": "Apex EOD"
   },
   {
     "firm_id": "f02",
@@ -150,7 +180,6 @@
     "logo_url": null,
     "website_url": "https://apextraderfunding.com",
     "trustpilot": 4.5,
-    "plan_id": "p054",
     "account_size": 100000,
     "plan_label": "EOD 100K",
     "drawdown_type": "end_of_day",
@@ -165,7 +194,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 199,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 20,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 50,
+    "plan_id": "p054",
+    "account_type": "Apex EOD"
   },
   {
     "firm_id": "f02",
@@ -174,7 +209,6 @@
     "logo_url": null,
     "website_url": "https://apextraderfunding.com",
     "trustpilot": 4.5,
-    "plan_id": "p055",
     "account_size": 150000,
     "plan_label": "EOD 150K",
     "drawdown_type": "end_of_day",
@@ -189,7 +223,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 239,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 20,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 50,
+    "plan_id": "p055",
+    "account_type": "Apex EOD"
   },
   {
     "firm_id": "f07",
@@ -198,7 +238,6 @@
     "logo_url": null,
     "website_url": "https://bulenox.com",
     "trustpilot": 4.0,
-    "plan_id": "p056",
     "account_size": 25000,
     "plan_label": "Option 1 25K",
     "drawdown_type": "intraday",
@@ -213,7 +252,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 298,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 40,
+    "plan_id": "p056",
+    "account_type": "Option 1 Intraday"
   },
   {
     "firm_id": "f07",
@@ -222,7 +267,6 @@
     "logo_url": null,
     "website_url": "https://bulenox.com",
     "trustpilot": 4.0,
-    "plan_id": "p057",
     "account_size": 50000,
     "plan_label": "Option 1 50K",
     "drawdown_type": "intraday",
@@ -237,7 +281,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 323,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 40,
+    "plan_id": "p057",
+    "account_type": "Option 1 Intraday"
   },
   {
     "firm_id": "f07",
@@ -246,7 +296,6 @@
     "logo_url": null,
     "website_url": "https://bulenox.com",
     "trustpilot": 4.0,
-    "plan_id": "p058",
     "account_size": 100000,
     "plan_label": "Option 1 100K",
     "drawdown_type": "intraday",
@@ -261,7 +310,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 463,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 40,
+    "plan_id": "p058",
+    "account_type": "Option 1 Intraday"
   },
   {
     "firm_id": "f07",
@@ -270,7 +325,6 @@
     "logo_url": null,
     "website_url": "https://bulenox.com",
     "trustpilot": 4.0,
-    "plan_id": "p059",
     "account_size": 150000,
     "plan_label": "Option 1 150K",
     "drawdown_type": "intraday",
@@ -285,7 +339,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 848,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 40,
+    "plan_id": "p059",
+    "account_type": "Option 1 Intraday"
   },
   {
     "firm_id": "f07",
@@ -294,7 +354,6 @@
     "logo_url": null,
     "website_url": "https://bulenox.com",
     "trustpilot": 4.0,
-    "plan_id": "p060",
     "account_size": 25000,
     "plan_label": "Option 2 25K",
     "drawdown_type": "end_of_day",
@@ -309,7 +368,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 318,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 40,
+    "plan_id": "p060",
+    "account_type": "Option 2 EOD"
   },
   {
     "firm_id": "f07",
@@ -318,7 +383,6 @@
     "logo_url": null,
     "website_url": "https://bulenox.com",
     "trustpilot": 4.0,
-    "plan_id": "p061",
     "account_size": 50000,
     "plan_label": "Option 2 50K",
     "drawdown_type": "end_of_day",
@@ -333,7 +397,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 343,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 40,
+    "plan_id": "p061",
+    "account_type": "Option 2 EOD"
   },
   {
     "firm_id": "f07",
@@ -342,7 +412,6 @@
     "logo_url": null,
     "website_url": "https://bulenox.com",
     "trustpilot": 4.0,
-    "plan_id": "p062",
     "account_size": 100000,
     "plan_label": "Option 2 100K",
     "drawdown_type": "end_of_day",
@@ -357,7 +426,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 523,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 40,
+    "plan_id": "p062",
+    "account_type": "Option 2 EOD"
   },
   {
     "firm_id": "f07",
@@ -366,7 +441,6 @@
     "logo_url": null,
     "website_url": "https://bulenox.com",
     "trustpilot": 4.0,
-    "plan_id": "p063",
     "account_size": 150000,
     "plan_label": "Option 2 150K",
     "drawdown_type": "end_of_day",
@@ -381,7 +455,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 898,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 40,
+    "plan_id": "p063",
+    "account_type": "Option 2 EOD"
   },
   {
     "firm_id": "f09",
@@ -390,7 +470,6 @@
     "logo_url": null,
     "website_url": "https://earn2trade.com",
     "trustpilot": 4.2,
-    "plan_id": "p064",
     "account_size": 50000,
     "plan_label": "Gauntlet 50K",
     "drawdown_type": "end_of_day",
@@ -405,7 +484,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 289,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 10,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p064",
+    "account_type": "Gauntlet Mini"
   },
   {
     "firm_id": "f09",
@@ -414,7 +499,6 @@
     "logo_url": null,
     "website_url": "https://earn2trade.com",
     "trustpilot": 4.2,
-    "plan_id": "p065",
     "account_size": 100000,
     "plan_label": "Gauntlet 100K",
     "drawdown_type": "end_of_day",
@@ -429,7 +513,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 384,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 10,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p065",
+    "account_type": "Gauntlet Mini"
   },
   {
     "firm_id": "f09",
@@ -438,7 +528,6 @@
     "logo_url": null,
     "website_url": "https://earn2trade.com",
     "trustpilot": 4.2,
-    "plan_id": "p066",
     "account_size": 150000,
     "plan_label": "Gauntlet 150K",
     "drawdown_type": "end_of_day",
@@ -453,7 +542,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 454,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 10,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p066",
+    "account_type": "Gauntlet Mini"
   },
   {
     "firm_id": "f09",
@@ -462,7 +557,6 @@
     "logo_url": null,
     "website_url": "https://earn2trade.com",
     "trustpilot": 4.2,
-    "plan_id": "p067",
     "account_size": 200000,
     "plan_label": "Gauntlet 200K",
     "drawdown_type": "end_of_day",
@@ -477,7 +571,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 539,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 10,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p067",
+    "account_type": "Gauntlet Mini"
   },
   {
     "firm_id": "f09",
@@ -486,7 +586,6 @@
     "logo_url": null,
     "website_url": "https://earn2trade.com",
     "trustpilot": 4.2,
-    "plan_id": "p068",
     "account_size": 25000,
     "plan_label": "TCP 25K",
     "drawdown_type": "end_of_day",
@@ -501,7 +600,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 229,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 10,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p068",
+    "account_type": "TCP"
   },
   {
     "firm_id": "f09",
@@ -510,7 +615,6 @@
     "logo_url": null,
     "website_url": "https://earn2trade.com",
     "trustpilot": 4.2,
-    "plan_id": "p069",
     "account_size": 50000,
     "plan_label": "TCP 50K",
     "drawdown_type": "end_of_day",
@@ -525,7 +629,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 289,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 10,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p069",
+    "account_type": "TCP"
   },
   {
     "firm_id": "f09",
@@ -534,7 +644,6 @@
     "logo_url": null,
     "website_url": "https://earn2trade.com",
     "trustpilot": 4.2,
-    "plan_id": "p070",
     "account_size": 100000,
     "plan_label": "TCP 100K",
     "drawdown_type": "end_of_day",
@@ -549,7 +658,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 409,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 10,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p070",
+    "account_type": "TCP"
   },
   {
     "firm_id": "f08",
@@ -558,7 +673,6 @@
     "logo_url": null,
     "website_url": "https://elitetraderfunding.com",
     "trustpilot": 4.3,
-    "plan_id": "p071",
     "account_size": 50000,
     "plan_label": "1-Step 50K",
     "drawdown_type": "intraday",
@@ -573,7 +687,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 252,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p071",
+    "account_type": "1-Step"
   },
   {
     "firm_id": "f08",
@@ -582,7 +702,6 @@
     "logo_url": null,
     "website_url": "https://elitetraderfunding.com",
     "trustpilot": 4.3,
-    "plan_id": "p072",
     "account_size": 100000,
     "plan_label": "1-Step 100K",
     "drawdown_type": "intraday",
@@ -597,7 +716,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 292,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p072",
+    "account_type": "1-Step"
   },
   {
     "firm_id": "f08",
@@ -606,7 +731,6 @@
     "logo_url": null,
     "website_url": "https://elitetraderfunding.com",
     "trustpilot": 4.3,
-    "plan_id": "p073",
     "account_size": 150000,
     "plan_label": "1-Step 150K",
     "drawdown_type": "intraday",
@@ -621,7 +745,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 382,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p073",
+    "account_type": "1-Step"
   },
   {
     "firm_id": "f08",
@@ -630,7 +760,6 @@
     "logo_url": null,
     "website_url": "https://elitetraderfunding.com",
     "trustpilot": 4.3,
-    "plan_id": "p074",
     "account_size": 250000,
     "plan_label": "1-Step 250K",
     "drawdown_type": "intraday",
@@ -645,7 +774,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 602,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p074",
+    "account_type": "1-Step"
   },
   {
     "firm_id": "f08",
@@ -654,7 +789,6 @@
     "logo_url": null,
     "website_url": "https://elitetraderfunding.com",
     "trustpilot": 4.3,
-    "plan_id": "p075",
     "account_size": 50000,
     "plan_label": "EOD 50K",
     "drawdown_type": "end_of_day",
@@ -669,7 +803,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 382,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p075",
+    "account_type": "EOD"
   },
   {
     "firm_id": "f08",
@@ -678,7 +818,6 @@
     "logo_url": null,
     "website_url": "https://elitetraderfunding.com",
     "trustpilot": 4.3,
-    "plan_id": "p076",
     "account_size": 100000,
     "plan_label": "EOD 100K",
     "drawdown_type": "end_of_day",
@@ -693,7 +832,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 442,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p076",
+    "account_type": "EOD"
   },
   {
     "firm_id": "f08",
@@ -702,7 +847,6 @@
     "logo_url": null,
     "website_url": "https://elitetraderfunding.com",
     "trustpilot": 4.3,
-    "plan_id": "p077",
     "account_size": 100000,
     "plan_label": "Fast Track 100K",
     "drawdown_type": "intraday",
@@ -717,7 +861,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 75,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 3,
+    "consistency_eval": 40,
+    "consistency_funded": null,
+    "plan_id": "p077",
+    "account_type": "Fast Track"
   },
   {
     "firm_id": "f08",
@@ -726,7 +876,6 @@
     "logo_url": null,
     "website_url": "https://elitetraderfunding.com",
     "trustpilot": 4.3,
-    "plan_id": "p078",
     "account_size": 10000,
     "plan_label": "Static 10K",
     "drawdown_type": "static",
@@ -741,7 +890,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 99,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p078",
+    "account_type": "Static"
   },
   {
     "firm_id": "f08",
@@ -750,7 +905,6 @@
     "logo_url": null,
     "website_url": "https://elitetraderfunding.com",
     "trustpilot": 4.3,
-    "plan_id": "p079",
     "account_size": 50000,
     "plan_label": "Static 50K",
     "drawdown_type": "static",
@@ -765,7 +919,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 449,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p079",
+    "account_type": "Static"
   },
   {
     "firm_id": "f08",
@@ -774,7 +934,6 @@
     "logo_url": null,
     "website_url": "https://elitetraderfunding.com",
     "trustpilot": 4.3,
-    "plan_id": "p080",
     "account_size": 100000,
     "plan_label": "DH 100K",
     "drawdown_type": "end_of_day",
@@ -789,7 +948,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 452,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p080",
+    "account_type": "Diamond Hands"
   },
   {
     "firm_id": "f08",
@@ -798,7 +963,6 @@
     "logo_url": null,
     "website_url": "https://elitetraderfunding.com",
     "trustpilot": 4.3,
-    "plan_id": "p081",
     "account_size": 50000,
     "plan_label": "DTF 50K",
     "drawdown_type": "end_of_day",
@@ -813,7 +977,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 646,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 5,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p081",
+    "account_type": "DTF"
   },
   {
     "firm_id": "f08",
@@ -822,7 +992,6 @@
     "logo_url": null,
     "website_url": "https://elitetraderfunding.com",
     "trustpilot": 4.3,
-    "plan_id": "p082",
     "account_size": 100000,
     "plan_label": "DTF 100K",
     "drawdown_type": "static",
@@ -837,7 +1006,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 696,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 5,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p082",
+    "account_type": "DTF"
   },
   {
     "firm_id": "f12",
@@ -846,7 +1021,6 @@
     "logo_url": null,
     "website_url": "https://legendstrading.com",
     "trustpilot": null,
-    "plan_id": "p083",
     "account_size": 25000,
     "plan_label": "Apprentice 25K",
     "drawdown_type": "end_of_day",
@@ -861,7 +1035,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 264,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 4,
+    "consistency_eval": 30,
+    "consistency_funded": 30,
+    "plan_id": "p083",
+    "account_type": "Apprentice"
   },
   {
     "firm_id": "f12",
@@ -870,7 +1050,6 @@
     "logo_url": null,
     "website_url": "https://legendstrading.com",
     "trustpilot": null,
-    "plan_id": "p084",
     "account_size": 50000,
     "plan_label": "Apprentice 50K",
     "drawdown_type": "end_of_day",
@@ -885,7 +1064,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 284,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 4,
+    "consistency_eval": 30,
+    "consistency_funded": 30,
+    "plan_id": "p084",
+    "account_type": "Apprentice"
   },
   {
     "firm_id": "f12",
@@ -894,7 +1079,6 @@
     "logo_url": null,
     "website_url": "https://legendstrading.com",
     "trustpilot": null,
-    "plan_id": "p085",
     "account_size": 100000,
     "plan_label": "Apprentice 100K",
     "drawdown_type": "end_of_day",
@@ -909,7 +1093,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 374,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 4,
+    "consistency_eval": 30,
+    "consistency_funded": 30,
+    "plan_id": "p085",
+    "account_type": "Apprentice"
   },
   {
     "firm_id": "f12",
@@ -918,7 +1108,6 @@
     "logo_url": null,
     "website_url": "https://legendstrading.com",
     "trustpilot": null,
-    "plan_id": "p086",
     "account_size": 150000,
     "plan_label": "Apprentice 150K",
     "drawdown_type": "end_of_day",
@@ -933,7 +1122,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 519,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 4,
+    "consistency_eval": 30,
+    "consistency_funded": 30,
+    "plan_id": "p086",
+    "account_type": "Apprentice"
   },
   {
     "firm_id": "f12",
@@ -942,7 +1137,6 @@
     "logo_url": null,
     "website_url": "https://legendstrading.com",
     "trustpilot": null,
-    "plan_id": "p087",
     "account_size": 25000,
     "plan_label": "Elite 25K",
     "drawdown_type": "end_of_day",
@@ -957,7 +1151,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 95,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 40,
+    "consistency_funded": 40,
+    "plan_id": "p087",
+    "account_type": "Elite"
   },
   {
     "firm_id": "f12",
@@ -966,7 +1166,6 @@
     "logo_url": null,
     "website_url": "https://legendstrading.com",
     "trustpilot": null,
-    "plan_id": "p088",
     "account_size": 50000,
     "plan_label": "Elite 50K",
     "drawdown_type": "end_of_day",
@@ -981,7 +1180,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 121,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 40,
+    "consistency_funded": 40,
+    "plan_id": "p088",
+    "account_type": "Elite"
   },
   {
     "firm_id": "f12",
@@ -990,7 +1195,6 @@
     "logo_url": null,
     "website_url": "https://legendstrading.com",
     "trustpilot": null,
-    "plan_id": "p089",
     "account_size": 100000,
     "plan_label": "Elite 100K",
     "drawdown_type": "end_of_day",
@@ -1005,7 +1209,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 182,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 40,
+    "consistency_funded": 40,
+    "plan_id": "p089",
+    "account_type": "Elite"
   },
   {
     "firm_id": "f12",
@@ -1014,7 +1224,6 @@
     "logo_url": null,
     "website_url": "https://legendstrading.com",
     "trustpilot": null,
-    "plan_id": "p090",
     "account_size": 150000,
     "plan_label": "Elite 150K",
     "drawdown_type": "end_of_day",
@@ -1029,7 +1238,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 278,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 40,
+    "consistency_funded": 40,
+    "plan_id": "p090",
+    "account_type": "Elite"
   },
   {
     "firm_id": "f05",
@@ -1038,7 +1253,6 @@
     "logo_url": null,
     "website_url": "https://lucidtrading.com",
     "trustpilot": 4.2,
-    "plan_id": "p091",
     "account_size": 25000,
     "plan_label": "S2F 25K",
     "drawdown_type": "end_of_day",
@@ -1053,7 +1267,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 238,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": null,
+    "consistency_funded": 20,
+    "plan_id": "p091",
+    "account_type": "S2F"
   },
   {
     "firm_id": "f05",
@@ -1062,7 +1282,6 @@
     "logo_url": null,
     "website_url": "https://lucidtrading.com",
     "trustpilot": 4.2,
-    "plan_id": "p092",
     "account_size": 50000,
     "plan_label": "S2F 50K",
     "drawdown_type": "end_of_day",
@@ -1077,7 +1296,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 364,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": null,
+    "consistency_funded": 20,
+    "plan_id": "p092",
+    "account_type": "S2F"
   },
   {
     "firm_id": "f05",
@@ -1086,7 +1311,6 @@
     "logo_url": null,
     "website_url": "https://lucidtrading.com",
     "trustpilot": 4.2,
-    "plan_id": "p093",
     "account_size": 100000,
     "plan_label": "S2F 100K",
     "drawdown_type": "end_of_day",
@@ -1101,7 +1325,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 490,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": null,
+    "consistency_funded": 20,
+    "plan_id": "p093",
+    "account_type": "S2F"
   },
   {
     "firm_id": "f05",
@@ -1110,7 +1340,6 @@
     "logo_url": null,
     "website_url": "https://lucidtrading.com",
     "trustpilot": 4.2,
-    "plan_id": "p094",
     "account_size": 150000,
     "plan_label": "S2F 150K",
     "drawdown_type": "end_of_day",
@@ -1125,7 +1354,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 588,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": null,
+    "consistency_funded": 20,
+    "plan_id": "p094",
+    "account_type": "S2F"
   },
   {
     "firm_id": "f05",
@@ -1134,7 +1369,6 @@
     "logo_url": null,
     "website_url": "https://lucidtrading.com",
     "trustpilot": 4.2,
-    "plan_id": "p095",
     "account_size": 25000,
     "plan_label": "LucidPro 25K",
     "drawdown_type": "end_of_day",
@@ -1149,7 +1383,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 81,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 40,
+    "plan_id": "p095",
+    "account_type": "Pro"
   },
   {
     "firm_id": "f05",
@@ -1158,7 +1398,6 @@
     "logo_url": null,
     "website_url": "https://lucidtrading.com",
     "trustpilot": 4.2,
-    "plan_id": "p096",
     "account_size": 50000,
     "plan_label": "LucidPro 50K",
     "drawdown_type": "end_of_day",
@@ -1173,7 +1412,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 111,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 40,
+    "plan_id": "p096",
+    "account_type": "Pro"
   },
   {
     "firm_id": "f05",
@@ -1182,7 +1427,6 @@
     "logo_url": null,
     "website_url": "https://lucidtrading.com",
     "trustpilot": 4.2,
-    "plan_id": "p097",
     "account_size": 100000,
     "plan_label": "LucidPro 100K",
     "drawdown_type": "end_of_day",
@@ -1197,7 +1441,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 171,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 40,
+    "plan_id": "p097",
+    "account_type": "Pro"
   },
   {
     "firm_id": "f05",
@@ -1206,7 +1456,6 @@
     "logo_url": null,
     "website_url": "https://lucidtrading.com",
     "trustpilot": 4.2,
-    "plan_id": "p098",
     "account_size": 150000,
     "plan_label": "LucidPro 150K",
     "drawdown_type": "end_of_day",
@@ -1221,7 +1470,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 222,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 40,
+    "plan_id": "p098",
+    "account_type": "Pro"
   },
   {
     "firm_id": "f05",
@@ -1230,7 +1485,6 @@
     "logo_url": null,
     "website_url": "https://lucidtrading.com",
     "trustpilot": 4.2,
-    "plan_id": "p099",
     "account_size": 25000,
     "plan_label": "LucidFlex 25K",
     "drawdown_type": "end_of_day",
@@ -1245,7 +1499,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 60,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 2,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p099",
+    "account_type": "Flex"
   },
   {
     "firm_id": "f05",
@@ -1254,7 +1514,6 @@
     "logo_url": null,
     "website_url": "https://lucidtrading.com",
     "trustpilot": 4.2,
-    "plan_id": "p100",
     "account_size": 50000,
     "plan_label": "LucidFlex 50K",
     "drawdown_type": "end_of_day",
@@ -1269,7 +1528,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 84,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 2,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p100",
+    "account_type": "Flex"
   },
   {
     "firm_id": "f05",
@@ -1278,7 +1543,6 @@
     "logo_url": null,
     "website_url": "https://lucidtrading.com",
     "trustpilot": 4.2,
-    "plan_id": "p101",
     "account_size": 100000,
     "plan_label": "LucidFlex 100K",
     "drawdown_type": "end_of_day",
@@ -1293,7 +1557,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 135,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 2,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p101",
+    "account_type": "Flex"
   },
   {
     "firm_id": "f05",
@@ -1302,7 +1572,6 @@
     "logo_url": null,
     "website_url": "https://lucidtrading.com",
     "trustpilot": 4.2,
-    "plan_id": "p102",
     "account_size": 150000,
     "plan_label": "LucidFlex 150K",
     "drawdown_type": "end_of_day",
@@ -1317,7 +1586,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 252,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 2,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p102",
+    "account_type": "Flex"
   },
   {
     "firm_id": "f13",
@@ -1326,7 +1601,6 @@
     "logo_url": null,
     "website_url": "https://oneuptrader.com",
     "trustpilot": null,
-    "plan_id": "p103",
     "account_size": 25000,
     "plan_label": "25K",
     "drawdown_type": "trailing",
@@ -1341,7 +1615,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 65,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 10,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p103",
+    "account_type": "OneUp"
   },
   {
     "firm_id": "f13",
@@ -1350,7 +1630,6 @@
     "logo_url": null,
     "website_url": "https://oneuptrader.com",
     "trustpilot": null,
-    "plan_id": "p104",
     "account_size": 50000,
     "plan_label": "50K",
     "drawdown_type": "trailing",
@@ -1365,7 +1644,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 75,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 10,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p104",
+    "account_type": "OneUp"
   },
   {
     "firm_id": "f13",
@@ -1374,7 +1659,6 @@
     "logo_url": null,
     "website_url": "https://oneuptrader.com",
     "trustpilot": null,
-    "plan_id": "p105",
     "account_size": 100000,
     "plan_label": "100K",
     "drawdown_type": "trailing",
@@ -1389,7 +1673,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 150,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 10,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p105",
+    "account_type": "OneUp"
   },
   {
     "firm_id": "f13",
@@ -1398,7 +1688,6 @@
     "logo_url": null,
     "website_url": "https://oneuptrader.com",
     "trustpilot": null,
-    "plan_id": "p106",
     "account_size": 150000,
     "plan_label": "150K",
     "drawdown_type": "trailing",
@@ -1413,7 +1702,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 175,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 10,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p106",
+    "account_type": "OneUp"
   },
   {
     "firm_id": "f13",
@@ -1422,7 +1717,6 @@
     "logo_url": null,
     "website_url": "https://oneuptrader.com",
     "trustpilot": null,
-    "plan_id": "p107",
     "account_size": 250000,
     "plan_label": "250K",
     "drawdown_type": "trailing",
@@ -1437,7 +1731,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 325,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 10,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p107",
+    "account_type": "OneUp"
   },
   {
     "firm_id": "f06",
@@ -1446,7 +1746,6 @@
     "logo_url": null,
     "website_url": "https://takeprofittrader.com",
     "trustpilot": 4.1,
-    "plan_id": "p108",
     "account_size": 25000,
     "plan_label": "25K",
     "drawdown_type": "end_of_day",
@@ -1461,7 +1760,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 280,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 5,
+    "min_trading_days": 5,
+    "consistency_eval": 50,
+    "consistency_funded": null,
+    "plan_id": "p108",
+    "account_type": "TakeProfit"
   },
   {
     "firm_id": "f06",
@@ -1470,7 +1775,6 @@
     "logo_url": null,
     "website_url": "https://takeprofittrader.com",
     "trustpilot": 4.1,
-    "plan_id": "p109",
     "account_size": 50000,
     "plan_label": "50K",
     "drawdown_type": "end_of_day",
@@ -1485,7 +1789,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 300,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 5,
+    "min_trading_days": 5,
+    "consistency_eval": 50,
+    "consistency_funded": null,
+    "plan_id": "p109",
+    "account_type": "TakeProfit"
   },
   {
     "firm_id": "f06",
@@ -1494,7 +1804,6 @@
     "logo_url": null,
     "website_url": "https://takeprofittrader.com",
     "trustpilot": 4.1,
-    "plan_id": "p110",
     "account_size": 75000,
     "plan_label": "75K",
     "drawdown_type": "end_of_day",
@@ -1509,7 +1818,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 380,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 5,
+    "min_trading_days": 5,
+    "consistency_eval": 50,
+    "consistency_funded": null,
+    "plan_id": "p110",
+    "account_type": "TakeProfit"
   },
   {
     "firm_id": "f06",
@@ -1518,7 +1833,6 @@
     "logo_url": null,
     "website_url": "https://takeprofittrader.com",
     "trustpilot": 4.1,
-    "plan_id": "p111",
     "account_size": 100000,
     "plan_label": "100K",
     "drawdown_type": "end_of_day",
@@ -1533,7 +1847,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 460,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 5,
+    "min_trading_days": 5,
+    "consistency_eval": 50,
+    "consistency_funded": null,
+    "plan_id": "p111",
+    "account_type": "TakeProfit"
   },
   {
     "firm_id": "f06",
@@ -1542,7 +1862,6 @@
     "logo_url": null,
     "website_url": "https://takeprofittrader.com",
     "trustpilot": 4.1,
-    "plan_id": "p112",
     "account_size": 150000,
     "plan_label": "150K",
     "drawdown_type": "end_of_day",
@@ -1557,7 +1876,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 490,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 5,
+    "min_trading_days": 5,
+    "consistency_eval": 50,
+    "consistency_funded": null,
+    "plan_id": "p112",
+    "account_type": "TakeProfit"
   },
   {
     "firm_id": "f04",
@@ -1566,7 +1891,6 @@
     "logo_url": null,
     "website_url": "https://tradeday.com",
     "trustpilot": 4.6,
-    "plan_id": "p113",
     "account_size": 50000,
     "plan_label": "Intraday 50K",
     "drawdown_type": "intraday",
@@ -1581,7 +1905,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 264,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p113",
+    "account_type": "Intraday"
   },
   {
     "firm_id": "f04",
@@ -1590,7 +1920,6 @@
     "logo_url": null,
     "website_url": "https://tradeday.com",
     "trustpilot": 4.6,
-    "plan_id": "p114",
     "account_size": 100000,
     "plan_label": "Intraday 100K",
     "drawdown_type": "intraday",
@@ -1605,7 +1934,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 339,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p114",
+    "account_type": "Intraday"
   },
   {
     "firm_id": "f04",
@@ -1614,7 +1949,6 @@
     "logo_url": null,
     "website_url": "https://tradeday.com",
     "trustpilot": 4.6,
-    "plan_id": "p115",
     "account_size": 150000,
     "plan_label": "Intraday 150K",
     "drawdown_type": "intraday",
@@ -1629,7 +1963,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 439,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p115",
+    "account_type": "Intraday"
   },
   {
     "firm_id": "f04",
@@ -1638,7 +1978,6 @@
     "logo_url": null,
     "website_url": "https://tradeday.com",
     "trustpilot": 4.6,
-    "plan_id": "p116",
     "account_size": 50000,
     "plan_label": "EOD 50K",
     "drawdown_type": "end_of_day",
@@ -1653,7 +1992,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 314,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p116",
+    "account_type": "EOD"
   },
   {
     "firm_id": "f04",
@@ -1662,7 +2007,6 @@
     "logo_url": null,
     "website_url": "https://tradeday.com",
     "trustpilot": 4.6,
-    "plan_id": "p117",
     "account_size": 100000,
     "plan_label": "EOD 100K",
     "drawdown_type": "end_of_day",
@@ -1677,7 +2021,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 414,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p117",
+    "account_type": "EOD"
   },
   {
     "firm_id": "f04",
@@ -1686,7 +2036,6 @@
     "logo_url": null,
     "website_url": "https://tradeday.com",
     "trustpilot": 4.6,
-    "plan_id": "p118",
     "account_size": 150000,
     "plan_label": "EOD 150K",
     "drawdown_type": "end_of_day",
@@ -1701,7 +2050,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 514,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p118",
+    "account_type": "EOD"
   },
   {
     "firm_id": "f04",
@@ -1710,7 +2065,6 @@
     "logo_url": null,
     "website_url": "https://tradeday.com",
     "trustpilot": 4.6,
-    "plan_id": "p119",
     "account_size": 50000,
     "plan_label": "Static 50K",
     "drawdown_type": "static",
@@ -1725,7 +2079,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 304,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p119",
+    "account_type": "Static"
   },
   {
     "firm_id": "f04",
@@ -1734,7 +2094,6 @@
     "logo_url": null,
     "website_url": "https://tradeday.com",
     "trustpilot": 4.6,
-    "plan_id": "p120",
     "account_size": 100000,
     "plan_label": "Static 100K",
     "drawdown_type": "static",
@@ -1749,7 +2108,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 404,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p120",
+    "account_type": "Static"
   },
   {
     "firm_id": "f04",
@@ -1758,7 +2123,6 @@
     "logo_url": null,
     "website_url": "https://tradeday.com",
     "trustpilot": 4.6,
-    "plan_id": "p121",
     "account_size": 150000,
     "plan_label": "Static 150K",
     "drawdown_type": "static",
@@ -1773,7 +2137,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 499,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": 30,
+    "consistency_funded": null,
+    "plan_id": "p121",
+    "account_type": "Static"
   },
   {
     "firm_id": "f11",
@@ -1782,7 +2152,6 @@
     "logo_url": null,
     "website_url": "https://tradeify.co",
     "trustpilot": 4.5,
-    "plan_id": "p122",
     "account_size": 25000,
     "plan_label": "Growth 25K",
     "drawdown_type": "end_of_day",
@@ -1797,7 +2166,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 59,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 35,
+    "plan_id": "p122",
+    "account_type": "Growth"
   },
   {
     "firm_id": "f11",
@@ -1806,7 +2181,6 @@
     "logo_url": null,
     "website_url": "https://tradeify.co",
     "trustpilot": 4.5,
-    "plan_id": "p123",
     "account_size": 50000,
     "plan_label": "Growth 50K",
     "drawdown_type": "end_of_day",
@@ -1821,7 +2195,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 87,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 35,
+    "plan_id": "p123",
+    "account_type": "Growth"
   },
   {
     "firm_id": "f11",
@@ -1830,7 +2210,6 @@
     "logo_url": null,
     "website_url": "https://tradeify.co",
     "trustpilot": 4.5,
-    "plan_id": "p124",
     "account_size": 100000,
     "plan_label": "Growth 100K",
     "drawdown_type": "end_of_day",
@@ -1845,7 +2224,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 153,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 35,
+    "plan_id": "p124",
+    "account_type": "Growth"
   },
   {
     "firm_id": "f11",
@@ -1854,7 +2239,6 @@
     "logo_url": null,
     "website_url": "https://tradeify.co",
     "trustpilot": 4.5,
-    "plan_id": "p125",
     "account_size": 150000,
     "plan_label": "Growth 150K",
     "drawdown_type": "end_of_day",
@@ -1869,7 +2253,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 221,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 35,
+    "plan_id": "p125",
+    "account_type": "Growth"
   },
   {
     "firm_id": "f11",
@@ -1878,7 +2268,6 @@
     "logo_url": null,
     "website_url": "https://tradeify.co",
     "trustpilot": 4.5,
-    "plan_id": "p126",
     "account_size": 25000,
     "plan_label": "Lightning 25K",
     "drawdown_type": "end_of_day",
@@ -1893,7 +2282,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 197,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": null,
+    "consistency_funded": 20,
+    "plan_id": "p126",
+    "account_type": "Lightning"
   },
   {
     "firm_id": "f11",
@@ -1902,7 +2297,6 @@
     "logo_url": null,
     "website_url": "https://tradeify.co",
     "trustpilot": 4.5,
-    "plan_id": "p127",
     "account_size": 50000,
     "plan_label": "Lightning 50K",
     "drawdown_type": "end_of_day",
@@ -1917,7 +2311,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 281,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": null,
+    "consistency_funded": 20,
+    "plan_id": "p127",
+    "account_type": "Lightning"
   },
   {
     "firm_id": "f11",
@@ -1926,7 +2326,6 @@
     "logo_url": null,
     "website_url": "https://tradeify.co",
     "trustpilot": 4.5,
-    "plan_id": "p128",
     "account_size": 100000,
     "plan_label": "Lightning 100K",
     "drawdown_type": "end_of_day",
@@ -1941,7 +2340,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 377,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": null,
+    "consistency_funded": 20,
+    "plan_id": "p128",
+    "account_type": "Lightning"
   },
   {
     "firm_id": "f11",
@@ -1950,7 +2355,6 @@
     "logo_url": null,
     "website_url": "https://tradeify.co",
     "trustpilot": 4.5,
-    "plan_id": "p129",
     "account_size": 150000,
     "plan_label": "Lightning 150K",
     "drawdown_type": "end_of_day",
@@ -1965,7 +2369,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 455,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 5,
+    "consistency_eval": null,
+    "consistency_funded": 20,
+    "plan_id": "p129",
+    "account_type": "Lightning"
   },
   {
     "firm_id": "f11",
@@ -1974,7 +2384,6 @@
     "logo_url": null,
     "website_url": "https://tradeify.co",
     "trustpilot": 4.5,
-    "plan_id": "p130",
     "account_size": 25000,
     "plan_label": "Select 25K",
     "drawdown_type": "end_of_day",
@@ -1989,7 +2398,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 65,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 3,
+    "consistency_eval": 40,
+    "consistency_funded": null,
+    "plan_id": "p130",
+    "account_type": "Select"
   },
   {
     "firm_id": "f11",
@@ -1998,7 +2413,6 @@
     "logo_url": null,
     "website_url": "https://tradeify.co",
     "trustpilot": 4.5,
-    "plan_id": "p131",
     "account_size": 50000,
     "plan_label": "Select 50K",
     "drawdown_type": "end_of_day",
@@ -2013,7 +2427,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 99,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 3,
+    "consistency_eval": 40,
+    "consistency_funded": null,
+    "plan_id": "p131",
+    "account_type": "Select"
   },
   {
     "firm_id": "f11",
@@ -2022,7 +2442,6 @@
     "logo_url": null,
     "website_url": "https://tradeify.co",
     "trustpilot": 4.5,
-    "plan_id": "p132",
     "account_size": 100000,
     "plan_label": "Select 100K",
     "drawdown_type": "end_of_day",
@@ -2037,7 +2456,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 159,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 3,
+    "consistency_eval": 40,
+    "consistency_funded": null,
+    "plan_id": "p132",
+    "account_type": "Select"
   },
   {
     "firm_id": "f11",
@@ -2046,7 +2471,6 @@
     "logo_url": null,
     "website_url": "https://tradeify.co",
     "trustpilot": 4.5,
-    "plan_id": "p133",
     "account_size": 150000,
     "plan_label": "Select 150K",
     "drawdown_type": "end_of_day",
@@ -2061,7 +2485,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 221,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 3,
+    "consistency_eval": 40,
+    "consistency_funded": null,
+    "plan_id": "p133",
+    "account_type": "Select"
   },
   {
     "firm_id": "f14",
@@ -2070,7 +2500,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p134",
     "account_size": 25000,
     "plan_label": "Standard OG 25K",
     "drawdown_type": "intraday",
@@ -2085,7 +2514,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 285,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 15,
+    "consistency_eval": 40,
+    "consistency_funded": null,
+    "plan_id": "p134",
+    "account_type": "Standard OG: 40% consistency; 15 min days; Exhibition + funded phases; $126/mo data"
   },
   {
     "firm_id": "f14",
@@ -2094,7 +2529,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p135",
     "account_size": 25000,
     "plan_label": "Standard MAX 25K",
     "drawdown_type": "intraday",
@@ -2109,7 +2543,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 165,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 15,
+    "consistency_eval": 40,
+    "consistency_funded": null,
+    "plan_id": "p135",
+    "account_type": "Standard MAX: Skip Exhibition; straight to funded; 40% consistency; 15 min days"
   },
   {
     "firm_id": "f14",
@@ -2118,7 +2558,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p136",
     "account_size": 25000,
     "plan_label": "Express OG 25K",
     "drawdown_type": "intraday",
@@ -2133,7 +2572,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 285,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 7,
+    "consistency_eval": 15,
+    "consistency_funded": null,
+    "plan_id": "p136",
+    "account_type": "Express OG: 15% consistency (stricter); 7 min days; Exhibition + funded phases"
   },
   {
     "firm_id": "f14",
@@ -2142,7 +2587,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p137",
     "account_size": 25000,
     "plan_label": "Express MAX 25K",
     "drawdown_type": "intraday",
@@ -2157,7 +2601,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 165,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 7,
+    "consistency_eval": 15,
+    "consistency_funded": null,
+    "plan_id": "p137",
+    "account_type": "Express MAX: Skip Exhibition; straight to funded; 15% consistency; 7 min days; fastest"
   },
   {
     "firm_id": "f14",
@@ -2166,7 +2616,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p138",
     "account_size": 50000,
     "plan_label": "Standard OG 50K",
     "drawdown_type": "intraday",
@@ -2181,7 +2630,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 305,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 15,
+    "consistency_eval": 40,
+    "consistency_funded": null,
+    "plan_id": "p138",
+    "account_type": "Standard OG: 40% consistency; 15 min days; Exhibition + funded phases; $126/mo data"
   },
   {
     "firm_id": "f14",
@@ -2190,7 +2645,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p139",
     "account_size": 50000,
     "plan_label": "Standard MAX 50K",
     "drawdown_type": "intraday",
@@ -2205,7 +2659,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 185,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 15,
+    "consistency_eval": 40,
+    "consistency_funded": null,
+    "plan_id": "p139",
+    "account_type": "Standard MAX: Skip Exhibition; straight to funded; 40% consistency; 15 min days"
   },
   {
     "firm_id": "f14",
@@ -2214,7 +2674,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p140",
     "account_size": 50000,
     "plan_label": "Express OG 50K",
     "drawdown_type": "intraday",
@@ -2229,7 +2688,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 305,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 7,
+    "consistency_eval": 15,
+    "consistency_funded": null,
+    "plan_id": "p140",
+    "account_type": "Express OG: 15% consistency (stricter); 7 min days; Exhibition + funded phases"
   },
   {
     "firm_id": "f14",
@@ -2238,7 +2703,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p141",
     "account_size": 50000,
     "plan_label": "Express MAX 50K",
     "drawdown_type": "intraday",
@@ -2253,7 +2717,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 185,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 7,
+    "consistency_eval": 15,
+    "consistency_funded": null,
+    "plan_id": "p141",
+    "account_type": "Express MAX: Skip Exhibition; straight to funded; 15% consistency; 7 min days; fastest"
   },
   {
     "firm_id": "f14",
@@ -2262,7 +2732,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p142",
     "account_size": 100000,
     "plan_label": "Standard OG 100K",
     "drawdown_type": "intraday",
@@ -2277,7 +2746,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 460,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 15,
+    "consistency_eval": 40,
+    "consistency_funded": null,
+    "plan_id": "p142",
+    "account_type": "Standard OG: 40% consistency; 15 min days; Exhibition + funded phases; $126/mo data"
   },
   {
     "firm_id": "f14",
@@ -2286,7 +2761,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p143",
     "account_size": 100000,
     "plan_label": "Standard MAX 100K",
     "drawdown_type": "intraday",
@@ -2301,7 +2775,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 340,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 15,
+    "consistency_eval": 40,
+    "consistency_funded": null,
+    "plan_id": "p143",
+    "account_type": "Standard MAX: Skip Exhibition; straight to funded; 40% consistency; 15 min days"
   },
   {
     "firm_id": "f14",
@@ -2310,7 +2790,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p144",
     "account_size": 100000,
     "plan_label": "Express OG 100K",
     "drawdown_type": "intraday",
@@ -2325,7 +2804,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 460,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 7,
+    "consistency_eval": 15,
+    "consistency_funded": null,
+    "plan_id": "p144",
+    "account_type": "Express OG: 15% consistency (stricter); 7 min days; Exhibition + funded phases"
   },
   {
     "firm_id": "f14",
@@ -2334,7 +2819,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p145",
     "account_size": 100000,
     "plan_label": "Express MAX 100K",
     "drawdown_type": "intraday",
@@ -2349,7 +2833,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 340,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 7,
+    "consistency_eval": 15,
+    "consistency_funded": null,
+    "plan_id": "p145",
+    "account_type": "Express MAX: Skip Exhibition; straight to funded; 15% consistency; 7 min days; fastest"
   },
   {
     "firm_id": "f14",
@@ -2358,7 +2848,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p146",
     "account_size": 150000,
     "plan_label": "Standard OG 150K",
     "drawdown_type": "intraday",
@@ -2373,7 +2862,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 515,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 15,
+    "consistency_eval": 40,
+    "consistency_funded": null,
+    "plan_id": "p146",
+    "account_type": "Standard OG: 40% consistency; 15 min days; Exhibition + funded phases; $126/mo data"
   },
   {
     "firm_id": "f14",
@@ -2382,7 +2877,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p147",
     "account_size": 150000,
     "plan_label": "Standard MAX 150K",
     "drawdown_type": "intraday",
@@ -2397,7 +2891,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 395,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 15,
+    "consistency_eval": 40,
+    "consistency_funded": null,
+    "plan_id": "p147",
+    "account_type": "Standard MAX: Skip Exhibition; straight to funded; 40% consistency; 15 min days"
   },
   {
     "firm_id": "f14",
@@ -2406,7 +2906,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p148",
     "account_size": 150000,
     "plan_label": "Express OG 150K",
     "drawdown_type": "intraday",
@@ -2421,7 +2920,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 515,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 7,
+    "consistency_eval": 15,
+    "consistency_funded": null,
+    "plan_id": "p148",
+    "account_type": "Express OG: 15% consistency (stricter); 7 min days; Exhibition + funded phases"
   },
   {
     "firm_id": "f14",
@@ -2430,7 +2935,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p149",
     "account_size": 150000,
     "plan_label": "Express MAX 150K",
     "drawdown_type": "intraday",
@@ -2445,7 +2949,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 395,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 7,
+    "consistency_eval": 15,
+    "consistency_funded": null,
+    "plan_id": "p149",
+    "account_type": "Express MAX: Skip Exhibition; straight to funded; 15% consistency; 7 min days; fastest"
   },
   {
     "firm_id": "f14",
@@ -2454,7 +2964,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p150",
     "account_size": 250000,
     "plan_label": "Standard OG 250K",
     "drawdown_type": "intraday",
@@ -2469,7 +2978,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 840,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 15,
+    "consistency_eval": 40,
+    "consistency_funded": null,
+    "plan_id": "p150",
+    "account_type": "Standard OG: 40% consistency; 15 min days; Exhibition + funded phases; $126/mo data"
   },
   {
     "firm_id": "f14",
@@ -2478,7 +2993,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p151",
     "account_size": 250000,
     "plan_label": "Standard MAX 250K",
     "drawdown_type": "intraday",
@@ -2493,7 +3007,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 720,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 15,
+    "consistency_eval": 40,
+    "consistency_funded": null,
+    "plan_id": "p151",
+    "account_type": "Standard MAX: Skip Exhibition; straight to funded; 40% consistency; 15 min days"
   },
   {
     "firm_id": "f14",
@@ -2502,7 +3022,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p152",
     "account_size": 250000,
     "plan_label": "Express OG 250K",
     "drawdown_type": "intraday",
@@ -2517,7 +3036,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 840,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 7,
+    "consistency_eval": 15,
+    "consistency_funded": null,
+    "plan_id": "p152",
+    "account_type": "Express OG: 15% consistency (stricter); 7 min days; Exhibition + funded phases"
   },
   {
     "firm_id": "f14",
@@ -2526,7 +3051,6 @@
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "p153",
     "account_size": 250000,
     "plan_label": "Express MAX 250K",
     "drawdown_type": "intraday",
@@ -2541,7 +3065,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 720,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 10,
+    "min_trading_days": 7,
+    "consistency_eval": 15,
+    "consistency_funded": null,
+    "plan_id": "p153",
+    "account_type": "Express MAX: Skip Exhibition; straight to funded; 15% consistency; 7 min days; fastest"
   },
   {
     "firm_id": "f10",
@@ -2550,7 +3080,6 @@
     "logo_url": null,
     "website_url": "https://alpha-futures.com",
     "trustpilot": 4.7,
-    "plan_id": "p154",
     "account_size": 25000,
     "plan_label": "Zero 25K",
     "drawdown_type": "eod",
@@ -2565,7 +3094,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 79,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 40,
+    "plan_id": "p154",
+    "account_type": "Zero: $0 activation; no consistency eval; 90% split; 1-day pass possible"
   },
   {
     "firm_id": "f10",
@@ -2574,7 +3109,6 @@
     "logo_url": null,
     "website_url": "https://alpha-futures.com",
     "trustpilot": 4.7,
-    "plan_id": "p155",
     "account_size": 50000,
     "plan_label": "Zero 50K",
     "drawdown_type": "eod",
@@ -2589,7 +3123,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 119,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 40,
+    "plan_id": "p155",
+    "account_type": "Zero: $0 activation; no consistency eval; 90% split; 1-day pass possible"
   },
   {
     "firm_id": "f10",
@@ -2598,7 +3138,6 @@
     "logo_url": null,
     "website_url": "https://alpha-futures.com",
     "trustpilot": 4.7,
-    "plan_id": "p156",
     "account_size": 100000,
     "plan_label": "Zero 100K",
     "drawdown_type": "eod",
@@ -2613,7 +3152,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 239,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 40,
+    "plan_id": "p156",
+    "account_type": "Zero: $0 activation; no consistency eval; 90% split; 1-day pass possible"
   },
   {
     "firm_id": "f10",
@@ -2622,7 +3167,6 @@
     "logo_url": null,
     "website_url": "https://alpha-futures.com",
     "trustpilot": 4.7,
-    "plan_id": "p157",
     "account_size": 50000,
     "plan_label": "Premium (No Act) 50K",
     "drawdown_type": "eod",
@@ -2637,7 +3181,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 149,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": 40,
+    "plan_id": "p157",
+    "account_type": "Premium (No Act): NEW; $0 activation; 50% consistency; tiered withdrawal caps"
   },
   {
     "firm_id": "f10",
@@ -2646,7 +3196,6 @@
     "logo_url": null,
     "website_url": "https://alpha-futures.com",
     "trustpilot": 4.7,
-    "plan_id": "p158",
     "account_size": 100000,
     "plan_label": "Premium (No Act) 100K",
     "drawdown_type": "eod",
@@ -2661,7 +3210,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 239,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": 40,
+    "plan_id": "p158",
+    "account_type": "Premium (No Act): NEW; $0 activation; 50% consistency; tiered withdrawal caps"
   },
   {
     "firm_id": "f10",
@@ -2670,7 +3225,6 @@
     "logo_url": null,
     "website_url": "https://alpha-futures.com",
     "trustpilot": 4.7,
-    "plan_id": "p159",
     "account_size": 150000,
     "plan_label": "Premium (No Act) 150K",
     "drawdown_type": "eod",
@@ -2685,7 +3239,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 329,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": 40,
+    "plan_id": "p159",
+    "account_type": "Premium (No Act): NEW; $0 activation; 50% consistency; tiered withdrawal caps"
   },
   {
     "firm_id": "f10",
@@ -2694,7 +3254,6 @@
     "logo_url": null,
     "website_url": "https://alpha-futures.com",
     "trustpilot": 4.7,
-    "plan_id": "p160",
     "account_size": 50000,
     "plan_label": "Premium 50K",
     "drawdown_type": "eod",
@@ -2709,7 +3268,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 228,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": 40,
+    "plan_id": "p160",
+    "account_type": "Premium: Replaces Standard; 50% consistency; tiered 70%\u219290%; $149 activation"
   },
   {
     "firm_id": "f10",
@@ -2718,7 +3283,6 @@
     "logo_url": null,
     "website_url": "https://alpha-futures.com",
     "trustpilot": 4.7,
-    "plan_id": "p161",
     "account_size": 100000,
     "plan_label": "Premium 100K",
     "drawdown_type": "eod",
@@ -2733,7 +3297,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 308,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": 40,
+    "plan_id": "p161",
+    "account_type": "Premium: Replaces Standard; 50% consistency; tiered 70%\u219290%; $149 activation"
   },
   {
     "firm_id": "f10",
@@ -2742,7 +3312,6 @@
     "logo_url": null,
     "website_url": "https://alpha-futures.com",
     "trustpilot": 4.7,
-    "plan_id": "p162",
     "account_size": 150000,
     "plan_label": "Premium 150K",
     "drawdown_type": "eod",
@@ -2757,7 +3326,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 388,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": 40,
+    "plan_id": "p162",
+    "account_type": "Premium: Replaces Standard; 50% consistency; tiered 70%\u219290%; $149 activation"
   },
   {
     "firm_id": "f10",
@@ -2766,7 +3341,6 @@
     "logo_url": null,
     "website_url": "https://alpha-futures.com",
     "trustpilot": 4.7,
-    "plan_id": "p163",
     "account_size": 50000,
     "plan_label": "Advanced 50K",
     "drawdown_type": "eod",
@@ -2781,7 +3355,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 288,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 2,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p163",
+    "account_type": "Advanced: No consistency; 90% split day one; $149 activation"
   },
   {
     "firm_id": "f10",
@@ -2790,7 +3370,6 @@
     "logo_url": null,
     "website_url": "https://alpha-futures.com",
     "trustpilot": 4.7,
-    "plan_id": "p164",
     "account_size": 100000,
     "plan_label": "Advanced 100K",
     "drawdown_type": "eod",
@@ -2805,7 +3384,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 428,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 2,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p164",
+    "account_type": "Advanced: No consistency; 90% split day one; $149 activation"
   },
   {
     "firm_id": "f10",
@@ -2814,7 +3399,6 @@
     "logo_url": null,
     "website_url": "https://alpha-futures.com",
     "trustpilot": 4.7,
-    "plan_id": "p165",
     "account_size": 150000,
     "plan_label": "Advanced 150K",
     "drawdown_type": "eod",
@@ -2829,7 +3413,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 568,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 2,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p165",
+    "account_type": "Advanced: No consistency; 90% split day one; $149 activation"
   },
   {
     "firm_id": "f01",
@@ -2838,7 +3428,6 @@
     "logo_url": null,
     "website_url": "https://www.topstep.com",
     "trustpilot": 4.3,
-    "plan_id": "p166",
     "account_size": 50000,
     "plan_label": "Standard 50K",
     "drawdown_type": "eod",
@@ -2853,7 +3442,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 198,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 10,
+    "consistency_eval": 50,
+    "consistency_funded": 40,
+    "plan_id": "p166",
+    "account_type": "Standard Path: Lower monthly ($49/$99/$149) + $149 activation; Intraday trailing eval"
   },
   {
     "firm_id": "f01",
@@ -2862,7 +3457,6 @@
     "logo_url": null,
     "website_url": "https://www.topstep.com",
     "trustpilot": 4.3,
-    "plan_id": "p167",
     "account_size": 100000,
     "plan_label": "Standard 100K",
     "drawdown_type": "eod",
@@ -2877,7 +3471,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 248,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 10,
+    "consistency_eval": 50,
+    "consistency_funded": 40,
+    "plan_id": "p167",
+    "account_type": "Standard Path: Lower monthly ($49/$99/$149) + $149 activation; Intraday trailing eval"
   },
   {
     "firm_id": "f01",
@@ -2886,7 +3486,6 @@
     "logo_url": null,
     "website_url": "https://www.topstep.com",
     "trustpilot": 4.3,
-    "plan_id": "p168",
     "account_size": 150000,
     "plan_label": "Standard 150K",
     "drawdown_type": "eod",
@@ -2901,7 +3500,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 298,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 10,
+    "consistency_eval": 50,
+    "consistency_funded": 40,
+    "plan_id": "p168",
+    "account_type": "Standard Path: Lower monthly ($49/$99/$149) + $149 activation; Intraday trailing eval"
   },
   {
     "firm_id": "f01",
@@ -2910,7 +3515,6 @@
     "logo_url": null,
     "website_url": "https://www.topstep.com",
     "trustpilot": 4.3,
-    "plan_id": "p169",
     "account_size": 50000,
     "plan_label": "No Activation 50K",
     "drawdown_type": "eod",
@@ -2925,7 +3529,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 95,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 10,
+    "consistency_eval": 50,
+    "consistency_funded": 40,
+    "plan_id": "p169",
+    "account_type": "No Activation Path: Higher monthly ($95/$149/$229) + $0 activation; Intraday trailing eval"
   },
   {
     "firm_id": "f01",
@@ -2934,7 +3544,6 @@
     "logo_url": null,
     "website_url": "https://www.topstep.com",
     "trustpilot": 4.3,
-    "plan_id": "p170",
     "account_size": 100000,
     "plan_label": "No Activation 100K",
     "drawdown_type": "eod",
@@ -2949,7 +3558,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 149,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 10,
+    "consistency_eval": 50,
+    "consistency_funded": 40,
+    "plan_id": "p170",
+    "account_type": "No Activation Path: Higher monthly ($95/$149/$229) + $0 activation; Intraday trailing eval"
   },
   {
     "firm_id": "f01",
@@ -2958,7 +3573,6 @@
     "logo_url": null,
     "website_url": "https://www.topstep.com",
     "trustpilot": 4.3,
-    "plan_id": "p171",
     "account_size": 150000,
     "plan_label": "No Activation 150K",
     "drawdown_type": "eod",
@@ -2973,7 +3587,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 229,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 10,
+    "consistency_eval": 50,
+    "consistency_funded": 40,
+    "plan_id": "p171",
+    "account_type": "No Activation Path: Higher monthly ($95/$149/$229) + $0 activation; Intraday trailing eval"
   },
   {
     "firm_id": "f15",
@@ -2982,7 +3602,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p172",
     "account_size": 25000,
     "plan_label": "Classic Starter 25K",
     "drawdown_type": "eod",
@@ -2997,7 +3616,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 89,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 2,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p172",
+    "account_type": "Classic Starter: EOD trailing eval; 1-1.5 (10-15\u03bc) contracts; $89/mo"
   },
   {
     "firm_id": "f15",
@@ -3006,7 +3631,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p173",
     "account_size": 50000,
     "plan_label": "Classic Growth 50K",
     "drawdown_type": "eod",
@@ -3021,7 +3645,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 128,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 2,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p173",
+    "account_type": "Classic Growth: EOD trailing eval; 3 (30\u03bc) contracts; $128/mo"
   },
   {
     "firm_id": "f15",
@@ -3030,7 +3660,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p174",
     "account_size": 100000,
     "plan_label": "Classic Scale 100K",
     "drawdown_type": "eod",
@@ -3045,7 +3674,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 269,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 2,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p174",
+    "account_type": "Classic Scale: EOD trailing eval; 6 (60\u03bc) contracts; $269/mo"
   },
   {
     "firm_id": "f15",
@@ -3054,7 +3689,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p175",
     "account_size": 2000,
     "plan_label": "Spark Micro 2K",
     "drawdown_type": "eod",
@@ -3069,7 +3703,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 69,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p175",
+    "account_type": "Spark Micro (NEW): 2 (20\u03bc) contracts; $0/mo + $69 activation; live funding immediately"
   },
   {
     "firm_id": "f15",
@@ -3078,7 +3718,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p176",
     "account_size": 25000,
     "plan_label": "Spark Starter 25K",
     "drawdown_type": "eod",
@@ -3093,7 +3732,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 68,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 30,
+    "plan_id": "p176",
+    "account_type": "Spark Starter (NEW): 2 (20\u03bc) contracts; $39/mo + $29 activation; live funding immediately"
   },
   {
     "firm_id": "f15",
@@ -3102,7 +3747,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p177",
     "account_size": 50000,
     "plan_label": "Spark Growth 50K",
     "drawdown_type": "eod",
@@ -3117,7 +3761,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 98,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": 30,
+    "plan_id": "p177",
+    "account_type": "Spark Growth (NEW): 4 (40\u03bc) contracts; $69/mo + $29 activation; live funding immediately"
   },
   {
     "firm_id": "f15",
@@ -3126,7 +3776,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p178",
     "account_size": 2000,
     "plan_label": "Merit 2K",
     "drawdown_type": "eod",
@@ -3141,7 +3790,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 69,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p178",
+    "account_type": "Merit Unique: $69 one-time; $2K starting + $2K static MDD; 25% dynamic DD; live funding immediately; no targets"
   },
   {
     "firm_id": "f16",
@@ -3150,7 +3805,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p179",
     "account_size": 25000,
     "plan_label": "Trail 25K",
     "drawdown_type": "eod",
@@ -3165,7 +3819,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 167,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 5,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": 30,
+    "plan_id": "p179",
+    "account_type": "Trail 25K: 37 eval + $130 activation; intraday trailing; 6 (60\u03bc) max contracts; 100% split on Pro"
   },
   {
     "firm_id": "f16",
@@ -3174,7 +3834,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p180",
     "account_size": 50000,
     "plan_label": "Trail 50K",
     "drawdown_type": "eod",
@@ -3189,7 +3848,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 187,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 5,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": 30,
+    "plan_id": "p180",
+    "account_type": "Trail 50K: 57 eval + $130 activation; intraday trailing; 10 (100\u03bc) max contracts; 100% split on Pro"
   },
   {
     "firm_id": "f16",
@@ -3198,7 +3863,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p181",
     "account_size": 100000,
     "plan_label": "Trail 100K",
     "drawdown_type": "eod",
@@ -3213,7 +3877,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 215,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 5,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": 30,
+    "plan_id": "p181",
+    "account_type": "Trail 100K: 85 eval + $130 activation; intraday trailing; 18 (180\u03bc) max contracts; 100% split on Pro"
   },
   {
     "firm_id": "f16",
@@ -3222,7 +3892,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p182",
     "account_size": 25000,
     "plan_label": "Static 25K",
     "drawdown_type": "eod",
@@ -3237,7 +3906,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 160,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 5,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": 30,
+    "plan_id": "p182",
+    "account_type": "Static 25K: 30 eval + $130 activation; fixed drawdown; 4 (40\u03bc) max contracts; 100% split on Pro"
   },
   {
     "firm_id": "f16",
@@ -3246,7 +3921,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p183",
     "account_size": 50000,
     "plan_label": "Static 50K",
     "drawdown_type": "eod",
@@ -3261,7 +3935,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 170,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 5,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": 30,
+    "plan_id": "p183",
+    "account_type": "Static 50K: 40 eval + $130 activation; fixed drawdown; 6 (60\u03bc) max contracts; 100% split on Pro"
   },
   {
     "firm_id": "f16",
@@ -3270,7 +3950,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p184",
     "account_size": 100000,
     "plan_label": "Static 100K",
     "drawdown_type": "eod",
@@ -3285,7 +3964,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 195,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 5,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": 30,
+    "plan_id": "p184",
+    "account_type": "Static 100K: 65 eval + $130 activation; fixed drawdown; 8 (80\u03bc) max contracts; 100% split on Pro"
   },
   {
     "firm_id": "f16",
@@ -3294,7 +3979,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p185",
     "account_size": 25000,
     "plan_label": "S2F 25K",
     "drawdown_type": "eod",
@@ -3309,7 +3993,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 222,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 3,
+    "min_trading_days": 10,
+    "consistency_eval": null,
+    "consistency_funded": 20,
+    "plan_id": "p185",
+    "account_type": "S2F 25K: 222 one-time; no evaluation; immediate funding; 100% profit split; 2 (20\u03bc) max contracts"
   },
   {
     "firm_id": "f16",
@@ -3318,7 +4008,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p186",
     "account_size": 50000,
     "plan_label": "S2F 50K",
     "drawdown_type": "eod",
@@ -3333,7 +4022,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 342,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 3,
+    "min_trading_days": 10,
+    "consistency_eval": null,
+    "consistency_funded": 20,
+    "plan_id": "p186",
+    "account_type": "S2F 50K: 342 one-time; no evaluation; immediate funding; 100% profit split; 10 (100\u03bc) max contracts"
   },
   {
     "firm_id": "f16",
@@ -3342,7 +4037,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p187",
     "account_size": 150000,
     "plan_label": "S2F 150K",
     "drawdown_type": "eod",
@@ -3357,7 +4051,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 495,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 3,
+    "min_trading_days": 10,
+    "consistency_eval": null,
+    "consistency_funded": 20,
+    "plan_id": "p187",
+    "account_type": "S2F 150K: 495 one-time; no evaluation; immediate funding; 100% profit split; 24 (240\u03bc) max contracts"
   },
   {
     "firm_id": "f16",
@@ -3366,7 +4066,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p188",
     "account_size": 50000,
     "plan_label": "S2L 50K Core",
     "drawdown_type": "eod",
@@ -3381,7 +4080,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 229,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 5,
+    "min_trading_days": 8,
+    "consistency_eval": 25,
+    "consistency_funded": null,
+    "plan_id": "p188",
+    "account_type": "S2L 50K Core: 229 one-time; 8-day eval \u2192 live brokerage account; real capital; 80/20 split; daily payouts"
   },
   {
     "firm_id": "f16",
@@ -3390,7 +4095,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p189",
     "account_size": 150000,
     "plan_label": "S2L 150K Edge",
     "drawdown_type": "eod",
@@ -3405,7 +4109,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 369,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 5,
+    "min_trading_days": 8,
+    "consistency_eval": 25,
+    "consistency_funded": null,
+    "plan_id": "p189",
+    "account_type": "S2L 150K Edge: 369 one-time; 8-day eval \u2192 live brokerage account; real capital; 80/20 split; daily payouts"
   },
   {
     "firm_id": "f16",
@@ -3414,7 +4124,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p190",
     "account_size": 300000,
     "plan_label": "S2L 300K Ultra",
     "drawdown_type": "eod",
@@ -3429,7 +4138,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 499,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 5,
+    "min_trading_days": 8,
+    "consistency_eval": 25,
+    "consistency_funded": null,
+    "plan_id": "p190",
+    "account_type": "S2L 300K Ultra: 499 one-time; 8-day eval \u2192 live brokerage account; real capital; 80/20 split; daily payouts"
   },
   {
     "firm_id": "f17",
@@ -3438,7 +4153,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p191",
     "account_size": 25000,
     "plan_label": "Signature Futures 25K",
     "drawdown_type": "eod",
@@ -3453,7 +4167,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 66,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 0,
+    "consistency_eval": null,
+    "consistency_funded": 35,
+    "plan_id": "p191",
+    "account_type": "E8 Sig Futures 25K: 66 one-time; EOD trailing eval; 6% target to pass; 80% profit split funded; 2% daily pause"
   },
   {
     "firm_id": "f17",
@@ -3462,7 +4182,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p192",
     "account_size": 50000,
     "plan_label": "Signature Futures 50K",
     "drawdown_type": "eod",
@@ -3477,7 +4196,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 90,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 0,
+    "consistency_eval": null,
+    "consistency_funded": 35,
+    "plan_id": "p192",
+    "account_type": "E8 Sig Futures 50K: 90 one-time; EOD trailing eval; 6% target to pass; 80% profit split funded; 2% daily pause"
   },
   {
     "firm_id": "f17",
@@ -3486,7 +4211,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p193",
     "account_size": 100000,
     "plan_label": "Signature Futures 100K",
     "drawdown_type": "eod",
@@ -3501,7 +4225,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 156,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 0,
+    "consistency_eval": null,
+    "consistency_funded": 35,
+    "plan_id": "p193",
+    "account_type": "E8 Sig Futures 100K: 156 one-time; EOD trailing eval; 6% target to pass; 80% profit split funded; 2% daily pause"
   },
   {
     "firm_id": "f17",
@@ -3510,7 +4240,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p194",
     "account_size": 150000,
     "plan_label": "Signature Futures 150K",
     "drawdown_type": "eod",
@@ -3525,7 +4254,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 234,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 0,
+    "consistency_eval": null,
+    "consistency_funded": 35,
+    "plan_id": "p194",
+    "account_type": "E8 Sig Futures 150K: 234 one-time; EOD trailing eval; 6% target to pass; 80% profit split funded; 2% daily pause"
   },
   {
     "firm_id": "f18",
@@ -3534,7 +4269,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p195",
     "account_size": 25000,
     "plan_label": "Express to Live 25K",
     "drawdown_type": "eod",
@@ -3549,7 +4283,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 0,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p195",
+    "account_type": "Express to Live 25K: PRICING TBD; flagship path to live brokerage; fastest to LIVE"
   },
   {
     "firm_id": "f18",
@@ -3558,7 +4298,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p196",
     "account_size": 50000,
     "plan_label": "Express to Live 50K",
     "drawdown_type": "eod",
@@ -3573,7 +4312,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 0,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p196",
+    "account_type": "Express to Live 50K: PRICING TBD; flagship path to live brokerage; fastest to LIVE"
   },
   {
     "firm_id": "f18",
@@ -3582,7 +4327,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p197",
     "account_size": 100000,
     "plan_label": "Express to Live 100K",
     "drawdown_type": "eod",
@@ -3597,7 +4341,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 0,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p197",
+    "account_type": "Express to Live 100K: PRICING TBD; flagship path to live brokerage; fastest to LIVE"
   },
   {
     "firm_id": "f18",
@@ -3606,7 +4356,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p198",
     "account_size": 150000,
     "plan_label": "Express to Live 150K",
     "drawdown_type": "eod",
@@ -3621,7 +4370,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 0,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 1,
+    "consistency_eval": null,
+    "consistency_funded": null,
+    "plan_id": "p198",
+    "account_type": "Express to Live 150K: PRICING TBD; flagship path to live brokerage; fastest to LIVE"
   },
   {
     "firm_id": "f18",
@@ -3630,7 +4385,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p199",
     "account_size": 50000,
     "plan_label": "Fundamental 50K",
     "drawdown_type": "eod",
@@ -3645,7 +4399,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 0,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 3,
+    "consistency_eval": null,
+    "consistency_funded": 30,
+    "plan_id": "p199",
+    "account_type": "Fundamental 50K: PRICING TBD; classic intraday; unchanged structure"
   },
   {
     "firm_id": "f18",
@@ -3654,7 +4414,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p200",
     "account_size": 100000,
     "plan_label": "Fundamental 100K",
     "drawdown_type": "eod",
@@ -3669,7 +4428,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 0,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 3,
+    "consistency_eval": null,
+    "consistency_funded": 30,
+    "plan_id": "p200",
+    "account_type": "Fundamental 100K: PRICING TBD; classic intraday; unchanged structure"
   },
   {
     "firm_id": "f18",
@@ -3678,7 +4443,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p201",
     "account_size": 150000,
     "plan_label": "Fundamental 150K",
     "drawdown_type": "eod",
@@ -3693,7 +4457,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 0,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 3,
+    "consistency_eval": null,
+    "consistency_funded": 30,
+    "plan_id": "p201",
+    "account_type": "Fundamental 150K: PRICING TBD; classic intraday; unchanged structure"
   },
   {
     "firm_id": "f18",
@@ -3702,7 +4472,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p202",
     "account_size": 50000,
     "plan_label": "Premium 50K",
     "drawdown_type": "eod",
@@ -3717,7 +4486,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 0,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 3,
+    "consistency_eval": null,
+    "consistency_funded": 30,
+    "plan_id": "p202",
+    "account_type": "Premium 50K: PRICING TBD; swing-capable; cash account day 1; progressive 75%\u2192100%; overnight+weekend hold"
   },
   {
     "firm_id": "f18",
@@ -3726,7 +4501,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p203",
     "account_size": 100000,
     "plan_label": "Premium 100K",
     "drawdown_type": "eod",
@@ -3741,7 +4515,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 0,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 3,
+    "consistency_eval": null,
+    "consistency_funded": 30,
+    "plan_id": "p203",
+    "account_type": "Premium 100K: PRICING TBD; swing-capable; cash account day 1; progressive 75%\u2192100%; overnight+weekend hold"
   },
   {
     "firm_id": "f18",
@@ -3750,7 +4530,6 @@
     "logo_url": null,
     "website_url": "",
     "trustpilot": null,
-    "plan_id": "p204",
     "account_size": 150000,
     "plan_label": "Premium 150K",
     "drawdown_type": "eod",
@@ -3765,7 +4544,13 @@
     "payout_frequency": null,
     "first_payout_days": null,
     "total_cost_to_funded": 0,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": 1,
+    "min_trading_days": 3,
+    "consistency_eval": null,
+    "consistency_funded": 30,
+    "plan_id": "p204",
+    "account_type": "Premium 150K: PRICING TBD; swing-capable; cash account day 1; progressive 75%\u2192100%; overnight+weekend hold"
   },
   {
     "firm_id": "f03",
@@ -3774,22 +4559,27 @@
     "logo_url": null,
     "website_url": "https://myfundedfutures.com",
     "trustpilot": 4.4,
+    "profit_split": 80,
+    "activation_fee": 0,
+    "monthly_fee": 0,
+    "is_one_time": 0,
+    "payout_frequency": "biweekly",
+    "first_payout_days": null,
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": null,
     "plan_id": "mffu-builder-25K",
     "account_size": 25000,
+    "account_type": "Builder",
     "plan_label": "25K Builder",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 1000,
     "daily_loss_limit": 0,
     "profit_target": 1500,
-    "profit_split": 80,
     "eval_fee": 75,
-    "activation_fee": 0,
-    "monthly_fee": 0,
-    "is_one_time": 0,
-    "payout_frequency": "biweekly",
-    "first_payout_days": null,
-    "total_cost_to_funded": 75.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 75.0
   },
   {
     "firm_id": "f03",
@@ -3798,22 +4588,27 @@
     "logo_url": null,
     "website_url": "https://myfundedfutures.com",
     "trustpilot": 4.4,
+    "profit_split": 80,
+    "activation_fee": 0,
+    "monthly_fee": 0,
+    "is_one_time": 0,
+    "payout_frequency": "weekly",
+    "first_payout_days": null,
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": null,
     "plan_id": "mffu-flex-25K",
     "account_size": 25000,
+    "account_type": "Flex",
     "plan_label": "25K Flex",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 1000,
     "daily_loss_limit": 0,
     "profit_target": 1500,
-    "profit_split": 80,
     "eval_fee": 84,
-    "activation_fee": 0,
-    "monthly_fee": 0,
-    "is_one_time": 0,
-    "payout_frequency": "weekly",
-    "first_payout_days": null,
-    "total_cost_to_funded": 84.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 84.0
   },
   {
     "firm_id": "f03",
@@ -3822,22 +4617,27 @@
     "logo_url": null,
     "website_url": "https://myfundedfutures.com",
     "trustpilot": 4.4,
+    "profit_split": 80,
+    "activation_fee": 0,
+    "monthly_fee": 0,
+    "is_one_time": 0,
+    "payout_frequency": "biweekly",
+    "first_payout_days": null,
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": null,
     "plan_id": "mffu-pro-25K",
     "account_size": 25000,
+    "account_type": "Pro",
     "plan_label": "25K Pro",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 1000,
     "daily_loss_limit": 0,
     "profit_target": 1500,
-    "profit_split": 80,
     "eval_fee": 114,
-    "activation_fee": 0,
-    "monthly_fee": 0,
-    "is_one_time": 0,
-    "payout_frequency": "biweekly",
-    "first_payout_days": null,
-    "total_cost_to_funded": 114.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 114.0
   },
   {
     "firm_id": "f03",
@@ -3846,22 +4646,27 @@
     "logo_url": null,
     "website_url": "https://myfundedfutures.com",
     "trustpilot": 4.4,
+    "profit_split": 80,
+    "activation_fee": 0,
+    "monthly_fee": 0,
+    "is_one_time": 0,
+    "payout_frequency": "biweekly",
+    "first_payout_days": null,
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": null,
     "plan_id": "mffu-rapid-25K",
     "account_size": 25000,
+    "account_type": "Rapid",
     "plan_label": "25K Rapid",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 1000,
     "daily_loss_limit": 0,
     "profit_target": 1500,
-    "profit_split": 80,
     "eval_fee": 87,
-    "activation_fee": 0,
-    "monthly_fee": 0,
-    "is_one_time": 0,
-    "payout_frequency": "biweekly",
-    "first_payout_days": null,
-    "total_cost_to_funded": 87.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 87.0
   },
   {
     "firm_id": "f03",
@@ -3870,22 +4675,27 @@
     "logo_url": null,
     "website_url": "https://myfundedfutures.com",
     "trustpilot": 4.4,
+    "profit_split": 80,
+    "activation_fee": 0,
+    "monthly_fee": 0,
+    "is_one_time": 0,
+    "payout_frequency": "biweekly",
+    "first_payout_days": null,
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": null,
     "plan_id": "mffu-builder-50K",
     "account_size": 50000,
+    "account_type": "Builder",
     "plan_label": "50K Builder",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 2000,
     "daily_loss_limit": 0,
     "profit_target": 3000,
-    "profit_split": 80,
     "eval_fee": 75,
-    "activation_fee": 0,
-    "monthly_fee": 0,
-    "is_one_time": 0,
-    "payout_frequency": "biweekly",
-    "first_payout_days": null,
-    "total_cost_to_funded": 75.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 75.0
   },
   {
     "firm_id": "f03",
@@ -3894,22 +4704,27 @@
     "logo_url": null,
     "website_url": "https://myfundedfutures.com",
     "trustpilot": 4.4,
-    "plan_id": "mffu-flex-50K",
-    "account_size": 50000,
-    "plan_label": "50K Flex",
-    "drawdown_type": "end_of_day",
-    "drawdown_amount": 2000,
-    "daily_loss_limit": 0,
-    "profit_target": 3000,
     "profit_split": 80,
-    "eval_fee": 127,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": "weekly",
     "first_payout_days": null,
-    "total_cost_to_funded": 127.0,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": null,
+    "plan_id": "mffu-flex-50K",
+    "account_size": 50000,
+    "account_type": "Flex",
+    "plan_label": "50K Flex",
+    "drawdown_type": "end_of_day",
+    "drawdown_amount": 2000,
+    "daily_loss_limit": 0,
+    "profit_target": 3000,
+    "eval_fee": 127,
+    "total_cost_to_funded": 127.0
   },
   {
     "firm_id": "f03",
@@ -3918,22 +4733,27 @@
     "logo_url": null,
     "website_url": "https://myfundedfutures.com",
     "trustpilot": 4.4,
+    "profit_split": 80,
+    "activation_fee": 0,
+    "monthly_fee": 0,
+    "is_one_time": 0,
+    "payout_frequency": "biweekly",
+    "first_payout_days": null,
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": null,
     "plan_id": "mffu-pro-50K",
     "account_size": 50000,
+    "account_type": "Pro",
     "plan_label": "50K Pro",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 2000,
     "daily_loss_limit": 0,
     "profit_target": 3000,
-    "profit_split": 80,
     "eval_fee": 114,
-    "activation_fee": 0,
-    "monthly_fee": 0,
-    "is_one_time": 0,
-    "payout_frequency": "biweekly",
-    "first_payout_days": null,
-    "total_cost_to_funded": 114.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 114.0
   },
   {
     "firm_id": "f03",
@@ -3942,22 +4762,27 @@
     "logo_url": null,
     "website_url": "https://myfundedfutures.com",
     "trustpilot": 4.4,
+    "profit_split": 80,
+    "activation_fee": 0,
+    "monthly_fee": 0,
+    "is_one_time": 0,
+    "payout_frequency": "biweekly",
+    "first_payout_days": null,
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": null,
     "plan_id": "mffu-rapid-50K",
     "account_size": 50000,
+    "account_type": "Rapid",
     "plan_label": "50K Rapid",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 2000,
     "daily_loss_limit": 0,
     "profit_target": 3000,
-    "profit_split": 80,
     "eval_fee": 126,
-    "activation_fee": 0,
-    "monthly_fee": 0,
-    "is_one_time": 0,
-    "payout_frequency": "biweekly",
-    "first_payout_days": null,
-    "total_cost_to_funded": 126.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 126.0
   },
   {
     "firm_id": "f03",
@@ -3966,22 +4791,27 @@
     "logo_url": null,
     "website_url": "https://myfundedfutures.com",
     "trustpilot": 4.4,
+    "profit_split": 80,
+    "activation_fee": 0,
+    "monthly_fee": 0,
+    "is_one_time": 0,
+    "payout_frequency": "biweekly",
+    "first_payout_days": null,
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": null,
     "plan_id": "mffu-builder-100K",
     "account_size": 100000,
+    "account_type": "Builder",
     "plan_label": "100K Builder",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 3000,
     "daily_loss_limit": 0,
     "profit_target": 6000,
-    "profit_split": 80,
     "eval_fee": 153,
-    "activation_fee": 0,
-    "monthly_fee": 0,
-    "is_one_time": 0,
-    "payout_frequency": "biweekly",
-    "first_payout_days": null,
-    "total_cost_to_funded": 153.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 153.0
   },
   {
     "firm_id": "f03",
@@ -3990,22 +4820,27 @@
     "logo_url": null,
     "website_url": "https://myfundedfutures.com",
     "trustpilot": 4.4,
+    "profit_split": 80,
+    "activation_fee": 0,
+    "monthly_fee": 0,
+    "is_one_time": 0,
+    "payout_frequency": "biweekly",
+    "first_payout_days": null,
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": null,
     "plan_id": "mffu-pro-100K",
     "account_size": 100000,
+    "account_type": "Pro",
     "plan_label": "100K Pro",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 3000,
     "daily_loss_limit": 0,
     "profit_target": 6000,
-    "profit_split": 80,
     "eval_fee": 344,
-    "activation_fee": 0,
-    "monthly_fee": 0,
-    "is_one_time": 0,
-    "payout_frequency": "biweekly",
-    "first_payout_days": null,
-    "total_cost_to_funded": 344.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 344.0
   },
   {
     "firm_id": "f03",
@@ -4014,22 +4849,27 @@
     "logo_url": null,
     "website_url": "https://myfundedfutures.com",
     "trustpilot": 4.4,
+    "profit_split": 80,
+    "activation_fee": 0,
+    "monthly_fee": 0,
+    "is_one_time": 0,
+    "payout_frequency": "biweekly",
+    "first_payout_days": null,
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": null,
     "plan_id": "mffu-rapid-100K",
     "account_size": 100000,
+    "account_type": "Rapid",
     "plan_label": "100K Rapid",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 3000,
     "daily_loss_limit": 0,
     "profit_target": 6000,
-    "profit_split": 80,
     "eval_fee": 267,
-    "activation_fee": 0,
-    "monthly_fee": 0,
-    "is_one_time": 0,
-    "payout_frequency": "biweekly",
-    "first_payout_days": null,
-    "total_cost_to_funded": 267.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 267.0
   },
   {
     "firm_id": "f03",
@@ -4038,22 +4878,27 @@
     "logo_url": null,
     "website_url": "https://myfundedfutures.com",
     "trustpilot": 4.4,
+    "profit_split": 80,
+    "activation_fee": 0,
+    "monthly_fee": 0,
+    "is_one_time": 0,
+    "payout_frequency": "biweekly",
+    "first_payout_days": null,
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": null,
     "plan_id": "mffu-builder-150K",
     "account_size": 150000,
+    "account_type": "Builder",
     "plan_label": "150K Builder",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 4500,
     "daily_loss_limit": 0,
     "profit_target": 9000,
-    "profit_split": 80,
     "eval_fee": 225,
-    "activation_fee": 0,
-    "monthly_fee": 0,
-    "is_one_time": 0,
-    "payout_frequency": "biweekly",
-    "first_payout_days": null,
-    "total_cost_to_funded": 225.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 225.0
   },
   {
     "firm_id": "f03",
@@ -4062,22 +4907,27 @@
     "logo_url": null,
     "website_url": "https://myfundedfutures.com",
     "trustpilot": 4.4,
+    "profit_split": 80,
+    "activation_fee": 0,
+    "monthly_fee": 0,
+    "is_one_time": 0,
+    "payout_frequency": "biweekly",
+    "first_payout_days": null,
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": null,
     "plan_id": "mffu-pro-150K",
     "account_size": 150000,
+    "account_type": "Pro",
     "plan_label": "150K Pro",
     "drawdown_type": "end_of_day",
     "drawdown_amount": 4500,
     "daily_loss_limit": 0,
     "profit_target": 9000,
-    "profit_split": 80,
     "eval_fee": 477,
-    "activation_fee": 0,
-    "monthly_fee": 0,
-    "is_one_time": 0,
-    "payout_frequency": "biweekly",
-    "first_payout_days": null,
-    "total_cost_to_funded": 477.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 477.0
   },
   {
     "firm_id": "f03",
@@ -4086,21 +4936,26 @@
     "logo_url": null,
     "website_url": "https://myfundedfutures.com",
     "trustpilot": 4.4,
-    "plan_id": "mffu-rapid-150K",
-    "account_size": 150000,
-    "plan_label": "150K Rapid",
-    "drawdown_type": "end_of_day",
-    "drawdown_amount": 4500,
-    "daily_loss_limit": 0,
-    "profit_target": 9000,
     "profit_split": 80,
-    "eval_fee": 347,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
-    "total_cost_to_funded": 347.0,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "max_funded_accounts": null,
+    "min_trading_days": 2,
+    "consistency_eval": 50,
+    "consistency_funded": null,
+    "plan_id": "mffu-rapid-150K",
+    "account_size": 150000,
+    "account_type": "Rapid",
+    "plan_label": "150K Rapid",
+    "drawdown_type": "end_of_day",
+    "drawdown_amount": 4500,
+    "daily_loss_limit": 0,
+    "profit_target": 9000,
+    "eval_fee": 347,
+    "total_cost_to_funded": 347.0
   }
 ]
