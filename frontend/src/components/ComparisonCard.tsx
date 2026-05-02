@@ -32,9 +32,16 @@ export default function ComparisonCard({ plan }: { plan: PlanRow }) {
         )}
         <div>
           <h3 className="text-lg font-semibold text-white">{plan.firm_name}</h3>
-          <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${dd.color}`}>
-            {dd.label}
-          </span>
+          <div className="flex gap-1.5 mt-0.5">
+            {(plan.account_type && plan.account_type !== "Standard") && (
+              <span className="inline-block rounded-full px-2 py-0.5 text-xs font-medium bg-brand-500/20 text-brand-300">
+                {plan.account_type}
+              </span>
+            )}
+            <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${dd.color}`}>
+              {dd.label}
+            </span>
+          </div>
         </div>
       </div>
 

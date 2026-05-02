@@ -186,6 +186,7 @@ const EMPTY_PLAN: PlanRow = {
   trustpilot: 0,
   plan_id: "",
   account_size: 50000,
+  account_type: "Standard",
   plan_label: "50K",
   drawdown_type: "end_of_day",
   drawdown_amount: 2000,
@@ -461,6 +462,14 @@ function AdminContent() {
                 onChange={(v) => updateField("plan_label", v)} placeholder="auto from size" />
 
               <div>
+                <label className="mb-1.5 block text-sm font-medium text-gray-300">Account Type</label>
+                <select value={form.account_type || "Standard"} onChange={(e) => updateField("account_type", e.target.value)}
+                  className="w-full rounded-lg border border-white/10 bg-gray-800 px-3 py-2 text-sm text-white">
+                  {["Standard", "Flex", "Rapid", "Pro", "Growth", "Select", "Intraday", "Static"].map((t) => <option key={t} value={t}>{t}</option>)}
+                </select>
+              </div>
+
+              <div>
                 <label className="mb-1.5 block text-sm font-medium text-gray-300">Drawdown Type</label>
                 <select value={form.drawdown_type} onChange={(e) => updateField("drawdown_type", e.target.value)}
                   className="w-full rounded-lg border border-white/10 bg-gray-800 px-3 py-2 text-sm text-white">
@@ -565,6 +574,7 @@ function AdminContent() {
               <tr className="border-b border-white/10">
                 <th className="px-3 py-3 text-left text-xs font-semibold uppercase text-gray-400">Firm</th>
                 <th className="px-3 py-3 text-left text-xs font-semibold uppercase text-gray-400">Size</th>
+                <th className="px-3 py-3 text-left text-xs font-semibold uppercase text-gray-400">Type</th>
                 <th className="px-3 py-3 text-left text-xs font-semibold uppercase text-gray-400">Drawdown</th>
                 <th className="px-3 py-3 text-right text-xs font-semibold uppercase text-gray-400">DD Amt</th>
                 <th className="px-3 py-3 text-right text-xs font-semibold uppercase text-gray-400">Target</th>
@@ -580,6 +590,11 @@ function AdminContent() {
                 <tr key={plan.plan_id} className="border-b border-white/5 hover:bg-white/5">
                   <td className="px-3 py-2 font-medium text-white">{plan.firm_name}</td>
                   <td className="px-3 py-2 text-gray-300">{plan.plan_label}</td>
+                  <td className="px-3 py-2">
+                    <span className="rounded-full bg-brand-500/20 px-2 py-0.5 text-xs text-brand-300">
+                      {plan.account_type || "Standard"}
+                    </span>
+                  </td>
                   <td className="px-3 py-2">
                     <span className="rounded-full bg-blue-500/20 px-2 py-0.5 text-xs text-blue-300">
                       {plan.drawdown_type}

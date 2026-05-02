@@ -5,6 +5,7 @@
 
 import {
   ACCOUNT_SIZES,
+  ACCOUNT_TYPE_OPTIONS,
   DRAWDOWN_OPTIONS,
   PLATFORM_OPTIONS,
   SORT_OPTIONS,
@@ -13,6 +14,9 @@ import {
 interface FilterBarProps {
   selectedSize: number;
   onSizeChange: (size: number) => void;
+
+  selectedAccountTypes: string[];
+  onAccountTypeChange: (types: string[]) => void;
 
   selectedDrawdowns: string[];
   onDrawdownChange: (types: string[]) => void;
@@ -65,6 +69,8 @@ function PillGroup({
 export default function FilterBar({
   selectedSize,
   onSizeChange,
+  selectedAccountTypes,
+  onAccountTypeChange,
   selectedDrawdowns,
   onDrawdownChange,
   selectedPlatform,
@@ -72,6 +78,18 @@ export default function FilterBar({
   sortValue,
   onSortChange,
 }: FilterBarProps) {
+  // Account type and drawdown are multi-select
+  const toggleAccountType = (value: string) => {
+    if (value === "") {
+      onAccountTypeChange([]);
+      return;
+    }
+    const next = selectedAccountTypes.includes(value)
+      ? selectedAccountTypes.filter((t) => t !== value)
+      : [...selectedAccountTypes, value];
+    onAccountTypeChange(next);
+  };
+
   // Drawdown is multi-select, others are single-select
   const toggleDrawdown = (value: string) => {
     if (value === "") {
@@ -94,6 +112,42 @@ export default function FilterBar({
           value={String(selectedSize)}
           onChange={(v) => onSizeChange(Number(v))}
         />
+
+        <div className="h-5 w-px bg-white/10 hidden md:block" />
+
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 shrink-0">
+            Type
+          </span>
+          <div className="flex flex-wrap gap-1.5">
+            <button
+              onClick={() => onAccountTypeChange([])}
+              className={`rounded-full px-3 py-1 text-xs font-medium transition
+                ${selectedAccountTypes.length === 0
+                  ? "bg-brand-500 text-white shadow-sm"
+                  : "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-gray-200"
+                }`}
+            >
+              All
+            </button>
+            {ACCOUNT_TYPE_OPTIONS.map((opt) => {
+              const active = selectedAccountTypes.includes(opt.value);
+              return (
+                <button
+                  key={opt.value}
+                  onClick={() => toggleAccountType(opt.value)}
+                  className={`rounded-full px-3 py-1 text-xs font-medium transition
+                    ${active
+                      ? "bg-brand-500 text-white shadow-sm"
+                      : "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-gray-200"
+                    }`}
+                >
+                  {opt.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
 
         <div className="h-5 w-px bg-white/10 hidden md:block" />
 

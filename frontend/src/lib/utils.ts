@@ -21,6 +21,17 @@ export const DRAWDOWN_STYLES: Record<string, DrawdownStyle> = {
   intraday:   { label: "Intraday", color: "bg-amber-500/20 text-amber-300" },
 };
 
+export const ACCOUNT_TYPE_OPTIONS = [
+  { value: "Standard", label: "Standard" },
+  { value: "Flex",     label: "Flex" },
+  { value: "Rapid",    label: "Rapid" },
+  { value: "Pro",      label: "Pro" },
+  { value: "Growth",   label: "Growth" },
+  { value: "Select",   label: "Select" },
+  { value: "Intraday", label: "Intraday" },
+  { value: "Static",   label: "Static" },
+];
+
 export const DRAWDOWN_OPTIONS = [
   { value: "end_of_day", label: "EOD" },
   { value: "trailing",   label: "Trailing" },

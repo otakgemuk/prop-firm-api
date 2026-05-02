@@ -68,6 +68,7 @@ async function scrape() {
     if (fee > 0) {
       plans.push(buildPlan({
         ...FIRM, planId: `mffu-flex-${cfg.label}`, accountSize: cfg.size, planLabel: `${cfg.label} Flex`,
+        accountType: "Flex",
         drawdownType: "end_of_day", drawdownAmount: cfg.maxLoss, dailyLossLimit: 0,
         profitTarget: cfg.target, profitSplit: cfg.split, evalFee: fee, isOneTime: false,
         payoutFrequency: cfg.freq, maxFundedAccounts: maxFunded, minTradingDays: minDays || 2,
@@ -83,6 +84,7 @@ async function scrape() {
     if (fee > 0) {
       plans.push(buildPlan({
         ...FIRM, planId: `mffu-rapid-${cfg.label}`, accountSize: cfg.size, planLabel: `${cfg.label} Rapid`,
+        accountType: "Rapid",
         drawdownType: "end_of_day", drawdownAmount: cfg.maxLoss, dailyLossLimit: 0,
         profitTarget: cfg.target, profitSplit: cfg.split, evalFee: fee, isOneTime: false,
         payoutFrequency: cfg.freq, maxFundedAccounts: maxFunded, minTradingDays: minDays || 2,
@@ -99,6 +101,7 @@ async function scrape() {
     if (fee > 0) {
       plans.push(buildPlan({
         ...FIRM, planId: `mffu-pro-${cfg.label}`, accountSize: cfg.size, planLabel: `${cfg.label} Pro`,
+        accountType: "Pro",
         drawdownType: "end_of_day", drawdownAmount: cfg.maxLoss, dailyLossLimit: 0,
         profitTarget: cfg.target, profitSplit: cfg.split, evalFee: fee, isOneTime: false,
         payoutFrequency: cfg.freq, maxFundedAccounts: maxFunded, minTradingDays: minDays || 2,

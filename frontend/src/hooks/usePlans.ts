@@ -11,6 +11,7 @@ import { useState, useEffect, useMemo } from "react";
 
 export interface PlanFilters {
   accountSize?: number;
+  accountType?: string[];
   drawdownType?: string[];
   platform?: string;
   search?: string;
@@ -29,6 +30,7 @@ export interface PlanRow {
   trustpilot: number;
   plan_id: string;
   account_size: number;
+  account_type: string;
   plan_label: string;
   drawdown_type: string;
   drawdown_amount: number;
@@ -102,6 +104,7 @@ export function usePlans(filters: PlanFilters) {
 
   // Stable filter keys for memo dependency
   const drawdownKey = filters.drawdownType?.slice().sort().join(",") ?? "";
+  const accountTypeKey = filters.accountType?.slice().sort().join(",") ?? "";
 
   // Apply filters → sort → paginate (all client-side)
   const { data, pagination } = useMemo(() => {
@@ -110,6 +113,12 @@ export function usePlans(filters: PlanFilters) {
     // ── Filter: account size (exact match when > 0) ────────
     if (filters.accountSize && filters.accountSize > 0) {
       rows = rows.filter((r) => r.account_size === filters.accountSize);
+    }
+
+    // ── Filter: account types ──────────────────────────────
+    if (filters.accountType?.length) {
+      const set = new Set(filters.accountType);
+      rows = rows.filter((r) => set.has(r.account_type || "Standard"));
     }
 
     // ── Filter: drawdown types ─────────────────────────────
@@ -158,6 +167,7 @@ export function usePlans(filters: PlanFilters) {
   }, [
     allPlans,
     filters.accountSize,
+    accountTypeKey,
     drawdownKey,
     filters.platform,
     filters.search,

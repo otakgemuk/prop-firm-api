@@ -39,7 +39,32 @@ const columns: ColumnDef<PlanRow, any>[] = [
     size: 160,
   }),
 
-  // 2. Eval Cost
+  // 2. Account Type
+  columnHelper.accessor("account_type", {
+    header: "Account Type",
+    cell: (info) => {
+      const v = info.getValue() || "Standard";
+      const colorMap: Record<string, string> = {
+        Standard: "bg-gray-500/20 text-gray-300",
+        Flex: "bg-sky-500/20 text-sky-300",
+        Rapid: "bg-orange-500/20 text-orange-300",
+        Pro: "bg-indigo-500/20 text-indigo-300",
+        Growth: "bg-emerald-500/20 text-emerald-300",
+        Select: "bg-violet-500/20 text-violet-300",
+        Intraday: "bg-amber-500/20 text-amber-300",
+        Static: "bg-teal-500/20 text-teal-300",
+      };
+      const cls = colorMap[v] ?? "bg-gray-500/20 text-gray-300";
+      return (
+        <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${cls}`}>
+          {v}
+        </span>
+      );
+    },
+    size: 110,
+  }),
+
+  // 3. Eval Cost
   columnHelper.accessor("eval_fee", {
     header: "Eval Cost",
     cell: (info) => formatUSD(info.getValue()),

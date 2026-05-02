@@ -25,7 +25,8 @@
     "min_trading_days": 2,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "plan_id": "p01"
+    "plan_id": "p01",
+    "account_type": "Standard"
   },
   {
     "firm_id": "f10",
@@ -53,7 +54,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f10",
@@ -81,7 +83,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f10",
@@ -109,7 +112,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f02",
@@ -137,7 +141,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f02",
@@ -165,7 +170,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f02",
@@ -193,7 +199,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f02",
@@ -221,7 +228,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f02",
@@ -249,7 +257,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f07",
@@ -277,7 +286,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f07",
@@ -305,7 +315,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f07",
@@ -333,7 +344,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f09",
@@ -361,7 +373,8 @@
     "min_trading_days": null,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p13"
+    "plan_id": "p13",
+    "account_type": "Standard"
   },
   {
     "firm_id": "f09",
@@ -389,7 +402,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f09",
@@ -417,7 +431,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f09",
@@ -445,7 +460,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f08",
@@ -473,7 +489,8 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p17"
+    "plan_id": "p17",
+    "account_type": "Standard"
   },
   {
     "firm_id": "f08",
@@ -501,7 +518,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f08",
@@ -529,7 +547,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f08",
@@ -557,7 +576,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f05",
@@ -585,7 +605,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": 50,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f05",
@@ -613,7 +634,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f05",
@@ -641,7 +663,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f03",
@@ -669,7 +692,8 @@
     "max_funded_accounts": null,
     "min_trading_days": 2,
     "consistency_eval": 50,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Flex"
   },
   {
     "firm_id": "f03",
@@ -697,7 +721,8 @@
     "max_funded_accounts": null,
     "min_trading_days": 2,
     "consistency_eval": 50,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Rapid"
   },
   {
     "firm_id": "f03",
@@ -725,7 +750,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f03",
@@ -753,7 +779,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f03",
@@ -781,7 +808,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f06",
@@ -809,7 +837,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f06",
@@ -837,7 +866,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f06",
@@ -865,7 +895,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f01",
@@ -893,7 +924,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f01",
@@ -921,7 +953,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f01",
@@ -949,7 +982,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f04",
@@ -977,7 +1011,8 @@
     "min_trading_days": null,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p35"
+    "plan_id": "p35",
+    "account_type": "Intraday"
   },
   {
     "firm_id": "f04",
@@ -1005,7 +1040,8 @@
     "min_trading_days": null,
     "consistency_eval": null,
     "consistency_funded": null,
-    "plan_id": "p36"
+    "plan_id": "p36",
+    "account_type": "Static"
   },
   {
     "firm_id": "f04",
@@ -1033,7 +1069,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f04",
@@ -1061,7 +1098,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f04",
@@ -1089,7 +1127,8 @@
     "max_funded_accounts": null,
     "min_trading_days": null,
     "consistency_eval": null,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Standard"
   },
   {
     "firm_id": "f11",
@@ -1117,7 +1156,8 @@
     "max_funded_accounts": null,
     "min_trading_days": 1,
     "consistency_eval": 40,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Growth"
   },
   {
     "firm_id": "f11",
@@ -1145,7 +1185,8 @@
     "max_funded_accounts": null,
     "min_trading_days": 3,
     "consistency_eval": 40,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Select"
   },
   {
     "firm_id": "f11",
@@ -1173,7 +1214,8 @@
     "max_funded_accounts": null,
     "min_trading_days": 1,
     "consistency_eval": 40,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Growth"
   },
   {
     "firm_id": "f11",
@@ -1201,7 +1243,8 @@
     "max_funded_accounts": null,
     "min_trading_days": 3,
     "consistency_eval": 40,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Select"
   },
   {
     "firm_id": "f11",
@@ -1229,7 +1272,8 @@
     "max_funded_accounts": null,
     "min_trading_days": 1,
     "consistency_eval": 40,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Growth"
   },
   {
     "firm_id": "f11",
@@ -1257,7 +1301,8 @@
     "max_funded_accounts": null,
     "min_trading_days": 3,
     "consistency_eval": 40,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Select"
   },
   {
     "firm_id": "f11",
@@ -1285,7 +1330,8 @@
     "max_funded_accounts": null,
     "min_trading_days": 1,
     "consistency_eval": 40,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Growth"
   },
   {
     "firm_id": "f11",
@@ -1313,6 +1359,7 @@
     "max_funded_accounts": null,
     "min_trading_days": 3,
     "consistency_eval": 40,
-    "consistency_funded": null
+    "consistency_funded": null,
+    "account_type": "Select"
   }
 ]

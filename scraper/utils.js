@@ -56,6 +56,7 @@ function buildPlan({
   firstPayoutDays = null,
   discountPct = 0,
   logoUrl = null,
+  accountType = "Standard",
   // New fields
   maxFundedAccounts = null,
   minTradingDays = null,
@@ -75,6 +76,7 @@ function buildPlan({
     trustpilot,
     plan_id: planId,
     account_size: accountSize,
+    account_type: accountType,
     plan_label: planLabel || `${(accountSize / 1000).toFixed(0)}K`,
     drawdown_type: drawdownType,
     drawdown_amount: drawdownAmount,

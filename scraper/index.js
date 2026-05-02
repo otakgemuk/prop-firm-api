@@ -76,10 +76,10 @@ async function main() {
     return a.account_size - b.account_size;
   });
 
-  // ── Diff (match by firm_slug + account_size, not plan_id) ─
+  // ── Diff (match by firm_slug + account_size + account_type) ─
   if (showDiff) {
     console.log("\n═══ DIFF ═══");
-    const key = (p) => `${p.firm_slug}:${p.account_size}`;
+    const key = (p) => `${p.firm_slug}:${p.account_size}:${p.account_type || "Standard"}`;
     const currentMap = new Map(currentData.map((p) => [key(p), p]));
     const newMap = new Map(results.map((p) => [key(p), p]));
 
@@ -106,10 +106,10 @@ async function main() {
   // ── Apply (preserve existing plan_ids and manual fields) ──
   if (applyChanges || (!showDiff && !firmFilter)) {
     // Merge: keep existing plan_id and manual fields for matched plans
-    const key = (p) => `${p.firm_slug}:${p.account_size}`;
+    const key = (p) => `${p.firm_slug}:${p.account_size}:${p.account_type || "Standard"}`;
     const oldDataMap = new Map(currentData.map((p) => [key(p), p]));
     const FIELDS_TO_PRESERVE = [
-      "plan_id", "max_funded_accounts", "min_trading_days",
+      "plan_id", "account_type", "max_funded_accounts", "min_trading_days",
       "consistency_eval", "consistency_funded",
     ];
     for (const plan of results) {

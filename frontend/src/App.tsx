@@ -16,6 +16,7 @@ type ViewMode = "table" | "cards";
 export default function App() {
   // ── Filter state (source of truth) ─────────────────────
   const [accountSize, setAccountSize]   = useState(0);
+  const [accountTypes, setAccountTypes] = useState<string[]>([]);
   const [drawdowns, setDrawdowns]       = useState<string[]>([]);
   const [platform, setPlatform]         = useState("");
   const [search, setSearch]             = useState("");
@@ -28,6 +29,7 @@ export default function App() {
 
   const filters: PlanFilters = {
     accountSize:  accountSize || undefined,
+    accountType:  accountTypes.length ? accountTypes : undefined,
     drawdownType: drawdowns.length ? drawdowns : undefined,
     platform:     platform || undefined,
     search:       search || undefined,
@@ -125,6 +127,8 @@ export default function App() {
         <FilterBar
           selectedSize={accountSize}
           onSizeChange={(s) => { setAccountSize(s); setPage(1); }}
+          selectedAccountTypes={accountTypes}
+          onAccountTypeChange={(types) => { setAccountTypes(types); setPage(1); }}
           selectedDrawdowns={drawdowns}
           onDrawdownChange={(types) => { setDrawdowns(types); setPage(1); }}
           selectedPlatform={platform}

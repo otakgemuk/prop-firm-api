@@ -4,10 +4,11 @@ const cheerio = require("cheerio");
 
 const FIRM = { firmId: "f04", firmName: "TradeDay", firmSlug: "tradeday", websiteUrl: "https://tradeday.com", trustpilot: 4.6 };
 const CONFIGS = [
-  { size: 25000,  label: "25K",  target: 1500, maxLoss: 1500, dailyLoss: 750  },
-  { size: 50000,  label: "50K",  target: 3000, maxLoss: 2000, dailyLoss: 1000 },
-  { size: 100000, label: "100K", target: 6000, maxLoss: 3000, dailyLoss: 2000 },
-  { size: 150000, label: "150K", target: 9000, maxLoss: 4500, dailyLoss: 3000 },
+  { size: 25000,  label: "25K",  target: 1500, maxLoss: 1500, dailyLoss: 750,  drawdown: "trailing", accountType: "Intraday" },
+  { size: 25000,  label: "25K",  target: 1500, maxLoss: 500,  dailyLoss: 500,  drawdown: "static",   accountType: "Static" },
+  { size: 50000,  label: "50K",  target: 3000, maxLoss: 2000, dailyLoss: 1000, drawdown: "static",   accountType: "Standard" },
+  { size: 100000, label: "100K", target: 6000, maxLoss: 3000, dailyLoss: 2000, drawdown: "static",   accountType: "Standard" },
+  { size: 150000, label: "150K", target: 9000, maxLoss: 4500, dailyLoss: 3000, drawdown: "static",   accountType: "Standard" },
 ];
 
 async function scrape() {
@@ -29,9 +30,11 @@ async function scrape() {
     if (m) { fee = parseMoney(m[1]); if (fee < 50 || fee > 2000) fee = 0; }
     if (!fee) { const known = { 25000: 125, 50000: 150, 100000: 250, 150000: 350 }; fee = known[cfg.size]; }
 
+    const planIdSuffix = cfg.accountType !== "Standard" ? `-${cfg.accountType}` : "";
     plans.push(buildPlan({
-      ...FIRM, planId: `tradeday-${cfg.label}`, accountSize: cfg.size,
-      drawdownType: "static", drawdownAmount: cfg.maxLoss, dailyLossLimit: cfg.dailyLoss,
+      ...FIRM, planId: `tradeday-${cfg.label}${planIdSuffix}`, accountSize: cfg.size,
+      accountType: cfg.accountType,
+      drawdownType: cfg.drawdown, drawdownAmount: cfg.maxLoss, dailyLossLimit: cfg.dailyLoss,
       profitTarget: cfg.target, profitSplit: 90, evalFee: fee, isOneTime: false,
       payoutFrequency: "weekly", maxFundedAccounts: maxFunded, minTradingDays: minDays,
       consistencyEvalPct, consistencyFundedPct,

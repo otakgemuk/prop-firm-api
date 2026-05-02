@@ -61,6 +61,7 @@ async function scrape() {
         planId: `tradeify-growth-${cfg.label}`,
         accountSize: cfg.size,
         planLabel: `${cfg.label} Growth`,
+        accountType: "Growth",
         drawdownType: "end_of_day",
         drawdownAmount: cfg.maxLoss,
         dailyLossLimit: cfg.dailyLoss,
@@ -72,7 +73,7 @@ async function scrape() {
         maxFundedAccounts: maxFunded,
         minTradingDays: minDays || 1,
         consistencyEvalPct,
-        consistencyFundedPct: null, // No funded consistency
+        consistencyFundedPct: null,
       }));
     }
 
@@ -83,6 +84,7 @@ async function scrape() {
         planId: `tradeify-select-${cfg.label}`,
         accountSize: cfg.size,
         planLabel: `${cfg.label} Select`,
+        accountType: "Select",
         drawdownType: "end_of_day",
         drawdownAmount: cfg.maxLoss,
         dailyLossLimit: cfg.dailyLoss,
