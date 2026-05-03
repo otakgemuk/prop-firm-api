@@ -244,6 +244,7 @@ function calcTotalCost(evalFee: number, activationFee: number, discountPct: numb
 function AdminContent() {
   const [plans, setPlans] = useState<PlanRow[]>([]);
   const [loading, setLoading] = useState(true);
+  const [metadata, setMetadata] = useState<any>(null);
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [form, setForm] = useState<PlanRow>({ ...EMPTY_PLAN });
   const [showAddForm, setShowAddForm] = useState(false);
@@ -272,11 +273,12 @@ function AdminContent() {
     }
     
     // Otherwise fetch from server
-    fetch("./plans.json")
-      .then((r) => r.json())
-      .then((data: PlanRow[]) => {
+    Promise.all([
+      fetch("./plans.json").then(r => r.json()),
+      fetch("./metadata.json").then(r => r.json()).catch(() => null)  // Metadata is optional
+    ]).then(([plans, meta]: [any, any]) => {
         // Recalculate total_cost_to_funded with discount applied
-        const recalculatedData = data.map(plan => ({
+        const recalculatedData = (plans as PlanRow[]).map(plan => ({
           ...plan,
           total_cost_to_funded: calcTotalCost(
             plan.eval_fee,
@@ -286,6 +288,7 @@ function AdminContent() {
           )
         }));
         setPlans(recalculatedData);
+        if (meta) setMetadata(meta);
         setLoading(false);
       })
       .catch(() => setLoading(false));
@@ -494,6 +497,11 @@ function AdminContent() {
                   Mighty<span className="text-brand-400">Ox</span> Trading
                 </h1>
                 <p className="text-sm text-gray-400">{plans.length} plans across {firms.length} firms</p>
+                {metadata && (
+                  <p className="text-xs text-gray-500 mt-1">
+                    🔄 Last updated: {metadata.last_updated_formatted}
+                  </p>
+                )}
               </div>
             </div>
           </div>
@@ -783,7 +791,23 @@ function AdminContent() {
                   <td className="px-3 py-2 text-right text-gray-300">${plan.profit_target.toLocaleString()}</td>
                   <td className="px-3 py-2 text-right text-gray-300">${plan.eval_fee}</td>
                   <td className="px-3 py-2 text-right text-gray-300">{plan.profit_split}%</td>
-                  <td className="px-3 py-2 text-right font-bold text-brand-300">${plan.total_cost_to_funded}</td>
+                  <td className="px-3 py-2 text-right font-bold">
+                    {plan.active_discount_pct > 0 ? (
+                      <div className="text-right">
+                        <div className="text-sm text-gray-400 line-through">
+                          ${plan.eval_fee.toFixed(2)}
+                        </div>
+                        <div className="text-green-400 font-bold">
+                          ${(plan.eval_fee - (plan.eval_fee * plan.active_discount_pct) / 100).toFixed(2)}
+                        </div>
+                        <div className="text-xs text-green-300">
+                          {plan.active_discount_pct}% off
+                        </div>
+                      </div>
+                    ) : (
+                      <span className="text-brand-300">${plan.total_cost_to_funded.toFixed(2)}</span>
+                    )}
+                  </td>
                   <td className="px-3 py-2 text-right text-gray-300">
                     {plan.active_discount_pct > 0 ? `${plan.active_discount_pct}%` : "—"}
                   </td>

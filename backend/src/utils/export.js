@@ -82,6 +82,34 @@ const rows = db.prepare(`
 
 db.close();
 
+// ── Add metadata ─────────────────────────────────────────────
+const now = new Date();
+const metadata = {
+  last_updated: now.toISOString(),
+  last_updated_formatted: now.toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    timeZone: 'UTC'
+  }) + ' UTC',
+  total_plans: rows.length,
+  total_firms: new Set(rows.map(r => r.firm_id)).size,
+  plans_with_discounts: rows.filter(r => r.active_discount_pct > 0).length,
+  data_version: '2.0' // Increment when data structure changes
+};
+
 // ── Write JSON ───────────────────────────────────────────────
+// Keep the JSON as a flat array for backward compatibility,
+// but add metadata as a separate file
 fs.writeFileSync(PLANS_PATH, JSON.stringify(rows, null, 2) + "\n");
+
+// Write metadata separately for frontend to display
+const METADATA_PATH = path.join(DATA_DIR, "metadata.json");
+fs.writeFileSync(METADATA_PATH, JSON.stringify(metadata, null, 2) + "\n");
+
 console.log(`[export] Done ✓ — ${rows.length} plans written to ${PLANS_PATH}`);
+console.log(`[export] Metadata written to ${METADATA_PATH}`);
+console.log(`[export] Last updated: ${metadata.last_updated_formatted}`);

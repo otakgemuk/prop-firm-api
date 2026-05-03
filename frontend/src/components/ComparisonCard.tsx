@@ -64,15 +64,24 @@ export default function ComparisonCard({ plan }: { plan: PlanRow }) {
       </div>
 
       {/* ── Total cost highlight ──────────────────────────── */}
-      <div className="mt-4 rounded-xl bg-brand-600/10 p-3 text-center">
-        <p className="text-xs uppercase tracking-wider text-brand-300">Total Cost to Funded</p>
-        <p className="mt-1 text-2xl font-bold text-brand-200">
-          {formatUSD(plan.total_cost_to_funded)}
-        </p>
-        {plan.active_discount_pct > 0 && (
-          <span className="mt-1 inline-block rounded-full bg-green-500/20 px-2 py-0.5 text-xs text-green-300">
-            {plan.active_discount_pct}% off
-          </span>
+      <div className="mt-4 rounded-xl bg-brand-600/10 p-3">
+        <p className="text-xs uppercase tracking-wider text-brand-300 text-center">Total Cost to Funded</p>
+        {plan.active_discount_pct > 0 ? (
+          <div className="mt-2">
+            <p className="text-center text-sm text-gray-400 line-through">
+              ${plan.eval_fee.toFixed(2)}
+            </p>
+            <p className="mt-1 text-center text-2xl font-bold text-green-400">
+              ${(plan.eval_fee - (plan.eval_fee * plan.active_discount_pct) / 100).toFixed(2)}
+            </p>
+            <p className="mt-1 text-center text-xs text-green-300 font-medium">
+              ✓ {plan.active_discount_pct}% discount applied
+            </p>
+          </div>
+        ) : (
+          <p className="mt-1 text-center text-2xl font-bold text-brand-200">
+            {formatUSD(plan.total_cost_to_funded)}
+          </p>
         )}
       </div>
 
