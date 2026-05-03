@@ -64,7 +64,7 @@ function buildPlan({
   consistencyFundedPct = null,
 }) {
   const totalCost = Math.round(
-    (evalFee + activationFee - (evalFee * discountPct) / 100) * 100
+    ((evalFee + activationFee) * (1 - discountPct / 100)) * 100
   ) / 100;
 
   const plan = {

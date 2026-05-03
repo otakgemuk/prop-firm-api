@@ -66,8 +66,9 @@ const rows = db.prepare(`
     p.consistency_funded,
     -- derived fields
     ROUND(
-      p.eval_fee + p.activation_fee +
-      CASE WHEN p.is_one_time = 0 THEN p.monthly_fee * 3 ELSE 0 END,
+      (p.eval_fee + p.activation_fee +
+      CASE WHEN p.is_one_time = 0 THEN p.monthly_fee * 3 ELSE 0 END) *
+      (1 - COALESCE(bd.discount_pct, 0) / 100.0),
       2
     )                                                       AS total_cost_to_funded,
     COALESCE(bd.discount_pct, 0)                            AS active_discount_pct
