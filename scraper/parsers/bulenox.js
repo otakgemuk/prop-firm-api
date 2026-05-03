@@ -53,7 +53,7 @@ async function scrape() {
         ...FIRM, planId: `bulenox-eod-${cfg.label}`, accountSize: cfg.size,
         planLabel: `${cfg.label} EOD`,
         accountType: "EOD",
-        drawdownType: "end_of_day", drawdownAmount: cfg.maxLoss, dailyLossLimit: cfg.dailyLoss,
+        drawdownType: "EOD", drawdownAmount: cfg.maxLoss, dailyLossLimit: cfg.dailyLoss,
         profitTarget: cfg.target, profitSplit: 80, evalFee: eodFee, isOneTime: false,
         payoutFrequency: "biweekly", maxFundedAccounts: maxFunded, minTradingDays: minDays,
         consistencyEvalPct, consistencyFundedPct,

@@ -15,7 +15,7 @@ export interface DrawdownStyle {
 }
 
 export const DRAWDOWN_STYLES: Record<string, DrawdownStyle> = {
-  end_of_day: { label: "EOD",      color: "bg-blue-500/20 text-blue-300" },
+  EOD:        { label: "EOD",      color: "bg-blue-500/20 text-blue-300" },
   trailing:   { label: "Trailing", color: "bg-purple-500/20 text-purple-300" },
   static:     { label: "Static",   color: "bg-emerald-500/20 text-emerald-300" },
   intraday:   { label: "Intraday", color: "bg-amber-500/20 text-amber-300" },

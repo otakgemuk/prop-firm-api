@@ -92,8 +92,8 @@ async function scrape() {
   addPlans(FAST_TRACK, "Fast Track",        "intraday",  true);
   addPlans(STATIC,     "Static",            "static",    true);
   addPlans(DTF,        "Direct to Funded",  "static",    true);
-  addPlans(EOD,        "EOD Drawdown",      "end_of_day", false);
-  addPlans(DIAMOND,    "Diamond Hands",     "end_of_day", false);
+  addPlans(EOD,        "EOD Drawdown",      "EOD", false);
+  addPlans(DIAMOND,    "Diamond Hands",     "EOD", false);
 
   if (plans.length === 0) throw new Error("Could not extract any plans");
   return plans;

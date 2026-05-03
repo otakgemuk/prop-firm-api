@@ -78,15 +78,15 @@ function seed() {
   //              profit_split, is_one_time, payout_frequency, firm_slug]
   // Note: firm_slug is LAST because the SQL uses it in WHERE f.slug = ? (14th param)
   const plans = [
-    ["p01", 50000,  "50K",  "end_of_day", 2000, 1000, 3000,  149,  0,  0, 80, 0, "biweekly", "topstep"],
-    ["p02", 100000, "100K", "end_of_day", 3000, 2000, 6000,  249,  0,  0, 80, 0, "biweekly", "topstep"],
-    ["p03", 150000, "150K", "end_of_day", 5000, 3000, 9000,  349,  0,  0, 80, 0, "biweekly", "topstep"],
+    ["p01", 50000,  "50K",  "EOD", 2000, 1000, 3000,  149,  0,  0, 80, 0, "biweekly", "topstep"],
+    ["p02", 100000, "100K", "EOD", 3000, 2000, 6000,  249,  0,  0, 80, 0, "biweekly", "topstep"],
+    ["p03", 150000, "150K", "EOD", 5000, 3000, 9000,  349,  0,  0, 80, 0, "biweekly", "topstep"],
 
-    ["p04", 25000,  "25K",  "end_of_day", 1250,  625, 1500,  147, 0, 0, 100, 1, "biweekly", "apex-trader-funding"],
-    ["p05", 50000,  "50K",  "end_of_day", 2500, 1250, 3000,  167, 0, 0, 100, 1, "biweekly", "apex-trader-funding"],
-    ["p06", 100000, "100K", "end_of_day", 3000, 2000, 6000,  207, 0, 0, 100, 1, "biweekly", "apex-trader-funding"],
-    ["p07", 150000, "150K", "end_of_day", 5000, 3000, 9000,  297, 0, 0, 100, 1, "biweekly", "apex-trader-funding"],
-    ["p08", 250000, "250K", "end_of_day", 6500, 4000, 15000, 517, 0, 0, 100, 1, "biweekly", "apex-trader-funding"],
+    ["p04", 25000,  "25K",  "EOD", 1250,  625, 1500,  147, 0, 0, 100, 1, "biweekly", "apex-trader-funding"],
+    ["p05", 50000,  "50K",  "EOD", 2500, 1250, 3000,  167, 0, 0, 100, 1, "biweekly", "apex-trader-funding"],
+    ["p06", 100000, "100K", "EOD", 3000, 2000, 6000,  207, 0, 0, 100, 1, "biweekly", "apex-trader-funding"],
+    ["p07", 150000, "150K", "EOD", 5000, 3000, 9000,  297, 0, 0, 100, 1, "biweekly", "apex-trader-funding"],
+    ["p08", 250000, "250K", "EOD", 6500, 4000, 15000, 517, 0, 0, 100, 1, "biweekly", "apex-trader-funding"],
 
     ["p09", 50000,  "50K",  "trailing",  2500, 1250, 3000,  200, 0, 0, 80, 0, "biweekly", "myfundedfutures"],
     ["p10", 100000, "100K", "trailing",  3500, 2000, 6000,  300, 0, 0, 80, 0, "biweekly", "myfundedfutures"],
@@ -99,9 +99,9 @@ function seed() {
     ["p15", 50000,  "50K",  "trailing", 2500, 1250, 3000,  175, 0, 0, 80, 0, "weekly", "lucid-trading"],
     ["p16", 100000, "100K", "trailing", 3500, 2000, 6000,  275, 0, 0, 80, 0, "weekly", "lucid-trading"],
 
-    ["p17", 50000,  "50K",  "end_of_day", 2000, 1000, 3000,  150, 0, 0, 80, 0, "biweekly", "take-profit-trader"],
-    ["p18", 100000, "100K", "end_of_day", 3000, 2000, 6000,  250, 0, 0, 80, 0, "biweekly", "take-profit-trader"],
-    ["p19", 150000, "150K", "end_of_day", 5000, 3000, 9000,  350, 0, 0, 80, 0, "biweekly", "take-profit-trader"],
+    ["p17", 50000,  "50K",  "EOD", 2000, 1000, 3000,  150, 0, 0, 80, 0, "biweekly", "take-profit-trader"],
+    ["p18", 100000, "100K", "EOD", 3000, 2000, 6000,  250, 0, 0, 80, 0, "biweekly", "take-profit-trader"],
+    ["p19", 150000, "150K", "EOD", 5000, 3000, 9000,  350, 0, 0, 80, 0, "biweekly", "take-profit-trader"],
 
     ["p20", 25000,  "25K",  "trailing", 1250,  500, 1500,  100, 0, 0, 80, 1, "biweekly", "bulenox"],
     ["p21", 50000,  "50K",  "trailing", 2500, 1000, 3000,  150, 0, 0, 80, 1, "biweekly", "bulenox"],
@@ -111,9 +111,9 @@ function seed() {
     ["p24", 100000, "100K", "intraday", 3000, 2000, 6000,  255, 0, 0, 100, 0, "biweekly", "elite-trader-funding"],
     ["p25", 150000, "150K", "intraday", 5000, 3000, 9000,  355, 0, 0, 100, 0, "biweekly", "elite-trader-funding"],
 
-    ["p26", 50000,  "50K",  "end_of_day", 2000, 1000, 3000,  150, 0, 0, 80, 0, "biweekly", "earn2trade"],
-    ["p27", 100000, "100K", "end_of_day", 3000, 2000, 6000,  250, 0, 0, 80, 0, "biweekly", "earn2trade"],
-    ["p28", 150000, "150K", "end_of_day", 5000, 3000, 9000,  350, 0, 0, 80, 0, "biweekly", "earn2trade"],
+    ["p26", 50000,  "50K",  "EOD", 2000, 1000, 3000,  150, 0, 0, 80, 0, "biweekly", "earn2trade"],
+    ["p27", 100000, "100K", "EOD", 3000, 2000, 6000,  250, 0, 0, 80, 0, "biweekly", "earn2trade"],
+    ["p28", 150000, "150K", "EOD", 5000, 3000, 9000,  350, 0, 0, 80, 0, "biweekly", "earn2trade"],
 
     ["p29", 50000,  "50K",  "static", 2000, 1000, 3000,  160, 0, 0, 90, 1, "weekly", "alpha-futures"],
     ["p30", 100000, "100K", "static", 3000, 2000, 6000,  260, 0, 0, 90, 1, "weekly", "alpha-futures"],

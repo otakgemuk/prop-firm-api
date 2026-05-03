@@ -85,7 +85,7 @@ async function scrape() {
           accountSize: cfg.size,
           planLabel: `${cfg.label} ${type.name}`,
           accountType: type.name,
-          drawdownType: "end_of_day",
+          drawdownType: "EOD",
           drawdownAmount: cfg.maxLoss,
           dailyLossLimit: 0,
           profitTarget: cfg.target,

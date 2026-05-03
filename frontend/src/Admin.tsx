@@ -188,7 +188,7 @@ const EMPTY_PLAN: PlanRow = {
   account_size: 50000,
   account_type: "Standard",
   plan_label: "50K",
-  drawdown_type: "end_of_day",
+  drawdown_type: "EOD",
   drawdown_amount: 2000,
   daily_loss_limit: 1000,
   profit_target: 3000,
@@ -207,7 +207,7 @@ const EMPTY_PLAN: PlanRow = {
   consistency_funded: 0,
 };
 
-const DRAWDOWN_OPTIONS = ["end_of_day", "trailing", "static", "intraday"];
+const DRAWDOWN_OPTIONS = ["EOD", "trailing", "static", "intraday"];
 const PAYOUT_OPTIONS = ["weekly", "biweekly"];
 
 function slugify(text: string): string {

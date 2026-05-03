@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS plans (
     account_size        INTEGER NOT NULL,
     account_type        TEXT NOT NULL DEFAULT 'Standard',
     label               TEXT,
-    drawdown_type       TEXT NOT NULL CHECK (drawdown_type IN ('end_of_day','trailing','static','intraday')),
+    drawdown_type       TEXT NOT NULL CHECK (drawdown_type IN ('EOD','trailing','static','intraday')),
     drawdown_amount     INTEGER,
     daily_loss_limit    INTEGER,
     profit_target       INTEGER,

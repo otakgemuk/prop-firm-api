@@ -14,9 +14,9 @@ const FIRM = {
 };
 
 const CONFIGS = [
-  { size: 50000,  label: "50K",  target: 3000, maxLoss: 2000, drawdown: "end_of_day" },
-  { size: 100000, label: "100K", target: 6000, maxLoss: 3000, drawdown: "end_of_day" },
-  { size: 150000, label: "150K", target: 9000, maxLoss: 4500, drawdown: "end_of_day" },
+  { size: 50000,  label: "50K",  target: 3000, maxLoss: 2000, drawdown: "EOD" },
+  { size: 100000, label: "100K", target: 6000, maxLoss: 3000, drawdown: "EOD" },
+  { size: 150000, label: "150K", target: 9000, maxLoss: 4500, drawdown: "EOD" },
 ];
 
 // Known prices (from website as of May 2026)

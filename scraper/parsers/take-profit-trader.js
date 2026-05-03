@@ -30,7 +30,7 @@ async function scrape() {
 
     plans.push(buildPlan({
       ...FIRM, planId: `tpt-${cfg.label}`, accountSize: cfg.size,
-      drawdownType: "end_of_day", drawdownAmount: cfg.maxLoss, dailyLossLimit: cfg.dailyLoss,
+      drawdownType: "EOD", drawdownAmount: cfg.maxLoss, dailyLossLimit: cfg.dailyLoss,
       profitTarget: cfg.target, profitSplit: 80, evalFee: fee, isOneTime: false,
       payoutFrequency: "biweekly", maxFundedAccounts: maxFunded, minTradingDays: minDays,
       consistencyEvalPct, consistencyFundedPct,
