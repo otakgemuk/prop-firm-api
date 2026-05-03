@@ -17,6 +17,12 @@ const DEFAULT_HASH = "51fa9d843acd4af113c93de66ceb65e0765b0015fbaaf6a4dfc0626010
 const HASH_KEY = "admin_pw_hash";
 const SESSION_KEY = "admin_auth";
 
+// ── GitHub API constants ───────────────────────────────────
+const GITHUB_OWNER = "otakgemuk";
+const GITHUB_REPO = "prop-firm-api";
+const GITHUB_BRANCH = "main";
+const PLANS_FILE_PATH = "data/plans.json";
+
 async function sha256(text: string): Promise<string> {
   const encoder = new TextEncoder();
   const data = encoder.encode(text);
@@ -244,6 +250,8 @@ function AdminContent() {
   const [filterFirm, setFilterFirm] = useState("");
   const [toast, setToast] = useState("");
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
+  const [deployStatus, setDeployStatus] = useState<"idle" | "pushing" | "success" | "error">("idle");
+  const [deployMsg, setDeployMsg] = useState("");
 
   // Load data with local storage persistence
   useEffect(() => {
@@ -291,6 +299,80 @@ function AdminContent() {
 
   // Filtered plans
   const filtered = filterFirm ? plans.filter((p) => p.firm_id === filterFirm) : plans;
+
+  // ── GitHub commit function ───────────────────────────────
+  const handleSaveAndDeploy = async () => {
+    const token = localStorage.getItem("gh_token");
+    if (!token) {
+      setDeployStatus("error");
+      setDeployMsg("❌ No GitHub token set. Open the Scraper section below and enter your GitHub PAT.");
+      return;
+    }
+
+    setDeployStatus("pushing");
+    setDeployMsg("Fetching current file from GitHub…");
+
+    try {
+      const json = JSON.stringify(plans, null, 2);
+      const base64Content = btoa(unescape(encodeURIComponent(json)));
+
+      // Step 1: Get current file SHA (required by GitHub API to update)
+      const fileUrl = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${PLANS_FILE_PATH}`;
+      const getRes = await fetch(`${fileUrl}?ref=${GITHUB_BRANCH}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: "application/vnd.github.v3+json",
+        },
+      });
+
+      if (!getRes.ok) {
+        throw new Error(`Failed to fetch file info: ${getRes.status} ${getRes.statusText}`);
+      }
+
+      const fileInfo = await getRes.json();
+      const currentSha = fileInfo.sha;
+
+      setDeployMsg("Committing changes to GitHub…");
+
+      // Step 2: Update the file via PUT
+      const putRes = await fetch(fileUrl, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: "application/vnd.github.v3+json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: `data: update plans from admin panel (${new Date().toISOString().slice(0, 16)})`,
+          content: base64Content,
+          sha: currentSha,
+          branch: GITHUB_BRANCH,
+        }),
+      });
+
+      if (!putRes.ok) {
+        const errBody = await putRes.json().catch(() => ({}));
+        throw new Error(`GitHub API error ${putRes.status}: ${errBody.message || putRes.statusText}`);
+      }
+
+      const result = await putRes.json();
+
+      setDeployStatus("success");
+      setDeployMsg(`✅ Deployed! Commit: ${result.commit.sha.slice(0, 7)}. Site will update in ~2 minutes.`);
+      setHasUnsavedChanges(false);
+      localStorage.removeItem("admin_plans_draft");
+
+      // Auto-clear success message after 8 seconds
+      setTimeout(() => {
+        setDeployStatus("idle");
+        setDeployMsg("");
+      }, 8000);
+
+    } catch (err: any) {
+      setDeployStatus("error");
+      setDeployMsg(`❌ ${err.message}`);
+    }
+  };
 
   // ── Form helpers ─────────────────────────────────────────
   const updateField = (field: keyof PlanRow, value: any) => {
@@ -413,6 +495,13 @@ function AdminContent() {
               ← Back to Site
             </a>
             <button
+              onClick={handleSaveAndDeploy}
+              disabled={deployStatus === "pushing"}
+              className="rounded-lg bg-brand-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-400 disabled:opacity-50"
+            >
+              {deployStatus === "pushing" ? "⏳ Deploying…" : "🚀 Save & Deploy"}
+            </button>
+            <button
               onClick={handleExport}
               className="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-500"
             >
@@ -435,25 +524,51 @@ function AdminContent() {
 
       <main className="mx-auto max-w-7xl px-4 py-6 space-y-6">
 
+        {/* ── Deploy Status ──────────────────────────────── */}
+        {deployMsg && (
+          <div className={`rounded-lg border p-3 flex items-center gap-3 text-sm ${
+            deployStatus === "success" ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-300" :
+            deployStatus === "error" ? "border-red-500/30 bg-red-500/10 text-red-300" :
+            "border-blue-500/30 bg-blue-500/10 text-blue-300"
+          }`}>
+            {deployStatus === "pushing" && (
+              <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" className="opacity-25" />
+                <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" className="opacity-75" />
+              </svg>
+            )}
+            <span>{deployMsg}</span>
+            {deployStatus === "error" && deployMsg.includes("No GitHub token") && (
+              <a href="#scraper" className="underline hover:text-white ml-2">Set token ↓</a>
+            )}
+          </div>
+        )}
+
         {/* ── Unsaved Changes Warning ──────────────────────── */}
-        {hasUnsavedChanges && (
+        {hasUnsavedChanges && deployStatus !== "pushing" && deployStatus !== "success" && (
           <div className="rounded-lg border border-yellow-500/30 bg-yellow-500/10 p-3 flex items-center gap-3 text-sm text-yellow-300">
             <span>⚠️ You have unsaved changes</span>
             <span className="text-yellow-500/60">•</span>
             <button
-              onClick={() => {
-                handleExport();
-                setHasUnsavedChanges(false);
-              }}
+              onClick={handleSaveAndDeploy}
+              className="underline hover:text-yellow-200 font-medium"
+            >
+              🚀 Save & Deploy now
+            </button>
+            <span className="text-yellow-500/60">•</span>
+            <button
+              onClick={handleExport}
               className="underline hover:text-yellow-200"
             >
-              Export to commit to GitHub
+              or copy JSON manually
             </button>
           </div>
         )}
 
         {/* ── Scraper Section ──────────────────────────────── */}
-        <ScraperSection />
+        <div id="scraper">
+          <ScraperSection />
+        </div>
 
         {/* ── Toolbar ──────────────────────────────────────── */}
         <div className="flex flex-wrap items-center gap-3">
@@ -677,13 +792,28 @@ function AdminContent() {
         {/* ── Instructions ─────────────────────────────────── */}
         <div className="rounded-2xl border border-white/10 bg-gray-900/60 p-6">
           <h3 className="mb-2 font-semibold text-white">How to update the live site</h3>
-          <ol className="list-inside list-decimal space-y-1 text-sm text-gray-400">
-            <li>Make your changes above (add, edit, or delete plans)</li>
-            <li>Click <strong className="text-emerald-400">📋 Export JSON</strong> to copy the data</li>
-            <li>Go to <a href="https://github.com/otakgemuk/prop-firm-api/blob/main/data/plans.json" target="_blank" rel="noopener" className="text-brand-400 underline">data/plans.json on GitHub</a></li>
-            <li>Click the pencil icon (Edit), select all, paste the new JSON</li>
-            <li>Commit changes — the site auto-updates in ~2 minutes</li>
-          </ol>
+          <div className="space-y-4 text-sm text-gray-400">
+            <div>
+              <p className="font-medium text-emerald-400 mb-1">🚀 Automatic (Recommended)</p>
+              <ol className="list-inside list-decimal space-y-1 ml-2">
+                <li>Make your changes above (add, edit, or delete plans)</li>
+                <li>Click <strong className="text-white">🚀 Save & Deploy</strong> in the header</li>
+                <li>Done! GitHub Actions rebuilds and deploys in ~2 minutes</li>
+              </ol>
+              <p className="mt-2 text-xs text-gray-500">
+                Requires a GitHub PAT with <code>contents: write</code> scope — set it in the Scraper section above.
+              </p>
+            </div>
+            <div>
+              <p className="font-medium text-gray-300 mb-1">📋 Manual (Fallback)</p>
+              <ol className="list-inside list-decimal space-y-1 ml-2">
+                <li>Click <strong className="text-emerald-400">📋 Export JSON</strong> to copy the data</li>
+                <li>Go to <a href="https://github.com/otakgemuk/prop-firm-api/blob/main/data/plans.json" target="_blank" rel="noopener" className="text-brand-400 underline">data/plans.json on GitHub</a></li>
+                <li>Click the pencil icon (Edit), select all, paste the new JSON</li>
+                <li>Commit changes — the site auto-updates in ~2 minutes</li>
+              </ol>
+            </div>
+          </div>
         </div>
       </main>
     </div>
