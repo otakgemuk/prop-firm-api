@@ -42,7 +42,7 @@ export const ACCOUNT_TYPE_OPTIONS = [
 ];
 
 export const DRAWDOWN_OPTIONS = [
-  { value: "end_of_day", label: "EOD" },
+  { value: "EOD", label: "EOD" },
   { value: "trailing",   label: "Trailing" },
   { value: "static",     label: "Static" },
   { value: "intraday",   label: "Intraday" },
