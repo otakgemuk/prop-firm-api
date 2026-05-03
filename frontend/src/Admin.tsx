@@ -243,9 +243,27 @@ function AdminContent() {
   const [showAddForm, setShowAddForm] = useState(false);
   const [filterFirm, setFilterFirm] = useState("");
   const [toast, setToast] = useState("");
+  const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
 
-  // Load data
+  // Load data with local storage persistence
   useEffect(() => {
+    // Check for unsaved draft in localStorage first
+    const draftKey = "admin_plans_draft";
+    const savedDraft = localStorage.getItem(draftKey);
+    
+    if (savedDraft) {
+      try {
+        const data = JSON.parse(savedDraft);
+        setPlans(data);
+        setLoading(false);
+        console.log("✓ Loaded draft from local storage");
+        return;
+      } catch (e) {
+        console.error("Failed to load draft:", e);
+      }
+    }
+    
+    // Otherwise fetch from server
     fetch("./plans.json")
       .then((r) => r.json())
       .then((data: PlanRow[]) => {
@@ -254,6 +272,14 @@ function AdminContent() {
       })
       .catch(() => setLoading(false));
   }, []);
+  
+  // Auto-save plans to localStorage whenever they change
+  useEffect(() => {
+    if (plans.length > 0) {
+      localStorage.setItem("admin_plans_draft", JSON.stringify(plans));
+      setHasUnsavedChanges(true);
+    }
+  }, [plans]);
 
   const showToast = useCallback((msg: string) => {
     setToast(msg);
@@ -392,11 +418,39 @@ function AdminContent() {
             >
               📋 Export JSON
             </button>
+            <button
+              onClick={() => {
+                if (confirm("Clear all unsaved edits and reload from server?")) {
+                  localStorage.removeItem("admin_plans_draft");
+                  window.location.reload();
+                }
+              }}
+              className="rounded-lg border border-orange-500/50 px-4 py-2 text-sm text-orange-300 transition hover:border-orange-400 hover:text-orange-200"
+            >
+              ⟲ Reset (Load Fresh)
+            </button>
           </div>
         </div>
       </header>
 
       <main className="mx-auto max-w-7xl px-4 py-6 space-y-6">
+
+        {/* ── Unsaved Changes Warning ──────────────────────── */}
+        {hasUnsavedChanges && (
+          <div className="rounded-lg border border-yellow-500/30 bg-yellow-500/10 p-3 flex items-center gap-3 text-sm text-yellow-300">
+            <span>⚠️ You have unsaved changes</span>
+            <span className="text-yellow-500/60">•</span>
+            <button
+              onClick={() => {
+                handleExport();
+                setHasUnsavedChanges(false);
+              }}
+              className="underline hover:text-yellow-200"
+            >
+              Export to commit to GitHub
+            </button>
+          </div>
+        )}
 
         {/* ── Scraper Section ──────────────────────────────── */}
         <ScraperSection />
