@@ -89,5 +89,5 @@ jobs:
           git commit -m "data: auto-update pricing ($(date -u +%Y-%m-%d))
 
           Automated daily price check via GitHub Actions.
-          Database migrated, baseline imported, 11 firms scraped, results exported."
+          Database migrated, baseline imported, 17 firms scraped, results exported."
           git push
