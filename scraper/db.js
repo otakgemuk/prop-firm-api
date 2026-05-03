@@ -28,10 +28,25 @@ function getDb() {
   return _db;
 }
 
+// ── Normalize drawdown_type ────────────────────────────────────
+// Convert any 'end_of_day' values to 'EOD' for consistency.
+// This handles cases where parsers or external data sources
+// still use 'end_of_day' instead of the standardized 'EOD'.
+function normalizeDrawdownType(value) {
+  if (!value) return value;
+  const normalized = String(value).toLowerCase();
+  if (normalized === "end_of_day" || normalized === "eod") {
+    return "EOD";
+  }
+  // Return as-is for other types: trailing, static, intraday
+  return value;
+}
+
 // ── Upsert scraped plans for one firm ───────────────────────
 // `plans` is the array returned by a parser's scrape() method.
 // Fields the scraper provides are updated; manual/enrichment
 // fields (max_funded_accounts etc.) are left untouched.
+// All drawdown_type values are normalized to EOD if needed.
 function upsertPlans(firmSlug, plans) {
   const db = getDb();
 
@@ -80,7 +95,7 @@ function upsertPlans(firmSlug, plans) {
         account_size:      p.account_size,
         account_type:      p.account_type      ?? "Standard",
         label:             p.plan_label        ?? p.label ?? null,
-        drawdown_type:     p.drawdown_type,
+        drawdown_type:     normalizeDrawdownType(p.drawdown_type),
         drawdown_amount:   p.drawdown_amount   ?? null,
         daily_loss_limit:  p.daily_loss_limit  ?? null,
         profit_target:     p.profit_target     ?? null,

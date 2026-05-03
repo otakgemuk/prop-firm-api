@@ -4,8 +4,12 @@
   "version": "1.0.0",
   "description": "Prop firm pricing scraper",
   "dependencies": {
+    "@mapbox/node-pre-gyp": "^1.0.11",
     "better-sqlite3": "^11.7.0",
     "cheerio": "^1.0.0",
     "playwright": "^1.49.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

@@ -26,6 +26,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install build tools (for native modules like better-sqlite3)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3 make g++
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:

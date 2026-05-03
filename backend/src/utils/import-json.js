@@ -26,6 +26,19 @@ const db    = new Database(DB_PATH);
 db.pragma("journal_mode = WAL");
 db.pragma("foreign_keys = ON");
 
+// ── Normalize drawdown_type ──────────────────────────────────
+// Convert any 'end_of_day' values to 'EOD' for consistency.
+// This handles legacy data or data collected from external sources.
+function normalizeDrawdownType(value) {
+  if (!value) return value;
+  const normalized = String(value).toLowerCase();
+  if (normalized === "end_of_day" || normalized === "eod") {
+    return "EOD";
+  }
+  // Return as-is for other types: trailing, static, intraday
+  return value;
+}
+
 // ── Prepared statements ──────────────────────────────────────
 const upsertFirm = db.prepare(`
   INSERT INTO firms (id, name, slug, logo_url, website_url, trustpilot, is_active)
@@ -105,7 +118,7 @@ const importAll = db.transaction((rows) => {
       account_size:       p.account_size,
       account_type:       p.account_type        ?? "Standard",
       label:              p.plan_label           ?? null,
-      drawdown_type:      p.drawdown_type,
+      drawdown_type:      normalizeDrawdownType(p.drawdown_type),
       drawdown_amount:    p.drawdown_amount      ?? null,
       daily_loss_limit:   p.daily_loss_limit     ?? null,
       profit_target:      p.profit_target        ?? null,
