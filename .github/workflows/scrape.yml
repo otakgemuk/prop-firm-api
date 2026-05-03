@@ -1,7 +1,10 @@
-# Scraper workflow — triggered manually from the admin page
+# Manual scraper workflow — triggered via GitHub Actions UI
 #
-# Runs the scraper, commits any price changes back to main,
-# which triggers the deploy workflow automatically.
+# Usage:
+#   1. Go to Actions → Scrape Prop Firm Prices → Run workflow
+#   2. (Optional) Enter firm slug to scrape one firm only
+#   3. Workflow runs migrate → import → scrape → export
+#   4. If prices changed, commits to main and triggers deploy
 
 name: Scrape Prop Firm Prices
 
@@ -9,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       firm:
-        description: "Firm to scrape (leave empty for all)"
+        description: "Firm to scrape (e.g. topstep; leave empty for all)"
         required: false
         type: string
 
@@ -28,9 +31,15 @@ jobs:
         with:
           node-version: 20
           cache: "npm"
-          cache-dependency-path: scraper/package-lock.json
+          cache-dependency-path: |
+            backend/package-lock.json
+            scraper/package-lock.json
 
-      - name: Install dependencies
+      - name: Install backend dependencies
+        working-directory: backend
+        run: npm ci
+
+      - name: Install scraper dependencies
         working-directory: scraper
         run: npm ci
 
@@ -38,20 +47,38 @@ jobs:
         working-directory: scraper
         run: npx playwright install --with-deps chromium
 
+      - name: Migrate database schema
+        working-directory: backend
+        run: npm run migrate
+
+      - name: Import baseline data from JSON
+        working-directory: backend
+        run: npm run import
+
       - name: Run scraper
         working-directory: scraper
         run: |
           if [ -n "${{ inputs.firm }}" ]; then
-            node index.js --firm "${{ inputs.firm }}" --apply
+            node index.js --firm "${{ inputs.firm }}"
           else
-            node index.js --apply
+            node index.js
           fi
+
+      - name: Export database to JSON
+        working-directory: backend
+        run: npm run export
 
       - name: Check for changes
         id: changes
         run: |
-          git diff --quiet data/plans.json && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
-          git diff --stat data/plans.json || true
+          if git diff --quiet data/plans.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No price changes detected."
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Price changes detected:"
+            git diff --stat data/plans.json
+          fi
 
       - name: Commit and push
         if: steps.changes.outputs.changed == 'true'
@@ -61,5 +88,5 @@ jobs:
           git add data/plans.json
           git commit -m "data: auto-update pricing from scraper
 
-          Triggered via admin page on $(date -u +%Y-%m-%d)"
+          Triggered manually on $(date -u +%Y-%m-%d\ %H:%M:%S) UTC"
           git push

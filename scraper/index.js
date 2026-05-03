@@ -2,16 +2,15 @@
 // scraper/index.js
 //
 // Prop Firm Data Scraper
-// Fetches pricing data from each firm's website and outputs normalized JSON.
+// Fetches pricing data from each firm's website and upserts into SQLite.
+// After all firms are scraped, export.js is called to regenerate plans.json.
 //
 // Usage:
-//   node scraper/index.js                    # scrape all firms
+//   node scraper/index.js                     # scrape all firms
 //   node scraper/index.js --firm topstep      # scrape one firm
-//   node scraper/index.js --diff              # show diff vs current data/plans.json
-//   node scraper/index.js --apply             # scrape and overwrite data/plans.json
+//   node scraper/index.js --diff              # show diff vs DB (no write)
 
-const fs = require("fs");
-const path = require("path");
+const { upsertPlans, getExistingPlans, close } = require("./db");
 
 // ── Parser registry ────────────────────────────────────────
 const parsers = {
@@ -29,118 +28,124 @@ const parsers = {
 };
 
 // ── CLI args ───────────────────────────────────────────────
-const args = process.argv.slice(2);
+const args       = process.argv.slice(2);
 const firmFilter = args.includes("--firm") ? args[args.indexOf("--firm") + 1] : null;
-const showDiff = args.includes("--diff");
-const applyChanges = args.includes("--apply");
+const showDiff   = args.includes("--diff");
 
 // ── Main ───────────────────────────────────────────────────
 async function main() {
-  const DATA_PATH = path.join(__dirname, "../data/plans.json");
-  const currentData = JSON.parse(fs.readFileSync(DATA_PATH, "utf8"));
-
-  const firmsToScrape = firmFilter
-    ? { [firmFilter]: parsers[firmFilter] }
-    : parsers;
-
   if (firmFilter && !parsers[firmFilter]) {
     console.error(`Unknown firm: ${firmFilter}`);
     console.error(`Available: ${Object.keys(parsers).join(", ")}`);
     process.exit(1);
   }
 
-  const results = [];
-  const errors = [];
+  const firmsToScrape = firmFilter
+    ? { [firmFilter]: parsers[firmFilter] }
+    : parsers;
+
+  const errors  = [];
+  let succeeded = 0;
 
   for (const [slug, parser] of Object.entries(firmsToScrape)) {
     console.log(`\n[${slug}] Scraping...`);
+
+    let plans;
     try {
-      const plans = await parser.scrape();
-      console.log(`[${slug}] ✓ Found ${plans.length} plans`);
-      results.push(...plans);
+      plans = await withRetry(() => parser.scrape(), { slug, attempts: 3 });
     } catch (err) {
-      console.error(`[${slug}] ✗ Error: ${err.message}`);
+      console.error(`[${slug}] ✗ All attempts failed: ${err.message}`);
       errors.push({ slug, error: err.message });
-      // Fall back to existing data for this firm
-      const existing = currentData.filter((p) => p.firm_slug === slug);
+      // Existing DB data for this firm is already intact — no action needed.
+      const existing = getExistingPlans(slug);
       if (existing.length) {
-        console.log(`[${slug}] ↩ Keeping ${existing.length} existing plans`);
-        results.push(...existing);
+        console.log(`[${slug}] ↩ Keeping ${existing.length} existing plans from DB`);
       }
-    }
-  }
-
-  // Sort by firm_name, then account_size
-  results.sort((a, b) => {
-    if (a.firm_name !== b.firm_name) return a.firm_name.localeCompare(b.firm_name);
-    return a.account_size - b.account_size;
-  });
-
-  // ── Diff (match by firm_slug + account_size + account_type) ─
-  if (showDiff) {
-    console.log("\n═══ DIFF ═══");
-    const key = (p) => `${p.firm_slug}:${p.account_size}:${p.account_type || "Standard"}`;
-    const currentMap = new Map(currentData.map((p) => [key(p), p]));
-    const newMap = new Map(results.map((p) => [key(p), p]));
-
-    let changes = 0;
-    for (const [k, newPlan] of newMap) {
-      const old = currentMap.get(k);
-      if (!old) {
-        console.log(`  + NEW: ${newPlan.firm_name} ${newPlan.plan_label} — $${newPlan.eval_fee}`);
-        changes++;
-      } else if (old.eval_fee !== newPlan.eval_fee || old.total_cost_to_funded !== newPlan.total_cost_to_funded) {
-        console.log(`  ~ CHANGED: ${newPlan.firm_name} ${newPlan.plan_label} — eval $${old.eval_fee}→$${newPlan.eval_fee}, total $${old.total_cost_to_funded}→$${newPlan.total_cost_to_funded}`);
-        changes++;
-      }
-    }
-    for (const [k, oldPlan] of currentMap) {
-      if (!newMap.has(k)) {
-        console.log(`  - REMOVED: ${oldPlan.firm_name} ${oldPlan.plan_label}`);
-        changes++;
-      }
-    }
-    if (changes === 0) console.log("  No changes detected.");
-  }
-
-  // ── Apply (preserve existing plan_ids and manual fields) ──
-  if (applyChanges || (!showDiff && !firmFilter)) {
-    // Merge: keep existing plan_id and manual fields for matched plans
-    const key = (p) => `${p.firm_slug}:${p.account_size}:${p.account_type || "Standard"}`;
-    const oldDataMap = new Map(currentData.map((p) => [key(p), p]));
-    const FIELDS_TO_PRESERVE = [
-      "plan_id", "account_type", "max_funded_accounts", "min_trading_days",
-      "consistency_eval", "consistency_funded",
-    ];
-    for (const plan of results) {
-      const existing = oldDataMap.get(key(plan));
-      if (existing) {
-        plan.plan_id = existing.plan_id;
-        for (const field of FIELDS_TO_PRESERVE) {
-          if ((plan[field] === null || plan[field] === undefined) && existing[field] != null) {
-            plan[field] = existing[field];
-          }
-        }
-      }
+      continue;
     }
 
-    fs.writeFileSync(DATA_PATH, JSON.stringify(results, null, 2) + "\n");
-    console.log(`\n✓ Wrote ${results.length} plans to ${DATA_PATH}`);
-  } else if (!showDiff) {
-    // Default: print to stdout
-    console.log(JSON.stringify(results, null, 2));
+    if (showDiff) {
+      const existing = getExistingPlans(slug);
+      printDiff(slug, existing, plans);
+    } else {
+      upsertPlans(slug, plans);
+      console.log(`[${slug}] ✓ Upserted ${plans.length} plans`);
+    }
+    succeeded++;
   }
 
   // ── Summary ──────────────────────────────────────────────
+  console.log(`\n─────────────────────────────────────`);
+  console.log(`Scraped: ${succeeded}/${Object.keys(firmsToScrape).length} firms`);
   if (errors.length) {
-    console.log(`\n⚠ ${errors.length} firm(s) had errors:`);
-    errors.forEach((e) => console.log(`  - ${e.slug}: ${e.error}`));
+    console.log(`⚠  ${errors.length} firm(s) had errors:`);
+    errors.forEach(e => console.log(`   - ${e.slug}: ${e.error}`));
   }
 
-  console.log(`\nTotal: ${results.length} plans across ${new Set(results.map(r => r.firm_id)).size} firms`);
+  // Fail CI if too many scrapers errored — prevents stale data from
+  // silently shipping without anyone noticing.
+  const FAILURE_THRESHOLD = 3;
+  if (!showDiff && errors.length >= FAILURE_THRESHOLD) {
+    console.error(
+      `\n✗ ${errors.length} scrapers failed (threshold: ${FAILURE_THRESHOLD}). ` +
+      "Marking CI job as failed."
+    );
+    close();
+    process.exit(1);
+  }
+
+  close();
 }
 
-main().catch((err) => {
+// ── Retry helper ───────────────────────────────────────────
+async function withRetry(fn, { slug, attempts = 3, delayMs = 2000 } = {}) {
+  let lastErr;
+  for (let i = 1; i <= attempts; i++) {
+    try {
+      return await fn();
+    } catch (err) {
+      lastErr = err;
+      if (i < attempts) {
+        console.warn(`[${slug}] attempt ${i} failed, retrying in ${delayMs * i}ms...`);
+        await new Promise(r => setTimeout(r, delayMs * i));
+      }
+    }
+  }
+  throw lastErr;
+}
+
+// ── Diff printer (--diff mode) ─────────────────────────────
+function printDiff(slug, existing, incoming) {
+  const key    = p => `${p.account_size}:${p.account_type ?? "Standard"}`;
+  const oldMap = new Map(existing.map(p => [key(p), p]));
+  const newMap = new Map(incoming.map(p => [key(p), p]));
+
+  let changes = 0;
+  for (const [k, np] of newMap) {
+    const op = oldMap.get(k);
+    if (!op) {
+      console.log(`  + NEW    [${slug}] ${np.plan_label ?? k} — $${np.eval_fee}`);
+      changes++;
+    } else if (op.eval_fee !== np.eval_fee || op.activation_fee !== np.activation_fee) {
+      console.log(
+        `  ~ CHANGE [${slug}] ${np.plan_label ?? k} — ` +
+        `eval $${op.eval_fee}→$${np.eval_fee}, ` +
+        `activation $${op.activation_fee}→$${np.activation_fee}`
+      );
+      changes++;
+    }
+  }
+  for (const [k, op] of oldMap) {
+    if (!newMap.has(k)) {
+      console.log(`  - REMOVE [${slug}] ${op.label ?? k}`);
+      changes++;
+    }
+  }
+  if (changes === 0) console.log(`  [${slug}] No changes.`);
+}
+
+main().catch(err => {
   console.error("Fatal:", err);
+  close();
   process.exit(1);
 });

@@ -6,6 +6,8 @@
     "dev": "node --watch src/server.js",
     "start": "node src/server.js",
     "migrate": "node src/utils/migrate.js",
+    "import": "node src/utils/import-json.js",
+    "export": "node src/utils/export.js",
     "seed": "node src/utils/seed.js"
   },
   "dependencies": {

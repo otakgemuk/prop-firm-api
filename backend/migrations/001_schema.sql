@@ -29,27 +29,34 @@ CREATE TABLE IF NOT EXISTS firm_platforms (
 );
 
 CREATE TABLE IF NOT EXISTS plans (
-    id                TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
-    firm_id           TEXT NOT NULL REFERENCES firms(id) ON DELETE CASCADE,
-    account_size      INTEGER NOT NULL,
-    label             TEXT,
-    drawdown_type     TEXT NOT NULL CHECK (drawdown_type IN ('end_of_day','trailing','static','intraday')),
-    drawdown_amount   INTEGER,
-    daily_loss_limit  INTEGER,
-    profit_target     INTEGER,
-    scaling_target    INTEGER,
-    eval_fee          REAL NOT NULL,
-    activation_fee    REAL DEFAULT 0,
-    monthly_fee       REAL DEFAULT 0,
-    profit_split      INTEGER DEFAULT 80,
-    payout_frequency  TEXT DEFAULT 'biweekly',
-    first_payout_days INTEGER,
-    is_one_time       INTEGER DEFAULT 0,
-    max_accounts      INTEGER DEFAULT 1,
-    notes             TEXT,
-    is_active         INTEGER NOT NULL DEFAULT 1,
-    created_at        TEXT NOT NULL DEFAULT (datetime('now')),
-    updated_at        TEXT NOT NULL DEFAULT (datetime('now'))
+    id                  TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
+    firm_id             TEXT NOT NULL REFERENCES firms(id) ON DELETE CASCADE,
+    account_size        INTEGER NOT NULL,
+    account_type        TEXT NOT NULL DEFAULT 'Standard',
+    label               TEXT,
+    drawdown_type       TEXT NOT NULL CHECK (drawdown_type IN ('end_of_day','trailing','static','intraday')),
+    drawdown_amount     INTEGER,
+    daily_loss_limit    INTEGER,
+    profit_target       INTEGER,
+    scaling_target      INTEGER,
+    eval_fee            REAL NOT NULL,
+    activation_fee      REAL DEFAULT 0,
+    monthly_fee         REAL DEFAULT 0,
+    profit_split        INTEGER DEFAULT 80,
+    payout_frequency    TEXT DEFAULT 'biweekly',
+    first_payout_days   INTEGER,
+    is_one_time         INTEGER DEFAULT 0,
+    -- manual fields: not overwritten by the scraper, set once by hand
+    max_funded_accounts INTEGER DEFAULT 1,
+    min_trading_days    INTEGER,
+    consistency_eval    INTEGER,
+    consistency_funded  INTEGER,
+    notes               TEXT,
+    is_active           INTEGER NOT NULL DEFAULT 1,
+    created_at          TEXT NOT NULL DEFAULT (datetime('now')),
+    updated_at          TEXT NOT NULL DEFAULT (datetime('now')),
+    -- natural key used for upserts: one plan per (firm, size, type)
+    UNIQUE (firm_id, account_size, account_type)
 );
 
 CREATE TABLE IF NOT EXISTS discount_codes (
