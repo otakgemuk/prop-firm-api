@@ -275,7 +275,17 @@ function AdminContent() {
     fetch("./plans.json")
       .then((r) => r.json())
       .then((data: PlanRow[]) => {
-        setPlans(data);
+        // Recalculate total_cost_to_funded with discount applied
+        const recalculatedData = data.map(plan => ({
+          ...plan,
+          total_cost_to_funded: calcTotalCost(
+            plan.eval_fee,
+            plan.activation_fee,
+            plan.active_discount_pct || 0,
+            plan.monthly_fee
+          )
+        }));
+        setPlans(recalculatedData);
         setLoading(false);
       })
       .catch(() => setLoading(false));
