@@ -25,6 +25,12 @@ const parsers = {
   "earn2trade":           require("./parsers/earn2trade"),
   "alpha-futures":        require("./parsers/alpha-futures"),
   "tradeify":             require("./parsers/tradeify"),
+  "daytraders":             require("./parsers/daytraders"),
+  "e8-markets":            require("./parsers/e8-markets"),
+  "funded-futures-network": require("./parsers/funded-futures-network"),
+  "legends-trading":       require("./parsers/legends-trading"),
+  "oneup-trader":          require("./parsers/oneup-trader"),
+  "phoenix-trader-funding": require("./parsers/phoenix-trader-funding"),
 };
 
 // ── CLI args ───────────────────────────────────────────────
