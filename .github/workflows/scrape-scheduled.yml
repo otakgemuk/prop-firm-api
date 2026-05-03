@@ -44,9 +44,8 @@ jobs:
         working-directory: scraper
         run: npm ci
 
-      - name: Install Playwright browsers
-        working-directory: scraper
-        run: npx playwright install --with-deps chromium
+      - name: Install Playwright browsers (cached)
+        uses: microsoft/playwright-github-action@v1
 
       - name: Migrate database schema
         working-directory: backend
