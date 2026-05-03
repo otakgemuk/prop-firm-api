@@ -1,4 +1,4 @@
-// Auto-generated from data/plans.json
+// Auto-generated
 
 export const STATIC_PLANS = [
   {
@@ -1844,7 +1844,7 @@ export const STATIC_PLANS = [
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 135,
+    "eval_fee": 270,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
@@ -1854,7 +1854,7 @@ export const STATIC_PLANS = [
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "total_cost_to_funded": 67.5,
+    "total_cost_to_funded": 135,
     "active_discount_pct": 50
   },
   {
@@ -1873,7 +1873,7 @@ export const STATIC_PLANS = [
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 75,
+    "eval_fee": 150,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
@@ -1883,7 +1883,7 @@ export const STATIC_PLANS = [
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "total_cost_to_funded": 37.5,
+    "total_cost_to_funded": 75,
     "active_discount_pct": 50
   },
   {
@@ -1902,7 +1902,7 @@ export const STATIC_PLANS = [
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 135,
+    "eval_fee": 270,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
@@ -1912,7 +1912,7 @@ export const STATIC_PLANS = [
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 67.5,
+    "total_cost_to_funded": 135,
     "active_discount_pct": 50
   },
   {
@@ -1931,7 +1931,7 @@ export const STATIC_PLANS = [
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 68,
+    "eval_fee": 136,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
@@ -1941,7 +1941,7 @@ export const STATIC_PLANS = [
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 34,
+    "total_cost_to_funded": 68,
     "active_discount_pct": 50
   },
   {
@@ -1960,7 +1960,7 @@ export const STATIC_PLANS = [
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 160,
+    "eval_fee": 320,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
@@ -1970,7 +1970,7 @@ export const STATIC_PLANS = [
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "total_cost_to_funded": 80,
+    "total_cost_to_funded": 160,
     "active_discount_pct": 50
   },
   {
@@ -1989,7 +1989,7 @@ export const STATIC_PLANS = [
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 80,
+    "eval_fee": 160,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
@@ -1999,7 +1999,7 @@ export const STATIC_PLANS = [
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "total_cost_to_funded": 40,
+    "total_cost_to_funded": 80,
     "active_discount_pct": 50
   },
   {
@@ -2013,6 +2013,35 @@ export const STATIC_PLANS = [
     "account_size": 50000,
     "account_type": "Standard MAX",
     "plan_label": "Standard MAX 50K",
+    "drawdown_type": "intraday",
+    "drawdown_amount": 2000,
+    "daily_loss_limit": null,
+    "profit_target": 3000,
+    "profit_split": null,
+    "eval_fee": 320,
+    "activation_fee": 0,
+    "monthly_fee": 0,
+    "is_one_time": 0,
+    "payout_frequency": null,
+    "first_payout_days": null,
+    "max_funded_accounts": 10,
+    "min_trading_days": 15,
+    "consistency_eval": 40,
+    "consistency_funded": null,
+    "total_cost_to_funded": 160,
+    "active_discount_pct": 50
+  },
+  {
+    "firm_id": "funded_futures_n",
+    "firm_name": "Funded Futures Network",
+    "firm_slug": "funded-futures-network",
+    "logo_url": null,
+    "website_url": "https://fundedfuturesnetwork.com",
+    "trustpilot": null,
+    "plan_id": "f6bfa00326d7b41670201e080dd748f0",
+    "account_size": 50000,
+    "account_type": "Standard OG",
+    "plan_label": "Standard OG 50K",
     "drawdown_type": "intraday",
     "drawdown_amount": 2000,
     "daily_loss_limit": null,
@@ -2038,35 +2067,6 @@ export const STATIC_PLANS = [
     "logo_url": null,
     "website_url": "https://fundedfuturesnetwork.com",
     "trustpilot": null,
-    "plan_id": "f6bfa00326d7b41670201e080dd748f0",
-    "account_size": 50000,
-    "account_type": "Standard OG",
-    "plan_label": "Standard OG 50K",
-    "drawdown_type": "intraday",
-    "drawdown_amount": 2000,
-    "daily_loss_limit": null,
-    "profit_target": 3000,
-    "profit_split": null,
-    "eval_fee": 80,
-    "activation_fee": 0,
-    "monthly_fee": 0,
-    "is_one_time": 0,
-    "payout_frequency": null,
-    "first_payout_days": null,
-    "max_funded_accounts": 10,
-    "min_trading_days": 15,
-    "consistency_eval": 40,
-    "consistency_funded": null,
-    "total_cost_to_funded": 40,
-    "active_discount_pct": 50
-  },
-  {
-    "firm_id": "funded_futures_n",
-    "firm_name": "Funded Futures Network",
-    "firm_slug": "funded-futures-network",
-    "logo_url": null,
-    "website_url": "https://fundedfuturesnetwork.com",
-    "trustpilot": null,
     "plan_id": "6caf01c71c3205f1923b0122c6876a12",
     "account_size": 100000,
     "account_type": "Express MAX",
@@ -2076,7 +2076,7 @@ export const STATIC_PLANS = [
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 315,
+    "eval_fee": 630,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
@@ -2086,7 +2086,7 @@ export const STATIC_PLANS = [
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "total_cost_to_funded": 157.5,
+    "total_cost_to_funded": 315,
     "active_discount_pct": 50
   },
   {
@@ -2105,7 +2105,7 @@ export const STATIC_PLANS = [
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 158,
+    "eval_fee": 316,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
@@ -2115,7 +2115,7 @@ export const STATIC_PLANS = [
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "total_cost_to_funded": 79,
+    "total_cost_to_funded": 158,
     "active_discount_pct": 50
   },
   {
@@ -2134,7 +2134,7 @@ export const STATIC_PLANS = [
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 315,
+    "eval_fee": 630,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
@@ -2144,7 +2144,7 @@ export const STATIC_PLANS = [
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 157.5,
+    "total_cost_to_funded": 315,
     "active_discount_pct": 50
   },
   {
@@ -2163,7 +2163,7 @@ export const STATIC_PLANS = [
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 158,
+    "eval_fee": 316,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
@@ -2173,7 +2173,7 @@ export const STATIC_PLANS = [
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 79,
+    "total_cost_to_funded": 158,
     "active_discount_pct": 50
   },
   {
@@ -2192,7 +2192,7 @@ export const STATIC_PLANS = [
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 365,
+    "eval_fee": 730,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
@@ -2202,7 +2202,7 @@ export const STATIC_PLANS = [
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "total_cost_to_funded": 182.5,
+    "total_cost_to_funded": 365,
     "active_discount_pct": 50
   },
   {
@@ -2221,7 +2221,7 @@ export const STATIC_PLANS = [
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 183,
+    "eval_fee": 366,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
@@ -2231,7 +2231,7 @@ export const STATIC_PLANS = [
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "total_cost_to_funded": 91.5,
+    "total_cost_to_funded": 183,
     "active_discount_pct": 50
   },
   {
@@ -2250,7 +2250,7 @@ export const STATIC_PLANS = [
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 365,
+    "eval_fee": 730,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
@@ -2260,7 +2260,7 @@ export const STATIC_PLANS = [
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 182.5,
+    "total_cost_to_funded": 365,
     "active_discount_pct": 50
   },
   {
@@ -2279,7 +2279,7 @@ export const STATIC_PLANS = [
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 183,
+    "eval_fee": 366,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
@@ -2289,7 +2289,7 @@ export const STATIC_PLANS = [
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 91.5,
+    "total_cost_to_funded": 183,
     "active_discount_pct": 50
   },
   {
@@ -2308,7 +2308,7 @@ export const STATIC_PLANS = [
     "daily_loss_limit": null,
     "profit_target": 15000,
     "profit_split": null,
-    "eval_fee": 590,
+    "eval_fee": 1180,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
@@ -2318,7 +2318,7 @@ export const STATIC_PLANS = [
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "total_cost_to_funded": 295,
+    "total_cost_to_funded": 590,
     "active_discount_pct": 50
   },
   {
@@ -2337,7 +2337,7 @@ export const STATIC_PLANS = [
     "daily_loss_limit": null,
     "profit_target": 15000,
     "profit_split": null,
-    "eval_fee": 295,
+    "eval_fee": 590,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
@@ -2347,7 +2347,7 @@ export const STATIC_PLANS = [
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "total_cost_to_funded": 147.5,
+    "total_cost_to_funded": 295,
     "active_discount_pct": 50
   },
   {
@@ -2366,7 +2366,7 @@ export const STATIC_PLANS = [
     "daily_loss_limit": null,
     "profit_target": 15000,
     "profit_split": null,
-    "eval_fee": 590,
+    "eval_fee": 1180,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
@@ -2376,7 +2376,7 @@ export const STATIC_PLANS = [
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 295,
+    "total_cost_to_funded": 590,
     "active_discount_pct": 50
   },
   {
@@ -2395,7 +2395,7 @@ export const STATIC_PLANS = [
     "daily_loss_limit": null,
     "profit_target": 15000,
     "profit_split": null,
-    "eval_fee": 295,
+    "eval_fee": 590,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 0,
@@ -2405,7 +2405,7 @@ export const STATIC_PLANS = [
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 147.5,
+    "total_cost_to_funded": 295,
     "active_discount_pct": 50
   },
   {
