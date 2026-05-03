@@ -56,16 +56,18 @@ export class ErrorBoundary extends React.Component<Props, State> {
             >
               Refresh Page
             </button>
-            {process.env.NODE_ENV === "development" && this.state.error && (
-              <details className="mt-8 text-left">
-                <summary className="cursor-pointer text-gray-400 hover:text-gray-300 font-mono text-sm">
-                  Error details (dev only)
-                </summary>
-                <pre className="mt-2 p-4 bg-gray-900 rounded text-red-400 text-xs overflow-auto max-h-40">
-                  {this.state.error.toString()}
-                </pre>
-              </details>
-            )}
+            {typeof window !== "undefined" &&
+              window.location.hostname === "localhost" &&
+              this.state.error && (
+                <details className="mt-8 text-left">
+                  <summary className="cursor-pointer text-gray-400 hover:text-gray-300 font-mono text-sm">
+                    Error details (dev only)
+                  </summary>
+                  <pre className="mt-2 p-4 bg-gray-900 rounded text-red-400 text-xs overflow-auto max-h-40">
+                    {this.state.error.toString()}
+                  </pre>
+                </details>
+              )}
           </div>
         </div>
       );
