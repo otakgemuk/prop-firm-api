@@ -75,7 +75,7 @@ export default function ComparisonCard({ plan }: { plan: PlanRow }) {
               {formatUSD(plan.total_cost_to_funded)}
             </p>
             <p className="mt-1 text-center text-xs text-green-300 font-medium">
-              ✓ {plan.active_discount_pct}% discount applied
+              ✓ {formatUSD(plan.base_cost_to_funded - plan.total_cost_to_funded)} saved ({plan.active_discount_pct}% off)
             </p>
           </div>
         ) : (

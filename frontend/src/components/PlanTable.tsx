@@ -90,41 +90,32 @@ const columns: ColumnDef<PlanRow, any>[] = [
     size: 120,
   }),
 
-  // 4. Total (base cost = eval + setup fee, before discount)
-  columnHelper.accessor("base_cost_to_funded", {
-    header: "Total",
-    cell: (info) => {
-      const base = info.getValue();
-      const discounted = info.row.original.total_cost_to_funded;
-      const hasDiscount = discounted < base;
-      return hasDiscount ? (
-        <span className="text-gray-400 line-through">{formatUSD(base)}</span>
-      ) : (
-        <span className="font-bold text-brand-300">{formatUSD(base)}</span>
-      );
-    },
-    size: 100,
-  }),
-
-  // 4b. Discounted Total (price after discount)
-  columnHelper.accessor("total_cost_to_funded", {
+  // 4. After Discount (savings amount)
+  columnHelper.accessor("active_discount_pct", {
     header: "After Discount",
     cell: (info) => {
-      const v = info.getValue();
+      const pct = info.getValue();
       const base = info.row.original.base_cost_to_funded;
-      const hasDiscount = v < base;
-      return hasDiscount ? (
-        <div>
-          <span className="font-bold text-green-400">{formatUSD(v)}</span>
-          <span className="ml-1 text-xs text-green-400/70">
-            (-{info.row.original.active_discount_pct}%)
+      if (pct > 0) {
+        const savings = base - info.row.original.total_cost_to_funded;
+        return (
+          <span className="text-green-400 font-medium">
+            -{formatUSD(savings)} <span className="text-xs text-green-400/70">({pct}%)</span>
           </span>
-        </div>
-      ) : (
-        <span className="text-gray-500">—</span>
-      );
+        );
+      }
+      return <span className="text-gray-500">—</span>;
     },
     size: 120,
+  }),
+
+  // 5. Total (eval + setup - discount)
+  columnHelper.accessor("total_cost_to_funded", {
+    header: "Total",
+    cell: (info) => (
+      <span className="font-bold text-brand-300">{formatUSD(info.getValue())}</span>
+    ),
+    size: 100,
   }),
 
   // 5. Max # Funded Accounts
