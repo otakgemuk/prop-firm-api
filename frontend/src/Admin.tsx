@@ -205,8 +205,11 @@ const EMPTY_PLAN: PlanRow = {
   is_one_time: 0,
   payout_frequency: "biweekly",
   first_payout_days: null,
+  base_cost_to_funded: 0,
   total_cost_to_funded: 0,
   active_discount_pct: 0,
+  has_discount: 0,
+  max_funded_status: "not_specified",
   max_funded_accounts: 0,
   min_trading_days: 0,
   consistency_eval: 0,
@@ -240,6 +243,22 @@ function calcTotalCost(evalFee: number, activationFee: number, discountPct: numb
   const discountedEval = evalFee - (evalFee * discountPct) / 100;
   return Math.round((discountedEval + activationFee + monthlyFee) * 100) / 100;
 }
+
+// Note: formatCostWithDiscount and formatMaxFunded are available utilities
+// for future use in formatting plan costs and max funded accounts display
+// function formatCostWithDiscount(baseCost: number, totalCost: number, discountPct: number): string {
+//   if (discountPct <= 0) {
+//     return `$${totalCost.toFixed(2)}`;
+//   }
+//   return `$${baseCost.toFixed(2)} (−${discountPct}% → $${totalCost.toFixed(2)})`;
+// }
+// 
+// function formatMaxFunded(value: number | null | undefined): string {
+//   if (value === null || value === undefined || value === 0) {
+//     return "Not specified";
+//   }
+//   return String(value);
+// }
 
 function AdminContent() {
   const [plans, setPlans] = useState<PlanRow[]>([]);
@@ -498,9 +517,13 @@ function AdminContent() {
                 </h1>
                 <p className="text-sm text-gray-400">{plans.length} plans across {firms.length} firms</p>
                 {metadata && (
-                  <p className="text-xs text-gray-500 mt-1">
-                    🔄 Last updated: {metadata.last_updated_formatted}
-                  </p>
+                  <div className="text-xs text-gray-500 mt-2 space-y-0.5">
+                    <p>🔄 Last updated: {metadata.last_updated_formatted}</p>
+                    <p>📦 Data version: {metadata.data_version}</p>
+                    {metadata.plans_with_discounts > 0 && (
+                      <p className="text-green-400">✨ {metadata.plans_with_discounts} plan(s) with active discounts</p>
+                    )}
+                  </div>
                 )}
               </div>
             </div>
@@ -718,11 +741,26 @@ function AdminContent() {
             </div>
 
             {/* Computed total */}
-            <div className="mt-4 rounded-lg bg-brand-600/10 px-4 py-3 text-center">
-              <span className="text-sm text-brand-300">Total Cost to Funded: </span>
-              <span className="text-xl font-bold text-brand-200">
-                ${calcTotalCost(form.eval_fee, form.activation_fee, form.active_discount_pct, form.monthly_fee).toFixed(2)}
-              </span>
+            <div className="mt-4 rounded-lg bg-brand-600/10 px-4 py-3">
+              <div className="text-center">
+                <span className="text-sm text-brand-300">Total Cost to Funded: </span>
+              </div>
+              <div className="text-center mt-1">
+                {form.active_discount_pct > 0 ? (
+                  <div>
+                    <div className="text-sm text-gray-400 line-through">
+                      ${(form.eval_fee + form.activation_fee + (form.is_one_time ? 0 : form.monthly_fee * 3)).toFixed(2)}
+                    </div>
+                    <div className="text-2xl font-bold text-green-400">
+                      −{form.active_discount_pct}% → ${calcTotalCost(form.eval_fee, form.activation_fee, form.active_discount_pct, form.monthly_fee).toFixed(2)}
+                    </div>
+                  </div>
+                ) : (
+                  <span className="text-xl font-bold text-brand-200">
+                    ${calcTotalCost(form.eval_fee, form.activation_fee, form.active_discount_pct, form.monthly_fee).toFixed(2)}
+                  </span>
+                )}
+              </div>
             </div>
 
             {/* Actions */}
@@ -792,16 +830,13 @@ function AdminContent() {
                   <td className="px-3 py-2 text-right text-gray-300">${plan.eval_fee}</td>
                   <td className="px-3 py-2 text-right text-gray-300">{plan.profit_split}%</td>
                   <td className="px-3 py-2 text-right font-bold">
-                    {plan.active_discount_pct > 0 ? (
+                    {plan.active_discount_pct > 0 && plan.base_cost_to_funded ? (
                       <div className="text-right">
                         <div className="text-sm text-gray-400 line-through">
-                          ${plan.eval_fee.toFixed(2)}
+                          ${plan.base_cost_to_funded.toFixed(2)}
                         </div>
                         <div className="text-green-400 font-bold">
-                          ${(plan.eval_fee - (plan.eval_fee * plan.active_discount_pct) / 100).toFixed(2)}
-                        </div>
-                        <div className="text-xs text-green-300">
-                          {plan.active_discount_pct}% off
+                          −{plan.active_discount_pct}% → ${plan.total_cost_to_funded.toFixed(2)}
                         </div>
                       </div>
                     ) : (

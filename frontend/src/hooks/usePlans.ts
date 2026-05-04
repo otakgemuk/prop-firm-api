@@ -43,8 +43,12 @@ export interface PlanRow {
   is_one_time: number;
   payout_frequency: string;
   first_payout_days: number | null;
+  base_cost_to_funded?: number;
   total_cost_to_funded: number;
   active_discount_pct: number;
+  // Validation and status fields
+  has_discount?: number;
+  max_funded_status?: string;
   // New fields for the updated column layout
   max_funded_accounts?: number;
   min_trading_days?: number;

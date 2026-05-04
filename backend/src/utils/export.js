@@ -66,12 +66,26 @@ const rows = db.prepare(`
     p.consistency_funded,
     -- derived fields
     ROUND(
+      p.eval_fee + p.activation_fee +
+      CASE WHEN p.is_one_time = 0 THEN p.monthly_fee * 3 ELSE 0 END,
+      2
+    )                                                       AS base_cost_to_funded,
+    ROUND(
       (p.eval_fee + p.activation_fee +
       CASE WHEN p.is_one_time = 0 THEN p.monthly_fee * 3 ELSE 0 END) *
       (1 - COALESCE(bd.discount_pct, 0) / 100.0),
       2
     )                                                       AS total_cost_to_funded,
-    COALESCE(bd.discount_pct, 0)                            AS active_discount_pct
+    COALESCE(bd.discount_pct, 0)                            AS active_discount_pct,
+    -- validation fields
+    CASE 
+      WHEN COALESCE(bd.discount_pct, 0) > 0 THEN 1
+      ELSE 0
+    END                                                     AS has_discount,
+    CASE 
+      WHEN COALESCE(p.max_funded_accounts, 0) = 0 THEN 'not_specified'
+      ELSE 'specified'
+    END                                                     AS max_funded_status
   FROM plans p
   JOIN firms f ON f.id = p.firm_id
   LEFT JOIN best_discount bd ON bd.firm_id = f.id
