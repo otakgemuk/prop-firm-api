@@ -42,7 +42,6 @@ export interface PlanRow {
   monthly_fee: number;
   is_one_time: number;
   payout_frequency: string;
-  first_payout_days: number | null;
   base_cost_to_funded: number;
   total_cost_to_funded: number;
   active_discount_pct: number;

@@ -15,7 +15,7 @@ export interface DrawdownStyle {
 }
 
 export const DRAWDOWN_STYLES: Record<string, DrawdownStyle> = {
-  EOD:        { label: "EOD",      color: "bg-blue-500/20 text-blue-300" },
+  eod:        { label: "EOD",      color: "bg-blue-500/20 text-blue-300" },
   trailing:   { label: "Trailing", color: "bg-purple-500/20 text-purple-300" },
   static:     { label: "Static",   color: "bg-emerald-500/20 text-emerald-300" },
   intraday:   { label: "Intraday", color: "bg-amber-500/20 text-amber-300" },
@@ -42,7 +42,7 @@ export const ACCOUNT_TYPE_OPTIONS = [
 ];
 
 export const DRAWDOWN_OPTIONS = [
-  { value: "EOD", label: "EOD" },
+  { value: "eod", label: "EOD" },
   { value: "trailing",   label: "Trailing" },
   { value: "static",     label: "Static" },
   { value: "intraday",   label: "Intraday" },
