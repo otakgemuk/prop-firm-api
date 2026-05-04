@@ -15,9 +15,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 79.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 79,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -25,8 +25,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 79.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 79,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 79
   },
   {
     "firm_id": "alpha_futures",
@@ -44,9 +45,9 @@
     "daily_loss_limit": null,
     "profit_target": 4000,
     "profit_split": null,
-    "eval_fee": 139.0,
-    "activation_fee": 149.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 139,
+    "activation_fee": 149,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -54,8 +55,9 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 288.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 288,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 288
   },
   {
     "firm_id": "alpha_futures",
@@ -73,9 +75,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 79.0,
-    "activation_fee": 149.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 79,
+    "activation_fee": 149,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -83,8 +85,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "total_cost_to_funded": 228.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 228,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 228
   },
   {
     "firm_id": "alpha_futures",
@@ -102,9 +105,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 149.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 149,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -112,8 +115,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "total_cost_to_funded": 149.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 149,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 149
   },
   {
     "firm_id": "alpha_futures",
@@ -131,9 +135,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 119.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 119,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -141,8 +145,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 119.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 119,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 119
   },
   {
     "firm_id": "alpha_futures",
@@ -160,9 +165,9 @@
     "daily_loss_limit": null,
     "profit_target": 8000,
     "profit_split": null,
-    "eval_fee": 279.0,
-    "activation_fee": 149.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 279,
+    "activation_fee": 149,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -170,8 +175,9 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 428.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 428,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 428
   },
   {
     "firm_id": "alpha_futures",
@@ -189,9 +195,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 159.0,
-    "activation_fee": 149.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 159,
+    "activation_fee": 149,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -199,8 +205,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "total_cost_to_funded": 308.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 308,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 308
   },
   {
     "firm_id": "alpha_futures",
@@ -218,9 +225,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 239.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 239,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -228,8 +235,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "total_cost_to_funded": 239.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 239,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 239
   },
   {
     "firm_id": "alpha_futures",
@@ -247,9 +255,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 239.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 239,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -257,8 +265,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 239.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 239,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 239
   },
   {
     "firm_id": "alpha_futures",
@@ -276,9 +285,9 @@
     "daily_loss_limit": null,
     "profit_target": 12000,
     "profit_split": null,
-    "eval_fee": 419.0,
-    "activation_fee": 149.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 419,
+    "activation_fee": 149,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -286,8 +295,9 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 568.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 568,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 568
   },
   {
     "firm_id": "alpha_futures",
@@ -305,9 +315,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 239.0,
-    "activation_fee": 149.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 239,
+    "activation_fee": 149,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -315,8 +325,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "total_cost_to_funded": 388.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 388,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 388
   },
   {
     "firm_id": "alpha_futures",
@@ -334,9 +345,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 329.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 329,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -344,8 +355,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "total_cost_to_funded": 329.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 329,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 329
   },
   {
     "firm_id": "apex_trader_fund",
@@ -363,9 +375,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 30.0,
-    "activation_fee": 109.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 30,
+    "activation_fee": 109,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -373,8 +385,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "total_cost_to_funded": 139.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 139,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 139
   },
   {
     "firm_id": "apex_trader_fund",
@@ -392,9 +405,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 20.0,
-    "activation_fee": 89.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 20,
+    "activation_fee": 89,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -402,8 +415,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "total_cost_to_funded": 109.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 109,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 109
   },
   {
     "firm_id": "apex_trader_fund",
@@ -421,9 +435,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 35.0,
-    "activation_fee": 119.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 35,
+    "activation_fee": 119,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -431,8 +445,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "total_cost_to_funded": 154.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 154,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 154
   },
   {
     "firm_id": "apex_trader_fund",
@@ -450,9 +465,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 25.0,
-    "activation_fee": 69.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 25,
+    "activation_fee": 69,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -460,8 +475,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "total_cost_to_funded": 94.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 94,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 94
   },
   {
     "firm_id": "apex_trader_fund",
@@ -479,9 +495,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 60.0,
-    "activation_fee": 139.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 60,
+    "activation_fee": 139,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -489,8 +505,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "total_cost_to_funded": 199.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 199,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 199
   },
   {
     "firm_id": "apex_trader_fund",
@@ -508,9 +525,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 40.0,
-    "activation_fee": 119.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 40,
+    "activation_fee": 119,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -518,8 +535,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "total_cost_to_funded": 159.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 159,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 159
   },
   {
     "firm_id": "apex_trader_fund",
@@ -537,9 +555,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 80.0,
-    "activation_fee": 159.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 80,
+    "activation_fee": 159,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -547,8 +565,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "total_cost_to_funded": 239.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 239,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 239
   },
   {
     "firm_id": "apex_trader_fund",
@@ -566,9 +585,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 60.0,
-    "activation_fee": 139.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 60,
+    "activation_fee": 139,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -576,8 +595,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "total_cost_to_funded": 199.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 199,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 199
   },
   {
     "firm_id": "bulenox",
@@ -585,7 +605,7 @@
     "firm_slug": "bulenox",
     "logo_url": null,
     "website_url": "https://bulenox.com",
-    "trustpilot": 4.0,
+    "trustpilot": 4,
     "plan_id": "ed5b4b4f8395fff8b6be6fed74d054f4",
     "account_size": 25000,
     "account_type": "Option 1",
@@ -595,9 +615,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 155.0,
-    "activation_fee": 143.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 155,
+    "activation_fee": 143,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -605,8 +625,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 298.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 32.78,
+    "active_discount_pct": 89,
+    "base_cost_to_funded": 298
   },
   {
     "firm_id": "bulenox",
@@ -614,7 +635,7 @@
     "firm_slug": "bulenox",
     "logo_url": null,
     "website_url": "https://bulenox.com",
-    "trustpilot": 4.0,
+    "trustpilot": 4,
     "plan_id": "d39d215acbced4d0254d774bcd899cd3",
     "account_size": 25000,
     "account_type": "Option 2",
@@ -624,9 +645,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 175.0,
-    "activation_fee": 143.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 175,
+    "activation_fee": 143,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -634,8 +655,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 318.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 174.9,
+    "active_discount_pct": 45,
+    "base_cost_to_funded": 318
   },
   {
     "firm_id": "bulenox",
@@ -643,7 +665,7 @@
     "firm_slug": "bulenox",
     "logo_url": null,
     "website_url": "https://bulenox.com",
-    "trustpilot": 4.0,
+    "trustpilot": 4,
     "plan_id": "8908e3a6c7d45c8297a4674384a73b46",
     "account_size": 50000,
     "account_type": "Option 1",
@@ -653,9 +675,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 175.0,
-    "activation_fee": 148.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 175,
+    "activation_fee": 148,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -663,8 +685,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 323.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 35.53,
+    "active_discount_pct": 89,
+    "base_cost_to_funded": 323
   },
   {
     "firm_id": "bulenox",
@@ -672,7 +695,7 @@
     "firm_slug": "bulenox",
     "logo_url": null,
     "website_url": "https://bulenox.com",
-    "trustpilot": 4.0,
+    "trustpilot": 4,
     "plan_id": "c9b4bcdbffb3434bf9058b9e19c9fa92",
     "account_size": 50000,
     "account_type": "Option 2",
@@ -682,9 +705,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 195.0,
-    "activation_fee": 148.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 195,
+    "activation_fee": 148,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -692,8 +715,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 343.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 188.65,
+    "active_discount_pct": 45,
+    "base_cost_to_funded": 343
   },
   {
     "firm_id": "bulenox",
@@ -701,7 +725,7 @@
     "firm_slug": "bulenox",
     "logo_url": null,
     "website_url": "https://bulenox.com",
-    "trustpilot": 4.0,
+    "trustpilot": 4,
     "plan_id": "f3d9c76309f677e9211f3d4518a1525e",
     "account_size": 100000,
     "account_type": "Option 1",
@@ -711,9 +735,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 215.0,
-    "activation_fee": 248.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 215,
+    "activation_fee": 248,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -721,8 +745,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 463.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 50.93,
+    "active_discount_pct": 89,
+    "base_cost_to_funded": 463
   },
   {
     "firm_id": "bulenox",
@@ -730,7 +755,7 @@
     "firm_slug": "bulenox",
     "logo_url": null,
     "website_url": "https://bulenox.com",
-    "trustpilot": 4.0,
+    "trustpilot": 4,
     "plan_id": "4fd51f09b520f33574970bde57691242",
     "account_size": 100000,
     "account_type": "Option 2",
@@ -740,9 +765,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 275.0,
-    "activation_fee": 248.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 275,
+    "activation_fee": 248,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -750,8 +775,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 523.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 287.65,
+    "active_discount_pct": 45,
+    "base_cost_to_funded": 523
   },
   {
     "firm_id": "bulenox",
@@ -759,7 +785,7 @@
     "firm_slug": "bulenox",
     "logo_url": null,
     "website_url": "https://bulenox.com",
-    "trustpilot": 4.0,
+    "trustpilot": 4,
     "plan_id": "82c174d6a0f5f6f2db2568243459725f",
     "account_size": 150000,
     "account_type": "Option 1",
@@ -769,9 +795,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 350.0,
-    "activation_fee": 498.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 350,
+    "activation_fee": 498,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -779,8 +805,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 848.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 93.28,
+    "active_discount_pct": 89,
+    "base_cost_to_funded": 848
   },
   {
     "firm_id": "bulenox",
@@ -788,7 +815,7 @@
     "firm_slug": "bulenox",
     "logo_url": null,
     "website_url": "https://bulenox.com",
-    "trustpilot": 4.0,
+    "trustpilot": 4,
     "plan_id": "b1605889088e56faf04ed1372fb37ae4",
     "account_size": 150000,
     "account_type": "Option 2",
@@ -798,9 +825,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 400.0,
-    "activation_fee": 498.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 400,
+    "activation_fee": 498,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -808,8 +835,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 898.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 493.9,
+    "active_discount_pct": 45,
+    "base_cost_to_funded": 898
   },
   {
     "firm_id": "daytraders",
@@ -827,9 +855,9 @@
     "daily_loss_limit": null,
     "profit_target": 0,
     "profit_split": null,
-    "eval_fee": 222.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 222,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -837,8 +865,9 @@
     "min_trading_days": 10,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 222.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 222,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 222
   },
   {
     "firm_id": "daytraders",
@@ -856,9 +885,9 @@
     "daily_loss_limit": null,
     "profit_target": 2500,
     "profit_split": null,
-    "eval_fee": 30.0,
-    "activation_fee": 130.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 30,
+    "activation_fee": 130,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -866,8 +895,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 30,
-    "total_cost_to_funded": 160.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 160,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 160
   },
   {
     "firm_id": "daytraders",
@@ -885,9 +915,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 37.0,
-    "activation_fee": 130.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 37,
+    "activation_fee": 130,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -895,8 +925,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 30,
-    "total_cost_to_funded": 167.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 167,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 167
   },
   {
     "firm_id": "daytraders",
@@ -914,9 +945,9 @@
     "daily_loss_limit": null,
     "profit_target": 0,
     "profit_split": null,
-    "eval_fee": 342.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 342,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -924,8 +955,9 @@
     "min_trading_days": 10,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 342.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 342,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 342
   },
   {
     "firm_id": "daytraders",
@@ -943,9 +975,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 229.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 229,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -953,8 +985,9 @@
     "min_trading_days": 8,
     "consistency_eval": 25,
     "consistency_funded": null,
-    "total_cost_to_funded": 229.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 229,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 229
   },
   {
     "firm_id": "daytraders",
@@ -972,9 +1005,9 @@
     "daily_loss_limit": null,
     "profit_target": 3750,
     "profit_split": null,
-    "eval_fee": 40.0,
-    "activation_fee": 130.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 40,
+    "activation_fee": 130,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -982,8 +1015,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 30,
-    "total_cost_to_funded": 170.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 170,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 170
   },
   {
     "firm_id": "daytraders",
@@ -1001,9 +1035,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 57.0,
-    "activation_fee": 130.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 57,
+    "activation_fee": 130,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1011,8 +1045,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 30,
-    "total_cost_to_funded": 187.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 187,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 187
   },
   {
     "firm_id": "daytraders",
@@ -1030,9 +1065,9 @@
     "daily_loss_limit": null,
     "profit_target": 5750,
     "profit_split": null,
-    "eval_fee": 65.0,
-    "activation_fee": 130.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 65,
+    "activation_fee": 130,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1040,8 +1075,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 30,
-    "total_cost_to_funded": 195.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 195,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 195
   },
   {
     "firm_id": "daytraders",
@@ -1059,9 +1095,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 85.0,
-    "activation_fee": 130.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 85,
+    "activation_fee": 130,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1069,8 +1105,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": 30,
-    "total_cost_to_funded": 215.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 215,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 215
   },
   {
     "firm_id": "daytraders",
@@ -1088,9 +1125,9 @@
     "daily_loss_limit": null,
     "profit_target": 0,
     "profit_split": null,
-    "eval_fee": 495.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 495,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1098,8 +1135,9 @@
     "min_trading_days": 10,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 495.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 495,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 495
   },
   {
     "firm_id": "daytraders",
@@ -1117,9 +1155,9 @@
     "daily_loss_limit": null,
     "profit_target": 8500,
     "profit_split": null,
-    "eval_fee": 369.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 369,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1127,8 +1165,9 @@
     "min_trading_days": 8,
     "consistency_eval": 25,
     "consistency_funded": null,
-    "total_cost_to_funded": 369.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 369,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 369
   },
   {
     "firm_id": "daytraders",
@@ -1146,9 +1185,9 @@
     "daily_loss_limit": null,
     "profit_target": 15000,
     "profit_split": null,
-    "eval_fee": 499.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 499,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1156,8 +1195,9 @@
     "min_trading_days": 8,
     "consistency_eval": 25,
     "consistency_funded": null,
-    "total_cost_to_funded": 499.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 499,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 499
   },
   {
     "firm_id": "e8_markets",
@@ -1175,9 +1215,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 110.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 110,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1185,8 +1225,9 @@
     "min_trading_days": 0,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "total_cost_to_funded": 110.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 110,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 110
   },
   {
     "firm_id": "e8_markets",
@@ -1204,9 +1245,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 150.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 150,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1214,8 +1255,9 @@
     "min_trading_days": 0,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "total_cost_to_funded": 150.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 150,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 150
   },
   {
     "firm_id": "e8_markets",
@@ -1233,9 +1275,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 260.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 260,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1243,8 +1285,9 @@
     "min_trading_days": 0,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "total_cost_to_funded": 260.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 260,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 260
   },
   {
     "firm_id": "e8_markets",
@@ -1262,9 +1305,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 390.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 390,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1272,8 +1315,9 @@
     "min_trading_days": 0,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "total_cost_to_funded": 390.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 390,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 390
   },
   {
     "firm_id": "earn2trade",
@@ -1291,9 +1335,9 @@
     "daily_loss_limit": null,
     "profit_target": 1750,
     "profit_split": null,
-    "eval_fee": 90.0,
-    "activation_fee": 139.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 90,
+    "activation_fee": 139,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1301,8 +1345,9 @@
     "min_trading_days": 10,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 229.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 229,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 229
   },
   {
     "firm_id": "earn2trade",
@@ -1320,9 +1365,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 150.0,
-    "activation_fee": 139.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 150,
+    "activation_fee": 139,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1330,8 +1375,9 @@
     "min_trading_days": 10,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 289.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 289,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 289
   },
   {
     "firm_id": "earn2trade",
@@ -1349,9 +1395,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 150.0,
-    "activation_fee": 139.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 150,
+    "activation_fee": 139,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1359,8 +1405,9 @@
     "min_trading_days": 10,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 289.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 289,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 289
   },
   {
     "firm_id": "earn2trade",
@@ -1378,9 +1425,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 245.0,
-    "activation_fee": 139.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 245,
+    "activation_fee": 139,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1388,8 +1435,9 @@
     "min_trading_days": 10,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 384.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 384,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 384
   },
   {
     "firm_id": "earn2trade",
@@ -1407,9 +1455,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 270.0,
-    "activation_fee": 139.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 270,
+    "activation_fee": 139,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1417,8 +1465,9 @@
     "min_trading_days": 10,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 409.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 409,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 409
   },
   {
     "firm_id": "earn2trade",
@@ -1436,9 +1485,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 315.0,
-    "activation_fee": 139.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 315,
+    "activation_fee": 139,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1446,8 +1495,9 @@
     "min_trading_days": 10,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 454.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 454,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 454
   },
   {
     "firm_id": "earn2trade",
@@ -1465,9 +1515,9 @@
     "daily_loss_limit": null,
     "profit_target": 12000,
     "profit_split": null,
-    "eval_fee": 400.0,
-    "activation_fee": 139.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 400,
+    "activation_fee": 139,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1475,8 +1525,9 @@
     "min_trading_days": 10,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 539.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 539,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 539
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1494,9 +1545,9 @@
     "daily_loss_limit": null,
     "profit_target": 600,
     "profit_split": null,
-    "eval_fee": 99.0,
-    "activation_fee": 87.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 99,
+    "activation_fee": 87,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1504,8 +1555,9 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 186.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 186,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 186
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1523,9 +1575,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 165.0,
-    "activation_fee": 87.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 165,
+    "activation_fee": 87,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1533,8 +1585,9 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 252.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 252,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 252
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1552,9 +1605,9 @@
     "daily_loss_limit": null,
     "profit_target": 2500,
     "profit_split": null,
-    "eval_fee": 599.0,
-    "activation_fee": 47.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 599,
+    "activation_fee": 47,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1562,8 +1615,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 646.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 646,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 646
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1581,9 +1635,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 295.0,
-    "activation_fee": 87.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 295,
+    "activation_fee": 87,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1591,8 +1645,9 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 382.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 382,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 382
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1610,9 +1665,9 @@
     "daily_loss_limit": null,
     "profit_target": 2400,
     "profit_split": null,
-    "eval_fee": 449.0,
-    "activation_fee": 87.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 449,
+    "activation_fee": 87,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1620,8 +1675,9 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 536.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 536,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 536
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1639,9 +1695,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 205.0,
-    "activation_fee": 87.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 205,
+    "activation_fee": 87,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1649,8 +1705,9 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 292.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 292,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 292
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1668,9 +1725,9 @@
     "daily_loss_limit": null,
     "profit_target": 5000,
     "profit_split": null,
-    "eval_fee": 365.0,
-    "activation_fee": 87.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 365,
+    "activation_fee": 87,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1678,8 +1735,9 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 452.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 452,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 452
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1697,9 +1755,9 @@
     "daily_loss_limit": null,
     "profit_target": 5000,
     "profit_split": null,
-    "eval_fee": 649.0,
-    "activation_fee": 47.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 649,
+    "activation_fee": 47,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1707,8 +1765,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 696.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 696,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 696
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1726,9 +1785,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 355.0,
-    "activation_fee": 87.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 355,
+    "activation_fee": 87,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1736,8 +1795,9 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 442.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 442,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 442
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1755,9 +1815,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 75.0,
-    "activation_fee": 87.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 75,
+    "activation_fee": 87,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1765,8 +1825,9 @@
     "min_trading_days": 3,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 162.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 162,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 162
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1784,9 +1845,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 295.0,
-    "activation_fee": 87.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 295,
+    "activation_fee": 87,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1794,8 +1855,9 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 382.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 382,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 382
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1813,9 +1875,9 @@
     "daily_loss_limit": null,
     "profit_target": 15000,
     "profit_split": null,
-    "eval_fee": 515.0,
-    "activation_fee": 87.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 515,
+    "activation_fee": 87,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1823,8 +1885,9 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 602.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 602,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 602
   },
   {
     "firm_id": "funded_futures_n",
@@ -1842,9 +1905,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 270.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 270,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1853,7 +1916,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 135,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 270
   },
   {
     "firm_id": "funded_futures_n",
@@ -1871,9 +1935,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 150.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 150,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1882,7 +1946,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 75,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 150
   },
   {
     "firm_id": "funded_futures_n",
@@ -1900,9 +1965,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 270.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 270,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1911,7 +1976,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 135,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 270
   },
   {
     "firm_id": "funded_futures_n",
@@ -1929,9 +1995,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 136.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 136,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1940,7 +2006,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 68,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 136
   },
   {
     "firm_id": "funded_futures_n",
@@ -1958,9 +2025,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 320.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 320,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1969,7 +2036,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 160,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 320
   },
   {
     "firm_id": "funded_futures_n",
@@ -1987,9 +2055,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 160.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 160,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -1998,7 +2066,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 80,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 160
   },
   {
     "firm_id": "funded_futures_n",
@@ -2016,9 +2085,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 320.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 320,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2027,7 +2096,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 160,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 320
   },
   {
     "firm_id": "funded_futures_n",
@@ -2045,9 +2115,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 160.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 160,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2056,7 +2126,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 80,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 160
   },
   {
     "firm_id": "funded_futures_n",
@@ -2074,9 +2145,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 630.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 630,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2085,7 +2156,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 315,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 630
   },
   {
     "firm_id": "funded_futures_n",
@@ -2103,9 +2175,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 316.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 316,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2114,7 +2186,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 158,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 316
   },
   {
     "firm_id": "funded_futures_n",
@@ -2132,9 +2205,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 630.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 630,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2143,7 +2216,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 315,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 630
   },
   {
     "firm_id": "funded_futures_n",
@@ -2161,9 +2235,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 316.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 316,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2172,7 +2246,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 158,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 316
   },
   {
     "firm_id": "funded_futures_n",
@@ -2190,9 +2265,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 730.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 730,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2201,7 +2276,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 365,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 730
   },
   {
     "firm_id": "funded_futures_n",
@@ -2219,9 +2295,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 366.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 366,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2230,7 +2306,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 183,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 366
   },
   {
     "firm_id": "funded_futures_n",
@@ -2248,9 +2325,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 730.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 730,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2259,7 +2336,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 365,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 730
   },
   {
     "firm_id": "funded_futures_n",
@@ -2277,9 +2355,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 366.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 366,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2288,7 +2366,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 183,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 366
   },
   {
     "firm_id": "funded_futures_n",
@@ -2306,9 +2385,9 @@
     "daily_loss_limit": null,
     "profit_target": 15000,
     "profit_split": null,
-    "eval_fee": 1180.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 1180,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2317,7 +2396,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 590,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 1180
   },
   {
     "firm_id": "funded_futures_n",
@@ -2335,9 +2415,9 @@
     "daily_loss_limit": null,
     "profit_target": 15000,
     "profit_split": null,
-    "eval_fee": 590.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 590,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2346,7 +2426,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 295,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 590
   },
   {
     "firm_id": "funded_futures_n",
@@ -2364,9 +2445,9 @@
     "daily_loss_limit": null,
     "profit_target": 15000,
     "profit_split": null,
-    "eval_fee": 1180.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 1180,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2375,7 +2456,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 590,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 1180
   },
   {
     "firm_id": "funded_futures_n",
@@ -2393,9 +2475,9 @@
     "daily_loss_limit": null,
     "profit_target": 15000,
     "profit_split": null,
-    "eval_fee": 590.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 590,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2404,7 +2486,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 295,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 590
   },
   {
     "firm_id": "legends_trading",
@@ -2422,9 +2505,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 165.0,
-    "activation_fee": 99.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 165,
+    "activation_fee": 99,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2432,8 +2515,9 @@
     "min_trading_days": 4,
     "consistency_eval": 30,
     "consistency_funded": 30,
-    "total_cost_to_funded": 264.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 264,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 264
   },
   {
     "firm_id": "legends_trading",
@@ -2451,9 +2535,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 95.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 95,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2461,8 +2545,9 @@
     "min_trading_days": 5,
     "consistency_eval": 40,
     "consistency_funded": 40,
-    "total_cost_to_funded": 95.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 95,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 95
   },
   {
     "firm_id": "legends_trading",
@@ -2480,9 +2565,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 185.0,
-    "activation_fee": 99.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 185,
+    "activation_fee": 99,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2490,8 +2575,9 @@
     "min_trading_days": 4,
     "consistency_eval": 30,
     "consistency_funded": 30,
-    "total_cost_to_funded": 284.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 284,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 284
   },
   {
     "firm_id": "legends_trading",
@@ -2509,9 +2595,9 @@
     "daily_loss_limit": null,
     "profit_target": 2700,
     "profit_split": null,
-    "eval_fee": 121.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 121,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2519,8 +2605,9 @@
     "min_trading_days": 5,
     "consistency_eval": 40,
     "consistency_funded": 40,
-    "total_cost_to_funded": 121.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 121,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 121
   },
   {
     "firm_id": "legends_trading",
@@ -2538,9 +2625,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 225.0,
-    "activation_fee": 149.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 225,
+    "activation_fee": 149,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2548,8 +2635,9 @@
     "min_trading_days": 4,
     "consistency_eval": 30,
     "consistency_funded": 30,
-    "total_cost_to_funded": 374.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 374,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 374
   },
   {
     "firm_id": "legends_trading",
@@ -2567,9 +2655,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 182.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 182,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2577,8 +2665,9 @@
     "min_trading_days": 5,
     "consistency_eval": 40,
     "consistency_funded": 40,
-    "total_cost_to_funded": 182.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 182,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 182
   },
   {
     "firm_id": "legends_trading",
@@ -2596,9 +2685,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 320.0,
-    "activation_fee": 199.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 320,
+    "activation_fee": 199,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2606,8 +2695,9 @@
     "min_trading_days": 4,
     "consistency_eval": 30,
     "consistency_funded": 30,
-    "total_cost_to_funded": 519.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 519,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 519
   },
   {
     "firm_id": "legends_trading",
@@ -2625,9 +2715,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 278.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 278,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2635,8 +2725,9 @@
     "min_trading_days": 5,
     "consistency_eval": 40,
     "consistency_funded": 40,
-    "total_cost_to_funded": 278.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 278,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 278
   },
   {
     "firm_id": "lucid_trading",
@@ -2654,9 +2745,9 @@
     "daily_loss_limit": null,
     "profit_target": 1250,
     "profit_split": null,
-    "eval_fee": 60.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 60,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2664,8 +2755,9 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 60.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 36.0,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 60
   },
   {
     "firm_id": "lucid_trading",
@@ -2683,9 +2775,9 @@
     "daily_loss_limit": null,
     "profit_target": 1250,
     "profit_split": null,
-    "eval_fee": 81.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 81,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2693,8 +2785,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 81.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 48.6,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 81
   },
   {
     "firm_id": "lucid_trading",
@@ -2712,9 +2805,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 238.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 238,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2722,8 +2815,9 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 238.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 142.8,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 238
   },
   {
     "firm_id": "lucid_trading",
@@ -2741,9 +2835,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 84.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 84,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2751,8 +2845,9 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 84.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 50.4,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 84
   },
   {
     "firm_id": "lucid_trading",
@@ -2770,9 +2865,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 111.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 111,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2780,8 +2875,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 111.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 66.6,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 111
   },
   {
     "firm_id": "lucid_trading",
@@ -2799,9 +2895,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 364.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 364,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2809,8 +2905,9 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 364.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 218.4,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 364
   },
   {
     "firm_id": "lucid_trading",
@@ -2828,9 +2925,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 135.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 135,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2838,8 +2935,9 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 135.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 81.0,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 135
   },
   {
     "firm_id": "lucid_trading",
@@ -2857,9 +2955,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 171.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 171,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2867,8 +2965,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 171.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 102.6,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 171
   },
   {
     "firm_id": "lucid_trading",
@@ -2886,9 +2985,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 490.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 490,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2896,8 +2995,9 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 490.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 294.0,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 490
   },
   {
     "firm_id": "lucid_trading",
@@ -2915,9 +3015,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 252.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 252,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2925,8 +3025,9 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 252.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 151.2,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 252
   },
   {
     "firm_id": "lucid_trading",
@@ -2944,9 +3045,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 222.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 222,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2954,8 +3055,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 222.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 133.2,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 222
   },
   {
     "firm_id": "lucid_trading",
@@ -2973,9 +3075,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 588.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 588,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -2983,8 +3085,9 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 588.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 352.8,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 588
   },
   {
     "firm_id": "myfundedfutures",
@@ -3002,9 +3105,9 @@
     "daily_loss_limit": 0,
     "profit_target": 1500,
     "profit_split": 80,
-    "eval_fee": 75.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 75,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
@@ -3012,8 +3115,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 75.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 75,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 75
   },
   {
     "firm_id": "myfundedfutures",
@@ -3031,9 +3135,9 @@
     "daily_loss_limit": 0,
     "profit_target": 1500,
     "profit_split": 80,
-    "eval_fee": 84.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 84,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": "weekly",
     "first_payout_days": null,
@@ -3041,8 +3145,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 84.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 84,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 84
   },
   {
     "firm_id": "myfundedfutures",
@@ -3060,9 +3165,9 @@
     "daily_loss_limit": 0,
     "profit_target": 1500,
     "profit_split": 80,
-    "eval_fee": 114.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 114,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
@@ -3070,8 +3175,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 114.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 114,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 114
   },
   {
     "firm_id": "myfundedfutures",
@@ -3089,9 +3195,9 @@
     "daily_loss_limit": 0,
     "profit_target": 1500,
     "profit_split": 80,
-    "eval_fee": 87.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 87,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
@@ -3099,8 +3205,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 87.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 87,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 87
   },
   {
     "firm_id": "myfundedfutures",
@@ -3118,9 +3225,9 @@
     "daily_loss_limit": 0,
     "profit_target": 3000,
     "profit_split": 80,
-    "eval_fee": 75.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 75,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
@@ -3128,8 +3235,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 75.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 75,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 75
   },
   {
     "firm_id": "myfundedfutures",
@@ -3147,9 +3255,9 @@
     "daily_loss_limit": 0,
     "profit_target": 3000,
     "profit_split": 80,
-    "eval_fee": 127.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 127,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": "weekly",
     "first_payout_days": null,
@@ -3157,8 +3265,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 127.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 127,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 127
   },
   {
     "firm_id": "myfundedfutures",
@@ -3176,9 +3285,9 @@
     "daily_loss_limit": 0,
     "profit_target": 3000,
     "profit_split": 80,
-    "eval_fee": 114.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 114,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
@@ -3186,8 +3295,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 114.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 114,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 114
   },
   {
     "firm_id": "myfundedfutures",
@@ -3205,9 +3315,9 @@
     "daily_loss_limit": 0,
     "profit_target": 3000,
     "profit_split": 80,
-    "eval_fee": 126.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 126,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
@@ -3215,8 +3325,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 126.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 126,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 126
   },
   {
     "firm_id": "myfundedfutures",
@@ -3234,9 +3345,9 @@
     "daily_loss_limit": 0,
     "profit_target": 6000,
     "profit_split": 80,
-    "eval_fee": 153.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 153,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
@@ -3244,8 +3355,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 153.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 153,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 153
   },
   {
     "firm_id": "myfundedfutures",
@@ -3263,9 +3375,9 @@
     "daily_loss_limit": 0,
     "profit_target": 6000,
     "profit_split": 80,
-    "eval_fee": 344.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 344,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
@@ -3273,8 +3385,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 344.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 344,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 344
   },
   {
     "firm_id": "myfundedfutures",
@@ -3292,9 +3405,9 @@
     "daily_loss_limit": 0,
     "profit_target": 6000,
     "profit_split": 80,
-    "eval_fee": 267.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 267,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
@@ -3302,8 +3415,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 267.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 267,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 267
   },
   {
     "firm_id": "myfundedfutures",
@@ -3321,9 +3435,9 @@
     "daily_loss_limit": 0,
     "profit_target": 9000,
     "profit_split": 80,
-    "eval_fee": 225.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 225,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
@@ -3331,8 +3445,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 225.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 225,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 225
   },
   {
     "firm_id": "myfundedfutures",
@@ -3350,9 +3465,9 @@
     "daily_loss_limit": 0,
     "profit_target": 9000,
     "profit_split": 80,
-    "eval_fee": 477.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 477,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
@@ -3360,8 +3475,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 477.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 477,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 477
   },
   {
     "firm_id": "myfundedfutures",
@@ -3379,9 +3495,9 @@
     "daily_loss_limit": 0,
     "profit_target": 9000,
     "profit_split": 80,
-    "eval_fee": 347.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 347,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
@@ -3389,8 +3505,9 @@
     "min_trading_days": 2,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 347.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 347,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 347
   },
   {
     "firm_id": "oneup_trader",
@@ -3408,9 +3525,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 65.0,
-    "activation_fee": 65.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 65,
+    "activation_fee": 65,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3418,8 +3535,9 @@
     "min_trading_days": 10,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 130.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 130,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 130
   },
   {
     "firm_id": "oneup_trader",
@@ -3437,9 +3555,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 75.0,
-    "activation_fee": 75.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 75,
+    "activation_fee": 75,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3447,8 +3565,9 @@
     "min_trading_days": 10,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 150.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 150,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 150
   },
   {
     "firm_id": "oneup_trader",
@@ -3466,9 +3585,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 150.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 150,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3476,8 +3595,9 @@
     "min_trading_days": 10,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 150.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 150,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 150
   },
   {
     "firm_id": "oneup_trader",
@@ -3495,9 +3615,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 175.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 175,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3505,8 +3625,9 @@
     "min_trading_days": 10,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 175.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 175,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 175
   },
   {
     "firm_id": "oneup_trader",
@@ -3524,9 +3645,9 @@
     "daily_loss_limit": null,
     "profit_target": 15000,
     "profit_split": null,
-    "eval_fee": 325.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 325,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3534,8 +3655,9 @@
     "min_trading_days": 10,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 325.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 325,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 325
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3553,9 +3675,9 @@
     "daily_loss_limit": null,
     "profit_target": 0,
     "profit_split": null,
-    "eval_fee": 69.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 69,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3563,8 +3685,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 69.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 69,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 69
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3582,9 +3705,9 @@
     "daily_loss_limit": null,
     "profit_target": 0,
     "profit_split": null,
-    "eval_fee": 0.0,
-    "activation_fee": 69.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 0,
+    "activation_fee": 69,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3592,8 +3715,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 69.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 69,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 69
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3611,9 +3735,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 89.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 89,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3621,8 +3745,9 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 89.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 89,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 89
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3640,9 +3765,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 39.0,
-    "activation_fee": 29.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 39,
+    "activation_fee": 29,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3650,8 +3775,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 30,
-    "total_cost_to_funded": 68.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 68,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 68
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3669,9 +3795,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 128.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 128,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3679,8 +3805,9 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 128.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 128,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 128
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3698,9 +3825,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 69.0,
-    "activation_fee": 29.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 69,
+    "activation_fee": 29,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3708,8 +3835,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 30,
-    "total_cost_to_funded": 98.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 98,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 98
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3727,9 +3855,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 269.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 269,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3737,8 +3865,9 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 269.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 269,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 269
   },
   {
     "firm_id": "take_profit_trad",
@@ -3756,9 +3885,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 150.0,
-    "activation_fee": 130.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 150,
+    "activation_fee": 130,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3766,8 +3895,9 @@
     "min_trading_days": 5,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 280.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 280,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 280
   },
   {
     "firm_id": "take_profit_trad",
@@ -3785,9 +3915,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 170.0,
-    "activation_fee": 130.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 170,
+    "activation_fee": 130,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3795,8 +3925,9 @@
     "min_trading_days": 5,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 300.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 300,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 300
   },
   {
     "firm_id": "take_profit_trad",
@@ -3814,9 +3945,9 @@
     "daily_loss_limit": null,
     "profit_target": 4500,
     "profit_split": null,
-    "eval_fee": 250.0,
-    "activation_fee": 130.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 250,
+    "activation_fee": 130,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3824,8 +3955,9 @@
     "min_trading_days": 5,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 380.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 380,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 380
   },
   {
     "firm_id": "take_profit_trad",
@@ -3843,9 +3975,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 330.0,
-    "activation_fee": 130.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 330,
+    "activation_fee": 130,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3853,8 +3985,9 @@
     "min_trading_days": 5,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 460.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 460,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 460
   },
   {
     "firm_id": "take_profit_trad",
@@ -3872,9 +4005,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 360.0,
-    "activation_fee": 130.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 360,
+    "activation_fee": 130,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3882,8 +4015,9 @@
     "min_trading_days": 5,
     "consistency_eval": 50,
     "consistency_funded": null,
-    "total_cost_to_funded": 490.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 490,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 490
   },
   {
     "firm_id": "topstep",
@@ -3901,9 +4035,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 95.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 95,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3911,8 +4045,9 @@
     "min_trading_days": 10,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "total_cost_to_funded": 95.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 95,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 95
   },
   {
     "firm_id": "topstep",
@@ -3930,9 +4065,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 49.0,
-    "activation_fee": 149.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 49,
+    "activation_fee": 149,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3940,8 +4075,9 @@
     "min_trading_days": 10,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "total_cost_to_funded": 198.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 198,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 198
   },
   {
     "firm_id": "topstep",
@@ -3959,9 +4095,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 149.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 149,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3969,8 +4105,9 @@
     "min_trading_days": 10,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "total_cost_to_funded": 149.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 149,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 149
   },
   {
     "firm_id": "topstep",
@@ -3988,9 +4125,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 99.0,
-    "activation_fee": 149.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 99,
+    "activation_fee": 149,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -3998,8 +4135,9 @@
     "min_trading_days": 10,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "total_cost_to_funded": 248.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 248,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 248
   },
   {
     "firm_id": "topstep",
@@ -4017,9 +4155,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 229.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 229,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4027,8 +4165,9 @@
     "min_trading_days": 10,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "total_cost_to_funded": 229.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 229,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 229
   },
   {
     "firm_id": "topstep",
@@ -4046,9 +4185,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 149.0,
-    "activation_fee": 149.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 149,
+    "activation_fee": 149,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4056,8 +4195,9 @@
     "min_trading_days": 10,
     "consistency_eval": 50,
     "consistency_funded": 40,
-    "total_cost_to_funded": 298.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 298,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 298
   },
   {
     "firm_id": "tradeday",
@@ -4075,9 +4215,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 175.0,
-    "activation_fee": 139.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 175,
+    "activation_fee": 139,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4085,8 +4225,9 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 314.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 314,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 314
   },
   {
     "firm_id": "tradeday",
@@ -4104,9 +4245,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 125.0,
-    "activation_fee": 139.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 125,
+    "activation_fee": 139,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4114,8 +4255,9 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 264.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 264,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 264
   },
   {
     "firm_id": "tradeday",
@@ -4133,9 +4275,9 @@
     "daily_loss_limit": null,
     "profit_target": 2500,
     "profit_split": null,
-    "eval_fee": 165.0,
-    "activation_fee": 139.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 165,
+    "activation_fee": 139,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4143,8 +4285,9 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 304.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 304,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 304
   },
   {
     "firm_id": "tradeday",
@@ -4162,9 +4305,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 275.0,
-    "activation_fee": 139.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 275,
+    "activation_fee": 139,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4172,8 +4315,9 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 414.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 414,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 414
   },
   {
     "firm_id": "tradeday",
@@ -4191,9 +4335,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 200.0,
-    "activation_fee": 139.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 200,
+    "activation_fee": 139,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4201,8 +4345,9 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 339.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 339,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 339
   },
   {
     "firm_id": "tradeday",
@@ -4220,9 +4365,9 @@
     "daily_loss_limit": null,
     "profit_target": 5000,
     "profit_split": null,
-    "eval_fee": 265.0,
-    "activation_fee": 139.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 265,
+    "activation_fee": 139,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4230,8 +4375,9 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 404.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 404,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 404
   },
   {
     "firm_id": "tradeday",
@@ -4249,9 +4395,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 375.0,
-    "activation_fee": 139.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 375,
+    "activation_fee": 139,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4259,8 +4405,9 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 514.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 514,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 514
   },
   {
     "firm_id": "tradeday",
@@ -4278,9 +4425,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 300.0,
-    "activation_fee": 139.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 300,
+    "activation_fee": 139,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4288,8 +4435,9 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 439.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 439,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 439
   },
   {
     "firm_id": "tradeday",
@@ -4307,9 +4455,9 @@
     "daily_loss_limit": null,
     "profit_target": 7500,
     "profit_split": null,
-    "eval_fee": 360.0,
-    "activation_fee": 139.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 360,
+    "activation_fee": 139,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4317,8 +4465,9 @@
     "min_trading_days": 5,
     "consistency_eval": 30,
     "consistency_funded": null,
-    "total_cost_to_funded": 499.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 499,
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 499
   },
   {
     "firm_id": "tradeify",
@@ -4336,9 +4485,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 59.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 59,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4346,8 +4495,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "total_cost_to_funded": 59.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 35.4,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 59
   },
   {
     "firm_id": "tradeify",
@@ -4365,9 +4515,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 197.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 197,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4375,8 +4525,9 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 197.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 118.2,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 197
   },
   {
     "firm_id": "tradeify",
@@ -4394,9 +4545,9 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 65.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 65,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4404,8 +4555,9 @@
     "min_trading_days": 3,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 65.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 39.0,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 65
   },
   {
     "firm_id": "tradeify",
@@ -4423,9 +4575,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 87.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 87,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4433,8 +4585,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "total_cost_to_funded": 87.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 52.2,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 87
   },
   {
     "firm_id": "tradeify",
@@ -4452,9 +4605,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 281.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 281,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4462,8 +4615,9 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 281.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 168.6,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 281
   },
   {
     "firm_id": "tradeify",
@@ -4481,9 +4635,9 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 99.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 99,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4491,8 +4645,9 @@
     "min_trading_days": 3,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 99.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 59.4,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 99
   },
   {
     "firm_id": "tradeify",
@@ -4510,9 +4665,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 153.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 153,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4520,8 +4675,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "total_cost_to_funded": 153.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 91.8,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 153
   },
   {
     "firm_id": "tradeify",
@@ -4539,9 +4695,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 377.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 377,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4549,8 +4705,9 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 377.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 226.2,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 377
   },
   {
     "firm_id": "tradeify",
@@ -4568,9 +4725,9 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 159.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 159,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4578,8 +4735,9 @@
     "min_trading_days": 3,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 159.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 95.4,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 159
   },
   {
     "firm_id": "tradeify",
@@ -4597,9 +4755,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 221.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 221,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4607,8 +4765,9 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "total_cost_to_funded": 221.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 132.6,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 221
   },
   {
     "firm_id": "tradeify",
@@ -4626,9 +4785,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 455.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 455,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4636,8 +4795,9 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 455.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 273.0,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 455
   },
   {
     "firm_id": "tradeify",
@@ -4655,9 +4815,9 @@
     "daily_loss_limit": null,
     "profit_target": 9000,
     "profit_split": null,
-    "eval_fee": 221.0,
-    "activation_fee": 0.0,
-    "monthly_fee": 0.0,
+    "eval_fee": 221,
+    "activation_fee": 0,
+    "monthly_fee": 0,
     "is_one_time": 0,
     "payout_frequency": null,
     "first_payout_days": null,
@@ -4665,7 +4825,8 @@
     "min_trading_days": 3,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 221.0,
-    "active_discount_pct": 0
+    "total_cost_to_funded": 132.6,
+    "active_discount_pct": 40,
+    "base_cost_to_funded": 221
   }
 ]
