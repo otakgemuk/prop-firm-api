@@ -43,7 +43,7 @@ export interface PlanRow {
   is_one_time: number;
   payout_frequency: string;
   first_payout_days: number | null;
-  base_cost_to_funded?: number;
+  base_cost_to_funded: number;
   total_cost_to_funded: number;
   active_discount_pct: number;
   // Validation and status fields
@@ -68,7 +68,8 @@ const SORT_KEYS: Record<string, (row: PlanRow) => number | string> = {
   profit_target:     (r) => r.profit_target,
   eval_fee:          (r) => r.eval_fee,
   activation_fee:    (r) => r.activation_fee,
-  total_cost:        (r) => r.total_cost_to_funded,
+  base_cost:            (r) => r.base_cost_to_funded,
+  total_cost:           (r) => r.total_cost_to_funded,
   total_cost_to_funded: (r) => r.total_cost_to_funded,
   profit_split:      (r) => r.profit_split,
   trustpilot:        (r) => r.trustpilot,
