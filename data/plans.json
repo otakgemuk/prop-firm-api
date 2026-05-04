@@ -2755,8 +2755,8 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 36.0,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 60,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 60
   },
   {
@@ -2785,8 +2785,8 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 48.6,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 81,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 81
   },
   {
@@ -2815,8 +2815,8 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 142.8,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 238,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 238
   },
   {
@@ -2845,8 +2845,8 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 50.4,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 84,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 84
   },
   {
@@ -2875,8 +2875,8 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 66.6,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 111,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 111
   },
   {
@@ -2905,8 +2905,8 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 218.4,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 364,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 364
   },
   {
@@ -2935,8 +2935,8 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 81.0,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 135,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 135
   },
   {
@@ -2965,8 +2965,8 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 102.6,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 171,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 171
   },
   {
@@ -2995,8 +2995,8 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 294.0,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 490,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 490
   },
   {
@@ -3025,8 +3025,8 @@
     "min_trading_days": 2,
     "consistency_eval": null,
     "consistency_funded": null,
-    "total_cost_to_funded": 151.2,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 252,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 252
   },
   {
@@ -3055,8 +3055,8 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 133.2,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 222,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 222
   },
   {
@@ -3085,8 +3085,8 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 352.8,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 588,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 588
   },
   {
@@ -4495,8 +4495,8 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "total_cost_to_funded": 35.4,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 59,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 59
   },
   {
@@ -4525,8 +4525,8 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 118.2,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 197,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 197
   },
   {
@@ -4555,8 +4555,8 @@
     "min_trading_days": 3,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 39.0,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 65,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 65
   },
   {
@@ -4585,8 +4585,8 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "total_cost_to_funded": 52.2,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 87,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 87
   },
   {
@@ -4615,8 +4615,8 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 168.6,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 281,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 281
   },
   {
@@ -4645,8 +4645,8 @@
     "min_trading_days": 3,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 59.4,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 99,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 99
   },
   {
@@ -4675,8 +4675,8 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "total_cost_to_funded": 91.8,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 153,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 153
   },
   {
@@ -4705,8 +4705,8 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 226.2,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 377,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 377
   },
   {
@@ -4735,8 +4735,8 @@
     "min_trading_days": 3,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 95.4,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 159,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 159
   },
   {
@@ -4765,8 +4765,8 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 35,
-    "total_cost_to_funded": 132.6,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 221,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 221
   },
   {
@@ -4795,8 +4795,8 @@
     "min_trading_days": 5,
     "consistency_eval": null,
     "consistency_funded": 20,
-    "total_cost_to_funded": 273.0,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 455,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 455
   },
   {
@@ -4825,8 +4825,8 @@
     "min_trading_days": 3,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 132.6,
-    "active_discount_pct": 40,
+    "total_cost_to_funded": 221,
+    "active_discount_pct": 0,
     "base_cost_to_funded": 221
   }
 ]
