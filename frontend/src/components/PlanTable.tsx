@@ -109,12 +109,17 @@ const columns: ColumnDef<PlanRow, any>[] = [
     size: 120,
   }),
 
-  // 5. Total (eval + setup - discount)
-  columnHelper.accessor("total_cost_to_funded", {
+  // 5. Total (funded setup + discounted eval)
+  columnHelper.accessor("activation_fee", {
     header: "Total",
-    cell: (info) => (
-      <span className="font-bold text-brand-300">{formatUSD(info.getValue())}</span>
-    ),
+    cell: (info) => {
+      const activation = info.getValue();
+      const evalFee = info.row.original.eval_fee;
+      const pct = info.row.original.active_discount_pct;
+      const discountedEval = pct > 0 ? evalFee - (evalFee * pct) / 100 : evalFee;
+      const total = activation + discountedEval;
+      return <span className="font-bold text-brand-300">{formatUSD(total)}</span>;
+    },
     size: 100,
   }),
 
