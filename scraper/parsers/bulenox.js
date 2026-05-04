@@ -1,62 +1,87 @@
 // Bulenox parser
-// Two account types per size:
-//   - "No Scaling" (Opt 1): default, trailing drawdown
-//   - "EOD" (Opt 2): end-of-day drawdown
-const { buildPlan, fetchRendered, parseMoney, extractConsistencyPercent } = require("../utils");
+// Two account types: Option 1 (intraday) and Option 2 (EOD)
+const { buildPlan, fetchRendered, extractConsistencyPercent } = require("../utils");
 const cheerio = require("cheerio");
 
 const FIRM = { firmId: "f07", firmName: "Bulenox", firmSlug: "bulenox", websiteUrl: "https://bulenox.com", trustpilot: 4.0 };
 
-const CONFIGS = [
-  { size: 25000,  label: "25K",  target: 1500, maxLoss: 1250, dailyLoss: 500  },
-  { size: 50000,  label: "50K",  target: 3000, maxLoss: 2500, dailyLoss: 1000 },
-  { size: 100000, label: "100K", target: 6000, maxLoss: 3500, dailyLoss: 2000 },
-  { size: 150000, label: "150K", target: 9000, maxLoss: 4500, dailyLoss: 3000 },
-];
+// Known prices (verified May 2026)
+const KNOWN_OPT1 = {
+  25000:  { eval: 155, act: 143, dd: 1500 },
+  50000:  { eval: 175, act: 148, dd: 2500 },
+  100000: { eval: 215, act: 248, dd: 3000 },
+  150000: { eval: 350, act: 498, dd: 4500 },
+};
 
-// Known prices (from website as of May 2026)
-const KNOWN_NO_SCALING = { 25000: 145, 50000: 175, 100000: 215, 150000: 325 };
-const KNOWN_EOD        = { 25000: 115, 50000: 155, 100000: 195, 150000: 295 };
+const KNOWN_OPT2 = {
+  25000:  { eval: 175, act: 143, dd: 1500 },
+  50000:  { eval: 195, act: 148, dd: 2500 },
+  100000: { eval: 275, act: 248, dd: 3000 },
+  150000: { eval: 400, act: 498, dd: 4500 },
+};
+
+const SIZES = [25000, 50000, 100000, 150000];
+const LABELS = { 25000: "25K", 50000: "50K", 100000: "100K", 150000: "150K" };
+const TARGETS = { 25000: 1500, 50000: 3000, 100000: 6000, 150000: 9000 };
 
 async function scrape() {
   const html = await fetchRendered("https://bulenox.com", { waitFor: 5000 });
   const $ = cheerio.load(html);
   const text = $.text();
 
-  const maxFundedMatch = text.match(/(?:up to|max(?:imum)?)\s+(\d+)\s+funded\s+account/i);
-  const maxFunded = maxFundedMatch ? parseInt(maxFundedMatch[1], 10) : null;
-  const minDaysMatch = text.match(/(?:minimum|min)\s+(\d+)\s+(?:trading\s+)?days?/i);
-  const minDays = minDaysMatch ? parseInt(minDaysMatch[1], 10) : null;
-  const consistencyEvalPct = extractConsistencyPercent(text, "eval");
-  const consistencyFundedPct = extractConsistencyPercent(text, "fund");
-
+  const consistencyFundedPct = extractConsistencyPercent(text, "fund") || 40;
   const plans = [];
-  for (const cfg of CONFIGS) {
-    // No Scaling (Opt 1) — trailing drawdown
-    const noScalingFee = KNOWN_NO_SCALING[cfg.size] || 0;
-    if (noScalingFee > 0) {
+
+  for (const size of SIZES) {
+    const label = LABELS[size];
+
+    // Option 1 — intraday
+    const opt1 = KNOWN_OPT1[size];
+    if (opt1) {
       plans.push(buildPlan({
-        ...FIRM, planId: `bulenox-ns-${cfg.label}`, accountSize: cfg.size,
-        planLabel: `${cfg.label}`,
-        accountType: "No Scaling",
-        drawdownType: "trailing", drawdownAmount: cfg.maxLoss, dailyLossLimit: cfg.dailyLoss,
-        profitTarget: cfg.target, profitSplit: 80, evalFee: noScalingFee, isOneTime: false,
-        payoutFrequency: "biweekly", maxFundedAccounts: maxFunded, minTradingDays: minDays,
-        consistencyEvalPct, consistencyFundedPct,
+        ...FIRM,
+        planId: `bulenox-opt1-${label}`,
+        accountSize: size,
+        planLabel: `Option 1 ${label}`,
+        accountType: "Option 1",
+        drawdownType: "intraday",
+        drawdownAmount: opt1.dd,
+        dailyLossLimit: null,
+        profitTarget: TARGETS[size],
+        profitSplit: null,
+        evalFee: opt1.eval,
+        activationFee: opt1.act,
+        isOneTime: false,
+        payoutFrequency: null,
+        maxFundedAccounts: 1,
+        minTradingDays: 1,
+        consistencyEvalPct: null,
+        consistencyFundedPct,
       }));
     }
 
-    // EOD (Opt 2) — end-of-day drawdown
-    const eodFee = KNOWN_EOD[cfg.size] || 0;
-    if (eodFee > 0) {
+    // Option 2 — EOD
+    const opt2 = KNOWN_OPT2[size];
+    if (opt2) {
       plans.push(buildPlan({
-        ...FIRM, planId: `bulenox-eod-${cfg.label}`, accountSize: cfg.size,
-        planLabel: `${cfg.label} EOD`,
-        accountType: "EOD",
-        drawdownType: "EOD", drawdownAmount: cfg.maxLoss, dailyLossLimit: cfg.dailyLoss,
-        profitTarget: cfg.target, profitSplit: 80, evalFee: eodFee, isOneTime: false,
-        payoutFrequency: "biweekly", maxFundedAccounts: maxFunded, minTradingDays: minDays,
-        consistencyEvalPct, consistencyFundedPct,
+        ...FIRM,
+        planId: `bulenox-opt2-${label}`,
+        accountSize: size,
+        planLabel: `Option 2 ${label}`,
+        accountType: "Option 2",
+        drawdownType: "eod",
+        drawdownAmount: opt2.dd,
+        dailyLossLimit: null,
+        profitTarget: TARGETS[size],
+        profitSplit: null,
+        evalFee: opt2.eval,
+        activationFee: opt2.act,
+        isOneTime: false,
+        payoutFrequency: null,
+        maxFundedAccounts: 1,
+        minTradingDays: 1,
+        consistencyEvalPct: null,
+        consistencyFundedPct,
       }));
     }
   }

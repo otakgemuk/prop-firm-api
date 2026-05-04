@@ -1,13 +1,18 @@
-// Earn2Trade parser
-const { buildPlan, fetchRendered, parseMoney, extractConsistencyPercent } = require("../utils");
+// Earn2Trade parser — TCP and Gauntlet plans
+const { buildPlan, fetchRendered, extractConsistencyPercent } = require("../utils");
 const cheerio = require("cheerio");
 
 const FIRM = { firmId: "f09", firmName: "Earn2Trade", firmSlug: "earn2trade", websiteUrl: "https://earn2trade.com", trustpilot: 4.2 };
-const CONFIGS = [
-  { size: 25000,  label: "25K",  target: 1750, maxLoss: 1500, dailyLoss: 550  },
-  { size: 50000,  label: "50K",  target: 3000, maxLoss: 2000, dailyLoss: 1000 },
-  { size: 100000, label: "100K", target: 6000, maxLoss: 3000, dailyLoss: 2000 },
-  { size: 150000, label: "150K", target: 9000, maxLoss: 5000, dailyLoss: 3000 },
+
+// Known prices (verified May 2026)
+const KNOWN = [
+  { size: 25000,  label: "25K",  type: "TCP",      eval: 90,  act: 139, target: 1750, dd: 1500 },
+  { size: 50000,  label: "50K",  type: "Gauntlet", eval: 150, act: 139, target: 3000, dd: 2000 },
+  { size: 50000,  label: "50K",  type: "TCP",      eval: 150, act: 139, target: 3000, dd: 2000 },
+  { size: 100000, label: "100K", type: "Gauntlet", eval: 245, act: 139, target: 6000, dd: 3500 },
+  { size: 100000, label: "100K", type: "TCP",      eval: 270, act: 139, target: 6000, dd: 3000 },
+  { size: 150000, label: "150K", type: "Gauntlet", eval: 315, act: 139, target: 9000, dd: 4500 },
+  { size: 200000, label: "200K", type: "Gauntlet", eval: 400, act: 139, target: 12000, dd: 6000 },
 ];
 
 async function scrape() {
@@ -16,28 +21,29 @@ async function scrape() {
   const text = $.text();
 
   const maxFundedMatch = text.match(/(?:up to|max(?:imum)?)\s+(\d+)\s+funded\s+account/i);
-  const maxFunded = maxFundedMatch ? parseInt(maxFundedMatch[1], 10) : null;
-  const minDaysMatch = text.match(/(?:minimum|min)\s+(\d+)\s+(?:trading\s+)?days?/i);
-  const minDays = minDaysMatch ? parseInt(minDaysMatch[1], 10) : null;
-  const consistencyEvalPct = extractConsistencyPercent(text, "eval");
-  const consistencyFundedPct = extractConsistencyPercent(text, "fund");
+  const maxFunded = maxFundedMatch ? parseInt(maxFundedMatch[1], 10) : 1;
+  const consistencyEvalPct = extractConsistencyPercent(text, "eval") || 30;
 
-  const plans = [];
-  for (const cfg of CONFIGS) {
-    let fee = 0;
-    const m = text.match(new RegExp(`${cfg.label}[\\s\\S]{0,300}?\\$(\\d+)`, "i"));
-    if (m) { fee = parseMoney(m[1]); if (fee < 50 || fee > 2000) fee = 0; }
-    if (!fee) { const known = { 25000: 150, 50000: 150, 100000: 250, 150000: 350 }; fee = known[cfg.size]; }
-
-    plans.push(buildPlan({
-      ...FIRM, planId: `e2t-${cfg.label}`, accountSize: cfg.size,
-      drawdownType: "EOD", drawdownAmount: cfg.maxLoss, dailyLossLimit: cfg.dailyLoss,
-      profitTarget: cfg.target, profitSplit: 80, evalFee: fee, isOneTime: false,
-      payoutFrequency: "biweekly", maxFundedAccounts: maxFunded, minTradingDays: minDays,
-      consistencyEvalPct, consistencyFundedPct,
-    }));
-  }
-  return plans;
+  return KNOWN.map(cfg => buildPlan({
+    ...FIRM,
+    planId: `e2t-${cfg.type.toLowerCase()}-${cfg.label}`,
+    accountSize: cfg.size,
+    planLabel: `${cfg.type} ${cfg.label}`,
+    accountType: cfg.type,
+    drawdownType: "eod",
+    drawdownAmount: cfg.dd,
+    dailyLossLimit: null,
+    profitTarget: cfg.target,
+    profitSplit: null,
+    evalFee: cfg.eval,
+    activationFee: cfg.act,
+    isOneTime: false,
+    payoutFrequency: null,
+    maxFundedAccounts: maxFunded,
+    minTradingDays: 10,
+    consistencyEvalPct,
+    consistencyFundedPct: null,
+  }));
 }
 
 module.exports = { scrape };

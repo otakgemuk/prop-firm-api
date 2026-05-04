@@ -1,8 +1,5 @@
-// Tradeify parser
-// Source: tradeify.co — Growth (one-time) and Select (subscription) plans
-// EOD drawdown, 40% eval consistency, no funded consistency
-
-const { buildPlan, fetchRendered, parseMoney, extractConsistencyPercent } = require("../utils");
+// Tradeify parser — Growth, Lightning, Select types
+const { buildPlan, fetchRendered, extractConsistencyPercent } = require("../utils");
 const cheerio = require("cheerio");
 
 const FIRM = {
@@ -13,18 +10,21 @@ const FIRM = {
   trustpilot: 4.5,
 };
 
-const CONFIGS = [
-  { size: 25000,  label: "25K",  target: 1500, maxLoss: 1000, dailyLoss: 0 },
-  { size: 50000,  label: "50K",  target: 3000, maxLoss: 2000, dailyLoss: 0 },
-  { size: 100000, label: "100K", target: 6000, maxLoss: 2500, dailyLoss: 0 },
-  { size: 150000, label: "150K", target: 9000, maxLoss: 3000, dailyLoss: 0 },
+// Known prices (verified May 2026)
+const KNOWN = [
+  { size: 25000,  type: "Growth",    eval: 59,  target: 1500, dd: 1000, minDays: 1,  consFund: 35 },
+  { size: 25000,  type: "Lightning", eval: 197, target: 1500, dd: 1000, minDays: 5,  consFund: 20 },
+  { size: 25000,  type: "Select",    eval: 65,  target: 1500, dd: 1000, minDays: 3,  consEval: 40 },
+  { size: 50000,  type: "Growth",    eval: 87,  target: 3000, dd: 2000, minDays: 1,  consFund: 35 },
+  { size: 50000,  type: "Lightning", eval: 281, target: 3000, dd: 2000, minDays: 5,  consFund: 20 },
+  { size: 50000,  type: "Select",    eval: 99,  target: 3000, dd: 2000, minDays: 3,  consEval: 40 },
+  { size: 100000, type: "Growth",    eval: 153, target: 6000, dd: 3500, minDays: 1,  consFund: 35 },
+  { size: 100000, type: "Lightning", eval: 377, target: 6000, dd: 4000, minDays: 5,  consFund: 20 },
+  { size: 100000, type: "Select",    eval: 159, target: 6000, dd: 3000, minDays: 3,  consEval: 40 },
+  { size: 150000, type: "Growth",    eval: 221, target: 9000, dd: 5000, minDays: 1,  consFund: 35 },
+  { size: 150000, type: "Lightning", eval: 455, target: 9000, dd: 5250, minDays: 5,  consFund: 20 },
+  { size: 150000, type: "Select",    eval: 221, target: 9000, dd: 4500, minDays: 3,  consEval: 40 },
 ];
-
-// Known Growth prices (one-time, no subscription)
-const KNOWN_GROWTH = { 25000: 59, 50000: 99, 100000: 159, 150000: 221 };
-
-// Known Select prices (subscription)
-const KNOWN_SELECT = { 25000: 109, 50000: 159, 100000: 251, 150000: 359 };
 
 async function scrape() {
   let html;
@@ -41,68 +41,28 @@ async function scrape() {
   const text = $.text();
 
   const maxFundedMatch = text.match(/(?:up to|max(?:imum)?)\s+(\d+)\s+funded\s+account/i);
-  const maxFunded = maxFundedMatch ? parseInt(maxFundedMatch[1], 10) : null;
-  const minDaysMatch = text.match(/(?:minimum|min)\s+(\d+)\s+(?:trading\s+)?days?/i);
-  const minDays = minDaysMatch ? parseInt(minDaysMatch[1], 10) : null;
-  const consistencyEvalPct = extractConsistencyPercent(text, "eval") || 40;
-  const consistencyFundedPct = extractConsistencyPercent(text, "fund"); // No funded consistency
+  const maxFunded = maxFundedMatch ? parseInt(maxFundedMatch[1], 10) : 1;
 
-  const plans = [];
-
-  for (const cfg of CONFIGS) {
-    // Try to scrape prices, fall back to known values
-    let growthFee = KNOWN_GROWTH[cfg.size] || 0;
-    let selectFee = KNOWN_SELECT[cfg.size] || 0;
-
-    // Growth plan (one-time eval)
-    if (growthFee > 0) {
-      plans.push(buildPlan({
-        ...FIRM,
-        planId: `tradeify-growth-${cfg.label}`,
-        accountSize: cfg.size,
-        planLabel: `${cfg.label} Growth`,
-        accountType: "Growth",
-        drawdownType: "EOD",
-        drawdownAmount: cfg.maxLoss,
-        dailyLossLimit: cfg.dailyLoss,
-        profitTarget: cfg.target,
-        profitSplit: 90,
-        evalFee: growthFee,
-        isOneTime: true,
-        payoutFrequency: "biweekly",
-        maxFundedAccounts: maxFunded,
-        minTradingDays: minDays || 1,
-        consistencyEvalPct,
-        consistencyFundedPct: null,
-      }));
-    }
-
-    // Select plan (subscription eval)
-    if (selectFee > 0) {
-      plans.push(buildPlan({
-        ...FIRM,
-        planId: `tradeify-select-${cfg.label}`,
-        accountSize: cfg.size,
-        planLabel: `${cfg.label} Select`,
-        accountType: "Select",
-        drawdownType: "EOD",
-        drawdownAmount: cfg.maxLoss,
-        dailyLossLimit: cfg.dailyLoss,
-        profitTarget: cfg.target,
-        profitSplit: 90,
-        evalFee: selectFee,
-        isOneTime: false,
-        payoutFrequency: "weekly",
-        maxFundedAccounts: maxFunded,
-        minTradingDays: minDays || 3,
-        consistencyEvalPct,
-        consistencyFundedPct: null,
-      }));
-    }
-  }
-
-  if (plans.length === 0) throw new Error("Could not extract any plans");
-  return plans;
+  return KNOWN.map(cfg => buildPlan({
+    ...FIRM,
+    planId: `tradeify-${cfg.type.toLowerCase()}-${cfg.size / 1000}k`,
+    accountSize: cfg.size,
+    planLabel: `${cfg.size / 1000}K ${cfg.type}`,
+    accountType: cfg.type,
+    drawdownType: "eod",
+    drawdownAmount: cfg.dd,
+    dailyLossLimit: null,
+    profitTarget: cfg.target,
+    profitSplit: null,
+    evalFee: cfg.eval,
+    activationFee: 0,
+    isOneTime: cfg.type === "Growth",
+    payoutFrequency: cfg.type === "Growth" ? null : cfg.type === "Lightning" ? null : "weekly",
+    maxFundedAccounts: maxFunded,
+    minTradingDays: cfg.minDays,
+    consistencyEvalPct: cfg.consEval || null,
+    consistencyFundedPct: cfg.consFund || null,
+  }));
 }
 
 module.exports = { scrape };

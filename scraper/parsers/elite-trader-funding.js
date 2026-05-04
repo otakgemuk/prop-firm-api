@@ -1,6 +1,6 @@
 // Elite Trader Funding parser
-// 6 plan types: 1-Step Monthly, Fast Track, Static, Direct to Funded, EOD Drawdown, Diamond Hands
-const { buildPlan, fetchRendered, parseMoney, extractConsistencyPercent } = require("../utils");
+// Types: 1-Step, Fast Track, Static, DTF, EOD, DH
+const { buildPlan, fetchRendered, extractConsistencyPercent } = require("../utils");
 const cheerio = require("cheerio");
 
 const FIRM = {
@@ -11,40 +11,20 @@ const FIRM = {
   trustpilot: 4.3,
 };
 
-// 1-Step Monthly (Intraday Trailing)
-const ONE_STEP = [
-  { size: 50000,  label: "50K",  target: 3000,  maxLoss: 2000,  dailyLoss: 1000, fee: 165, contracts: "8 Minis" },
-  { size: 100000, label: "100K", target: 6000,  maxLoss: 3000,  dailyLoss: 2000, fee: 205, contracts: "14 Minis" },
-  { size: 150000, label: "150K", target: 9000,  maxLoss: 5000,  dailyLoss: 3000, fee: 295, contracts: "18 Minis" },
-  { size: 250000, label: "250K", target: 15000, maxLoss: 5000,  dailyLoss: 4000, fee: 515, contracts: "25 Minis" },
-  { size: 300000, label: "300K", target: 20000, maxLoss: 7500,  dailyLoss: 5000, fee: 655, contracts: "30 Minis" },
-];
-
-// Fast Track (Intraday Trailing, one-time)
-const FAST_TRACK = [
-  { size: 100000, label: "100K", target: 6000, maxLoss: 3000, dailyLoss: 2000, fee: 75, contracts: "14 Minis" },
-];
-
-// Static (Fixed drawdown, one-time)
-const STATIC = [
-  { size: 10000, label: "10K", target: 1000, maxLoss: 500, dailyLoss: 500, fee: 99, contracts: "2 Minis / 20 Micros" },
-];
-
-// Direct to Funded (Static, one-time)
-const DTF = [
-  { size: 25000, label: "25K", target: 0, maxLoss: 1500, dailyLoss: 1000, fee: 599, contracts: "4 Minis" },
-];
-
-// EOD Drawdown (End-of-Day, monthly)
-const EOD = [
-  { size: 50000,  label: "50K",  target: 3000, maxLoss: 2000, dailyLoss: 1000, fee: 155, contracts: "8 Minis" },
-  { size: 100000, label: "100K", target: 6000, maxLoss: 3000, dailyLoss: 2000, fee: 190, contracts: "14 Minis" },
-  { size: 150000, label: "150K", target: 9000, maxLoss: 5000, dailyLoss: 3000, fee: 280, contracts: "18 Minis" },
-];
-
-// Diamond Hands (EOD Trailing, monthly)
-const DIAMOND = [
-  { size: 50000, label: "50K", target: 3000, maxLoss: 2000, dailyLoss: 1000, fee: 180, contracts: "8 Minis" },
+// Known prices (verified May 2026)
+const KNOWN = [
+  { size: 10000,  type: "Static",      label: "Static 10K",      eval: 99,  act: 87,  target: 600,   dd: 500,  ddType: "static", maxAcct: 1,  minDays: 5, consEval: 30 },
+  { size: 50000,  type: "1-Step",      label: "1-Step 50K",      eval: 165, act: 87,  target: 3000,  dd: 2000, ddType: "intraday", maxAcct: 1, minDays: 5, consEval: 30 },
+  { size: 50000,  type: "DTF",         label: "DTF 50K",         eval: 599, act: 47,  target: 2500,  dd: 2500, ddType: "eod", maxAcct: 5, minDays: 1 },
+  { size: 50000,  type: "EOD",         label: "EOD 50K",         eval: 295, act: 87,  target: 3000,  dd: 2000, ddType: "eod", maxAcct: 1, minDays: 5, consEval: 30 },
+  { size: 50000,  type: "Static",      label: "Static 50K",      eval: 449, act: 87,  target: 2400,  dd: 2000, ddType: "static", maxAcct: 1, minDays: 5, consEval: 30 },
+  { size: 100000, type: "1-Step",      label: "1-Step 100K",     eval: 205, act: 87,  target: 6000,  dd: 3000, ddType: "intraday", maxAcct: 1, minDays: 5, consEval: 30 },
+  { size: 100000, type: "DH",          label: "DH 100K",         eval: 365, act: 87,  target: 5000,  dd: 3500, ddType: "eod", maxAcct: 1, minDays: 5, consEval: 30 },
+  { size: 100000, type: "DTF",         label: "DTF 100K",        eval: 649, act: 47,  target: 5000,  dd: 5000, ddType: "static", maxAcct: 5, minDays: 1 },
+  { size: 100000, type: "EOD",         label: "EOD 100K",        eval: 355, act: 87,  target: 6000,  dd: 3500, ddType: "eod", maxAcct: 1, minDays: 5, consEval: 30 },
+  { size: 100000, type: "Fast Track",  label: "Fast Track 100K", eval: 75,  act: 87,  target: 6000,  dd: 3000, ddType: "intraday", maxAcct: 1, minDays: 3, consEval: 40 },
+  { size: 150000, type: "1-Step",      label: "1-Step 150K",     eval: 295, act: 87,  target: 9000,  dd: 5000, ddType: "intraday", maxAcct: 1, minDays: 5, consEval: 30 },
+  { size: 250000, type: "1-Step",      label: "1-Step 250K",     eval: 515, act: 87,  target: 15000, dd: 6500, ddType: "intraday", maxAcct: 1, minDays: 5, consEval: 30 },
 ];
 
 async function scrape() {
@@ -54,49 +34,27 @@ async function scrape() {
 
   const maxFundedMatch = text.match(/(?:up to|max(?:imum)?)\s+(\d+)\s+funded\s+account/i);
   const maxFunded = maxFundedMatch ? parseInt(maxFundedMatch[1], 10) : null;
-  const minDaysMatch = text.match(/(?:minimum|min)\s+(\d+)\s+(?:trading\s+)?days?/i);
-  const minDays = minDaysMatch ? parseInt(minDaysMatch[1], 10) : null;
-  const consistencyEvalPct = extractConsistencyPercent(text, "eval");
-  const consistencyFundedPct = extractConsistencyPercent(text, "fund");
 
-  const plans = [];
-
-  function addPlans(configs, accountType, drawdownType, isOneTime) {
-    for (const cfg of configs) {
-      if (cfg.fee > 0) {
-        plans.push(buildPlan({
-          ...FIRM,
-          planId: `etf-${accountType.toLowerCase().replace(/\s+/g, "-")}-${cfg.label}`,
-          accountSize: cfg.size,
-          planLabel: `${cfg.label} ${accountType}`,
-          accountType,
-          drawdownType,
-          drawdownAmount: cfg.maxLoss,
-          dailyLossLimit: cfg.dailyLoss,
-          profitTarget: cfg.target,
-          profitSplit: 100,
-          evalFee: cfg.fee,
-          activationFee: 0,
-          isOneTime,
-          payoutFrequency: "biweekly",
-          maxFundedAccounts: maxFunded,
-          minTradingDays: minDays,
-          consistencyEvalPct,
-          consistencyFundedPct,
-        }));
-      }
-    }
-  }
-
-  addPlans(ONE_STEP,   "1-Step Monthly",    "intraday",  false);
-  addPlans(FAST_TRACK, "Fast Track",        "intraday",  true);
-  addPlans(STATIC,     "Static",            "static",    true);
-  addPlans(DTF,        "Direct to Funded",  "static",    true);
-  addPlans(EOD,        "EOD Drawdown",      "EOD", false);
-  addPlans(DIAMOND,    "Diamond Hands",     "EOD", false);
-
-  if (plans.length === 0) throw new Error("Could not extract any plans");
-  return plans;
+  return KNOWN.map(cfg => buildPlan({
+    ...FIRM,
+    planId: `etf-${cfg.type.toLowerCase().replace(/\s+/g, "-")}-${cfg.label.split(" ").pop()}`,
+    accountSize: cfg.size,
+    planLabel: cfg.label,
+    accountType: cfg.type,
+    drawdownType: cfg.ddType,
+    drawdownAmount: cfg.dd,
+    dailyLossLimit: null,
+    profitTarget: cfg.target,
+    profitSplit: null,
+    evalFee: cfg.eval,
+    activationFee: cfg.act,
+    isOneTime: cfg.type === "Fast Track" || cfg.type === "DTF",
+    payoutFrequency: null,
+    maxFundedAccounts: cfg.maxAcct || maxFunded,
+    minTradingDays: cfg.minDays,
+    consistencyEvalPct: cfg.consEval || null,
+    consistencyFundedPct: null,
+  }));
 }
 
 module.exports = { scrape };

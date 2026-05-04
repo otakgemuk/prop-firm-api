@@ -29,17 +29,12 @@ function getDb() {
 }
 
 // ── Normalize drawdown_type ────────────────────────────────────
-// Convert any 'end_of_day' values to 'EOD' for consistency.
-// This handles cases where parsers or external data sources
-// still use 'end_of_day' instead of the standardized 'EOD'.
+// Standardize to lowercase for consistency.
 function normalizeDrawdownType(value) {
   if (!value) return value;
   const normalized = String(value).toLowerCase();
-  if (normalized === "end_of_day" || normalized === "eod") {
-    return "EOD";
-  }
-  // Return as-is for other types: trailing, static, intraday
-  return value;
+  if (normalized === "end_of_day") return "eod";
+  return normalized;
 }
 
 // ── Upsert scraped plans for one firm ───────────────────────
@@ -55,13 +50,13 @@ function upsertPlans(firmSlug, plans) {
       firm_id, account_size, account_type, label, drawdown_type,
       drawdown_amount, daily_loss_limit, profit_target,
       eval_fee, activation_fee, monthly_fee, profit_split,
-      payout_frequency, first_payout_days, is_one_time, is_active
+      payout_frequency, is_one_time, is_active
     )
     SELECT
       f.id, $account_size, $account_type, $label, $drawdown_type,
       $drawdown_amount, $daily_loss_limit, $profit_target,
       $eval_fee, $activation_fee, $monthly_fee, $profit_split,
-      $payout_frequency, $first_payout_days, $is_one_time, 1
+      $payout_frequency, $is_one_time, 1
     FROM firms f WHERE f.slug = $firm_slug
     ON CONFLICT(firm_id, account_size, account_type) DO UPDATE SET
       label             = excluded.label,
@@ -74,7 +69,6 @@ function upsertPlans(firmSlug, plans) {
       monthly_fee       = excluded.monthly_fee,
       profit_split      = excluded.profit_split,
       payout_frequency  = excluded.payout_frequency,
-      first_payout_days = excluded.first_payout_days,
       is_one_time       = excluded.is_one_time,
       is_active         = 1,
       updated_at        = datetime('now')
@@ -104,7 +98,6 @@ function upsertPlans(firmSlug, plans) {
         monthly_fee:       p.monthly_fee       ?? 0,
         profit_split:      p.profit_split      ?? null,
         payout_frequency:  p.payout_frequency  ?? null,
-        first_payout_days: p.first_payout_days ?? null,
         is_one_time:       p.is_one_time       ?? 0,
       });
     }

@@ -1,15 +1,23 @@
-// TradeDay parser
-const { buildPlan, fetchRendered, parseMoney, extractConsistencyPercent } = require("../utils");
+// TradeDay parser — EOD, Intraday, Static types
+const { buildPlan, fetchRendered, extractConsistencyPercent } = require("../utils");
 const cheerio = require("cheerio");
 
 const FIRM = { firmId: "f04", firmName: "TradeDay", firmSlug: "tradeday", websiteUrl: "https://tradeday.com", trustpilot: 4.6 };
-const CONFIGS = [
-  { size: 25000,  label: "25K",  target: 1500, maxLoss: 1500, dailyLoss: 750,  drawdown: "trailing", accountType: "Intraday" },
-  { size: 25000,  label: "25K",  target: 1500, maxLoss: 500,  dailyLoss: 500,  drawdown: "static",   accountType: "Static" },
-  { size: 50000,  label: "50K",  target: 3000, maxLoss: 2000, dailyLoss: 1000, drawdown: "static",   accountType: "Standard" },
-  { size: 100000, label: "100K", target: 6000, maxLoss: 3000, dailyLoss: 2000, drawdown: "static",   accountType: "Standard" },
-  { size: 150000, label: "150K", target: 9000, maxLoss: 4500, dailyLoss: 3000, drawdown: "static",   accountType: "Standard" },
+
+// Known prices (verified May 2026)
+const KNOWN = [
+  { size: 50000,  type: "EOD",      eval: 175, act: 139, target: 3000, dd: 2000 },
+  { size: 50000,  type: "Intraday", eval: 125, act: 139, target: 3000, dd: 2000 },
+  { size: 50000,  type: "Static",   eval: 165, act: 139, target: 2500, dd: 2000 },
+  { size: 100000, type: "EOD",      eval: 275, act: 139, target: 6000, dd: 3000 },
+  { size: 100000, type: "Intraday", eval: 200, act: 139, target: 6000, dd: 3000 },
+  { size: 100000, type: "Static",   eval: 265, act: 139, target: 5000, dd: 3000 },
+  { size: 150000, type: "EOD",      eval: 375, act: 139, target: 9000, dd: 4000 },
+  { size: 150000, type: "Intraday", eval: 300, act: 139, target: 9000, dd: 4000 },
+  { size: 150000, type: "Static",   eval: 360, act: 139, target: 7500, dd: 4000 },
 ];
+
+const DD_TYPES = { "EOD": "eod", "Intraday": "intraday", "Static": "static" };
 
 async function scrape() {
   const html = await fetchRendered("https://tradeday.com", { waitFor: 5000 });
@@ -17,30 +25,29 @@ async function scrape() {
   const text = $.text();
 
   const maxFundedMatch = text.match(/(?:up to|max(?:imum)?)\s+(\d+)\s+funded\s+account/i);
-  const maxFunded = maxFundedMatch ? parseInt(maxFundedMatch[1], 10) : null;
-  const minDaysMatch = text.match(/(?:minimum|min)\s+(\d+)\s+(?:trading\s+)?days?/i);
-  const minDays = minDaysMatch ? parseInt(minDaysMatch[1], 10) : null;
-  const consistencyEvalPct = extractConsistencyPercent(text, "eval");
-  const consistencyFundedPct = extractConsistencyPercent(text, "fund");
+  const maxFunded = maxFundedMatch ? parseInt(maxFundedMatch[1], 10) : 1;
+  const consistencyEvalPct = extractConsistencyPercent(text, "eval") || 30;
 
-  const plans = [];
-  for (const cfg of CONFIGS) {
-    let fee = 0;
-    const m = text.match(new RegExp(`${cfg.label}[\\s\\S]{0,300}?\\$(\\d+)`, "i"));
-    if (m) { fee = parseMoney(m[1]); if (fee < 50 || fee > 2000) fee = 0; }
-    if (!fee) { const known = { 25000: 125, 50000: 150, 100000: 250, 150000: 350 }; fee = known[cfg.size]; }
-
-    const planIdSuffix = cfg.accountType !== "Standard" ? `-${cfg.accountType}` : "";
-    plans.push(buildPlan({
-      ...FIRM, planId: `tradeday-${cfg.label}${planIdSuffix}`, accountSize: cfg.size,
-      accountType: cfg.accountType,
-      drawdownType: cfg.drawdown, drawdownAmount: cfg.maxLoss, dailyLossLimit: cfg.dailyLoss,
-      profitTarget: cfg.target, profitSplit: 90, evalFee: fee, isOneTime: false,
-      payoutFrequency: "weekly", maxFundedAccounts: maxFunded, minTradingDays: minDays,
-      consistencyEvalPct, consistencyFundedPct,
-    }));
-  }
-  return plans;
+  return KNOWN.map(cfg => buildPlan({
+    ...FIRM,
+    planId: `tradeday-${cfg.type.toLowerCase()}-${cfg.size / 1000}k`,
+    accountSize: cfg.size,
+    planLabel: `${cfg.type} ${cfg.size / 1000}K`,
+    accountType: cfg.type,
+    drawdownType: DD_TYPES[cfg.type] || "eod",
+    drawdownAmount: cfg.dd,
+    dailyLossLimit: null,
+    profitTarget: cfg.target,
+    profitSplit: null,
+    evalFee: cfg.eval,
+    activationFee: cfg.act,
+    isOneTime: false,
+    payoutFrequency: null,
+    maxFundedAccounts: maxFunded,
+    minTradingDays: 5,
+    consistencyEvalPct,
+    consistencyFundedPct: null,
+  }));
 }
 
 module.exports = { scrape };

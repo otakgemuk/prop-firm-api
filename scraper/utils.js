@@ -53,7 +53,6 @@ function buildPlan({
   monthlyFee = 0,
   isOneTime = false,
   payoutFrequency = "biweekly",
-  firstPayoutDays = null,
   discountPct = 0,
   logoUrl = null,
   accountType = "Standard",
@@ -64,7 +63,7 @@ function buildPlan({
   consistencyFundedPct = null,
 }) {
   const totalCost = Math.round(
-    ((evalFee + activationFee) * (1 - discountPct / 100)) * 100
+    (evalFee * (1 - discountPct / 100) + activationFee) * 100
   ) / 100;
 
   const plan = {
@@ -88,7 +87,6 @@ function buildPlan({
     monthly_fee: monthlyFee,
     is_one_time: isOneTime ? 1 : 0,
     payout_frequency: payoutFrequency,
-    first_payout_days: firstPayoutDays,
     total_cost_to_funded: totalCost,
     active_discount_pct: discountPct,
   };

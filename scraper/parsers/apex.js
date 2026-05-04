@@ -1,7 +1,5 @@
 // Apex Trader Funding parser
-// Two account types:
-//   - "Standard": monthly sub + free activation
-//   - "No Activation": lower monthly + $140 activation fee
+// Two account types: EOD and Intraday
 const { buildPlan, fetchRendered, parseMoney, extractConsistencyPercent } = require("../utils");
 const cheerio = require("cheerio");
 
@@ -13,20 +11,25 @@ const FIRM = {
   trustpilot: 4.5,
 };
 
-const CONFIGS = [
-  { size: 25000,  label: "25K",  target: 1500,  maxLoss: 1250, dailyLoss: 625  },
-  { size: 50000,  label: "50K",  target: 3000,  maxLoss: 2500, dailyLoss: 1250 },
-  { size: 100000, label: "100K", target: 6000,  maxLoss: 3000, dailyLoss: 2000 },
-  { size: 150000, label: "150K", target: 9000,  maxLoss: 5000, dailyLoss: 3000 },
-  { size: 250000, label: "250K", target: 15000, maxLoss: 6500, dailyLoss: 4000 },
-];
+// Known prices (verified May 2026)
+const KNOWN_EOD = {
+  25000:  { eval: 30,  act: 109 },
+  50000:  { eval: 35,  act: 119 },
+  100000: { eval: 60,  act: 139 },
+  150000: { eval: 80,  act: 159 },
+};
 
-// Known prices (from website as of May 2026)
-// Standard: free activation, higher monthly
-const KNOWN_STANDARD = { 25000: 147, 50000: 167, 100000: 207, 150000: 297, 250000: 517 };
-// No Activation: $140 activation, lower monthly
-const KNOWN_NO_ACTIVATION = { 25000: 107, 50000: 127, 100000: 167, 150000: 257, 250000: 477 };
-const ACTIVATION_FEE = 140;
+const KNOWN_INTRADAY = {
+  25000:  { eval: 20,  act: 89 },
+  50000:  { eval: 25,  act: 69 },
+  100000: { eval: 40,  act: 119 },
+  150000: { eval: 60,  act: 139 },
+};
+
+const SIZES = [25000, 50000, 100000, 150000];
+const LABELS = { 25000: "25K", 50000: "50K", 100000: "100K", 150000: "150K" };
+const TARGETS = { 25000: 1500, 50000: 3000, 100000: 6000, 150000: 9000 };
+const DD_AMTS = { 25000: 1000, 50000: 2000, 100000: 3000, 150000: 4000 };
 
 async function scrape() {
   let html;
@@ -43,61 +46,60 @@ async function scrape() {
   const text = $.text();
 
   const maxFundedMatch = text.match(/(?:up to|max(?:imum)?)\s+(\d+)\s+funded\s+account/i);
-  const maxFunded = maxFundedMatch ? parseInt(maxFundedMatch[1], 10) : null;
-  const minDaysMatch = text.match(/(?:minimum|min)\s+(\d+)\s+(?:trading\s+)?days?/i);
-  const minDays = minDaysMatch ? parseInt(minDaysMatch[1], 10) : null;
-  const consistencyEvalPct = extractConsistencyPercent(text, "eval");
-  const consistencyFundedPct = extractConsistencyPercent(text, "fund");
+  const maxFunded = maxFundedMatch ? parseInt(maxFundedMatch[1], 10) : 20;
+  const consistencyFundedPct = extractConsistencyPercent(text, "fund") || 50;
 
   const plans = [];
 
-  for (const cfg of CONFIGS) {
-    // Standard type — free activation, higher monthly
-    const stdFee = KNOWN_STANDARD[cfg.size] || 0;
-    if (stdFee > 0) {
+  for (const size of SIZES) {
+    const label = LABELS[size];
+
+    // EOD type
+    const eod = KNOWN_EOD[size];
+    if (eod) {
       plans.push(buildPlan({
         ...FIRM,
-        planId: `apex-std-${cfg.label}`,
-        accountSize: cfg.size,
-        planLabel: `${cfg.label}`,
-        accountType: "Standard",
-        drawdownType: "EOD",
-        drawdownAmount: cfg.maxLoss,
-        dailyLossLimit: cfg.dailyLoss,
-        profitTarget: cfg.target,
-        profitSplit: 100,
-        evalFee: stdFee,
-        activationFee: 0,
+        planId: `apex-eod-${label}`,
+        accountSize: size,
+        planLabel: `EOD ${label}`,
+        accountType: "EOD",
+        drawdownType: "eod",
+        drawdownAmount: DD_AMTS[size],
+        dailyLossLimit: null,
+        profitTarget: TARGETS[size],
+        profitSplit: null,
+        evalFee: eod.eval,
+        activationFee: eod.act,
         isOneTime: false,
-        payoutFrequency: "biweekly",
+        payoutFrequency: null,
         maxFundedAccounts: maxFunded,
-        minTradingDays: minDays,
-        consistencyEvalPct,
+        minTradingDays: 1,
+        consistencyEvalPct: null,
         consistencyFundedPct,
       }));
     }
 
-    // No Activation type — $140 activation, lower monthly
-    const noActFee = KNOWN_NO_ACTIVATION[cfg.size] || 0;
-    if (noActFee > 0) {
+    // Intraday type
+    const intra = KNOWN_INTRADAY[size];
+    if (intra) {
       plans.push(buildPlan({
         ...FIRM,
-        planId: `apex-na-${cfg.label}`,
-        accountSize: cfg.size,
-        planLabel: `${cfg.label} No Act.`,
-        accountType: "No Activation",
-        drawdownType: "EOD",
-        drawdownAmount: cfg.maxLoss,
-        dailyLossLimit: cfg.dailyLoss,
-        profitTarget: cfg.target,
-        profitSplit: 100,
-        evalFee: noActFee,
-        activationFee: ACTIVATION_FEE,
+        planId: `apex-intraday-${label}`,
+        accountSize: size,
+        planLabel: `Intraday ${label}`,
+        accountType: "Intraday",
+        drawdownType: "intraday",
+        drawdownAmount: DD_AMTS[size],
+        dailyLossLimit: null,
+        profitTarget: TARGETS[size],
+        profitSplit: null,
+        evalFee: intra.eval,
+        activationFee: intra.act,
         isOneTime: false,
-        payoutFrequency: "biweekly",
+        payoutFrequency: null,
         maxFundedAccounts: maxFunded,
-        minTradingDays: minDays,
-        consistencyEvalPct,
+        minTradingDays: 1,
+        consistencyEvalPct: null,
         consistencyFundedPct,
       }));
     }

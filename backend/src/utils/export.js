@@ -58,7 +58,6 @@ const rows = db.prepare(`
     p.monthly_fee,
     p.is_one_time,
     p.payout_frequency,
-    p.first_payout_days,
     -- manual / enrichment fields
     p.max_funded_accounts,
     p.min_trading_days,
@@ -71,9 +70,9 @@ const rows = db.prepare(`
       2
     )                                                       AS base_cost_to_funded,
     ROUND(
-      (p.eval_fee + p.activation_fee +
-      CASE WHEN p.is_one_time = 0 THEN p.monthly_fee * 3 ELSE 0 END) *
-      (1 - COALESCE(bd.discount_pct, 0) / 100.0),
+      p.eval_fee * (1 - COALESCE(bd.discount_pct, 0) / 100.0) +
+      p.activation_fee +
+      CASE WHEN p.is_one_time = 0 THEN p.monthly_fee * 3 ELSE 0 END,
       2
     )                                                       AS total_cost_to_funded,
     COALESCE(bd.discount_pct, 0)                            AS active_discount_pct,
