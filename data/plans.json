@@ -26,7 +26,8 @@
     "consistency_eval": null,
     "consistency_funded": 40,
     "total_cost_to_funded": 79,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 79
   },
   {
     "firm_id": "alpha_futures",
@@ -55,7 +56,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 288,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 288
   },
   {
     "firm_id": "alpha_futures",
@@ -84,7 +86,8 @@
     "consistency_eval": 50,
     "consistency_funded": 40,
     "total_cost_to_funded": 228,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 228
   },
   {
     "firm_id": "alpha_futures",
@@ -113,7 +116,8 @@
     "consistency_eval": 50,
     "consistency_funded": 40,
     "total_cost_to_funded": 149,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 149
   },
   {
     "firm_id": "alpha_futures",
@@ -142,7 +146,8 @@
     "consistency_eval": null,
     "consistency_funded": 40,
     "total_cost_to_funded": 119,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 119
   },
   {
     "firm_id": "alpha_futures",
@@ -171,7 +176,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 428,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 428
   },
   {
     "firm_id": "alpha_futures",
@@ -200,7 +206,8 @@
     "consistency_eval": 50,
     "consistency_funded": 40,
     "total_cost_to_funded": 308,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 308
   },
   {
     "firm_id": "alpha_futures",
@@ -229,7 +236,8 @@
     "consistency_eval": 50,
     "consistency_funded": 40,
     "total_cost_to_funded": 239,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 239
   },
   {
     "firm_id": "alpha_futures",
@@ -258,7 +266,8 @@
     "consistency_eval": null,
     "consistency_funded": 40,
     "total_cost_to_funded": 239,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 239
   },
   {
     "firm_id": "alpha_futures",
@@ -287,7 +296,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 568,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 568
   },
   {
     "firm_id": "alpha_futures",
@@ -316,7 +326,8 @@
     "consistency_eval": 50,
     "consistency_funded": 40,
     "total_cost_to_funded": 388,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 388
   },
   {
     "firm_id": "alpha_futures",
@@ -345,7 +356,8 @@
     "consistency_eval": 50,
     "consistency_funded": 40,
     "total_cost_to_funded": 329,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 329
   },
   {
     "firm_id": "apex_trader_fund",
@@ -374,7 +386,8 @@
     "consistency_eval": null,
     "consistency_funded": 50,
     "total_cost_to_funded": 139,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 139
   },
   {
     "firm_id": "apex_trader_fund",
@@ -403,7 +416,8 @@
     "consistency_eval": null,
     "consistency_funded": 50,
     "total_cost_to_funded": 109,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 109
   },
   {
     "firm_id": "apex_trader_fund",
@@ -432,7 +446,8 @@
     "consistency_eval": null,
     "consistency_funded": 50,
     "total_cost_to_funded": 154,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 154
   },
   {
     "firm_id": "apex_trader_fund",
@@ -461,7 +476,8 @@
     "consistency_eval": null,
     "consistency_funded": 50,
     "total_cost_to_funded": 94,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 94
   },
   {
     "firm_id": "apex_trader_fund",
@@ -490,7 +506,8 @@
     "consistency_eval": null,
     "consistency_funded": 50,
     "total_cost_to_funded": 199,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 199
   },
   {
     "firm_id": "apex_trader_fund",
@@ -519,7 +536,8 @@
     "consistency_eval": null,
     "consistency_funded": 50,
     "total_cost_to_funded": 159,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 159
   },
   {
     "firm_id": "apex_trader_fund",
@@ -548,7 +566,8 @@
     "consistency_eval": null,
     "consistency_funded": 50,
     "total_cost_to_funded": 239,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 239
   },
   {
     "firm_id": "apex_trader_fund",
@@ -577,7 +596,8 @@
     "consistency_eval": null,
     "consistency_funded": 50,
     "total_cost_to_funded": 199,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 199
   },
   {
     "firm_id": "bulenox",
@@ -846,7 +866,8 @@
     "consistency_eval": null,
     "consistency_funded": 20,
     "total_cost_to_funded": 222,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 222
   },
   {
     "firm_id": "daytraders",
@@ -875,7 +896,8 @@
     "consistency_eval": 50,
     "consistency_funded": 30,
     "total_cost_to_funded": 160,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 160
   },
   {
     "firm_id": "daytraders",
@@ -904,7 +926,8 @@
     "consistency_eval": 50,
     "consistency_funded": 30,
     "total_cost_to_funded": 167,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 167
   },
   {
     "firm_id": "daytraders",
@@ -933,7 +956,8 @@
     "consistency_eval": null,
     "consistency_funded": 20,
     "total_cost_to_funded": 342,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 342
   },
   {
     "firm_id": "daytraders",
@@ -962,7 +986,8 @@
     "consistency_eval": 25,
     "consistency_funded": null,
     "total_cost_to_funded": 229,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 229
   },
   {
     "firm_id": "daytraders",
@@ -991,7 +1016,8 @@
     "consistency_eval": 50,
     "consistency_funded": 30,
     "total_cost_to_funded": 170,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 170
   },
   {
     "firm_id": "daytraders",
@@ -1020,7 +1046,8 @@
     "consistency_eval": 50,
     "consistency_funded": 30,
     "total_cost_to_funded": 187,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 187
   },
   {
     "firm_id": "daytraders",
@@ -1049,7 +1076,8 @@
     "consistency_eval": 50,
     "consistency_funded": 30,
     "total_cost_to_funded": 195,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 195
   },
   {
     "firm_id": "daytraders",
@@ -1078,7 +1106,8 @@
     "consistency_eval": 50,
     "consistency_funded": 30,
     "total_cost_to_funded": 215,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 215
   },
   {
     "firm_id": "daytraders",
@@ -1107,7 +1136,8 @@
     "consistency_eval": null,
     "consistency_funded": 20,
     "total_cost_to_funded": 495,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 495
   },
   {
     "firm_id": "daytraders",
@@ -1136,7 +1166,8 @@
     "consistency_eval": 25,
     "consistency_funded": null,
     "total_cost_to_funded": 369,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 369
   },
   {
     "firm_id": "daytraders",
@@ -1165,7 +1196,8 @@
     "consistency_eval": 25,
     "consistency_funded": null,
     "total_cost_to_funded": 499,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 499
   },
   {
     "firm_id": "e8_markets",
@@ -1194,7 +1226,8 @@
     "consistency_eval": null,
     "consistency_funded": 35,
     "total_cost_to_funded": 110,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 110
   },
   {
     "firm_id": "e8_markets",
@@ -1223,7 +1256,8 @@
     "consistency_eval": null,
     "consistency_funded": 35,
     "total_cost_to_funded": 150,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 150
   },
   {
     "firm_id": "e8_markets",
@@ -1252,7 +1286,8 @@
     "consistency_eval": null,
     "consistency_funded": 35,
     "total_cost_to_funded": 260,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 260
   },
   {
     "firm_id": "e8_markets",
@@ -1281,7 +1316,8 @@
     "consistency_eval": null,
     "consistency_funded": 35,
     "total_cost_to_funded": 390,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 390
   },
   {
     "firm_id": "earn2trade",
@@ -1310,7 +1346,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 229,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 229
   },
   {
     "firm_id": "earn2trade",
@@ -1339,7 +1376,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 289,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 289
   },
   {
     "firm_id": "earn2trade",
@@ -1368,7 +1406,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 289,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 289
   },
   {
     "firm_id": "earn2trade",
@@ -1397,7 +1436,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 384,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 384
   },
   {
     "firm_id": "earn2trade",
@@ -1426,7 +1466,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 409,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 409
   },
   {
     "firm_id": "earn2trade",
@@ -1455,7 +1496,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 454,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 454
   },
   {
     "firm_id": "earn2trade",
@@ -1484,7 +1526,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 539,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 539
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1513,7 +1556,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 186,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 186
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1542,7 +1586,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 252,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 252
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1571,7 +1616,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 646,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 646
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1600,7 +1646,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 382,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 382
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1629,7 +1676,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 536,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 536
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1658,7 +1706,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 292,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 292
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1687,7 +1736,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 452,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 452
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1716,7 +1766,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 696,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 696
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1745,7 +1796,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 442,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 442
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1774,7 +1826,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 162,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 162
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1803,7 +1856,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 382,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 382
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1832,7 +1886,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 602,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 602
   },
   {
     "firm_id": "funded_futures_n",
@@ -1861,7 +1916,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 135,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 270
   },
   {
     "firm_id": "funded_futures_n",
@@ -1890,7 +1946,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 75,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 150
   },
   {
     "firm_id": "funded_futures_n",
@@ -1919,7 +1976,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 135,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 270
   },
   {
     "firm_id": "funded_futures_n",
@@ -1948,7 +2006,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 68,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 136
   },
   {
     "firm_id": "funded_futures_n",
@@ -1977,7 +2036,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 160,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 320
   },
   {
     "firm_id": "funded_futures_n",
@@ -2006,7 +2066,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 80,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 160
   },
   {
     "firm_id": "funded_futures_n",
@@ -2035,7 +2096,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 160,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 320
   },
   {
     "firm_id": "funded_futures_n",
@@ -2064,7 +2126,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 80,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 160
   },
   {
     "firm_id": "funded_futures_n",
@@ -2093,7 +2156,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 315,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 630
   },
   {
     "firm_id": "funded_futures_n",
@@ -2122,7 +2186,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 158,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 316
   },
   {
     "firm_id": "funded_futures_n",
@@ -2151,7 +2216,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 315,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 630
   },
   {
     "firm_id": "funded_futures_n",
@@ -2180,7 +2246,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 158,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 316
   },
   {
     "firm_id": "funded_futures_n",
@@ -2209,7 +2276,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 365,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 730
   },
   {
     "firm_id": "funded_futures_n",
@@ -2238,7 +2306,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 183,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 366
   },
   {
     "firm_id": "funded_futures_n",
@@ -2267,7 +2336,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 365,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 730
   },
   {
     "firm_id": "funded_futures_n",
@@ -2296,7 +2366,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 183,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 366
   },
   {
     "firm_id": "funded_futures_n",
@@ -2325,7 +2396,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 590,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 1180
   },
   {
     "firm_id": "funded_futures_n",
@@ -2354,7 +2426,8 @@
     "consistency_eval": 15,
     "consistency_funded": null,
     "total_cost_to_funded": 295,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 590
   },
   {
     "firm_id": "funded_futures_n",
@@ -2383,7 +2456,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 590,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 1180
   },
   {
     "firm_id": "funded_futures_n",
@@ -2412,7 +2486,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 295,
-    "active_discount_pct": 50
+    "active_discount_pct": 50,
+    "base_cost_to_funded": 590
   },
   {
     "firm_id": "legends_trading",
@@ -2441,7 +2516,8 @@
     "consistency_eval": 30,
     "consistency_funded": 30,
     "total_cost_to_funded": 264,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 264
   },
   {
     "firm_id": "legends_trading",
@@ -2470,7 +2546,8 @@
     "consistency_eval": 40,
     "consistency_funded": 40,
     "total_cost_to_funded": 95,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 95
   },
   {
     "firm_id": "legends_trading",
@@ -2499,7 +2576,8 @@
     "consistency_eval": 30,
     "consistency_funded": 30,
     "total_cost_to_funded": 284,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 284
   },
   {
     "firm_id": "legends_trading",
@@ -2528,7 +2606,8 @@
     "consistency_eval": 40,
     "consistency_funded": 40,
     "total_cost_to_funded": 121,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 121
   },
   {
     "firm_id": "legends_trading",
@@ -2557,7 +2636,8 @@
     "consistency_eval": 30,
     "consistency_funded": 30,
     "total_cost_to_funded": 374,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 374
   },
   {
     "firm_id": "legends_trading",
@@ -2586,7 +2666,8 @@
     "consistency_eval": 40,
     "consistency_funded": 40,
     "total_cost_to_funded": 182,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 182
   },
   {
     "firm_id": "legends_trading",
@@ -2615,7 +2696,8 @@
     "consistency_eval": 30,
     "consistency_funded": 30,
     "total_cost_to_funded": 519,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 519
   },
   {
     "firm_id": "legends_trading",
@@ -2644,7 +2726,8 @@
     "consistency_eval": 40,
     "consistency_funded": 40,
     "total_cost_to_funded": 278,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 278
   },
   {
     "firm_id": "lucid_trading",
@@ -2673,7 +2756,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 60,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 60
   },
   {
     "firm_id": "lucid_trading",
@@ -2702,7 +2786,8 @@
     "consistency_eval": null,
     "consistency_funded": 40,
     "total_cost_to_funded": 81,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 81
   },
   {
     "firm_id": "lucid_trading",
@@ -2731,7 +2816,8 @@
     "consistency_eval": null,
     "consistency_funded": 20,
     "total_cost_to_funded": 238,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 238
   },
   {
     "firm_id": "lucid_trading",
@@ -2760,7 +2846,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 84,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 84
   },
   {
     "firm_id": "lucid_trading",
@@ -2789,7 +2876,8 @@
     "consistency_eval": null,
     "consistency_funded": 40,
     "total_cost_to_funded": 111,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 111
   },
   {
     "firm_id": "lucid_trading",
@@ -2818,7 +2906,8 @@
     "consistency_eval": null,
     "consistency_funded": 20,
     "total_cost_to_funded": 364,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 364
   },
   {
     "firm_id": "lucid_trading",
@@ -2847,7 +2936,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 135,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 135
   },
   {
     "firm_id": "lucid_trading",
@@ -2876,7 +2966,8 @@
     "consistency_eval": null,
     "consistency_funded": 40,
     "total_cost_to_funded": 171,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 171
   },
   {
     "firm_id": "lucid_trading",
@@ -2905,7 +2996,8 @@
     "consistency_eval": null,
     "consistency_funded": 20,
     "total_cost_to_funded": 490,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 490
   },
   {
     "firm_id": "lucid_trading",
@@ -2934,7 +3026,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 252,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 252
   },
   {
     "firm_id": "lucid_trading",
@@ -2963,7 +3056,8 @@
     "consistency_eval": null,
     "consistency_funded": 40,
     "total_cost_to_funded": 222,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 222
   },
   {
     "firm_id": "lucid_trading",
@@ -2992,7 +3086,8 @@
     "consistency_eval": null,
     "consistency_funded": 20,
     "total_cost_to_funded": 588,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 588
   },
   {
     "firm_id": "myfundedfutures",
@@ -3021,7 +3116,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 75,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 75
   },
   {
     "firm_id": "myfundedfutures",
@@ -3050,7 +3146,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 84,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 84
   },
   {
     "firm_id": "myfundedfutures",
@@ -3079,7 +3176,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 114,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 114
   },
   {
     "firm_id": "myfundedfutures",
@@ -3108,7 +3206,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 87,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 87
   },
   {
     "firm_id": "myfundedfutures",
@@ -3137,7 +3236,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 75,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 75
   },
   {
     "firm_id": "myfundedfutures",
@@ -3166,7 +3266,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 127,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 127
   },
   {
     "firm_id": "myfundedfutures",
@@ -3195,7 +3296,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 114,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 114
   },
   {
     "firm_id": "myfundedfutures",
@@ -3224,7 +3326,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 126,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 126
   },
   {
     "firm_id": "myfundedfutures",
@@ -3253,7 +3356,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 153,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 153
   },
   {
     "firm_id": "myfundedfutures",
@@ -3282,7 +3386,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 344,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 344
   },
   {
     "firm_id": "myfundedfutures",
@@ -3311,7 +3416,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 267,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 267
   },
   {
     "firm_id": "myfundedfutures",
@@ -3340,7 +3446,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 225,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 225
   },
   {
     "firm_id": "myfundedfutures",
@@ -3369,7 +3476,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 477,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 477
   },
   {
     "firm_id": "myfundedfutures",
@@ -3398,7 +3506,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 347,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 347
   },
   {
     "firm_id": "oneup_trader",
@@ -3427,7 +3536,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 130,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 130
   },
   {
     "firm_id": "oneup_trader",
@@ -3456,7 +3566,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 150,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 150
   },
   {
     "firm_id": "oneup_trader",
@@ -3485,7 +3596,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 150,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 150
   },
   {
     "firm_id": "oneup_trader",
@@ -3514,7 +3626,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 175,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 175
   },
   {
     "firm_id": "oneup_trader",
@@ -3543,7 +3656,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 325,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 325
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3572,7 +3686,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 69,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 69
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3601,7 +3716,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 69,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 69
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3630,7 +3746,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 89,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 89
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3659,7 +3776,8 @@
     "consistency_eval": null,
     "consistency_funded": 30,
     "total_cost_to_funded": 68,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 68
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3688,7 +3806,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 128,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 128
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3717,7 +3836,8 @@
     "consistency_eval": null,
     "consistency_funded": 30,
     "total_cost_to_funded": 98,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 98
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3746,7 +3866,8 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "total_cost_to_funded": 269,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 269
   },
   {
     "firm_id": "take_profit_trad",
@@ -3775,7 +3896,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 280,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 280
   },
   {
     "firm_id": "take_profit_trad",
@@ -3804,7 +3926,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 300,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 300
   },
   {
     "firm_id": "take_profit_trad",
@@ -3833,7 +3956,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 380,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 380
   },
   {
     "firm_id": "take_profit_trad",
@@ -3862,7 +3986,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 460,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 460
   },
   {
     "firm_id": "take_profit_trad",
@@ -3891,7 +4016,8 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "total_cost_to_funded": 490,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 490
   },
   {
     "firm_id": "topstep",
@@ -3920,7 +4046,8 @@
     "consistency_eval": 50,
     "consistency_funded": 40,
     "total_cost_to_funded": 95,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 95
   },
   {
     "firm_id": "topstep",
@@ -3949,7 +4076,8 @@
     "consistency_eval": 50,
     "consistency_funded": 40,
     "total_cost_to_funded": 198,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 198
   },
   {
     "firm_id": "topstep",
@@ -3978,7 +4106,8 @@
     "consistency_eval": 50,
     "consistency_funded": 40,
     "total_cost_to_funded": 149,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 149
   },
   {
     "firm_id": "topstep",
@@ -4007,7 +4136,8 @@
     "consistency_eval": 50,
     "consistency_funded": 40,
     "total_cost_to_funded": 248,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 248
   },
   {
     "firm_id": "topstep",
@@ -4036,7 +4166,8 @@
     "consistency_eval": 50,
     "consistency_funded": 40,
     "total_cost_to_funded": 229,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 229
   },
   {
     "firm_id": "topstep",
@@ -4065,7 +4196,8 @@
     "consistency_eval": 50,
     "consistency_funded": 40,
     "total_cost_to_funded": 298,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 298
   },
   {
     "firm_id": "tradeday",
@@ -4094,7 +4226,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 314,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 314
   },
   {
     "firm_id": "tradeday",
@@ -4123,7 +4256,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 264,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 264
   },
   {
     "firm_id": "tradeday",
@@ -4152,7 +4286,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 304,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 304
   },
   {
     "firm_id": "tradeday",
@@ -4181,7 +4316,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 414,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 414
   },
   {
     "firm_id": "tradeday",
@@ -4210,7 +4346,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 339,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 339
   },
   {
     "firm_id": "tradeday",
@@ -4239,7 +4376,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 404,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 404
   },
   {
     "firm_id": "tradeday",
@@ -4268,7 +4406,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 514,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 514
   },
   {
     "firm_id": "tradeday",
@@ -4297,7 +4436,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 439,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 439
   },
   {
     "firm_id": "tradeday",
@@ -4326,7 +4466,8 @@
     "consistency_eval": 30,
     "consistency_funded": null,
     "total_cost_to_funded": 499,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 499
   },
   {
     "firm_id": "tradeify",
@@ -4355,7 +4496,8 @@
     "consistency_eval": null,
     "consistency_funded": 35,
     "total_cost_to_funded": 59,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 59
   },
   {
     "firm_id": "tradeify",
@@ -4384,7 +4526,8 @@
     "consistency_eval": null,
     "consistency_funded": 20,
     "total_cost_to_funded": 197,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 197
   },
   {
     "firm_id": "tradeify",
@@ -4413,7 +4556,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 65,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 65
   },
   {
     "firm_id": "tradeify",
@@ -4442,7 +4586,8 @@
     "consistency_eval": null,
     "consistency_funded": 35,
     "total_cost_to_funded": 87,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 87
   },
   {
     "firm_id": "tradeify",
@@ -4471,7 +4616,8 @@
     "consistency_eval": null,
     "consistency_funded": 20,
     "total_cost_to_funded": 281,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 281
   },
   {
     "firm_id": "tradeify",
@@ -4500,7 +4646,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 99,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 99
   },
   {
     "firm_id": "tradeify",
@@ -4529,7 +4676,8 @@
     "consistency_eval": null,
     "consistency_funded": 35,
     "total_cost_to_funded": 153,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 153
   },
   {
     "firm_id": "tradeify",
@@ -4558,7 +4706,8 @@
     "consistency_eval": null,
     "consistency_funded": 20,
     "total_cost_to_funded": 377,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 377
   },
   {
     "firm_id": "tradeify",
@@ -4587,7 +4736,8 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 159,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 159
   },
   {
     "firm_id": "tradeify",
@@ -4616,7 +4766,8 @@
     "consistency_eval": null,
     "consistency_funded": 35,
     "total_cost_to_funded": 221,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 221
   },
   {
     "firm_id": "tradeify",
@@ -4645,7 +4796,8 @@
     "consistency_eval": null,
     "consistency_funded": 20,
     "total_cost_to_funded": 455,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 455
   },
   {
     "firm_id": "tradeify",
@@ -4674,6 +4826,7 @@
     "consistency_eval": 40,
     "consistency_funded": null,
     "total_cost_to_funded": 221,
-    "active_discount_pct": 0
+    "active_discount_pct": 0,
+    "base_cost_to_funded": 221
   }
 ]
