@@ -90,17 +90,17 @@ const columns: ColumnDef<PlanRow, any>[] = [
     size: 120,
   }),
 
-  // 4. After Discount (savings amount)
-  columnHelper.accessor("active_discount_pct", {
+  // 4. After Discount (eval fee with discount applied)
+  columnHelper.accessor("eval_fee", {
     header: "After Discount",
     cell: (info) => {
-      const pct = info.getValue();
-      const base = info.row.original.base_cost_to_funded;
+      const evalFee = info.getValue();
+      const pct = info.row.original.active_discount_pct;
       if (pct > 0) {
-        const savings = base - info.row.original.total_cost_to_funded;
+        const discounted = evalFee - (evalFee * pct) / 100;
         return (
           <span className="text-green-400 font-medium">
-            -{formatUSD(savings)} <span className="text-xs text-green-400/70">({pct}%)</span>
+            {formatUSD(discounted)} <span className="text-xs text-green-400/70">(-{pct}%)</span>
           </span>
         );
       }
