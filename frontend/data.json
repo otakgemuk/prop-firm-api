@@ -605,8 +605,8 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 298,
-    "active_discount_pct": 0,
+    "total_cost_to_funded": 32.78,
+    "active_discount_pct": 89,
     "base_cost_to_funded": 298
   },
   {
@@ -635,8 +635,8 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 318,
-    "active_discount_pct": 0,
+    "total_cost_to_funded": 174.9,
+    "active_discount_pct": 45,
     "base_cost_to_funded": 318
   },
   {
@@ -665,8 +665,8 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 323,
-    "active_discount_pct": 0,
+    "total_cost_to_funded": 35.53,
+    "active_discount_pct": 89,
     "base_cost_to_funded": 323
   },
   {
@@ -695,8 +695,8 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 343,
-    "active_discount_pct": 0,
+    "total_cost_to_funded": 188.65,
+    "active_discount_pct": 45,
     "base_cost_to_funded": 343
   },
   {
@@ -725,8 +725,8 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 463,
-    "active_discount_pct": 0,
+    "total_cost_to_funded": 50.93,
+    "active_discount_pct": 89,
     "base_cost_to_funded": 463
   },
   {
@@ -755,8 +755,8 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 523,
-    "active_discount_pct": 0,
+    "total_cost_to_funded": 287.65,
+    "active_discount_pct": 45,
     "base_cost_to_funded": 523
   },
   {
@@ -785,8 +785,8 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 848,
-    "active_discount_pct": 0,
+    "total_cost_to_funded": 93.28,
+    "active_discount_pct": 89,
     "base_cost_to_funded": 848
   },
   {
@@ -815,8 +815,8 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 40,
-    "total_cost_to_funded": 898,
-    "active_discount_pct": 0,
+    "total_cost_to_funded": 493.9,
+    "active_discount_pct": 45,
     "base_cost_to_funded": 898
   },
   {
