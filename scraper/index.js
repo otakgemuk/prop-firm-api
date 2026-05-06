@@ -31,6 +31,8 @@ const parsers = {
   "legends-trading":       require("./parsers/legends-trading"),
   "oneup-trader":          require("./parsers/oneup-trader"),
   "phoenix-trader-funding": require("./parsers/phoenix-trader-funding"),
+  "phidias":                require("./parsers/phidias"),
+  "purdia":                 require("./parsers/purdia"),
 };
 
 // ── CLI args ───────────────────────────────────────────────

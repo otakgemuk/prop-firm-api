@@ -15,28 +15,36 @@ const db = new Database(DB_PATH);
 db.pragma("journal_mode = WAL");
 
 // ── Discount definitions ─────────────────────────────────────
-// Each entry: { firm_slug, code, discount_pct, account_type? }
-// If account_type is set, the discount only applies to that type.
-// account_type matching is case-insensitive and uses LIKE for partial match.
-
+// Export uses MAX(discount_pct) per firm, so highest discount wins.
 const DISCOUNTS = [
   // Take Profit Trader — 40% off all
   { firm_slug: "take-profit-trader", code: "SAVE40", discount_pct: 40 },
 
   // Legends Trading — Apprentice 50%, Elite 20%
-  { firm_slug: "legends-trading", code: "APPRENTICE50", discount_pct: 50, account_type: "Apprentice" },
-  { firm_slug: "legends-trading", code: "ELITE20",      discount_pct: 20, account_type: "Elite" },
+  // Export applies 50% to all (highest per firm)
+  { firm_slug: "legends-trading", code: "APPRENTICE50", discount_pct: 50 },
+  { firm_slug: "legends-trading", code: "ELITE20",      discount_pct: 20 },
 
   // Alpha Futures — 25% off all
   { firm_slug: "alpha-futures", code: "ALPHA25", discount_pct: 25 },
 
-  // E8 Markets — Signature 20% (first order; 10% second), E8 One 10%
-  { firm_slug: "e8-markets", code: "SIG20",  discount_pct: 20, account_type: "Signature" },
-  { firm_slug: "e8-markets", code: "E8ONE10", discount_pct: 10, account_type: "E8 One" },
+  // E8 Markets — Signature 20%, E8 One 10%
+  // Export applies 20% to all (highest per firm)
+  { firm_slug: "e8-markets", code: "SIG20",   discount_pct: 20 },
+  { firm_slug: "e8-markets", code: "E8ONE10", discount_pct: 10 },
+
+  // Phidias — 60% OFF Fundamental & Swing, 80% OFF OTP, 25% all + 50% 25K
+  // Export applies 80% to all (highest per firm)
+  { firm_slug: "phidias", code: "FUNDAMENTAL60", discount_pct: 60 },
+  { firm_slug: "phidias", code: "OTP80",         discount_pct: 80 },
+  { firm_slug: "phidias", code: "ALL25",         discount_pct: 25 },
+
+  // Purdia Capital — 25% off all accounts
+  { firm_slug: "purdia", code: "PURDIA25", discount_pct: 25 },
 ];
 
 // ── Upsert discount codes ────────────────────────────────────
-const upsertGlobal = db.prepare(`
+const upsert = db.prepare(`
   INSERT INTO discount_codes (firm_id, code, discount_pct, is_active)
   SELECT f.id, $code, $discount_pct, 1
   FROM firms f WHERE f.slug = $firm_slug
@@ -45,16 +53,9 @@ const upsertGlobal = db.prepare(`
     is_active    = 1
 `);
 
-// For account-type-specific discounts, we use a different approach:
-// store the account_type hint in the code name and apply the discount
-// at the firm level (export.js applies to all plans for that firm).
-// The frontend can filter by account_type if needed.
-// For now, we use the HIGHEST discount per firm as the active_discount_pct
-// since the export query uses MAX(discount_pct).
-
 let count = 0;
 for (const d of DISCOUNTS) {
-  const result = upsertGlobal.run(d);
+  const result = upsert.run(d);
   if (result.changes > 0) count++;
 }
 
