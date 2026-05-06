@@ -1,4 +1,4 @@
-// Phidias Propfirm parser — Fundamental, Swing, Static account types
+// Phidias Propfirm parser — Express to Live, Fundamental, Premium types
 // Lifetime (one-time) pricing, no monthly fees
 const { buildPlan } = require("../utils");
 
@@ -10,23 +10,23 @@ const FIRM = {
   trustpilot: null,
 };
 
-// Known RETAIL prices (verified from official pricing image, May 2026)
-// Previous values were promotional prices — these are the actual retail prices.
+// Known RETAIL prices (verified May 2026)
 const KNOWN = [
-  // Swing — EOD drawdown, lifetime pricing
-  { size: 50000,  type: "Swing", eval: 169, act: 0, target: 3000,  dd: 2000, ddType: "eod",     minDays: 0 },
-  { size: 100000, type: "Swing", eval: 269, act: 0, target: 6000,  dd: 3000, ddType: "eod",     minDays: 0 },
-  { size: 150000, type: "Swing", eval: 369, act: 0, target: 9000,  dd: 4500, ddType: "eod",     minDays: 0 },
+  // Express to Live — static drawdown, lifetime pricing
+  { size: 25000,  type: "Express to Live", eval: 277,   act: 0, target: 1500,  dd: 500,  ddType: "static", minDays: 0 },
+  { size: 50000,  type: "Express to Live", eval: 723,   act: 0, target: 3000,  dd: 1000, ddType: "static", minDays: 0 },
+  { size: 100000, type: "Express to Live", eval: 800,   act: 0, target: 6000,  dd: 2000, ddType: "static", minDays: 0 },
+  { size: 150000, type: "Express to Live", eval: 1125,  act: 0, target: 9000,  dd: 3000, ddType: "static", minDays: 0 },
 
-  // Static — static drawdown, lifetime pricing
-  { size: 50000,  type: "Static", eval: 149, act: 0, target: 3000,  dd: 1000, ddType: "static",  minDays: 0 },
-  { size: 100000, type: "Static", eval: 219, act: 0, target: 6000,  dd: 2000, ddType: "static",  minDays: 0 },
-  { size: 150000, type: "Static", eval: 299, act: 0, target: 9000,  dd: 3000, ddType: "static",  minDays: 0 },
+  // Fundamental — EOD drawdown, lifetime pricing
+  { size: 50000,  type: "Fundamental", eval: 580,  act: 0, target: 3000,  dd: 2000, ddType: "eod",  minDays: 0 },
+  { size: 100000, type: "Fundamental", eval: 723,  act: 0, target: 6000,  dd: 3000, ddType: "eod",  minDays: 0 },
+  { size: 150000, type: "Fundamental", eval: 863,  act: 0, target: 9000,  dd: 4500, ddType: "eod",  minDays: 0 },
 
-  // One-Time Payment (OTP) — Evaluation + CASH account bundle
-  { size: 50000,  type: "OTP", eval: 377, act: 0, target: 3000,  dd: 2000, ddType: "eod",     minDays: 0 },
-  { size: 100000, type: "OTP", eval: 477, act: 0, target: 6000,  dd: 3000, ddType: "eod",     minDays: 0 },
-  { size: 150000, type: "OTP", eval: 577, act: 0, target: 9000,  dd: 4500, ddType: "eod",     minDays: 0 },
+  // Premium — EOD drawdown, lifetime pricing
+  { size: 50000,  type: "Premium", eval: 723,   act: 0, target: 3000,  dd: 2000, ddType: "eod",  minDays: 0 },
+  { size: 100000, type: "Premium", eval: 900,   act: 0, target: 6000,  dd: 3000, ddType: "eod",  minDays: 0 },
+  { size: 150000, type: "Premium", eval: 1123,  act: 0, target: 9000,  dd: 4500, ddType: "eod",  minDays: 0 },
 ];
 
 async function scrape() {
