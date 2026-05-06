@@ -15,7 +15,7 @@ const FIRM = {
 // 25K tiers not shown in source — kept as-is (unverified).
 const KNOWN = [
   { size: 25000,  type: "Apprentice", eval: 165, act: 99,  target: 1500, dd: 1500, minDays: 4, consEval: 30, consFund: 30 },
-  { size: 25000,  type: "Elite",      eval: 95,  act: 0,   target: 1500, dd: 1250, minDays: 5, consEval: 40, consFund: 40 },
+  { size: 25000,  type: "Elite",      eval: 119, act: 0,   target: 1500, dd: 1250, minDays: 5, consEval: 40, consFund: 40 },
   { size: 50000,  type: "Apprentice", eval: 249, act: 99,  target: 3000, dd: 2000, minDays: 4, consEval: 30, consFund: 30 },
   { size: 50000,  type: "Elite",      eval: 179, act: 0,   target: 2700, dd: 2200, minDays: 5, consEval: 40, consFund: 40 },
   { size: 100000, type: "Apprentice", eval: 349, act: 149, target: 6000, dd: 3000, minDays: 4, consEval: 30, consFund: 30 },
