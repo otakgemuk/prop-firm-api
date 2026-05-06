@@ -33,11 +33,10 @@ const DISCOUNTS = [
   { firm_slug: "e8-markets", code: "SIG20",   discount_pct: 20 },
   { firm_slug: "e8-markets", code: "E8ONE10", discount_pct: 10 },
 
-  // Phidias — 60% OFF Fundamental & Swing, 80% OFF OTP, 25% all + 50% 25K
-  // Export applies 80% to all (highest per firm)
-  { firm_slug: "phidias", code: "FUNDAMENTAL60", discount_pct: 60 },
-  { firm_slug: "phidias", code: "OTP80",         discount_pct: 80 },
-  { firm_slug: "phidias", code: "ALL25",         discount_pct: 25 },
+  // Phidias — no verified discount codes (previous codes were for promo-priced data)
+  // { firm_slug: "phidias", code: "OTP80",         discount_pct: 80 },
+  // { firm_slug: "phidias", code: "FUNDAMENTAL60", discount_pct: 60 },
+  // { firm_slug: "phidias", code: "ALL25",         discount_pct: 25 },
 
   // Purdia Capital — 25% off all accounts
   { firm_slug: "purdia", code: "PURDIA25", discount_pct: 25 },
