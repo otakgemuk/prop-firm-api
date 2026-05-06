@@ -10,28 +10,20 @@ const FIRM = {
   trustpilot: null,
 };
 
-// Known prices (verified from help center + user data, May 2026)
+// Known RETAIL prices (verified from official pricing image, May 2026)
+// Previous values were promotional prices — these are the actual retail prices.
 const KNOWN = [
-  // Fundamental — trailing drawdown, lifetime pricing
-  { size: 25000,  type: "Fundamental", eval: 162, act: 0, target: 1500,  dd: 1000, ddType: "eod",     minDays: 0 },
-  { size: 50000,  type: "Fundamental", eval: 149, act: 0, target: 3000,  dd: 2000, ddType: "eod",     minDays: 0 },
-  { size: 100000, type: "Fundamental", eval: 149, act: 0, target: 6000,  dd: 3000, ddType: "eod",     minDays: 0 },
-  { size: 150000, type: "Fundamental", eval: 169, act: 0, target: 9000,  dd: 4500, ddType: "eod",     minDays: 0 },
-
   // Swing — EOD drawdown, lifetime pricing
-  { size: 25000,  type: "Swing", eval: 162, act: 0, target: 1500,  dd: 1000, ddType: "eod",     minDays: 0 },
-  { size: 50000,  type: "Swing", eval: 149, act: 0, target: 3000,  dd: 2000, ddType: "eod",     minDays: 0 },
-  { size: 100000, type: "Swing", eval: 149, act: 0, target: 6000,  dd: 3000, ddType: "eod",     minDays: 0 },
-  { size: 150000, type: "Swing", eval: 169, act: 0, target: 9000,  dd: 4500, ddType: "eod",     minDays: 0 },
+  { size: 50000,  type: "Swing", eval: 169, act: 0, target: 3000,  dd: 2000, ddType: "eod",     minDays: 0 },
+  { size: 100000, type: "Swing", eval: 269, act: 0, target: 6000,  dd: 3000, ddType: "eod",     minDays: 0 },
+  { size: 150000, type: "Swing", eval: 369, act: 0, target: 9000,  dd: 4500, ddType: "eod",     minDays: 0 },
 
   // Static — static drawdown, lifetime pricing
-  { size: 25000,  type: "Static", eval: 83,  act: 0, target: 1500,  dd: 500,  ddType: "static",  minDays: 0 },
-  { size: 50000,  type: "Static", eval: 116, act: 0, target: 3000,  dd: 1000, ddType: "static",  minDays: 0 },
-  { size: 100000, type: "Static", eval: 149, act: 0, target: 6000,  dd: 2000, ddType: "static",  minDays: 0 },
-  { size: 150000, type: "Static", eval: 169, act: 0, target: 9000,  dd: 3000, ddType: "static",  minDays: 0 },
+  { size: 50000,  type: "Static", eval: 149, act: 0, target: 3000,  dd: 1000, ddType: "static",  minDays: 0 },
+  { size: 100000, type: "Static", eval: 219, act: 0, target: 6000,  dd: 2000, ddType: "static",  minDays: 0 },
+  { size: 150000, type: "Static", eval: 299, act: 0, target: 9000,  dd: 3000, ddType: "static",  minDays: 0 },
 
   // One-Time Payment (OTP) — Evaluation + CASH account bundle
-  { size: 25000,  type: "OTP", eval: 277, act: 0, target: 1500,  dd: 1000, ddType: "eod",     minDays: 0 },
   { size: 50000,  type: "OTP", eval: 377, act: 0, target: 3000,  dd: 2000, ddType: "eod",     minDays: 0 },
   { size: 100000, type: "OTP", eval: 477, act: 0, target: 6000,  dd: 3000, ddType: "eod",     minDays: 0 },
   { size: 150000, type: "OTP", eval: 577, act: 0, target: 9000,  dd: 4500, ddType: "eod",     minDays: 0 },
@@ -60,7 +52,8 @@ async function scrape() {
     minTradingDays: cfg.minDays,
     consistencyEvalPct: null,
     consistencyFundedPct: null,
-    priceSource: 'manual',
+    priceSource: 'verified',
+    priceVerified: true,
   }));
 }
 
