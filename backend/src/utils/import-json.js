@@ -12,7 +12,7 @@ const path     = require("path");
 const fs       = require("fs");
 
 // ── Paths ────────────────────────────────────────────────────
-const DATA_DIR   = process.env.DATA_DIR || path.join(__dirname, "../../../../data");
+const DATA_DIR   = process.env.DATA_DIR || path.join(__dirname, "../../../data");
 const DB_PATH    = process.env.DB_PATH  || path.join(DATA_DIR, "propfirm.db");
 const PLANS_PATH = path.join(DATA_DIR, "plans.json");
 

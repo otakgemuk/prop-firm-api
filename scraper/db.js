@@ -2,61 +2,127 @@ const Database = require('better-sqlite3');
 const path = require('path');
 const fs = require('fs');
 
-const dbPath = path.join(__dirname, 'prop_firm_data.db');
+// Use the same database as the backend (data/propfirm.db)
+const dbPath = path.join(__dirname, '..', 'data', 'propfirm.db');
 let db = null;
 
 function getDb() {
   if (!db) {
-    const exists = fs.existsSync(dbPath);
+    if (!fs.existsSync(dbPath)) {
+      throw new Error(
+        `Database not found at ${dbPath}. Run 'npm run migrate' and 'npm run import' first.`
+      );
+    }
     db = new Database(dbPath);
-    if (!exists) createTables();
+    db.pragma('journal_mode = WAL');
+    db.pragma('foreign_keys = ON');
   }
   return db;
 }
 
-function createTables() {
+// Upsert a firm into the firms table (create if missing, update if exists)
+function upsertFirm(d) {
   const db = getDb();
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS plans (
-      firm_id TEXT, firm_name TEXT, firm_slug TEXT, logo_url TEXT,
-      website_url TEXT, trustpilot REAL, plan_id TEXT PRIMARY KEY,
-      account_size INTEGER, plan_label TEXT, drawdown_type TEXT,
-      drawdown_amount INTEGER, daily_loss_limit INTEGER,
-      profit_target INTEGER, profit_split INTEGER, eval_fee INTEGER,
-      activation_fee INTEGER, monthly_fee INTEGER, is_one_time INTEGER,
-      payout_frequency TEXT, first_payout_days INTEGER,
-      total_cost_to_funded REAL, active_discount_pct INTEGER
-    );
-  `);
+  db.prepare(`
+    INSERT INTO firms (id, name, slug, logo_url, website_url, trustpilot, is_active)
+    VALUES (?, ?, ?, ?, ?, ?, 1)
+    ON CONFLICT(slug) DO UPDATE SET
+      name        = excluded.name,
+      logo_url    = excluded.logo_url,
+      website_url = excluded.website_url,
+      trustpilot  = excluded.trustpilot,
+      updated_at  = datetime('now')
+  `).run(
+    d.firm_id, d.firm_name, d.firm_slug,
+    d.logo_url || null, d.website_url || null, d.trustpilot || null
+  );
 }
 
+// Normalize drawdown_type to match the CHECK constraint
+function normalizeDrawdownType(value) {
+  if (!value) return 'EOD';
+  const v = String(value).toLowerCase();
+  if (v === 'end_of_day' || v === 'eod') return 'EOD';
+  if (v === 'trailing') return 'trailing';
+  if (v === 'static') return 'static';
+  if (v === 'intraday') return 'intraday';
+  return 'EOD';
+}
+
+// Generate a stable plan ID from firm + size + type
+function makePlanId(firmSlug, accountSize, accountType) {
+  return `${firmSlug}-${accountSize}-${(accountType || 'Standard').toLowerCase().replace(/\s+/g, '-')}`;
+}
+
+// Upsert plans for a firm — replaces all plans for that firm
 function upsertPlans(firmSlug, plans) {
   const db = getDb();
-  db.prepare(`DELETE FROM plans WHERE firm_slug = ?`).run(firmSlug);
-  
+
+  // Ensure the firm exists
+  if (plans.length > 0) {
+    upsertFirm(plans[0]);
+  }
+
+  // Get the firm's internal ID
+  const firm = db.prepare('SELECT id FROM firms WHERE slug = ?').get(firmSlug);
+  if (!firm) {
+    throw new Error(`Firm not found after upsert: ${firmSlug}`);
+  }
+
+  // Delete existing plans for this firm
+  db.prepare('DELETE FROM plans WHERE firm_id = ?').run(firm.id);
+
   const insert = db.prepare(`
-    INSERT INTO plans VALUES (
-      ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+    INSERT INTO plans (
+      id, firm_id, account_size, account_type, label, drawdown_type,
+      drawdown_amount, daily_loss_limit, profit_target, eval_fee,
+      activation_fee, monthly_fee, profit_split, payout_frequency,
+      first_payout_days, is_one_time,
+      max_funded_accounts, min_trading_days, consistency_eval, consistency_funded,
+      is_active
+    ) VALUES (
+      ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1
     )
   `);
-  
+
   for (const p of plans) {
     insert.run(
-      p.firm_id, p.firm_name, firmSlug, p.logo_url || null,
-      p.website_url, p.trustpilot || 0, p.plan_id, p.account_size,
-      p.plan_label, p.drawdown_type, p.drawdown_amount,
-      p.daily_loss_limit || null, p.profit_target, p.profit_split,
-      p.eval_fee, p.activation_fee || 0, p.monthly_fee || 0,
-      p.is_one_time || 0, p.payout_frequency || 'biweekly',
-      p.first_payout_days || null, p.total_cost_to_funded,
-      p.active_discount_pct || 0
+      makePlanId(firmSlug, p.account_size, p.account_type),
+      firm.id,
+      p.account_size,
+      p.account_type || 'Standard',
+      p.plan_label || null,
+      normalizeDrawdownType(p.drawdown_type),
+      p.drawdown_amount || null,
+      p.daily_loss_limit || null,
+      p.profit_target || null,
+      p.eval_fee,
+      p.activation_fee || 0,
+      p.monthly_fee || 0,
+      p.profit_split || null,
+      p.payout_frequency || 'biweekly',
+      p.first_payout_days || null,
+      p.is_one_time || 0,
+      p.max_funded_accounts || null,
+      p.min_trading_days || null,
+      p.consistency_eval || null,
+      p.consistency_funded || null
     );
   }
+
   console.log(`✅ Upserted ${plans.length} plans for ${firmSlug}`);
 }
 
 function getExistingPlans(firmSlug) {
-  return getDb().prepare(`SELECT * FROM plans WHERE firm_slug = ?`).all(firmSlug);
+  const db = getDb();
+  const firm = db.prepare('SELECT id FROM firms WHERE slug = ?').get(firmSlug);
+  if (!firm) return [];
+  return db.prepare(`
+    SELECT p.*, f.name AS firm_name, f.slug AS firm_slug, f.logo_url, f.website_url, f.trustpilot
+    FROM plans p
+    JOIN firms f ON f.id = p.firm_id
+    WHERE f.slug = ?
+  `).all(firmSlug);
 }
 
 function close() { if (db) { db.close(); db = null; } }
