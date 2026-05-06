@@ -4600,7 +4600,7 @@
     "daily_loss_limit": null,
     "profit_target": null,
     "profit_split": 90,
-    "eval_fee": 349,
+    "eval_fee": 549,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 1,
@@ -4609,15 +4609,16 @@
     "min_trading_days": 10,
     "consistency_eval": null,
     "consistency_funded": null,
-    "base_cost_to_funded": 349,
-    "total_cost_to_funded": 261.75,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "base_cost_to_funded": 549,
+    "total_cost_to_funded": 439.2,
+    "active_discount_pct": 20,
+    "has_discount": 1,
     "max_funded_status": "specified",
-    "retail_eval_fee": 349,
+    "retail_eval_fee": 549,
     "price_source": "verified",
     "price_verified": 1,
-    "price_status": "ok"
+    "price_status": "ok",
+    "discount_pct": 20
   },
   {
     "firm_id": "purdia",
@@ -4670,7 +4671,7 @@
     "daily_loss_limit": null,
     "profit_target": null,
     "profit_split": 90,
-    "eval_fee": 679,
+    "eval_fee": 849,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 1,
@@ -4679,15 +4680,16 @@
     "min_trading_days": 10,
     "consistency_eval": null,
     "consistency_funded": null,
-    "base_cost_to_funded": 679,
-    "total_cost_to_funded": 509.25,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "base_cost_to_funded": 849,
+    "total_cost_to_funded": 679.2,
+    "active_discount_pct": 20,
+    "has_discount": 1,
     "max_funded_status": "specified",
-    "retail_eval_fee": 679,
+    "retail_eval_fee": 849,
     "price_source": "verified",
     "price_verified": 1,
-    "price_status": "ok"
+    "price_status": "ok",
+    "discount_pct": 20
   },
   {
     "firm_id": "purdia",
@@ -5940,14 +5942,15 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 277,
-    "total_cost_to_funded": 277,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 138.5,
+    "active_discount_pct": 50,
+    "has_discount": 1,
     "max_funded_status": "specified",
     "retail_eval_fee": 277,
     "price_source": "verified",
     "price_verified": 1,
-    "price_status": "ok"
+    "price_status": "ok",
+    "discount_pct": 50
   },
   {
     "firm_id": "phidias",
@@ -5982,7 +5985,8 @@
     "retail_eval_fee": 723,
     "price_source": "verified",
     "price_verified": 1,
-    "price_status": "ok"
+    "price_status": "ok",
+    "discount_pct": 0
   },
   {
     "firm_id": "phidias",
@@ -6017,7 +6021,8 @@
     "retail_eval_fee": 800,
     "price_source": "verified",
     "price_verified": 1,
-    "price_status": "ok"
+    "price_status": "ok",
+    "discount_pct": 0
   },
   {
     "firm_id": "phidias",
@@ -6052,7 +6057,8 @@
     "retail_eval_fee": 1125,
     "price_source": "verified",
     "price_verified": 1,
-    "price_status": "ok"
+    "price_status": "ok",
+    "discount_pct": 0
   },
   {
     "firm_id": "phidias",
@@ -6080,14 +6086,15 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 580,
-    "total_cost_to_funded": 580,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 232.0,
+    "active_discount_pct": 60,
+    "has_discount": 1,
     "max_funded_status": "specified",
     "retail_eval_fee": 580,
     "price_source": "verified",
     "price_verified": 1,
-    "price_status": "ok"
+    "price_status": "ok",
+    "discount_pct": 60
   },
   {
     "firm_id": "phidias",
@@ -6115,14 +6122,15 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 723,
-    "total_cost_to_funded": 723,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 289.2,
+    "active_discount_pct": 60,
+    "has_discount": 1,
     "max_funded_status": "specified",
     "retail_eval_fee": 723,
     "price_source": "verified",
     "price_verified": 1,
-    "price_status": "ok"
+    "price_status": "ok",
+    "discount_pct": 60
   },
   {
     "firm_id": "phidias",
@@ -6150,14 +6158,15 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 863,
-    "total_cost_to_funded": 863,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 345.2,
+    "active_discount_pct": 60,
+    "has_discount": 1,
     "max_funded_status": "specified",
     "retail_eval_fee": 863,
     "price_source": "verified",
     "price_verified": 1,
-    "price_status": "ok"
+    "price_status": "ok",
+    "discount_pct": 60
   },
   {
     "firm_id": "phidias",
@@ -6192,7 +6201,8 @@
     "retail_eval_fee": 723,
     "price_source": "verified",
     "price_verified": 1,
-    "price_status": "ok"
+    "price_status": "ok",
+    "discount_pct": 0
   },
   {
     "firm_id": "phidias",
@@ -6227,7 +6237,8 @@
     "retail_eval_fee": 900,
     "price_source": "verified",
     "price_verified": 1,
-    "price_status": "ok"
+    "price_status": "ok",
+    "discount_pct": 0
   },
   {
     "firm_id": "phidias",
@@ -6262,41 +6273,7 @@
     "retail_eval_fee": 1123,
     "price_source": "verified",
     "price_verified": 1,
-    "price_status": "ok"
-  },
-  {
-    "firm_id": "purdia",
-    "firm_name": "Purdia Capital",
-    "firm_slug": "purdia",
-    "logo_url": null,
-    "website_url": "https://purdia.com",
-    "trustpilot": null,
-    "plan_id": "purdia-instant-150k",
-    "account_size": 150000,
-    "account_type": "Instant",
-    "plan_label": "Instant 150K",
-    "drawdown_type": "trailing",
-    "drawdown_amount": 4500,
-    "daily_loss_limit": null,
-    "profit_target": null,
-    "profit_split": 90,
-    "eval_fee": 999,
-    "activation_fee": 0,
-    "monthly_fee": 0,
-    "is_one_time": 1,
-    "payout_frequency": "biweekly",
-    "max_funded_accounts": 1,
-    "min_trading_days": 10,
-    "consistency_eval": null,
-    "consistency_funded": null,
-    "base_cost_to_funded": 999,
-    "total_cost_to_funded": 999,
-    "active_discount_pct": 0,
-    "has_discount": 0,
-    "max_funded_status": "specified",
-    "retail_eval_fee": 999,
-    "price_source": "verified",
-    "price_verified": 1,
-    "price_status": "ok"
+    "price_status": "ok",
+    "discount_pct": 0
   }
 ]

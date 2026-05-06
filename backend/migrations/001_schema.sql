@@ -55,6 +55,7 @@ CREATE TABLE IF NOT EXISTS plans (
     retail_eval_fee     REAL,                             -- Original retail price before any promo/discount
     price_source        TEXT DEFAULT 'scraper',           -- 'scraper' | 'help_center' | 'manual' | 'verified'
     price_verified      INTEGER DEFAULT 0,                -- 1 = manually confirmed retail
+    discount_pct        INTEGER DEFAULT 0,                -- Per-plan discount % (overrides firm-level)
     is_active           INTEGER NOT NULL DEFAULT 1,
     created_at          TEXT NOT NULL DEFAULT (datetime('now')),
     updated_at          TEXT NOT NULL DEFAULT (datetime('now')),

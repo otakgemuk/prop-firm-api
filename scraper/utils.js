@@ -105,6 +105,7 @@ function buildPlan({
   plan.retail_eval_fee = retailEvalFee ?? evalFee;
   plan.price_source = priceSource || 'scraper';
   plan.price_verified = priceVerified ? 1 : 0;
+  plan.discount_pct = discountPct || 0;
 
   return plan;
 }

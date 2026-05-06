@@ -33,10 +33,13 @@ const DISCOUNTS = [
   { firm_slug: "e8-markets", code: "SIG20",   discount_pct: 20 },
   { firm_slug: "e8-markets", code: "E8ONE10", discount_pct: 10 },
 
-  // Phidias — no verified discount codes (previous codes were for promo-priced data)
-  // { firm_slug: "phidias", code: "OTP80",         discount_pct: 80 },
-  // { firm_slug: "phidias", code: "FUNDAMENTAL60", discount_pct: 60 },
-  // { firm_slug: "phidias", code: "ALL25",         discount_pct: 25 },
+  // Phidias — per-plan-type discounts (applied correctly in plans.json)
+  // 50% OFF 25K Evaluation, 60% OFF Fundamental & Swing, 80% OFF OTP
+  // Note: export applies MAX per firm, so these codes are for reference.
+  // Actual per-plan discounts are set directly in plans.json data.
+  { firm_slug: "phidias", code: "EVAL50",    discount_pct: 50 },
+  { firm_slug: "phidias", code: "FUND60",    discount_pct: 60 },
+  { firm_slug: "phidias", code: "OTP80",     discount_pct: 80 },
 
   // Purdia Capital — no verified discount codes (previous code was for promo-priced data)
   // { firm_slug: "purdia", code: "PURDIA25", discount_pct: 25 },

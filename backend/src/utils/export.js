@@ -67,6 +67,8 @@ const rows = db.prepare(`
     p.retail_eval_fee,
     p.price_source,
     p.price_verified,
+    -- discount: prefer plan-level over firm-level
+    COALESCE(NULLIF(p.discount_pct, 0), bd.discount_pct, 0) AS active_discount_pct,
     -- derived fields
     ROUND(
       p.eval_fee + p.activation_fee +
@@ -74,15 +76,14 @@ const rows = db.prepare(`
       2
     )                                                       AS base_cost_to_funded,
     ROUND(
-      p.eval_fee * (1 - COALESCE(bd.discount_pct, 0) / 100.0) +
+      p.eval_fee * (1 - COALESCE(NULLIF(p.discount_pct, 0), bd.discount_pct, 0) / 100.0) +
       p.activation_fee +
       CASE WHEN p.is_one_time = 0 THEN p.monthly_fee * 3 ELSE 0 END,
       2
     )                                                       AS total_cost_to_funded,
-    COALESCE(bd.discount_pct, 0)                            AS active_discount_pct,
     -- validation fields
     CASE 
-      WHEN COALESCE(bd.discount_pct, 0) > 0 THEN 1
+      WHEN COALESCE(NULLIF(p.discount_pct, 0), bd.discount_pct, 0) > 0 THEN 1
       ELSE 0
     END                                                     AS has_discount,
     CASE 

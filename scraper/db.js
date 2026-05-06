@@ -79,10 +79,10 @@ function upsertPlans(firmSlug, plans) {
       activation_fee, monthly_fee, profit_split, payout_frequency,
       first_payout_days, is_one_time,
       max_funded_accounts, min_trading_days, consistency_eval, consistency_funded,
-      retail_eval_fee, price_source, price_verified,
+      retail_eval_fee, price_source, price_verified, discount_pct,
       is_active
     ) VALUES (
-      ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1
+      ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1
     )
   `);
 
@@ -110,7 +110,8 @@ function upsertPlans(firmSlug, plans) {
       p.consistency_funded || null,
       p.retail_eval_fee ?? p.eval_fee,
       p.price_source || 'scraper',
-      p.price_verified || 0
+      p.price_verified || 0,
+      p.discount_pct || 0
     );
   }
 
