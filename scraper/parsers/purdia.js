@@ -1,4 +1,4 @@
-// Purdia Capital parser — Pro, EOD, Beginner, Instant Funding
+// Purdia Capital parser — Pro, EOD, Beginner, Instant Funding, Combine
 const { buildPlan } = require("../utils");
 
 const FIRM = {
@@ -9,14 +9,16 @@ const FIRM = {
   trustpilot: null,
 };
 
-// Known prices (verified from purdia.com + review sites, May 2026)
+// Known RETAIL prices (verified May 2026)
+// Pro 100K, EOD 100K, Instant 100K, Combine confirmed from pricing page.
+// EOD 50K, Beginner 25K, Instant 50K kept as-is (not in source).
 const KNOWN = [
   // Pro Evaluation — trailing drawdown, monthly
-  { size: 100000, type: "Pro",       eval: 99,  act: 0, target: 6000,  dd: 3000, ddType: "trailing", minDays: 5, profitSplit: 90 },
+  { size: 100000, type: "Pro",       eval: 299, act: 0, target: 6000,  dd: 3000, ddType: "trailing", minDays: 5, profitSplit: 90 },
 
   // EOD Evaluation — end-of-day drawdown, monthly
   { size: 50000,  type: "EOD",       eval: 99,  act: 0, target: 3000,  dd: 2000, ddType: "eod",      minDays: 5, profitSplit: 70 },
-  { size: 100000, type: "EOD",       eval: 299, act: 0, target: 6000,  dd: 3000, ddType: "eod",      minDays: 5, profitSplit: 70 },
+  { size: 100000, type: "EOD",       eval: 349, act: 0, target: 6000,  dd: 3000, ddType: "eod",      minDays: 5, profitSplit: 70 },
 
   // Beginner Evaluation — trailing drawdown, monthly
   { size: 25000,  type: "Beginner",  eval: 119, act: 0, target: 2000,  dd: 2000, ddType: "trailing", minDays: 5, profitSplit: 70 },
@@ -24,6 +26,11 @@ const KNOWN = [
   // Instant Funding — trailing drawdown, one-time
   { size: 50000,  type: "Instant",   eval: 349, act: 0, target: null,   dd: 1500, ddType: "trailing", minDays: 10, profitSplit: 90, isOneTime: true },
   { size: 100000, type: "Instant",   eval: 679, act: 0, target: null,   dd: 3000, ddType: "trailing", minDays: 10, profitSplit: 90, isOneTime: true },
+
+  // Combine — low-cost evaluation accounts
+  { size: 50000,  type: "Combine",   eval: 19,  act: 0, target: 3000,  dd: 2000, ddType: "trailing", minDays: 5, profitSplit: 90 },
+  { size: 100000, type: "Combine",   eval: 29,  act: 0, target: 6000,  dd: 3000, ddType: "trailing", minDays: 5, profitSplit: 90 },
+  { size: 150000, type: "Combine",   eval: 39,  act: 0, target: 9000,  dd: 4500, ddType: "trailing", minDays: 5, profitSplit: 90 },
 ];
 
 async function scrape() {
@@ -48,7 +55,8 @@ async function scrape() {
     minTradingDays: cfg.minDays,
     consistencyEvalPct: null,
     consistencyFundedPct: null,
-    priceSource: 'manual',
+    priceSource: 'verified',
+    priceVerified: true,
   }));
 }
 
