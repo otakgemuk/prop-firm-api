@@ -61,6 +61,10 @@ jobs:
         working-directory: backend
         run: npm run import
 
+      - name: Seed discount codes
+        working-directory: backend
+        run: node src/utils/seed-discounts.js
+
       - name: Run scraper
         working-directory: scraper
         run: node index.js
