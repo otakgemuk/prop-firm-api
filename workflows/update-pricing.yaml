@@ -1,0 +1,39 @@
+name: Daily Prop Firm Pricing Update
+
+on:
+  schedule:
+    # Run at 6 AM UTC daily
+    - cron: '0 6 * * *'
+  workflow_dispatch:  # Allows manual trigger from GitHub UI
+
+jobs:
+  update-pricing:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 lxml
+      
+      - name: Run MCP data fetcher
+        run: |
+          python scripts/fetch_mcp_deals.py
+      
+      - name: Update plans.json with new pricing
+        run: |
+          python scripts/update_plans_json.py
+      
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git add data/plans.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Auto-update prop firm pricing $(date +'%Y-%m-%d')" && git push)
