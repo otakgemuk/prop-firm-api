@@ -48,6 +48,7 @@ async function scrape() {
     minTradingDays: cfg.minDays,
     consistencyEvalPct: null,
     consistencyFundedPct: null,
+    priceSource: 'manual',
   }));
 }
 

@@ -48,6 +48,11 @@ export interface PlanRow {
   // Validation and status fields
   has_discount?: number;
   max_funded_status?: string;
+  // Price provenance fields
+  retail_eval_fee?: number;
+  price_source?: string;
+  price_verified?: number;
+  price_status?: string;
   // New fields for the updated column layout
   max_funded_accounts?: number;
   min_trading_days?: number;

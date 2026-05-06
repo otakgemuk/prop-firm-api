@@ -50,6 +50,7 @@ async function scrape() {
     minTradingDays: cfg.minDays,
     consistencyEvalPct: cfg.consEval,
     consistencyFundedPct: cfg.consFund,
+    priceSource: 'manual',
   }));
 }
 

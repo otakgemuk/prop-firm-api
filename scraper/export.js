@@ -23,7 +23,13 @@ function exportToJson() {
       plan_id, account_size, plan_label, drawdown_type, drawdown_amount,
       daily_loss_limit, profit_target, profit_split, eval_fee, activation_fee,
       monthly_fee, is_one_time, payout_frequency, first_payout_days,
-      total_cost_to_funded, active_discount_pct
+      total_cost_to_funded, active_discount_pct,
+      retail_eval_fee, price_source, price_verified,
+      CASE 
+        WHEN retail_eval_fee IS NOT NULL AND retail_eval_fee > eval_fee 
+        THEN 'promo_price_detected'
+        ELSE 'ok'
+      END AS price_status
     FROM plans
     ORDER BY firm_name, account_size
   `).all();

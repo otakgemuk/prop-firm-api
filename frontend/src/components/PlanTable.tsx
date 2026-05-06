@@ -76,7 +76,39 @@ const columns: ColumnDef<PlanRow, any>[] = [
   // 3. Eval Cost
   columnHelper.accessor("eval_fee", {
     header: "Eval Cost",
-    cell: (info) => formatUSD(info.getValue()),
+    cell: (info) => {
+      const evalFee = info.getValue();
+      const retailFee = info.row.original.retail_eval_fee;
+      const priceStatus = info.row.original.price_status;
+      const priceVerified = info.row.original.price_verified;
+
+      // If retail price is higher than eval fee, the scraped price was a promo
+      if (retailFee && retailFee > evalFee) {
+        return (
+          <div className="flex flex-col gap-0.5">
+            <span className="text-xs text-gray-500 line-through">{formatUSD(retailFee)}</span>
+            <span className="text-green-400 font-medium">{formatUSD(evalFee)}</span>
+            {priceStatus === 'promo_price_detected' && (
+              <span className="inline-block self-start rounded-full bg-amber-500/20 px-1.5 py-0.5 text-[10px] font-medium text-amber-300">
+                Promo
+              </span>
+            )}
+          </div>
+        );
+      }
+
+      // Show verified checkmark for confirmed retail prices
+      if (priceVerified === 1) {
+        return (
+          <div className="flex items-center gap-1">
+            <span>{formatUSD(evalFee)}</span>
+            <span className="text-emerald-400 text-xs" title="Verified retail price">✓</span>
+          </div>
+        );
+      }
+
+      return formatUSD(evalFee);
+    },
     size: 100,
   }),
 

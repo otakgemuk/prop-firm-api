@@ -27,7 +27,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 71.1,
     "active_discount_pct": 10,
-    "base_cost_to_funded": 79
+    "base_cost_to_funded": 79,
+    "retail_eval_fee": 79,
+    "price_source": "help_center",
+    "price_verified": 1,
+    "price_status": "ok"
   },
   {
     "firm_id": "alpha_futures",
@@ -57,7 +61,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 274.1,
     "active_discount_pct": 10,
-    "base_cost_to_funded": 288
+    "base_cost_to_funded": 288,
+    "retail_eval_fee": 139,
+    "price_source": "help_center",
+    "price_verified": 1,
+    "price_status": "ok"
   },
   {
     "firm_id": "alpha_futures",
@@ -87,7 +95,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 220.1,
     "active_discount_pct": 10,
-    "base_cost_to_funded": 228
+    "base_cost_to_funded": 228,
+    "retail_eval_fee": 79,
+    "price_source": "help_center",
+    "price_verified": 1,
+    "price_status": "ok"
   },
   {
     "firm_id": "alpha_futures",
@@ -117,7 +129,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 134.1,
     "active_discount_pct": 10,
-    "base_cost_to_funded": 149
+    "base_cost_to_funded": 149,
+    "retail_eval_fee": 149,
+    "price_source": "help_center",
+    "price_verified": 1,
+    "price_status": "ok"
   },
   {
     "firm_id": "alpha_futures",
@@ -147,7 +163,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 107.1,
     "active_discount_pct": 10,
-    "base_cost_to_funded": 119
+    "base_cost_to_funded": 119,
+    "retail_eval_fee": 119,
+    "price_source": "help_center",
+    "price_verified": 1,
+    "price_status": "ok"
   },
   {
     "firm_id": "alpha_futures",
@@ -177,7 +197,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 400.1,
     "active_discount_pct": 10,
-    "base_cost_to_funded": 428
+    "base_cost_to_funded": 428,
+    "retail_eval_fee": 279,
+    "price_source": "help_center",
+    "price_verified": 1,
+    "price_status": "ok"
   },
   {
     "firm_id": "alpha_futures",
@@ -207,7 +231,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 292.1,
     "active_discount_pct": 10,
-    "base_cost_to_funded": 308
+    "base_cost_to_funded": 308,
+    "retail_eval_fee": 159,
+    "price_source": "help_center",
+    "price_verified": 1,
+    "price_status": "ok"
   },
   {
     "firm_id": "alpha_futures",
@@ -237,7 +265,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 215.1,
     "active_discount_pct": 10,
-    "base_cost_to_funded": 239
+    "base_cost_to_funded": 239,
+    "retail_eval_fee": 239,
+    "price_source": "help_center",
+    "price_verified": 1,
+    "price_status": "ok"
   },
   {
     "firm_id": "alpha_futures",
@@ -267,7 +299,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 215.1,
     "active_discount_pct": 10,
-    "base_cost_to_funded": 239
+    "base_cost_to_funded": 239,
+    "retail_eval_fee": 239,
+    "price_source": "help_center",
+    "price_verified": 1,
+    "price_status": "ok"
   },
   {
     "firm_id": "alpha_futures",
@@ -297,7 +333,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 526.1,
     "active_discount_pct": 10,
-    "base_cost_to_funded": 568
+    "base_cost_to_funded": 568,
+    "retail_eval_fee": 419,
+    "price_source": "help_center",
+    "price_verified": 1,
+    "price_status": "ok"
   },
   {
     "firm_id": "alpha_futures",
@@ -327,7 +367,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 364.1,
     "active_discount_pct": 10,
-    "base_cost_to_funded": 388
+    "base_cost_to_funded": 388,
+    "retail_eval_fee": 239,
+    "price_source": "help_center",
+    "price_verified": 1,
+    "price_status": "ok"
   },
   {
     "firm_id": "alpha_futures",
@@ -357,7 +401,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 296.1,
     "active_discount_pct": 10,
-    "base_cost_to_funded": 329
+    "base_cost_to_funded": 329,
+    "retail_eval_fee": 329,
+    "price_source": "help_center",
+    "price_verified": 1,
+    "price_status": "ok"
   },
   {
     "firm_id": "apex_trader_fund",
@@ -385,9 +433,13 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "total_cost_to_funded": 112.0,
+    "total_cost_to_funded": 112,
     "active_discount_pct": 90,
-    "base_cost_to_funded": 139
+    "base_cost_to_funded": 139,
+    "retail_eval_fee": 30,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "apex_trader_fund",
@@ -415,9 +467,13 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "total_cost_to_funded": 91.0,
+    "total_cost_to_funded": 91,
     "active_discount_pct": 90,
-    "base_cost_to_funded": 109
+    "base_cost_to_funded": 109,
+    "retail_eval_fee": 20,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "apex_trader_fund",
@@ -447,7 +503,11 @@
     "consistency_funded": 50,
     "total_cost_to_funded": 122.5,
     "active_discount_pct": 90,
-    "base_cost_to_funded": 154
+    "base_cost_to_funded": 154,
+    "retail_eval_fee": 35,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "apex_trader_fund",
@@ -477,7 +537,11 @@
     "consistency_funded": 50,
     "total_cost_to_funded": 71.5,
     "active_discount_pct": 90,
-    "base_cost_to_funded": 94
+    "base_cost_to_funded": 94,
+    "retail_eval_fee": 25,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "apex_trader_fund",
@@ -505,9 +569,13 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "total_cost_to_funded": 145.0,
+    "total_cost_to_funded": 145,
     "active_discount_pct": 90,
-    "base_cost_to_funded": 199
+    "base_cost_to_funded": 199,
+    "retail_eval_fee": 60,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "apex_trader_fund",
@@ -535,9 +603,13 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "total_cost_to_funded": 123.0,
+    "total_cost_to_funded": 123,
     "active_discount_pct": 90,
-    "base_cost_to_funded": 159
+    "base_cost_to_funded": 159,
+    "retail_eval_fee": 40,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "apex_trader_fund",
@@ -565,9 +637,13 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "total_cost_to_funded": 167.0,
+    "total_cost_to_funded": 167,
     "active_discount_pct": 90,
-    "base_cost_to_funded": 239
+    "base_cost_to_funded": 239,
+    "retail_eval_fee": 80,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "apex_trader_fund",
@@ -595,9 +671,13 @@
     "min_trading_days": 1,
     "consistency_eval": null,
     "consistency_funded": 50,
-    "total_cost_to_funded": 145.0,
+    "total_cost_to_funded": 145,
     "active_discount_pct": 90,
-    "base_cost_to_funded": 199
+    "base_cost_to_funded": 199,
+    "retail_eval_fee": 60,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "bulenox",
@@ -627,7 +707,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 32.78,
     "active_discount_pct": 89,
-    "base_cost_to_funded": 298
+    "base_cost_to_funded": 298,
+    "retail_eval_fee": 155,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "bulenox",
@@ -657,7 +741,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 174.9,
     "active_discount_pct": 45,
-    "base_cost_to_funded": 318
+    "base_cost_to_funded": 318,
+    "retail_eval_fee": 175,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "bulenox",
@@ -687,7 +775,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 35.53,
     "active_discount_pct": 89,
-    "base_cost_to_funded": 323
+    "base_cost_to_funded": 323,
+    "retail_eval_fee": 175,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "bulenox",
@@ -717,7 +809,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 188.65,
     "active_discount_pct": 45,
-    "base_cost_to_funded": 343
+    "base_cost_to_funded": 343,
+    "retail_eval_fee": 195,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "bulenox",
@@ -747,7 +843,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 50.93,
     "active_discount_pct": 89,
-    "base_cost_to_funded": 463
+    "base_cost_to_funded": 463,
+    "retail_eval_fee": 215,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "bulenox",
@@ -777,7 +877,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 287.65,
     "active_discount_pct": 45,
-    "base_cost_to_funded": 523
+    "base_cost_to_funded": 523,
+    "retail_eval_fee": 275,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "bulenox",
@@ -807,7 +911,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 93.28,
     "active_discount_pct": 89,
-    "base_cost_to_funded": 848
+    "base_cost_to_funded": 848,
+    "retail_eval_fee": 350,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "bulenox",
@@ -837,7 +945,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 493.9,
     "active_discount_pct": 45,
-    "base_cost_to_funded": 898
+    "base_cost_to_funded": 898,
+    "retail_eval_fee": 400,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "daytraders",
@@ -867,7 +979,11 @@
     "consistency_funded": 20,
     "total_cost_to_funded": 222,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 222
+    "base_cost_to_funded": 222,
+    "retail_eval_fee": 222,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "daytraders",
@@ -897,7 +1013,11 @@
     "consistency_funded": 30,
     "total_cost_to_funded": 160,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 160
+    "base_cost_to_funded": 160,
+    "retail_eval_fee": 30,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "daytraders",
@@ -927,7 +1047,11 @@
     "consistency_funded": 30,
     "total_cost_to_funded": 167,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 167
+    "base_cost_to_funded": 167,
+    "retail_eval_fee": 37,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "daytraders",
@@ -957,7 +1081,11 @@
     "consistency_funded": 20,
     "total_cost_to_funded": 342,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 342
+    "base_cost_to_funded": 342,
+    "retail_eval_fee": 342,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "daytraders",
@@ -987,7 +1115,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 229,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 229
+    "base_cost_to_funded": 229,
+    "retail_eval_fee": 229,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "daytraders",
@@ -1017,7 +1149,11 @@
     "consistency_funded": 30,
     "total_cost_to_funded": 170,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 170
+    "base_cost_to_funded": 170,
+    "retail_eval_fee": 40,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "daytraders",
@@ -1047,7 +1183,11 @@
     "consistency_funded": 30,
     "total_cost_to_funded": 187,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 187
+    "base_cost_to_funded": 187,
+    "retail_eval_fee": 57,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "daytraders",
@@ -1077,7 +1217,11 @@
     "consistency_funded": 30,
     "total_cost_to_funded": 195,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 195
+    "base_cost_to_funded": 195,
+    "retail_eval_fee": 65,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "daytraders",
@@ -1107,7 +1251,11 @@
     "consistency_funded": 30,
     "total_cost_to_funded": 215,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 215
+    "base_cost_to_funded": 215,
+    "retail_eval_fee": 85,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "daytraders",
@@ -1137,7 +1285,11 @@
     "consistency_funded": 20,
     "total_cost_to_funded": 495,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 495
+    "base_cost_to_funded": 495,
+    "retail_eval_fee": 495,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "daytraders",
@@ -1167,7 +1319,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 369,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 369
+    "base_cost_to_funded": 369,
+    "retail_eval_fee": 369,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "daytraders",
@@ -1197,7 +1353,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 499,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 499
+    "base_cost_to_funded": 499,
+    "retail_eval_fee": 499,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "e8_markets",
@@ -1227,7 +1387,11 @@
     "consistency_funded": 35,
     "total_cost_to_funded": 110,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 110
+    "base_cost_to_funded": 110,
+    "retail_eval_fee": 110,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "e8_markets",
@@ -1257,7 +1421,11 @@
     "consistency_funded": 35,
     "total_cost_to_funded": 150,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 150
+    "base_cost_to_funded": 150,
+    "retail_eval_fee": 150,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "e8_markets",
@@ -1287,7 +1455,11 @@
     "consistency_funded": 35,
     "total_cost_to_funded": 260,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 260
+    "base_cost_to_funded": 260,
+    "retail_eval_fee": 260,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "e8_markets",
@@ -1317,7 +1489,11 @@
     "consistency_funded": 35,
     "total_cost_to_funded": 390,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 390
+    "base_cost_to_funded": 390,
+    "retail_eval_fee": 390,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "earn2trade",
@@ -1347,7 +1523,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 229,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 229
+    "base_cost_to_funded": 229,
+    "retail_eval_fee": 90,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "earn2trade",
@@ -1377,7 +1557,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 289,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 289
+    "base_cost_to_funded": 289,
+    "retail_eval_fee": 150,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "earn2trade",
@@ -1407,7 +1591,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 289,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 289
+    "base_cost_to_funded": 289,
+    "retail_eval_fee": 150,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "earn2trade",
@@ -1437,7 +1625,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 384,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 384
+    "base_cost_to_funded": 384,
+    "retail_eval_fee": 245,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "earn2trade",
@@ -1467,7 +1659,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 409,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 409
+    "base_cost_to_funded": 409,
+    "retail_eval_fee": 270,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "earn2trade",
@@ -1497,7 +1693,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 454,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 454
+    "base_cost_to_funded": 454,
+    "retail_eval_fee": 315,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "earn2trade",
@@ -1527,7 +1727,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 539,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 539
+    "base_cost_to_funded": 539,
+    "retail_eval_fee": 400,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1557,7 +1761,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 186,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 186
+    "base_cost_to_funded": 186,
+    "retail_eval_fee": 99,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1587,7 +1795,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 252,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 252
+    "base_cost_to_funded": 252,
+    "retail_eval_fee": 165,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1617,7 +1829,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 646,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 646
+    "base_cost_to_funded": 646,
+    "retail_eval_fee": 599,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1647,7 +1863,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 382,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 382
+    "base_cost_to_funded": 382,
+    "retail_eval_fee": 295,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1677,7 +1897,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 536,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 536
+    "base_cost_to_funded": 536,
+    "retail_eval_fee": 449,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1707,7 +1931,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 292,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 292
+    "base_cost_to_funded": 292,
+    "retail_eval_fee": 205,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1737,7 +1965,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 452,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 452
+    "base_cost_to_funded": 452,
+    "retail_eval_fee": 365,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1767,7 +1999,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 696,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 696
+    "base_cost_to_funded": 696,
+    "retail_eval_fee": 649,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1797,7 +2033,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 442,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 442
+    "base_cost_to_funded": 442,
+    "retail_eval_fee": 355,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1827,7 +2067,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 162,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 162
+    "base_cost_to_funded": 162,
+    "retail_eval_fee": 75,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1857,7 +2101,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 382,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 382
+    "base_cost_to_funded": 382,
+    "retail_eval_fee": 295,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "elite_trader_fun",
@@ -1887,7 +2135,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 602,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 602
+    "base_cost_to_funded": 602,
+    "retail_eval_fee": 515,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -1915,9 +2167,13 @@
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "total_cost_to_funded": 185.0,
+    "total_cost_to_funded": 185,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 320
+    "base_cost_to_funded": 320,
+    "retail_eval_fee": 270,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -1947,7 +2203,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 87.5,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 125
+    "base_cost_to_funded": 125,
+    "retail_eval_fee": 75,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -1977,7 +2237,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 117.5,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 185
+    "base_cost_to_funded": 185,
+    "retail_eval_fee": 135,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -2005,9 +2269,13 @@
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 84.0,
+    "total_cost_to_funded": 84,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 118
+    "base_cost_to_funded": 118,
+    "retail_eval_fee": 68,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -2035,9 +2303,13 @@
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "total_cost_to_funded": 210.0,
+    "total_cost_to_funded": 210,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 370
+    "base_cost_to_funded": 370,
+    "retail_eval_fee": 320,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -2065,9 +2337,13 @@
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "total_cost_to_funded": 90.0,
+    "total_cost_to_funded": 90,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 130
+    "base_cost_to_funded": 130,
+    "retail_eval_fee": 80,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -2095,9 +2371,13 @@
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 130.0,
+    "total_cost_to_funded": 130,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 210
+    "base_cost_to_funded": 210,
+    "retail_eval_fee": 160,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -2125,9 +2405,13 @@
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 90.0,
+    "total_cost_to_funded": 90,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 130
+    "base_cost_to_funded": 130,
+    "retail_eval_fee": 80,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -2155,9 +2439,13 @@
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "total_cost_to_funded": 415.0,
+    "total_cost_to_funded": 415,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 730
+    "base_cost_to_funded": 730,
+    "retail_eval_fee": 630,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -2185,9 +2473,13 @@
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "total_cost_to_funded": 179.0,
+    "total_cost_to_funded": 179,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 258
+    "base_cost_to_funded": 258,
+    "retail_eval_fee": 158,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -2217,7 +2509,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 257.5,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 415
+    "base_cost_to_funded": 415,
+    "retail_eval_fee": 315,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -2245,9 +2541,13 @@
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 179.0,
+    "total_cost_to_funded": 179,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 258
+    "base_cost_to_funded": 258,
+    "retail_eval_fee": 158,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -2275,9 +2575,13 @@
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "total_cost_to_funded": 465.0,
+    "total_cost_to_funded": 465,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 830
+    "base_cost_to_funded": 830,
+    "retail_eval_fee": 730,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -2307,7 +2611,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 191.5,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 283
+    "base_cost_to_funded": 283,
+    "retail_eval_fee": 183,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -2337,7 +2645,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 282.5,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 465
+    "base_cost_to_funded": 465,
+    "retail_eval_fee": 365,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -2367,7 +2679,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 191.5,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 283
+    "base_cost_to_funded": 283,
+    "retail_eval_fee": 183,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -2395,9 +2711,13 @@
     "min_trading_days": 7,
     "consistency_eval": 15,
     "consistency_funded": null,
-    "total_cost_to_funded": 690.0,
+    "total_cost_to_funded": 690,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 1280
+    "base_cost_to_funded": 1280,
+    "retail_eval_fee": 1180,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -2427,7 +2747,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 247.5,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 395
+    "base_cost_to_funded": 395,
+    "retail_eval_fee": 295,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -2455,9 +2779,13 @@
     "min_trading_days": 15,
     "consistency_eval": 40,
     "consistency_funded": null,
-    "total_cost_to_funded": 395.0,
+    "total_cost_to_funded": 395,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 690
+    "base_cost_to_funded": 690,
+    "retail_eval_fee": 590,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "funded_futures_n",
@@ -2487,7 +2815,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 247.5,
     "active_discount_pct": 50,
-    "base_cost_to_funded": 395
+    "base_cost_to_funded": 395,
+    "retail_eval_fee": 295,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "legends_trading",
@@ -2517,7 +2849,11 @@
     "consistency_funded": 30,
     "total_cost_to_funded": 264,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 264
+    "base_cost_to_funded": 264,
+    "retail_eval_fee": 165,
+    "price_source": "manual",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "legends_trading",
@@ -2547,7 +2883,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 95,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 95
+    "base_cost_to_funded": 95,
+    "retail_eval_fee": 95,
+    "price_source": "manual",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "legends_trading",
@@ -2577,7 +2917,11 @@
     "consistency_funded": 30,
     "total_cost_to_funded": 284,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 284
+    "base_cost_to_funded": 284,
+    "retail_eval_fee": 185,
+    "price_source": "manual",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "legends_trading",
@@ -2607,7 +2951,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 121,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 121
+    "base_cost_to_funded": 121,
+    "retail_eval_fee": 121,
+    "price_source": "manual",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "legends_trading",
@@ -2637,7 +2985,11 @@
     "consistency_funded": 30,
     "total_cost_to_funded": 374,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 374
+    "base_cost_to_funded": 374,
+    "retail_eval_fee": 225,
+    "price_source": "manual",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "legends_trading",
@@ -2667,7 +3019,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 182,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 182
+    "base_cost_to_funded": 182,
+    "retail_eval_fee": 182,
+    "price_source": "manual",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "legends_trading",
@@ -2697,7 +3053,11 @@
     "consistency_funded": 30,
     "total_cost_to_funded": 519,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 519
+    "base_cost_to_funded": 519,
+    "retail_eval_fee": 320,
+    "price_source": "manual",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "legends_trading",
@@ -2727,7 +3087,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 278,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 278
+    "base_cost_to_funded": 278,
+    "retail_eval_fee": 278,
+    "price_source": "manual",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "lucid_trading",
@@ -2757,7 +3121,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 60,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 60
+    "base_cost_to_funded": 60,
+    "retail_eval_fee": 60,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "lucid_trading",
@@ -2787,7 +3155,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 81,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 81
+    "base_cost_to_funded": 81,
+    "retail_eval_fee": 81,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "lucid_trading",
@@ -2817,7 +3189,11 @@
     "consistency_funded": 20,
     "total_cost_to_funded": 238,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 238
+    "base_cost_to_funded": 238,
+    "retail_eval_fee": 238,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "lucid_trading",
@@ -2847,7 +3223,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 84,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 84
+    "base_cost_to_funded": 84,
+    "retail_eval_fee": 84,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "lucid_trading",
@@ -2877,7 +3257,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 111,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 111
+    "base_cost_to_funded": 111,
+    "retail_eval_fee": 111,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "lucid_trading",
@@ -2907,7 +3291,11 @@
     "consistency_funded": 20,
     "total_cost_to_funded": 364,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 364
+    "base_cost_to_funded": 364,
+    "retail_eval_fee": 364,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "lucid_trading",
@@ -2937,7 +3325,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 135,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 135
+    "base_cost_to_funded": 135,
+    "retail_eval_fee": 135,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "lucid_trading",
@@ -2967,7 +3359,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 171,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 171
+    "base_cost_to_funded": 171,
+    "retail_eval_fee": 171,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "lucid_trading",
@@ -2997,7 +3393,11 @@
     "consistency_funded": 20,
     "total_cost_to_funded": 490,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 490
+    "base_cost_to_funded": 490,
+    "retail_eval_fee": 490,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "lucid_trading",
@@ -3027,7 +3427,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 252,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 252
+    "base_cost_to_funded": 252,
+    "retail_eval_fee": 252,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "lucid_trading",
@@ -3057,7 +3461,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 222,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 222
+    "base_cost_to_funded": 222,
+    "retail_eval_fee": 222,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "lucid_trading",
@@ -3087,7 +3495,11 @@
     "consistency_funded": 20,
     "total_cost_to_funded": 588,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 588
+    "base_cost_to_funded": 588,
+    "retail_eval_fee": 588,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "myfundedfutures",
@@ -3117,7 +3529,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 75,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 75
+    "base_cost_to_funded": 75,
+    "retail_eval_fee": 75,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "myfundedfutures",
@@ -3147,7 +3563,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 84,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 84
+    "base_cost_to_funded": 84,
+    "retail_eval_fee": 84,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "myfundedfutures",
@@ -3177,7 +3597,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 114,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 114
+    "base_cost_to_funded": 114,
+    "retail_eval_fee": 114,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "myfundedfutures",
@@ -3207,7 +3631,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 87,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 87
+    "base_cost_to_funded": 87,
+    "retail_eval_fee": 87,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "myfundedfutures",
@@ -3237,7 +3665,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 75,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 75
+    "base_cost_to_funded": 75,
+    "retail_eval_fee": 75,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "myfundedfutures",
@@ -3267,7 +3699,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 127,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 127
+    "base_cost_to_funded": 127,
+    "retail_eval_fee": 127,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "myfundedfutures",
@@ -3297,7 +3733,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 114,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 114
+    "base_cost_to_funded": 114,
+    "retail_eval_fee": 114,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "myfundedfutures",
@@ -3327,7 +3767,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 126,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 126
+    "base_cost_to_funded": 126,
+    "retail_eval_fee": 126,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "myfundedfutures",
@@ -3357,7 +3801,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 153,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 153
+    "base_cost_to_funded": 153,
+    "retail_eval_fee": 153,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "myfundedfutures",
@@ -3387,7 +3835,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 344,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 344
+    "base_cost_to_funded": 344,
+    "retail_eval_fee": 344,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "myfundedfutures",
@@ -3417,7 +3869,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 267,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 267
+    "base_cost_to_funded": 267,
+    "retail_eval_fee": 267,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "myfundedfutures",
@@ -3447,7 +3903,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 225,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 225
+    "base_cost_to_funded": 225,
+    "retail_eval_fee": 225,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "myfundedfutures",
@@ -3477,7 +3937,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 477,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 477
+    "base_cost_to_funded": 477,
+    "retail_eval_fee": 477,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "myfundedfutures",
@@ -3507,7 +3971,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 347,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 347
+    "base_cost_to_funded": 347,
+    "retail_eval_fee": 347,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "oneup_trader",
@@ -3537,7 +4005,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 130,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 130
+    "base_cost_to_funded": 130,
+    "retail_eval_fee": 65,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "oneup_trader",
@@ -3567,7 +4039,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 150,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 150
+    "base_cost_to_funded": 150,
+    "retail_eval_fee": 75,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "oneup_trader",
@@ -3597,7 +4073,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 150,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 150
+    "base_cost_to_funded": 150,
+    "retail_eval_fee": 150,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "oneup_trader",
@@ -3627,7 +4107,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 175,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 175
+    "base_cost_to_funded": 175,
+    "retail_eval_fee": 175,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "oneup_trader",
@@ -3657,7 +4141,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 325,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 325
+    "base_cost_to_funded": 325,
+    "retail_eval_fee": 325,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3687,7 +4175,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 69,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 69
+    "base_cost_to_funded": 69,
+    "retail_eval_fee": 69,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3717,7 +4209,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 69,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 69
+    "base_cost_to_funded": 69,
+    "retail_eval_fee": 0,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3747,7 +4243,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 89,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 89
+    "base_cost_to_funded": 89,
+    "retail_eval_fee": 89,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3777,7 +4277,11 @@
     "consistency_funded": 30,
     "total_cost_to_funded": 68,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 68
+    "base_cost_to_funded": 68,
+    "retail_eval_fee": 39,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3807,7 +4311,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 128,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 128
+    "base_cost_to_funded": 128,
+    "retail_eval_fee": 128,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3837,7 +4345,11 @@
     "consistency_funded": 30,
     "total_cost_to_funded": 98,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 98
+    "base_cost_to_funded": 98,
+    "retail_eval_fee": 69,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "phoenix_trader_f",
@@ -3867,7 +4379,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 269,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 269
+    "base_cost_to_funded": 269,
+    "retail_eval_fee": 269,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "take_profit_trad",
@@ -3897,7 +4413,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 280,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 280
+    "base_cost_to_funded": 280,
+    "retail_eval_fee": 150,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "take_profit_trad",
@@ -3927,7 +4447,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 300,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 300
+    "base_cost_to_funded": 300,
+    "retail_eval_fee": 170,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "take_profit_trad",
@@ -3957,7 +4481,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 380,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 380
+    "base_cost_to_funded": 380,
+    "retail_eval_fee": 250,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "take_profit_trad",
@@ -3987,7 +4515,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 460,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 460
+    "base_cost_to_funded": 460,
+    "retail_eval_fee": 330,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "take_profit_trad",
@@ -4017,7 +4549,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 490,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 490
+    "base_cost_to_funded": 490,
+    "retail_eval_fee": 360,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "topstep",
@@ -4047,7 +4583,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 95,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 95
+    "base_cost_to_funded": 95,
+    "retail_eval_fee": 95,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "topstep",
@@ -4077,7 +4617,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 198,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 198
+    "base_cost_to_funded": 198,
+    "retail_eval_fee": 49,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "topstep",
@@ -4107,7 +4651,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 149,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 149
+    "base_cost_to_funded": 149,
+    "retail_eval_fee": 149,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "topstep",
@@ -4137,7 +4685,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 248,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 248
+    "base_cost_to_funded": 248,
+    "retail_eval_fee": 99,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "topstep",
@@ -4167,7 +4719,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 229,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 229
+    "base_cost_to_funded": 229,
+    "retail_eval_fee": 229,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "topstep",
@@ -4197,7 +4753,11 @@
     "consistency_funded": 40,
     "total_cost_to_funded": 298,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 298
+    "base_cost_to_funded": 298,
+    "retail_eval_fee": 149,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeday",
@@ -4227,7 +4787,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 314,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 314
+    "base_cost_to_funded": 314,
+    "retail_eval_fee": 175,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeday",
@@ -4257,7 +4821,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 264,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 264
+    "base_cost_to_funded": 264,
+    "retail_eval_fee": 125,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeday",
@@ -4287,7 +4855,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 304,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 304
+    "base_cost_to_funded": 304,
+    "retail_eval_fee": 165,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeday",
@@ -4317,7 +4889,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 414,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 414
+    "base_cost_to_funded": 414,
+    "retail_eval_fee": 275,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeday",
@@ -4347,7 +4923,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 339,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 339
+    "base_cost_to_funded": 339,
+    "retail_eval_fee": 200,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeday",
@@ -4377,7 +4957,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 404,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 404
+    "base_cost_to_funded": 404,
+    "retail_eval_fee": 265,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeday",
@@ -4407,7 +4991,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 514,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 514
+    "base_cost_to_funded": 514,
+    "retail_eval_fee": 375,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeday",
@@ -4437,7 +5025,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 439,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 439
+    "base_cost_to_funded": 439,
+    "retail_eval_fee": 300,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeday",
@@ -4467,7 +5059,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 499,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 499
+    "base_cost_to_funded": 499,
+    "retail_eval_fee": 360,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeify",
@@ -4497,7 +5093,11 @@
     "consistency_funded": 35,
     "total_cost_to_funded": 59,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 59
+    "base_cost_to_funded": 59,
+    "retail_eval_fee": 59,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeify",
@@ -4527,7 +5127,11 @@
     "consistency_funded": 20,
     "total_cost_to_funded": 197,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 197
+    "base_cost_to_funded": 197,
+    "retail_eval_fee": 197,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeify",
@@ -4557,7 +5161,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 65,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 65
+    "base_cost_to_funded": 65,
+    "retail_eval_fee": 65,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeify",
@@ -4587,7 +5195,11 @@
     "consistency_funded": 35,
     "total_cost_to_funded": 87,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 87
+    "base_cost_to_funded": 87,
+    "retail_eval_fee": 87,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeify",
@@ -4617,7 +5229,11 @@
     "consistency_funded": 20,
     "total_cost_to_funded": 281,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 281
+    "base_cost_to_funded": 281,
+    "retail_eval_fee": 281,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeify",
@@ -4647,7 +5263,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 99,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 99
+    "base_cost_to_funded": 99,
+    "retail_eval_fee": 99,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeify",
@@ -4677,7 +5297,11 @@
     "consistency_funded": 35,
     "total_cost_to_funded": 153,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 153
+    "base_cost_to_funded": 153,
+    "retail_eval_fee": 153,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeify",
@@ -4707,7 +5331,11 @@
     "consistency_funded": 20,
     "total_cost_to_funded": 377,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 377
+    "base_cost_to_funded": 377,
+    "retail_eval_fee": 377,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeify",
@@ -4737,7 +5365,11 @@
     "consistency_funded": null,
     "total_cost_to_funded": 159,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 159
+    "base_cost_to_funded": 159,
+    "retail_eval_fee": 159,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeify",
@@ -4767,7 +5399,11 @@
     "consistency_funded": 35,
     "total_cost_to_funded": 221,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 221
+    "base_cost_to_funded": 221,
+    "retail_eval_fee": 221,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeify",
@@ -4797,7 +5433,11 @@
     "consistency_funded": 20,
     "total_cost_to_funded": 455,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 455
+    "base_cost_to_funded": 455,
+    "retail_eval_fee": 455,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   },
   {
     "firm_id": "tradeify",
@@ -4827,6 +5467,10 @@
     "consistency_funded": null,
     "total_cost_to_funded": 221,
     "active_discount_pct": 0,
-    "base_cost_to_funded": 221
+    "base_cost_to_funded": 221,
+    "retail_eval_fee": 221,
+    "price_source": "scraper",
+    "price_verified": 0,
+    "price_status": "ok"
   }
 ]

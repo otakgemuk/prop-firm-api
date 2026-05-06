@@ -63,6 +63,10 @@ const rows = db.prepare(`
     p.min_trading_days,
     p.consistency_eval,
     p.consistency_funded,
+    -- price provenance fields
+    p.retail_eval_fee,
+    p.price_source,
+    p.price_verified,
     -- derived fields
     ROUND(
       p.eval_fee + p.activation_fee +
@@ -84,7 +88,13 @@ const rows = db.prepare(`
     CASE 
       WHEN COALESCE(p.max_funded_accounts, 0) = 0 THEN 'not_specified'
       ELSE 'specified'
-    END                                                     AS max_funded_status
+    END                                                     AS max_funded_status,
+    -- Price validation: detect if eval_fee is actually a promo price
+    CASE 
+      WHEN p.retail_eval_fee IS NOT NULL AND p.retail_eval_fee > p.eval_fee 
+      THEN 'promo_price_detected'
+      ELSE 'ok'
+    END                                                     AS price_status
   FROM plans p
   JOIN firms f ON f.id = p.firm_id
   LEFT JOIN best_discount bd ON bd.firm_id = f.id

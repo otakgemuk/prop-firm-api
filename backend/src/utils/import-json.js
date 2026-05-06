@@ -57,14 +57,16 @@ const upsertPlan = db.prepare(`
     drawdown_amount, daily_loss_limit, profit_target, eval_fee,
     activation_fee, monthly_fee, profit_split, payout_frequency,
     first_payout_days, is_one_time,
-    max_funded_accounts, min_trading_days, consistency_eval, consistency_funded
+    max_funded_accounts, min_trading_days, consistency_eval, consistency_funded,
+    retail_eval_fee, price_source, price_verified
   )
   SELECT
     $id, f.id, $account_size, $account_type, $label, $drawdown_type,
     $drawdown_amount, $daily_loss_limit, $profit_target, $eval_fee,
     $activation_fee, $monthly_fee, $profit_split, $payout_frequency,
     $first_payout_days, $is_one_time,
-    $max_funded_accounts, $min_trading_days, $consistency_eval, $consistency_funded
+    $max_funded_accounts, $min_trading_days, $consistency_eval, $consistency_funded,
+    $retail_eval_fee, $price_source, $price_verified
   FROM firms f WHERE f.slug = $firm_slug
   ON CONFLICT(firm_id, account_size, account_type) DO UPDATE SET
     label             = excluded.label,
@@ -84,6 +86,9 @@ const upsertPlan = db.prepare(`
     min_trading_days    = COALESCE(plans.min_trading_days,    excluded.min_trading_days),
     consistency_eval    = COALESCE(plans.consistency_eval,    excluded.consistency_eval),
     consistency_funded  = COALESCE(plans.consistency_funded,  excluded.consistency_funded),
+    retail_eval_fee     = COALESCE(plans.retail_eval_fee,     excluded.retail_eval_fee),
+    price_source        = COALESCE(plans.price_source,        excluded.price_source),
+    price_verified      = COALESCE(plans.price_verified,      excluded.price_verified),
     updated_at          = datetime('now')
 `);
 
@@ -133,6 +138,9 @@ const importAll = db.transaction((rows) => {
       min_trading_days:   p.min_trading_days     ?? null,
       consistency_eval:   p.consistency_eval     ?? null,
       consistency_funded: p.consistency_funded   ?? null,
+      retail_eval_fee:    p.retail_eval_fee      ?? p.eval_fee ?? null,
+      price_source:       p.price_source         ?? "scraper",
+      price_verified:     p.price_verified       ?? 0,
     });
     planCount++;
   }

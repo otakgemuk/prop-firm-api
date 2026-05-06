@@ -61,6 +61,10 @@ function buildPlan({
   minTradingDays = null,
   consistencyEvalPct = null,
   consistencyFundedPct = null,
+  // Price provenance fields
+  retailEvalFee = null,
+  priceSource = 'scraper',
+  priceVerified = false,
 }) {
   const totalCost = Math.round(
     (evalFee * (1 - discountPct / 100) + activationFee) * 100
@@ -96,6 +100,11 @@ function buildPlan({
   if (minTradingDays !== null) plan.min_trading_days = minTradingDays;
   if (consistencyEvalPct !== null) plan.consistency_eval = consistencyEvalPct;
   if (consistencyFundedPct !== null) plan.consistency_funded = consistencyFundedPct;
+
+  // Price provenance — track where the price came from and whether it's retail
+  plan.retail_eval_fee = retailEvalFee ?? evalFee;
+  plan.price_source = priceSource || 'scraper';
+  plan.price_verified = priceVerified ? 1 : 0;
 
   return plan;
 }

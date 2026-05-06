@@ -55,6 +55,8 @@ async function scrape() {
       minTradingDays: cfg.minDays,
       consistencyEvalPct: cfg.consEval || null,
       consistencyFundedPct: cfg.consFund || null,
+      priceSource: 'help_center',
+      priceVerified: true,
     });
   });
 }

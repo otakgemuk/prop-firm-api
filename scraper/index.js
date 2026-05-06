@@ -76,6 +76,13 @@ async function main() {
       const existing = getExistingPlans(slug);
       printDiff(slug, existing, plans);
     } else {
+      // Validate: if retail_eval_fee exists and eval_fee < retail_eval_fee,
+      // the scraper captured a promo price — log a warning
+      for (const plan of plans) {
+        if (plan.retail_eval_fee && plan.eval_fee < plan.retail_eval_fee) {
+          console.warn(`[${slug}] ⚠ ${plan.plan_label}: eval_fee ($${plan.eval_fee}) < retail ($${plan.retail_eval_fee}) — promo price detected`);
+        }
+      }
       upsertPlans(slug, plans);
       console.log(`[${slug}] ✓ Upserted ${plans.length} plans`);
     }
