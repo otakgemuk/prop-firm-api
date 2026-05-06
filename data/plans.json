@@ -3807,9 +3807,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 162,
-    "total_cost_to_funded": 162,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 32.4,
+    "active_discount_pct": 80,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -3838,9 +3838,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 277,
-    "total_cost_to_funded": 277,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 55.4,
+    "active_discount_pct": 80,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -3869,9 +3869,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 83,
-    "total_cost_to_funded": 83,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 16.6,
+    "active_discount_pct": 80,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -3900,9 +3900,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 162,
-    "total_cost_to_funded": 162,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 32.4,
+    "active_discount_pct": 80,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -3931,9 +3931,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 149,
-    "total_cost_to_funded": 149,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 29.8,
+    "active_discount_pct": 80,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -3962,9 +3962,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 377,
-    "total_cost_to_funded": 377,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 75.4,
+    "active_discount_pct": 80,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -3993,9 +3993,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 116,
-    "total_cost_to_funded": 116,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 23.2,
+    "active_discount_pct": 80,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -4024,9 +4024,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 149,
-    "total_cost_to_funded": 149,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 29.8,
+    "active_discount_pct": 80,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -4055,9 +4055,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 149,
-    "total_cost_to_funded": 149,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 29.8,
+    "active_discount_pct": 80,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -4086,9 +4086,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 477,
-    "total_cost_to_funded": 477,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 95.4,
+    "active_discount_pct": 80,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -4117,9 +4117,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 149,
-    "total_cost_to_funded": 149,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 29.8,
+    "active_discount_pct": 80,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -4148,9 +4148,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 149,
-    "total_cost_to_funded": 149,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 29.8,
+    "active_discount_pct": 80,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -4179,9 +4179,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 169,
-    "total_cost_to_funded": 169,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 33.8,
+    "active_discount_pct": 80,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -4210,9 +4210,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 577,
-    "total_cost_to_funded": 577,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 115.4,
+    "active_discount_pct": 80,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -4241,9 +4241,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 169,
-    "total_cost_to_funded": 169,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 33.8,
+    "active_discount_pct": 80,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -4272,9 +4272,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 169,
-    "total_cost_to_funded": 169,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 33.8,
+    "active_discount_pct": 80,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -4520,9 +4520,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 119,
-    "total_cost_to_funded": 119,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 89.25,
+    "active_discount_pct": 25,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -4551,9 +4551,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 99,
-    "total_cost_to_funded": 99,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 74.25,
+    "active_discount_pct": 25,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -4582,9 +4582,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 349,
-    "total_cost_to_funded": 349,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 261.75,
+    "active_discount_pct": 25,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -4613,9 +4613,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 299,
-    "total_cost_to_funded": 299,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 224.25,
+    "active_discount_pct": 25,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -4644,9 +4644,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 679,
-    "total_cost_to_funded": 679,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 509.25,
+    "active_discount_pct": 25,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
@@ -4675,9 +4675,9 @@
     "consistency_eval": null,
     "consistency_funded": null,
     "base_cost_to_funded": 99,
-    "total_cost_to_funded": 99,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "total_cost_to_funded": 74.25,
+    "active_discount_pct": 25,
+    "has_discount": 1,
     "max_funded_status": "specified"
   },
   {
