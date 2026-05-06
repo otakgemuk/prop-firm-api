@@ -60,10 +60,6 @@ jobs:
         working-directory: backend
         run: npm run import
 
-      - name: Seed discount codes
-        working-directory: backend
-        run: node src/utils/seed-discounts.js
-
       - name: Run scraper
         working-directory: scraper
         run: |
@@ -72,6 +68,10 @@ jobs:
           else
             node index.js
           fi
+
+      - name: Seed discount codes
+        working-directory: backend
+        run: node src/utils/seed-discounts.js
 
       - name: Export database to JSON
         working-directory: backend
