@@ -34,10 +34,12 @@ jobs:
         working-directory: ./scraper
         run: node export.js
       
-      - name: Commit changes
-        run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "actions@github.com"
-          git remote set-url origin https://x-access-token:${{ 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 }}@github.com/${{ github.repository }}
-          git add data/plans.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update pricing $(date +'%Y-%m-%d')" && git push)
+- name: Commit and push changes
+  env:
+    GH_PAT: ${{ secrets.GH_PAT }}    # ← This pulls your secret
+  run: |
+    git config user.name "GitHub Actions Bot"
+    git config user.email "actions@github.com"
+    git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}
+    git add data/plans.json
+    git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Auto-update pricing $(date +'%Y-%m-%d')" && git push)
