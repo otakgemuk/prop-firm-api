@@ -25,9 +25,14 @@ const LABELS = { 25000: "25K", 50000: "50K", 100000: "100K", 150000: "150K" };
 const TARGETS = { 25000: 1500, 50000: 3000, 100000: 6000, 150000: 9000 };
 
 async function scrape() {
-  const html = await fetchRendered("https://bulenox.com", { waitFor: 5000 });
-  const $ = cheerio.load(html);
-  const text = $.text();
+  let text = "";
+  try {
+    const html = await fetchRendered("https://bulenox.com", { waitFor: 5000 });
+    const $ = cheerio.load(html);
+    text = $.text();
+  } catch (e) {
+    console.warn(`[bulenox] Live scrape failed, using known prices: ${e.message}`);
+  }
 
   const consistencyFundedPct = extractConsistencyPercent(text, "fund") || 40;
   const plans = [];

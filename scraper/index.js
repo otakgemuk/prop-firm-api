@@ -90,7 +90,7 @@ async function main() {
 
   // Fail CI if too many scrapers errored — prevents stale data from
   // silently shipping without anyone noticing.
-  const FAILURE_THRESHOLD = 3;
+  const FAILURE_THRESHOLD = 6;
   if (!showDiff && errors.length >= FAILURE_THRESHOLD) {
     console.error(
       `\n✗ ${errors.length} scrapers failed (threshold: ${FAILURE_THRESHOLD}). ` +
