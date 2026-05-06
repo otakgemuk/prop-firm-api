@@ -1,32 +1,83 @@
+# Scrape Prop Firm Prices — Daily scheduled + manual trigger
+#
+# Workflow:
+#   1. Scrape: Fetch fresh pricing data, upsert to SQLite DB
+#   2. Export: Generate plans.json from DB
+#   3. Commit: If prices changed, push to main (triggers deploy)
+#
+# If any parser fails, the job continues with fallback (old DB data).
+# If 3+ parsers fail, the job fails to alert on stale data.
+
 name: Scrape Prop Firm Prices
 
 on:
   workflow_dispatch:
+    inputs:
+      firm:
+        description: "Firm to scrape (e.g. topstep; leave empty for all)"
+        required: false
+        type: string
   schedule:
-    - cron: '0 */12 * * *'
+    - cron: "0 6 * * *"   # Every day at 06:00 UTC
+
+permissions:
+  contents: write
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
-      - name: Install dependencies
-        working-directory: ./scraper
-        run: |
-          npm ci
-          npx playwright install --with-deps chromium
+          node-version: 20
+          cache: "npm"
+          cache-dependency-path: scraper/package-lock.json
+
+      - name: Install scraper dependencies
+        working-directory: scraper
+        run: npm ci
+
+      - name: Install Playwright browsers
+        working-directory: scraper
+        run: npx playwright install --with-deps chromium
+
       - name: Run scraper
-        working-directory: ./scraper
-        run: node index.js
-      - name: Export to JSON
-        working-directory: ./scraper
-        run: node export.js
-      - name: Commit changes
+        working-directory: scraper
         run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "actions@github.com"
+          if [ -n "${{ inputs.firm }}" ]; then
+            node index.js --firm "${{ inputs.firm }}"
+          else
+            node index.js
+          fi
+
+      - name: Export database to JSON
+        working-directory: scraper
+        run: node export.js
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet data/plans.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No price changes detected."
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Price changes detected:"
+            git diff --stat data/plans.json
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "Prop Firm Bot"
+          git config user.email "bot@propfirmcompare.com"
           git add data/plans.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update pricing" && git push)
+          git commit -m "data: auto-update pricing ($(date -u +%Y-%m-%d))
+
+          Automated price check via GitHub Actions.
+          $(git diff --stat data/plans.json | tail -1)"
+          git push

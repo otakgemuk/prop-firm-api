@@ -1,5 +1,8 @@
 // Alpha Futures parser — Zero, Advanced, Premium types
 const { buildPlan, fetchRendered, extractConsistencyPercent } = require("../utils");
+// TODO: Currently returns hardcoded prices. Implement live price extraction.
+// See topstep.js for reference implementation.
+
 const cheerio = require("cheerio");
 
 const FIRM = {

@@ -1,5 +1,8 @@
 // DayTraders parser
 // Account types: S2F, Static, Trail, S2L
+// TODO: Currently returns hardcoded prices. Implement live price extraction.
+// See topstep.js for reference implementation.
+
 const { buildPlan, fetchRendered } = require("../utils");
 const cheerio = require("cheerio");
 

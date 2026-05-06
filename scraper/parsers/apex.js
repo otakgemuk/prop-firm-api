@@ -1,5 +1,8 @@
 // Apex Trader Funding parser
 // Two account types: EOD and Intraday
+// TODO: Currently returns hardcoded prices. Implement live price extraction.
+// See topstep.js for reference implementation.
+
 const { buildPlan, fetchRendered, parseMoney, extractConsistencyPercent } = require("../utils");
 const cheerio = require("cheerio");
 

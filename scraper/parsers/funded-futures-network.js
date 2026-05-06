@@ -1,5 +1,8 @@
 // Funded Futures Network parser
 // Standard/Express × OG/MAX across 5 account sizes
+// TODO: Currently returns hardcoded prices. Implement live price extraction.
+// See topstep.js for reference implementation.
+
 const { buildPlan, fetchRendered } = require("../utils");
 const cheerio = require("cheerio");
 

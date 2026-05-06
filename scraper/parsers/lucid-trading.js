@@ -1,5 +1,8 @@
 // Lucid Trading parser — LucidFlex, LucidPro, S2F types
 const { buildPlan, fetchRendered } = require("../utils");
+// TODO: Currently returns hardcoded prices. Implement live price extraction.
+// See topstep.js for reference implementation.
+
 const cheerio = require("cheerio");
 
 const FIRM = { firmId: "f05", firmName: "Lucid Trading", firmSlug: "lucid-trading", websiteUrl: "https://lucidtrading.com", trustpilot: 4.2 };

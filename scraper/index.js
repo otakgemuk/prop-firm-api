@@ -11,6 +11,7 @@
 //   node scraper/index.js --diff              # show diff vs DB (no write)
 
 const { upsertPlans, getExistingPlans, close } = require("./db");
+const { closeBrowser } = require("./utils");
 
 // ── Parser registry ────────────────────────────────────────
 const parsers = {
@@ -100,6 +101,8 @@ async function main() {
     process.exit(1);
   }
 
+  // Cleanup: close shared browser and DB
+  await closeBrowser();
   close();
 }
 
@@ -150,8 +153,9 @@ function printDiff(slug, existing, incoming) {
   if (changes === 0) console.log(`  [${slug}] No changes.`);
 }
 
-main().catch(err => {
+main().catch(async (err) => {
   console.error("Fatal:", err);
+  await closeBrowser();
   close();
   process.exit(1);
 });

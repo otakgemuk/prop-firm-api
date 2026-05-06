@@ -1,5 +1,8 @@
 // TradeDay parser — EOD, Intraday, Static types
 const { buildPlan, fetchRendered, extractConsistencyPercent } = require("../utils");
+// TODO: Currently returns hardcoded prices. Implement live price extraction.
+// See topstep.js for reference implementation.
+
 const cheerio = require("cheerio");
 
 const FIRM = { firmId: "f04", firmName: "TradeDay", firmSlug: "tradeday", websiteUrl: "https://tradeday.com", trustpilot: 4.6 };

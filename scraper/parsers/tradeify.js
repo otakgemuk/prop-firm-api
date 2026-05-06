@@ -1,5 +1,8 @@
 // Tradeify parser — Growth, Lightning, Select types
 const { buildPlan, fetchRendered, extractConsistencyPercent } = require("../utils");
+// TODO: Currently returns hardcoded prices. Implement live price extraction.
+// See topstep.js for reference implementation.
+
 const cheerio = require("cheerio");
 
 const FIRM = {

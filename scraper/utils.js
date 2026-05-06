@@ -4,11 +4,35 @@
 
 const { chromium } = require("playwright");
 
+// ── Shared browser instance (reused across parsers) ───────
+let _browser = null;
+let _browserLaunchPromise = null;
+
+async function getBrowser() {
+  if (_browser && _browser.isConnected()) return _browser;
+  if (_browserLaunchPromise) return _browserLaunchPromise;
+
+  _browserLaunchPromise = chromium.launch({ headless: true }).then(b => {
+    _browser = b;
+    _browserLaunchPromise = null;
+    b.on('disconnected', () => { _browser = null; });
+    return b;
+  });
+  return _browserLaunchPromise;
+}
+
+async function closeBrowser() {
+  if (_browser) {
+    await _browser.close().catch(() => {});
+    _browser = null;
+  }
+}
+
 // ── Fetch HTML with Playwright (handles JS-rendered sites) ─
 async function fetchRendered(url, { waitFor = 3000, selector = null } = {}) {
-  const browser = await chromium.launch({ headless: true });
+  const browser = await getBrowser();
+  const page = await browser.newPage();
   try {
-    const page = await browser.newPage();
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30000 });
     if (selector) {
       await page.waitForSelector(selector, { timeout: 10000 }).catch(() => {});
@@ -17,20 +41,27 @@ async function fetchRendered(url, { waitFor = 3000, selector = null } = {}) {
     }
     return await page.content();
   } finally {
-    await browser.close();
+    await page.close();
   }
 }
 
 // ── Fetch plain HTML (for static sites / help centers) ─────
-async function fetchStatic(url) {
-  const res = await fetch(url, {
-    headers: {
-      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    },
-  });
-  if (!res.ok) throw new Error(`HTTP ${res.status}: ${url}`);
-  return res.text();
+async function fetchStatic(url, { timeoutMs = 15000 } = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const res = await fetch(url, {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      },
+      signal: controller.signal,
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}: ${url}`);
+    return res.text();
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 // ── Build a normalized plan object ─────────────────────────
@@ -62,9 +93,9 @@ function buildPlan({
   consistencyEvalPct = null,
   consistencyFundedPct = null,
 }) {
-  const totalCost = Math.round(
-    (evalFee * (1 - discountPct / 100) + activationFee) * 100
-  ) / 100;
+  const discountedFee = Math.round(evalFee * (1 - discountPct / 100) * 100) / 100;
+  const totalCost = Math.round((discountedFee + activationFee) * 100) / 100;
+  const baseCost = Math.round((evalFee + activationFee) * 100) / 100;
 
   const plan = {
     firm_id: firmId,
@@ -88,6 +119,7 @@ function buildPlan({
     is_one_time: isOneTime ? 1 : 0,
     payout_frequency: payoutFrequency,
     total_cost_to_funded: totalCost,
+    base_cost_to_funded: baseCost,
     active_discount_pct: discountPct,
   };
 
@@ -103,8 +135,12 @@ function buildPlan({
 // ── Parse "$1,234" → 1234 ─────────────────────────────────
 function parseMoney(str) {
   if (!str) return 0;
-  const cleaned = str.replace(/[^0-9.]/g, "");
-  return parseFloat(cleaned) || 0;
+  // Remove currency symbols, commas, whitespace
+  const cleaned = str.replace(/[$€£,\s]/g, "");
+  // Handle ranges like "$50-$100" → take first value
+  const parts = cleaned.split(/[-–—]/);
+  const num = parseFloat(parts[0]);
+  return isNaN(num) ? 0 : num;
 }
 
 // ── Parse "100%" → 100, "80/20" → 80 ─────────────────────
@@ -115,14 +151,13 @@ function parsePercent(str) {
 }
 
 // ── Extract consistency percentage from page text ──────────
-// Looks for patterns like "40% consistency", "consistency rule: 40%", "40% Consistency Rule"
 function extractConsistencyPercent(text, context = "") {
-  // Try specific patterns
   const patterns = [
     new RegExp(`(\\d+)%\\s*consistency\\s*${context}`, "i"),
     new RegExp(`consistency\\s*${context}[^\\d]*(\\d+)%`, "i"),
     new RegExp(`consistency\\s*rule[^\\d]*(\\d+)%`, "i"),
     new RegExp(`(\\d+)%\\s*consistency\\s*rule`, "i"),
+    new RegExp(`consistency\\s*[:=]\\s*(\\d+)%`, "i"),
   ];
   for (const pat of patterns) {
     const m = text.match(pat);
@@ -131,4 +166,8 @@ function extractConsistencyPercent(text, context = "") {
   return null;
 }
 
-module.exports = { fetchRendered, fetchStatic, buildPlan, parseMoney, parsePercent, extractConsistencyPercent };
+module.exports = {
+  fetchRendered, fetchStatic, buildPlan,
+  parseMoney, parsePercent, extractConsistencyPercent,
+  getBrowser, closeBrowser,
+};

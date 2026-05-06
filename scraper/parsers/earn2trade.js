@@ -1,5 +1,8 @@
 // Earn2Trade parser — TCP and Gauntlet plans
 const { buildPlan, fetchRendered, extractConsistencyPercent } = require("../utils");
+// TODO: Currently returns hardcoded prices. Implement live price extraction.
+// See topstep.js for reference implementation.
+
 const cheerio = require("cheerio");
 
 const FIRM = { firmId: "f09", firmName: "Earn2Trade", firmSlug: "earn2trade", websiteUrl: "https://earn2trade.com", trustpilot: 4.2 };

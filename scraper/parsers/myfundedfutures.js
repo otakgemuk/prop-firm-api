@@ -1,4 +1,6 @@
 // MyFundedFutures parser — Builder, Flex, Pro, Rapid types
+// TODO: Currently returns hardcoded prices. Implement live price extraction.
+// See topstep.js for reference implementation.
 const { buildPlan, extractConsistencyPercent } = require("../utils");
 const cheerio = require("cheerio");
 

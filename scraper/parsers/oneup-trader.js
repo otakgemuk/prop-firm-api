@@ -1,5 +1,8 @@
 // OneUp Trader parser — single "OneUp" account type
 const { buildPlan, fetchRendered } = require("../utils");
+// TODO: Currently returns hardcoded prices. Implement live price extraction.
+// See topstep.js for reference implementation.
+
 const cheerio = require("cheerio");
 
 const FIRM = {
