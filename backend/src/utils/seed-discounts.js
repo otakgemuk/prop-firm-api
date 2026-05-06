@@ -38,8 +38,8 @@ const DISCOUNTS = [
   // { firm_slug: "phidias", code: "FUNDAMENTAL60", discount_pct: 60 },
   // { firm_slug: "phidias", code: "ALL25",         discount_pct: 25 },
 
-  // Purdia Capital — 25% off all accounts
-  { firm_slug: "purdia", code: "PURDIA25", discount_pct: 25 },
+  // Purdia Capital — no verified discount codes (previous code was for promo-priced data)
+  // { firm_slug: "purdia", code: "PURDIA25", discount_pct: 25 },
 ];
 
 // ── Upsert discount codes ────────────────────────────────────
