@@ -106,6 +106,7 @@ function buildPlan({
   plan.price_source = priceSource || 'scraper';
   plan.price_verified = priceVerified ? 1 : 0;
   plan.discount_pct = discountPct || 0;
+  plan.discount_amount = 0;  // Fixed $ discounts set in data, not parsers
 
   return plan;
 }

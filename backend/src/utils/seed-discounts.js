@@ -43,6 +43,9 @@ const DISCOUNTS = [
 
   // Purdia Capital — no verified discount codes (previous code was for promo-priced data)
   // { firm_slug: "purdia", code: "PURDIA25", discount_pct: 25 },
+
+  // MyFundedFutures — code MOT (per-plan discounts set directly in data)
+  { firm_slug: "myfundedfutures", code: "MOT", discount_pct: 10 },
 ];
 
 // ── Upsert discount codes ────────────────────────────────────

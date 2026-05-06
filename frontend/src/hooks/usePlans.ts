@@ -53,6 +53,8 @@ export interface PlanRow {
   price_source?: string;
   price_verified?: number;
   price_status?: string;
+  discount_pct?: number;
+  discount_amount?: number;
   // New fields for the updated column layout
   max_funded_accounts?: number;
   min_trading_days?: number;

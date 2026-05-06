@@ -58,7 +58,7 @@ const upsertPlan = db.prepare(`
     activation_fee, monthly_fee, profit_split, payout_frequency,
     first_payout_days, is_one_time,
     max_funded_accounts, min_trading_days, consistency_eval, consistency_funded,
-    retail_eval_fee, price_source, price_verified, discount_pct
+    retail_eval_fee, price_source, price_verified, discount_pct, discount_amount
   )
   SELECT
     $id, f.id, $account_size, $account_type, $label, $drawdown_type,
@@ -66,7 +66,7 @@ const upsertPlan = db.prepare(`
     $activation_fee, $monthly_fee, $profit_split, $payout_frequency,
     $first_payout_days, $is_one_time,
     $max_funded_accounts, $min_trading_days, $consistency_eval, $consistency_funded,
-    $retail_eval_fee, $price_source, $price_verified, $discount_pct
+    $retail_eval_fee, $price_source, $price_verified, $discount_pct, $discount_amount
   FROM firms f WHERE f.slug = $firm_slug
   ON CONFLICT(firm_id, account_size, account_type) DO UPDATE SET
     label             = excluded.label,
@@ -90,6 +90,7 @@ const upsertPlan = db.prepare(`
     price_source        = COALESCE(plans.price_source,        excluded.price_source),
     price_verified      = COALESCE(plans.price_verified,      excluded.price_verified),
     discount_pct        = COALESCE(plans.discount_pct,        excluded.discount_pct),
+    discount_amount     = COALESCE(plans.discount_amount,     excluded.discount_amount),
     updated_at          = datetime('now')
 `);
 
@@ -143,6 +144,7 @@ const importAll = db.transaction((rows) => {
       price_source:       p.price_source         ?? "scraper",
       price_verified:     p.price_verified       ?? 0,
       discount_pct:       p.discount_pct         ?? p.active_discount_pct ?? 0,
+      discount_amount:    p.discount_amount      ?? 0,
     });
     planCount++;
   }
