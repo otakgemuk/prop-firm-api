@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Apex",
+    "url": "https://apextraderfunding.com/pricing/",
+    "selector": null
+  },
+  {
+    "name": "Tradeify",
+    "url": "https://tradeify.co/pricing",
+    "selector": null
+  },
+  {
+    "name": "TakeProfitTrader",
+    "url": "https://takeprofittrader.com/pricing/",
+    "selector": null
+  },
+  {
+    "name": "Bulenox",
+    "url": "https://bulenox.com/pricing",
+    "selector": null
+  },
+  {
+    "name": "FFN",
+    "url": "https://www.fundedfuturesnetwork.com/pricing",
+    "selector": null
+  },
+  {
+    "name": "Lucid",
+    "url": "https://lucidtrading.com/pricing/",
+    "selector": null
+  },
+  {
+    "name": "MyFundedFutures",
+    "url": "https://myfundedfutures.com/pricing",
+    "selector": null
+  },
+  {
+    "name": "Legends",
+    "url": "https://thelegendstrading.com/pricing/",
+    "selector": null
+  },
+  {
+    "name": "TradeDay",
+    "url": "https://members.tradeday.com/membership-plans-pricing",
+    "selector": null
+  },
+  {
+    "name": "TheFuturesDesk",
+    "url": "https://www.thefuturesdesk.com/pricing/",
+    "selector": null
+  }
+]
