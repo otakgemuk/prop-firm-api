@@ -26,11 +26,7 @@ const KNOWN = [
   // Instant Funding — trailing drawdown, one-time
   { size: 50000,  type: "Instant",   eval: 349, act: 0, target: null,   dd: 1500, ddType: "trailing", minDays: 10, profitSplit: 90, isOneTime: true },
   { size: 100000, type: "Instant",   eval: 679, act: 0, target: null,   dd: 3000, ddType: "trailing", minDays: 10, profitSplit: 90, isOneTime: true },
-
-  // Combine — low-cost evaluation accounts
-  { size: 50000,  type: "Combine",   eval: 19,  act: 0, target: 3000,  dd: 2000, ddType: "trailing", minDays: 5, profitSplit: 90 },
-  { size: 100000, type: "Combine",   eval: 29,  act: 0, target: 6000,  dd: 3000, ddType: "trailing", minDays: 5, profitSplit: 90 },
-  { size: 150000, type: "Combine",   eval: 39,  act: 0, target: 9000,  dd: 4500, ddType: "trailing", minDays: 5, profitSplit: 90 },
+  { size: 150000, type: "Instant",   eval: 999, act: 0, target: null,   dd: 4500, ddType: "trailing", minDays: 10, profitSplit: 90, isOneTime: true },
 ];
 
 async function scrape() {
