@@ -45,7 +45,7 @@ async function scrape() {
     activationFee: cfg.act,
     isOneTime: false,
     payoutFrequency: null,
-    maxFundedAccounts: 1,
+    maxFundedAccounts: 5,
     minTradingDays: cfg.minDays,
     consistencyEvalPct: null,
     consistencyFundedPct: cfg.consFund || null,

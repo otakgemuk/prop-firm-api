@@ -72,7 +72,7 @@ async function scrape() {
         activationFee: eod.act,
         isOneTime: false,
         payoutFrequency: null,
-        maxFundedAccounts: maxFunded,
+        maxFundedAccounts: 20,
         minTradingDays: 1,
         consistencyEvalPct: null,
         consistencyFundedPct,

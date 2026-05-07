@@ -24,8 +24,8 @@ const KNOWN = [
   { size: 25000,  type: "Beginner",  eval: 119, act: 0, target: 2000,  dd: 2000, ddType: "trailing", minDays: 5, profitSplit: 70 },
 
   // Instant Funding — trailing drawdown, one-time
-  { size: 50000,  type: "Instant",   eval: 549, act: 0, target: null,   dd: 1500, ddType: "trailing", minDays: 10, profitSplit: 90, isOneTime: true },
-  { size: 100000, type: "Instant",   eval: 849, act: 0, target: null,   dd: 3000, ddType: "trailing", minDays: 10, profitSplit: 90, isOneTime: true },
+  { size: 50000,  type: "Instant",   eval: 549, discount: 20, act: 0, target: null,   dd: 1500, ddType: "trailing", minDays: 10, profitSplit: 90, isOneTime: true },
+  { size: 100000, type: "Instant",   eval: 849, discount: 20, act: 0, target: null,   dd: 3000, ddType: "trailing", minDays: 10, profitSplit: 90, isOneTime: true },
 ];
 
 async function scrape() {
@@ -46,7 +46,8 @@ async function scrape() {
     activationFee: cfg.act,
     isOneTime: cfg.isOneTime || false,
     payoutFrequency: null,
-    maxFundedAccounts: 1,
+    discountPct: cfg.discount || 0,
+      maxFundedAccounts: 1,
     minTradingDays: cfg.minDays,
     consistencyEvalPct: null,
     consistencyFundedPct: null,

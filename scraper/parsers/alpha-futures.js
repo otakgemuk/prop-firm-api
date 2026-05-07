@@ -47,6 +47,7 @@ async function scrape() {
       dailyLossLimit: null,
       profitTarget: cfg.target,
       profitSplit: null,
+      discountPct: cfg.type === "Zero" ? 10 : 25,
       evalFee: cfg.eval,
       activationFee: cfg.act,
       isOneTime: false,
