@@ -73,7 +73,7 @@ async function scrape() {
       activationFee: 0,
       isOneTime: false,
       payoutFrequency: "biweekly",
-      discountPct: 0,
+      discountPct: 50,
       maxFundedAccounts: 10,
       minTradingDays: cfg.minDays,
       consistencyEvalPct: cfg.consEval,

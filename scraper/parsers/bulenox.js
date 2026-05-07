@@ -1,5 +1,5 @@
 // Bulenox parser
-// Two account types: Option 1 (intraday) and Option 2 (EOD)
+// Two account types: Option 1 (intraday, 89% discount) and Option 2 (EOD, 45% discount)
 const { buildPlan, fetchRendered, extractConsistencyPercent } = require("../utils");
 const cheerio = require("cheerio");
 
@@ -40,7 +40,7 @@ async function scrape() {
   for (const size of SIZES) {
     const label = LABELS[size];
 
-    // Option 1 — intraday
+    // Option 1 — intraday, 89% discount
     const opt1 = KNOWN_OPT1[size];
     if (opt1) {
       plans.push(buildPlan({
@@ -55,17 +55,21 @@ async function scrape() {
         profitTarget: TARGETS[size],
         profitSplit: null,
         evalFee: opt1.eval,
+        retailEvalFee: opt1.eval,
         activationFee: opt1.act,
         isOneTime: false,
         payoutFrequency: null,
+        discountPct: 89,
         maxFundedAccounts: 1,
         minTradingDays: 1,
         consistencyEvalPct: null,
         consistencyFundedPct,
+        priceSource: "manual",
+        priceVerified: true,
       }));
     }
 
-    // Option 2 — EOD
+    // Option 2 — EOD, 45% discount
     const opt2 = KNOWN_OPT2[size];
     if (opt2) {
       plans.push(buildPlan({
@@ -80,13 +84,17 @@ async function scrape() {
         profitTarget: TARGETS[size],
         profitSplit: null,
         evalFee: opt2.eval,
+        retailEvalFee: opt2.eval,
         activationFee: opt2.act,
         isOneTime: false,
         payoutFrequency: null,
+        discountPct: 45,
         maxFundedAccounts: 1,
         minTradingDays: 1,
         consistencyEvalPct: null,
         consistencyFundedPct,
+        priceSource: "manual",
+        priceVerified: true,
       }));
     }
   }
