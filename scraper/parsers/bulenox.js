@@ -59,7 +59,9 @@ async function scrape() {
         activationFee: opt1.act,
         isOneTime: false,
         payoutFrequency: null,
-        discountPct: 89,
+        // No active discount — Option 1 / Option 2 are account types, not promos
+
+        discountPct: 0,
         maxFundedAccounts: 1,
         minTradingDays: 1,
         consistencyEvalPct: null,
@@ -88,7 +90,7 @@ async function scrape() {
         activationFee: opt2.act,
         isOneTime: false,
         payoutFrequency: null,
-        discountPct: 45,
+        discountPct: 0,
         maxFundedAccounts: 1,
         minTradingDays: 1,
         consistencyEvalPct: null,
