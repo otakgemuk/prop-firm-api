@@ -10,7 +10,7 @@ const fs       = require("fs");
 // ── Resolve DB path ─────────────────────────────────────────
 // Canonical location is the root data/ directory so both the
 // scraper and backend share the same file.
-const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, "../../../../data");
+const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, "../../../data");
 if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 
 const DB_PATH = process.env.DB_PATH || path.join(DATA_DIR, "propfirm.db");

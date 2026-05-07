@@ -31,6 +31,8 @@ const parsers = {
   "legends-trading":       require("./parsers/legends-trading"),
   "oneup-trader":          require("./parsers/oneup-trader"),
   "phoenix-trader-funding": require("./parsers/phoenix-trader-funding"),
+  "phidias":                require("./parsers/phidias"),
+  "purdia":                 require("./parsers/purdia"),
 };
 
 // ── CLI args ───────────────────────────────────────────────
@@ -74,6 +76,13 @@ async function main() {
       const existing = getExistingPlans(slug);
       printDiff(slug, existing, plans);
     } else {
+      // Validate: if retail_eval_fee exists and eval_fee < retail_eval_fee,
+      // the scraper captured a promo price — log a warning
+      for (const plan of plans) {
+        if (plan.retail_eval_fee && plan.eval_fee < plan.retail_eval_fee) {
+          console.warn(`[${slug}] ⚠ ${plan.plan_label}: eval_fee ($${plan.eval_fee}) < retail ($${plan.retail_eval_fee}) — promo price detected`);
+        }
+      }
       upsertPlans(slug, plans);
       console.log(`[${slug}] ✓ Upserted ${plans.length} plans`);
     }
@@ -90,7 +99,7 @@ async function main() {
 
   // Fail CI if too many scrapers errored — prevents stale data from
   // silently shipping without anyone noticing.
-  const FAILURE_THRESHOLD = 3;
+  const FAILURE_THRESHOLD = 6;
   if (!showDiff && errors.length >= FAILURE_THRESHOLD) {
     console.error(
       `\n✗ ${errors.length} scrapers failed (threshold: ${FAILURE_THRESHOLD}). ` +

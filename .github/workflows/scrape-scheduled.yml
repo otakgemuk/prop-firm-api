@@ -49,8 +49,9 @@ jobs:
         working-directory: scraper
         run: npm ci
 
-      - name: Install Playwright browsers (cached)
-        uses: microsoft/playwright-github-action@v1
+      - name: Install Playwright browsers
+        working-directory: scraper
+        run: npx playwright install --with-deps chromium
 
       - name: Migrate database schema
         working-directory: backend
@@ -63,6 +64,10 @@ jobs:
       - name: Run scraper
         working-directory: scraper
         run: node index.js
+
+      - name: Seed discount codes
+        working-directory: backend
+        run: node src/utils/seed-discounts.js
 
       - name: Export database to JSON
         working-directory: backend

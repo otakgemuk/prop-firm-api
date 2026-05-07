@@ -52,6 +52,11 @@ CREATE TABLE IF NOT EXISTS plans (
     consistency_eval    INTEGER,
     consistency_funded  INTEGER,
     notes               TEXT,
+    retail_eval_fee     REAL,                             -- Original retail price before any promo/discount
+    price_source        TEXT DEFAULT 'scraper',           -- 'scraper' | 'help_center' | 'manual' | 'verified'
+    price_verified      INTEGER DEFAULT 0,                -- 1 = manually confirmed retail
+    discount_pct        INTEGER DEFAULT 0,                -- Per-plan discount % (overrides firm-level)
+    discount_amount     REAL DEFAULT 0,                    -- Per-plan fixed $ discount (e.g. $40 off)
     is_active           INTEGER NOT NULL DEFAULT 1,
     created_at          TEXT NOT NULL DEFAULT (datetime('now')),
     updated_at          TEXT NOT NULL DEFAULT (datetime('now')),

@@ -12,7 +12,7 @@ const path     = require("path");
 const fs       = require("fs");
 
 // ── Paths ────────────────────────────────────────────────────
-const DATA_DIR   = process.env.DATA_DIR || path.join(__dirname, "../../../../data");
+const DATA_DIR   = process.env.DATA_DIR || path.join(__dirname, "../../../data");
 const DB_PATH    = process.env.DB_PATH  || path.join(DATA_DIR, "propfirm.db");
 const PLANS_PATH = path.join(DATA_DIR, "plans.json");
 
@@ -63,6 +63,13 @@ const rows = db.prepare(`
     p.min_trading_days,
     p.consistency_eval,
     p.consistency_funded,
+    -- price provenance fields
+    p.retail_eval_fee,
+    p.price_source,
+    p.price_verified,
+    -- discount: prefer plan-level over firm-level
+    COALESCE(NULLIF(p.discount_pct, 0), bd.discount_pct, 0) AS active_discount_pct,
+    COALESCE(p.discount_amount, 0)                          AS discount_amount,
     -- derived fields
     ROUND(
       p.eval_fee + p.activation_fee +
@@ -70,21 +77,27 @@ const rows = db.prepare(`
       2
     )                                                       AS base_cost_to_funded,
     ROUND(
-      p.eval_fee * (1 - COALESCE(bd.discount_pct, 0) / 100.0) +
+      p.eval_fee * (1 - COALESCE(NULLIF(p.discount_pct, 0), bd.discount_pct, 0) / 100.0)
+      - COALESCE(p.discount_amount, 0) +
       p.activation_fee +
       CASE WHEN p.is_one_time = 0 THEN p.monthly_fee * 3 ELSE 0 END,
       2
     )                                                       AS total_cost_to_funded,
-    COALESCE(bd.discount_pct, 0)                            AS active_discount_pct,
     -- validation fields
     CASE 
-      WHEN COALESCE(bd.discount_pct, 0) > 0 THEN 1
+      WHEN COALESCE(NULLIF(p.discount_pct, 0), bd.discount_pct, 0) > 0 THEN 1
       ELSE 0
     END                                                     AS has_discount,
     CASE 
       WHEN COALESCE(p.max_funded_accounts, 0) = 0 THEN 'not_specified'
       ELSE 'specified'
-    END                                                     AS max_funded_status
+    END                                                     AS max_funded_status,
+    -- Price validation: detect if eval_fee is actually a promo price
+    CASE 
+      WHEN p.retail_eval_fee IS NOT NULL AND p.retail_eval_fee > p.eval_fee 
+      THEN 'promo_price_detected'
+      ELSE 'ok'
+    END                                                     AS price_status
   FROM plans p
   JOIN firms f ON f.id = p.firm_id
   LEFT JOIN best_discount bd ON bd.firm_id = f.id
