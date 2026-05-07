@@ -5730,9 +5730,9 @@ export const STATIC_PLANS = [
     "is_one_time": 1,
     "retail_eval_fee": 88,
     "base_cost_to_funded": 88,
-    "total_cost_to_funded": 88,
-    "active_discount_pct": 0,
-    "has_discount": 0
+    "total_cost_to_funded": 44,
+    "active_discount_pct": 50,
+    "has_discount": 1
   },
   {
     "firm_id": "phidias",
@@ -5765,9 +5765,9 @@ export const STATIC_PLANS = [
     "is_one_time": 1,
     "retail_eval_fee": 277,
     "base_cost_to_funded": 277,
-    "total_cost_to_funded": 277,
-    "active_discount_pct": 0,
-    "has_discount": 0
+    "total_cost_to_funded": 138.5,
+    "active_discount_pct": 50,
+    "has_discount": 1
   },
   {
     "firm_id": "phidias",
@@ -5800,9 +5800,9 @@ export const STATIC_PLANS = [
     "is_one_time": 0,
     "retail_eval_fee": 164,
     "base_cost_to_funded": 164,
-    "total_cost_to_funded": 164,
-    "active_discount_pct": 0,
-    "has_discount": 0
+    "total_cost_to_funded": 65.6,
+    "active_discount_pct": 60,
+    "has_discount": 1
   },
   {
     "firm_id": "phidias",
@@ -5835,9 +5835,9 @@ export const STATIC_PLANS = [
     "is_one_time": 0,
     "retail_eval_fee": 273,
     "base_cost_to_funded": 273,
-    "total_cost_to_funded": 273,
-    "active_discount_pct": 0,
-    "has_discount": 0
+    "total_cost_to_funded": 109.2,
+    "active_discount_pct": 60,
+    "has_discount": 1
   },
   {
     "firm_id": "phidias",
@@ -5870,9 +5870,9 @@ export const STATIC_PLANS = [
     "is_one_time": 1,
     "retail_eval_fee": 580,
     "base_cost_to_funded": 580,
-    "total_cost_to_funded": 580,
-    "active_discount_pct": 0,
-    "has_discount": 0
+    "total_cost_to_funded": 116,
+    "active_discount_pct": 80,
+    "has_discount": 1
   },
   {
     "firm_id": "phidias",
@@ -5905,9 +5905,9 @@ export const STATIC_PLANS = [
     "is_one_time": 1,
     "retail_eval_fee": 723,
     "base_cost_to_funded": 723,
-    "total_cost_to_funded": 723,
-    "active_discount_pct": 0,
-    "has_discount": 0
+    "total_cost_to_funded": 144.6,
+    "active_discount_pct": 80,
+    "has_discount": 1
   },
   {
     "firm_id": "phidias",
@@ -5940,9 +5940,9 @@ export const STATIC_PLANS = [
     "is_one_time": 0,
     "retail_eval_fee": 329,
     "base_cost_to_funded": 329,
-    "total_cost_to_funded": 329,
-    "active_discount_pct": 0,
-    "has_discount": 0
+    "total_cost_to_funded": 131.6,
+    "active_discount_pct": 60,
+    "has_discount": 1
   },
   {
     "firm_id": "phidias",
@@ -5975,9 +5975,9 @@ export const STATIC_PLANS = [
     "is_one_time": 0,
     "retail_eval_fee": 411,
     "base_cost_to_funded": 411,
-    "total_cost_to_funded": 411,
-    "active_discount_pct": 0,
-    "has_discount": 0
+    "total_cost_to_funded": 164.4,
+    "active_discount_pct": 60,
+    "has_discount": 1
   },
   {
     "firm_id": "phidias",
@@ -6010,9 +6010,9 @@ export const STATIC_PLANS = [
     "is_one_time": 0,
     "retail_eval_fee": 570,
     "base_cost_to_funded": 570,
-    "total_cost_to_funded": 570,
-    "active_discount_pct": 0,
-    "has_discount": 0
+    "total_cost_to_funded": 228,
+    "active_discount_pct": 60,
+    "has_discount": 1
   },
   {
     "firm_id": "phidias",
@@ -6045,9 +6045,9 @@ export const STATIC_PLANS = [
     "is_one_time": 1,
     "retail_eval_fee": 723,
     "base_cost_to_funded": 723,
-    "total_cost_to_funded": 723,
-    "active_discount_pct": 0,
-    "has_discount": 0
+    "total_cost_to_funded": 144.6,
+    "active_discount_pct": 80,
+    "has_discount": 1
   },
   {
     "firm_id": "phidias",
@@ -6080,9 +6080,9 @@ export const STATIC_PLANS = [
     "is_one_time": 1,
     "retail_eval_fee": 900,
     "base_cost_to_funded": 900,
-    "total_cost_to_funded": 900,
-    "active_discount_pct": 0,
-    "has_discount": 0
+    "total_cost_to_funded": 180,
+    "active_discount_pct": 80,
+    "has_discount": 1
   },
   {
     "firm_id": "phidias",
@@ -6115,8 +6115,8 @@ export const STATIC_PLANS = [
     "is_one_time": 1,
     "retail_eval_fee": 1123,
     "base_cost_to_funded": 1123,
-    "total_cost_to_funded": 1123,
-    "active_discount_pct": 0,
-    "has_discount": 0
+    "total_cost_to_funded": 224.6,
+    "active_discount_pct": 80,
+    "has_discount": 1
   }
 ];
