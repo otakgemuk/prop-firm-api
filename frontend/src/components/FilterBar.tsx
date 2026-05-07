@@ -21,6 +21,10 @@ interface FilterBarProps {
   selectedDrawdowns: string[];
   onDrawdownChange: (types: string[]) => void;
 
+  selectedFirms: string[];
+  onFirmChange: (firmIds: string[]) => void;
+  firms: { id: string; name: string }[];
+
   selectedPlatform: string;
   onPlatformChange: (platform: string) => void;
 
@@ -73,6 +77,9 @@ export default function FilterBar({
   onAccountTypeChange,
   selectedDrawdowns,
   onDrawdownChange,
+  selectedFirms,
+  onFirmChange,
+  firms,
   selectedPlatform,
   onPlatformChange,
   sortValue,
@@ -100,6 +107,18 @@ export default function FilterBar({
       ? selectedDrawdowns.filter((d) => d !== value)
       : [...selectedDrawdowns, value];
     onDrawdownChange(next);
+  };
+
+  // Firm is multi-select
+  const toggleFirm = (value: string) => {
+    if (value === "") {
+      onFirmChange([]);
+      return;
+    }
+    const next = selectedFirms.includes(value)
+      ? selectedFirms.filter((f) => f !== value)
+      : [...selectedFirms, value];
+    onFirmChange(next);
   };
 
   return (
@@ -186,7 +205,42 @@ export default function FilterBar({
         </div>
       </div>
 
-      {/* Row 2: Platform + Sort */}
+      {/* Row 2: Firm filter */}
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 shrink-0">
+          Firm
+        </span>
+        <div className="flex flex-wrap gap-1.5">
+          <button
+            onClick={() => onFirmChange([])}
+            className={`rounded-full px-3 py-1 text-xs font-medium transition
+              ${selectedFirms.length === 0
+                ? "bg-brand-500 text-white shadow-sm"
+                : "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-gray-200"
+              }`}
+          >
+            All
+          </button>
+          {firms.map((firm) => {
+            const active = selectedFirms.includes(firm.id);
+            return (
+              <button
+                key={firm.id}
+                onClick={() => toggleFirm(firm.id)}
+                className={`rounded-full px-3 py-1 text-xs font-medium transition
+                  ${active
+                    ? "bg-brand-500 text-white shadow-sm"
+                    : "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-gray-200"
+                  }`}
+              >
+                {firm.name}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Row 3: Platform + Sort */}
       <div className="flex flex-wrap items-center gap-6">
         <PillGroup
           label="Platform"

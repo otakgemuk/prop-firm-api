@@ -13,6 +13,7 @@ export interface PlanFilters {
   accountSize?: number;
   accountType?: string[];
   drawdownType?: string[];
+  firmIds?: string[];
   platform?: string;
   search?: string;
   sort?: string;
@@ -138,6 +139,12 @@ export function usePlans(filters: PlanFilters) {
       rows = rows.filter((r) => set.has(r.drawdown_type));
     }
 
+    // ── Filter: firm IDs ───────────────────────────────────
+    if (filters.firmIds?.length) {
+      const set = new Set(filters.firmIds);
+      rows = rows.filter((r) => set.has(r.firm_id));
+    }
+
     // ── Filter: global search ──────────────────────────────
     if (filters.search) {
       const q = filters.search.toLowerCase();
@@ -182,11 +189,23 @@ export function usePlans(filters: PlanFilters) {
     drawdownKey,
     filters.platform,
     filters.search,
+    filters.firmIds?.slice().sort().join(",") ?? "",
     filters.sort,
     filters.order,
     filters.page,
     filters.limit,
   ]);
 
-  return { data, pagination, isLoading, error };
+  // Extract unique firms for filter UI
+  const firms = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const p of allPlans) {
+      if (!map.has(p.firm_id)) map.set(p.firm_id, p.firm_name);
+    }
+    return Array.from(map, ([id, name]) => ({ id, name })).sort((a, b) =>
+      a.name.localeCompare(b.name)
+    );
+  }, [allPlans]);
+
+  return { data, pagination, isLoading, error, firms };
 }

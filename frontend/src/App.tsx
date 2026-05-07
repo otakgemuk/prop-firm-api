@@ -18,6 +18,7 @@ export default function App() {
   const [accountSize, setAccountSize]   = useState(0);
   const [accountTypes, setAccountTypes] = useState<string[]>([]);
   const [drawdowns, setDrawdowns]       = useState<string[]>([]);
+  const [firmIds, setFirmIds]           = useState<string[]>([]);
   const [platform, setPlatform]         = useState("");
   const [search, setSearch]             = useState("");
   const [sortValue, setSortValue]       = useState("total_cost:asc");
@@ -31,6 +32,7 @@ export default function App() {
     accountSize:  accountSize || undefined,
     accountType:  accountTypes.length ? accountTypes : undefined,
     drawdownType: drawdowns.length ? drawdowns : undefined,
+    firmIds:      firmIds.length ? firmIds : undefined,
     platform:     platform || undefined,
     search:       search || undefined,
     sort,
@@ -39,7 +41,7 @@ export default function App() {
     limit: 100,
   };
 
-  const { data, pagination, isLoading, error } = usePlans(filters);
+  const { data, pagination, isLoading, error, firms } = usePlans(filters);
 
   // ── Sync table column sorting → filter state ───────────
   const handleSortingChange = useCallback((sorting: SortingState) => {
@@ -131,6 +133,9 @@ export default function App() {
           onAccountTypeChange={(types) => { setAccountTypes(types); setPage(1); }}
           selectedDrawdowns={drawdowns}
           onDrawdownChange={(types) => { setDrawdowns(types); setPage(1); }}
+          selectedFirms={firmIds}
+          onFirmChange={(ids) => { setFirmIds(ids); setPage(1); }}
+          firms={firms}
           selectedPlatform={platform}
           onPlatformChange={(p) => { setPlatform(p); setPage(1); }}
           sortValue={sortValue}
