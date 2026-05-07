@@ -5759,15 +5759,15 @@ export const STATIC_PLANS = [
     "drawdown_amount": 500,
     "daily_loss_limit": null,
     "profit_target": 1500,
-    "eval_fee": 277,
+    "eval_fee": 55,
     "activation_fee": 0,
     "monthly_fee": 0,
     "is_one_time": 1,
-    "retail_eval_fee": 277,
-    "base_cost_to_funded": 277,
-    "active_discount_pct": 80,
-    "has_discount": 1,
-    "total_cost_to_funded": 221.6
+    "retail_eval_fee": 55,
+    "base_cost_to_funded": 55,
+    "active_discount_pct": 0,
+    "has_discount": 0,
+    "total_cost_to_funded": 55
   },
   {
     "firm_id": "phidias",
