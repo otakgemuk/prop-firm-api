@@ -16,7 +16,6 @@ const { upsertPlans, getExistingPlans, close } = require("./db");
 const parsers = {
   "topstep":              require("./parsers/topstep"),
   "apex-trader-funding":  require("./parsers/apex"),
-  "myfundedfutures":      require("./parsers/myfundedfutures"),
   "tradeday":             require("./parsers/tradeday"),
   "lucid-trading":        require("./parsers/lucid-trading"),
   "take-profit-trader":   require("./parsers/take-profit-trader"),
