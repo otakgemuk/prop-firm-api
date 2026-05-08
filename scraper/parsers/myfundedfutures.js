@@ -32,7 +32,7 @@ const KNOWN = [
 async function scrape() {
   try {
     const res = await fetch("https://help.myfundedfutures.com/en/articles/11802636-traders-evaluation-simplified", {
-      headers: { "User-Agent": "Mozilla/5.0 (compatible; PropFirmScraper/1.0)" },
+      headers: { "User-Agent": "PropFirmScraper/1.0 (+https://github.com/otakgemuk/prop-firm-api)" },
     });
     if (res.ok) {
       const html = await res.text();

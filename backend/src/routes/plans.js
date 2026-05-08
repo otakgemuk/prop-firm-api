@@ -9,6 +9,23 @@ const { db } = require("../utils/db");
 
 const router = Router();
 
+// ── Input validation helpers ───────────────────────────────
+const MAX_SEARCH_LENGTH = 100;
+const MAX_PARAM_LENGTH = 50;
+const ALLOWED_DRAWDOWN_TYPES = new Set(["EOD", "trailing", "static", "intraday", "end_of_day", "eod"]);
+const ALLOWED_SORT_ORDER = new Set(["asc", "desc"]);
+
+function sanitizeString(val, maxLen = MAX_PARAM_LENGTH) {
+  if (!val || typeof val !== "string") return null;
+  return val.slice(0, maxLen).replace(/[^\w\s\-.,]/g, "");
+}
+
+function sanitizeInt(val) {
+  const n = parseInt(val, 10);
+  return Number.isFinite(n) && n >= 0 && n <= 10_000_000 ? n : null;
+}
+
+
 const SORT_COLUMNS = {
   account_size:      "p.account_size",
   eval_fee:          "p.eval_fee",
@@ -81,8 +98,11 @@ router.get("/", (req, res, next) => {
     }
 
     if (search) {
-      conditions.push("(f.name LIKE $search OR p.label LIKE $search)");
-      params.search = `%${search}%`;
+      const sanitizedSearch = sanitizeString(search, MAX_SEARCH_LENGTH);
+      if (sanitizedSearch) {
+        conditions.push("(f.name LIKE $search OR p.label LIKE $search)");
+        params.search = `%${sanitizedSearch}%`;
+      }
     }
 
     const whereClause = conditions.length

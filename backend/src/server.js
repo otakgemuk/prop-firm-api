@@ -2,14 +2,15 @@
 //
 // Environment variables (via .env or process.env):
 //   NODE_ENV       — 'production' or 'development' (production requires CORS_ORIGIN)
-//   CORS_ORIGIN    — Allowed frontend origin (required in production; dev defaults to "*")
+//   CORS_ORIGIN    — Allowed frontend origin (required in production; dev defaults to localhost)
 //   PORT           — HTTP port (default 3001)
 //   DB_PATH        — SQLite database file path (default ../data/propfirm.db)
 
 require("dotenv").config();
 
-const express = require("express");
-const cors    = require("cors");
+const express    = require("express");
+const cors       = require("cors");
+const rateLimit  = require("express-rate-limit");
 
 const plansRouter = require("./routes/plans");
 
@@ -30,10 +31,24 @@ if (isProduction && !corsOrigin) {
   process.exit(1);
 }
 
+// Default to localhost in dev, never "*"
+const allowedOrigin = corsOrigin || "http://localhost:5173";
+
 // ── Middleware ──────────────────────────────────────────────
-app.use(cors({ origin: corsOrigin || "*" }));
-console.log(`[cors] origin=${corsOrigin || "*"} (production=${isProduction})`);
-app.use(express.json());
+app.use(cors({ origin: allowedOrigin }));
+console.log(`[cors] origin=${allowedOrigin} (production=${isProduction})`);
+
+// Rate limiting — 100 requests per minute per IP
+const apiLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 100,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: "Too many requests, please try again later." },
+});
+app.use("/api/", apiLimiter);
+
+app.use(express.json({ limit: "100kb" }));
 
 // ── Health check ───────────────────────────────────────────
 app.get("/api/health", (_req, res) => res.json({ status: "ok" }));

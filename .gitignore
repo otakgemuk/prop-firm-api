@@ -4,10 +4,23 @@ node_modules/
 *.db-wal
 *.tsbuildinfo
 .env
+.env.*
+!.env.example
+
+# Build output — CI rebuilds on every push
 dist/
+frontend/dist/
 
 # Backend data directory (SQLite DBs, etc.)
 backend/data/
 
 # Frontend generated files — produced by build, never commit
 frontend/src/lib/staticData.ts
+
+# Backup files
+*.backup
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -48,6 +48,10 @@ jobs:
         working-directory: scraper
         run: npm ci
 
+      - name: Run scraper tests
+        working-directory: scraper
+        run: npm test
+
       - name: Install Playwright browsers
         working-directory: scraper
         run: npx playwright install --with-deps chromium

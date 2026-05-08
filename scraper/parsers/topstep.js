@@ -25,7 +25,7 @@ const ACTIVATION_FEE = 149;
 async function scrape() {
   try {
     const res = await fetch("https://help.topstep.com/en/articles/9208217-topstep-pricing", {
-      headers: { "User-Agent": "Mozilla/5.0 (compatible; PropFirmScraper/1.0)" },
+      headers: { "User-Agent": "PropFirmScraper/1.0 (+https://github.com/otakgemuk/prop-firm-api)" },
     });
     if (res.ok) {
       const html = await res.text();

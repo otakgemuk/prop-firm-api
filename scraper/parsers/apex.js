@@ -37,7 +37,7 @@ async function scrape() {
     html = await fetchRendered("https://apextraderfunding.com", { waitFor: 5000 });
   } catch (e) {
     const res = await fetch("https://apextraderfunding.com", {
-      headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" },
+      headers: { "User-Agent": "PropFirmScraper/1.0 (+https://github.com/otakgemuk/prop-firm-api)" },
     });
     html = await res.text();
   }
