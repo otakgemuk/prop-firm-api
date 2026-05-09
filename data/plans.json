@@ -6118,10 +6118,10 @@
     "consistency_funded": null,
     "base_cost_to_funded": 30,
     "total_cost_to_funded": 30,
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "active_discount_pct": 91,
+    "has_discount": 1,
     "max_funded_status": "specified",
-    "retail_eval_fee": 30,
+    "retail_eval_fee": 330,
     "price_verified": 0,
     "price_status": "ok"
   },
