@@ -4587,15 +4587,15 @@
     "consistency_eval": 50,
     "consistency_funded": null,
     "base_cost_to_funded": 153,
-    "total_cost_to_funded": 91.8,
+    "total_cost_to_funded": 92,
     "active_discount_pct": 40,
     "has_discount": 1,
     "max_funded_status": "not_specified",
     "retail_eval_fee": 153,
     "price_verified": 1,
     "price_status": "ok",
-    "discount_pct": 10,
-    "discount_amount": 0
+    "discount_pct": 40,
+    "discount_amount": 61
   },
   {
     "firm_id": "myfundedfutures",
@@ -4630,8 +4630,8 @@
     "retail_eval_fee": 125,
     "price_verified": 1,
     "price_status": "ok",
-    "discount_pct": 0,
-    "discount_amount": 40
+    "discount_pct": 40,
+    "discount_amount": 50
   },
   {
     "firm_id": "myfundedfutures",
