@@ -1,12 +1,13 @@
 [
-  { "firm_slug": "take-profit-trader", "code": "SAVE40", "discount_pct": 40 },
-  { "firm_slug": "legends-trading", "code": "APPRENTICE50", "discount_pct": 50 },
-  { "firm_slug": "legends-trading", "code": "ELITE20", "discount_pct": 20 },
-  { "firm_slug": "alpha-futures", "code": "ALPHA25", "discount_pct": 25 },
-  { "firm_slug": "e8-markets", "code": "SIG20", "discount_pct": 20 },
-  { "firm_slug": "e8-markets", "code": "E8ONE10", "discount_pct": 10 },
-  { "firm_slug": "phidias-propfirm", "code": "EVAL50", "discount_pct": 50 },
-  { "firm_slug": "phidias-propfirm", "code": "FUND60", "discount_pct": 60 },
-  { "firm_slug": "phidias-propfirm", "code": "OTP80", "discount_pct": 80 },
+  { "firm_slug": "apex-trader-funding", "code": "MIGHTYOX", "discount_pct": 90 },
+  { "firm_slug": "take-profit-trader", "code": "MOT", "discount_pct": 40 },
+  { "firm_slug": "legends-trading", "code": "MOT", "discount_pct": 50 },
+  { "firm_slug": "legends-trading", "code": "MOT", "discount_pct": 20 },
+  { "firm_slug": "alpha-futures", "code": "MOT", "discount_pct": 25 },
+  { "firm_slug": "e8-markets", "code": "MOT", "discount_pct": 20 },
+  { "firm_slug": "e8-markets", "code": "MOT", "discount_pct": 10 },
+  { "firm_slug": "phidias-propfirm", "code": "MOT", "discount_pct": 50 },
+  { "firm_slug": "phidias-propfirm", "code": "MOT", "discount_pct": 60 },
+  { "firm_slug": "phidias-propfirm", "code": "MOT", "discount_pct": 80 },
   { "firm_slug": "myfundedfutures", "code": "MOT", "discount_pct": 10 }
 ]

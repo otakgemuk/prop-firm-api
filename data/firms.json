@@ -48,5 +48,10 @@
     "name": "TheFuturesDesk",
     "url": "https://www.thefuturesdesk.com/pricing/",
     "selector": null
+  },
+  {
+    "name": "BluSky Trading",
+    "url": "https://blusky.pro",
+    "selector": null
   }
 ]
