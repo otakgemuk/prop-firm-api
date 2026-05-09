@@ -88,35 +88,18 @@ export default function App() {
       return sortOrder === "desc" ? -cmp : cmp;
     });
 
-    const grouped: Record<string, PlanRow[]> = {};
-    rows.forEach((p) => {
-      const key = p.firm_name;
-      if (!grouped[key]) grouped[key] = [];
-      grouped[key].push(p);
-    });
-
     let md = `# Prop Firm Plans\n\n`;
     md += `> Exported ${new Date().toISOString().slice(0, 10)} · ${rows.length} plans\n\n`;
 
-    Object.entries(grouped).forEach(([firm, plans]) => {
-      // Sort plans within each firm group
-      plans.sort((a, b) => {
-        const aVal = (a as any)[sortField] ?? 0;
-        const bVal = (b as any)[sortField] ?? 0;
-        const cmp = typeof aVal === "string" ? aVal.localeCompare(bVal) : aVal - bVal;
-        return sortOrder === "desc" ? -cmp : cmp;
-      });
-      md += `## ${firm}\n\n`;
-      md += `| Plan | Account Size | Drawdown Type | Drawdown | Profit Target | Eval Fee | Activation Fee | Discount | Total Cost |\n`;
-      md += `|------|-------------|---------------|----------|--------------|----------|----------------|----------|------------|\n`;
-      plans.forEach((p) => {
-        const dd = p.drawdown_amount ? `$${p.drawdown_amount.toLocaleString()}` : "—";
-        const pt = p.profit_target ? `$${p.profit_target.toLocaleString()}` : "None";
-        const disc = p.active_discount_pct > 0 ? `${p.active_discount_pct}%` : "—";
-        md += `| ${p.account_type || p.plan_label} | ${p.plan_label} | ${p.drawdown_type || "—"} | ${dd} | ${pt} | $${p.eval_fee.toLocaleString()} | $${p.activation_fee.toLocaleString()} | ${disc} | $${p.total_cost_to_funded.toLocaleString()} |\n`;
-      });
-      md += `\n`;
+    md += `| Firm | Plan | Account Size | Drawdown Type | Drawdown | Profit Target | Eval Fee | Activation Fee | Discount | Total Cost |\n`;
+    md += `|------|------|-------------|---------------|----------|--------------|----------|----------------|----------|------------|\n`;
+    rows.forEach((p) => {
+      const dd = p.drawdown_amount ? `$${p.drawdown_amount.toLocaleString()}` : "—";
+      const pt = p.profit_target ? `$${p.profit_target.toLocaleString()}` : "None";
+      const disc = p.active_discount_pct > 0 ? `${p.active_discount_pct}%` : "—";
+      md += `| ${p.firm_name} | ${p.account_type || p.plan_label} | ${p.plan_label} | ${p.drawdown_type || "—"} | ${dd} | ${pt} | $${p.eval_fee.toLocaleString()} | $${p.activation_fee.toLocaleString()} | ${disc} | $${p.total_cost_to_funded.toLocaleString()} |\n`;
     });
+    md += `\n`;
 
     const blob = new Blob([md], { type: "text/markdown" });
     const url = URL.createObjectURL(blob);
