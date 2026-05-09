@@ -15,12 +15,19 @@ function copyDataPlugin() {
         fs.copyFileSync(plansSrc, plansDest);
         console.log("[copy-data] plans.json → dist/plans.json");
       }
-      // Copy logo.png from public/
-      const logoSrc = resolve(__dirname, "public/logo.png");
-      const logoDest = resolve(__dirname, "dist/logo.png");
+      // Copy logo.webp from public/
+      const logoSrc = resolve(__dirname, "public/logo.webp");
+      const logoDest = resolve(__dirname, "dist/logo.webp");
       if (fs.existsSync(logoSrc)) {
         fs.copyFileSync(logoSrc, logoDest);
-        console.log("[copy-data] logo.png → dist/logo.png");
+        console.log("[copy-data] logo.webp → dist/logo.webp");
+      }
+      // Copy MightyOx_Logo_Gold.webp from public/
+      const oxSrc = resolve(__dirname, "public/MightyOx_Logo_Gold.webp");
+      const oxDest = resolve(__dirname, "dist/MightyOx_Logo_Gold.webp");
+      if (fs.existsSync(oxSrc)) {
+        fs.copyFileSync(oxSrc, oxDest);
+        console.log("[copy-data] MightyOx_Logo_Gold.webp → dist/MightyOx_Logo_Gold.webp");
       }
     },
   };
