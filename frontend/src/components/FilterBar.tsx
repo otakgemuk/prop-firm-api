@@ -193,18 +193,6 @@ export default function FilterBar({
   sortValue,
   onSortChange,
 }: FilterBarProps) {
-  // Account type and drawdown are multi-select
-  const toggleAccountType = (value: string) => {
-    if (value === "") {
-      onAccountTypeChange([]);
-      return;
-    }
-    const next = selectedAccountTypes.includes(value)
-      ? selectedAccountTypes.filter((t) => t !== value)
-      : [...selectedAccountTypes, value];
-    onAccountTypeChange(next);
-  };
-
   // Drawdown is multi-select, others are single-select
   const toggleDrawdown = (value: string) => {
     if (value === "") {
@@ -242,34 +230,35 @@ export default function FilterBar({
           <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 shrink-0">
             Type
           </span>
-          <div className="flex flex-wrap gap-1.5">
-            <button
-              onClick={() => onAccountTypeChange([])}
-              className={`rounded-full px-3 py-1 text-xs font-medium transition
-                ${selectedAccountTypes.length === 0
-                  ? "bg-brand-500 text-white shadow-sm"
-                  : "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-gray-200"
-                }`}
+          <div className="relative">
+            <select
+              multiple
+              value={selectedAccountTypes}
+              onChange={(e) => {
+                const selected = Array.from(e.target.selectedOptions, (o) => o.value);
+                onAccountTypeChange(selected);
+              }}
+              className="rounded-lg border border-white/10 bg-gray-800 px-3 py-2 text-xs text-white
+                         focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400
+                         min-w-[140px] max-h-40 overflow-y-auto"
             >
-              All
-            </button>
-            {ACCOUNT_TYPE_OPTIONS.map((opt) => {
-              const active = selectedAccountTypes.includes(opt.value);
-              return (
-                <button
-                  key={opt.value}
-                  onClick={() => toggleAccountType(opt.value)}
-                  className={`rounded-full px-3 py-1 text-xs font-medium transition
-                    ${active
-                      ? "bg-brand-500 text-white shadow-sm"
-                      : "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-gray-200"
-                    }`}
-                >
-                  {opt.label}
-                </button>
-              );
-            })}
+              {ACCOUNT_TYPE_OPTIONS.map((opt) => (
+                <option key={opt.value} value={opt.value}>{opt.label}</option>
+              ))}
+            </select>
+            {selectedAccountTypes.length > 0 && (
+              <button
+                onClick={() => onAccountTypeChange([])}
+                className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center
+                           rounded-full bg-red-500 text-[10px] text-white hover:bg-red-400"
+              >
+                ✕
+              </button>
+            )}
           </div>
+          {selectedAccountTypes.length > 0 && (
+            <span className="text-xs text-brand-300">{selectedAccountTypes.length} selected</span>
+          )}
         </div>
 
         <div className="h-5 w-px bg-white/10 hidden md:block" />
