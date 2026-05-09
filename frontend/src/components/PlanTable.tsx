@@ -141,12 +141,15 @@ const columns: ColumnDef<PlanRow, any>[] = [
     size: 120,
   }),
 
-  // 5. Total cost to funded (from data, includes discount)
-  columnHelper.accessor("total_cost_to_funded", {
+  // 5. Total = Setup Fee + After Discount
+  columnHelper.accessor("eval_fee", {
     header: "Total",
     cell: (info) => {
-      const total = info.getValue();
+      const evalFee = info.getValue();
+      const act = info.row.original.activation_fee;
       const pct = info.row.original.active_discount_pct;
+      const afterDiscount = pct > 0 ? evalFee * (1 - pct / 100) : evalFee;
+      const total = act + afterDiscount;
       if (pct > 0) {
         return (
           <span className="font-bold text-brand-300">
