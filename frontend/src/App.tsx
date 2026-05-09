@@ -42,22 +42,52 @@ export default function App() {
   const { data, pagination, isLoading, error, firms } = usePlans(filters);
 
   // ── Export to Markdown ─────────────────────────────────
-  // Fetches plans.json directly to guarantee ALL plans are included,
-  // regardless of active filters or pagination.
+  // Fetches plans.json directly and applies current filters (no pagination).
+  // When no filters are active, exports ALL plans.
   const exportMarkdown = useCallback(async () => {
     const res = await fetch("./plans.json");
     if (!res.ok) return alert("Failed to load plans data");
-    const allPlansRaw: PlanRow[] = await res.json();
+    let rows: PlanRow[] = await res.json();
+
+    // Apply the same filters as usePlans (but no pagination)
+    if (accountSize && accountSize > 0) {
+      if (accountSize === 250000) {
+        rows = rows.filter((r) => r.account_size >= 250000);
+      } else {
+        rows = rows.filter((r) => r.account_size === accountSize);
+      }
+    }
+    if (accountTypes.length) {
+      const set = new Set(accountTypes);
+      rows = rows.filter((r) => set.has(r.account_type || "Standard"));
+    }
+    if (drawdowns.length) {
+      const set = new Set(drawdowns);
+      rows = rows.filter((r) => set.has(r.drawdown_type));
+    }
+    if (firmIds.length) {
+      const set = new Set(firmIds);
+      rows = rows.filter((r) => set.has(r.firm_id));
+    }
+    if (search) {
+      const q = search.toLowerCase();
+      rows = rows.filter(
+        (r) =>
+          r.firm_name.toLowerCase().includes(q) ||
+          r.plan_label.toLowerCase().includes(q) ||
+          r.firm_slug.toLowerCase().includes(q)
+      );
+    }
 
     const grouped: Record<string, PlanRow[]> = {};
-    allPlansRaw.forEach((p) => {
+    rows.forEach((p) => {
       const key = p.firm_name;
       if (!grouped[key]) grouped[key] = [];
       grouped[key].push(p);
     });
 
     let md = `# Prop Firm Plans\n\n`;
-    md += `> Exported ${new Date().toISOString().slice(0, 10)} · ${allPlansRaw.length} plans\n\n`;
+    md += `> Exported ${new Date().toISOString().slice(0, 10)} · ${rows.length} plans\n\n`;
 
     Object.entries(grouped).forEach(([firm, plans]) => {
       md += `## ${firm}\n\n`;
@@ -79,7 +109,7 @@ export default function App() {
     a.download = `prop-firm-plans-${new Date().toISOString().slice(0, 10)}.md`;
     a.click();
     URL.revokeObjectURL(url);
-  }, []);
+  }, [accountSize, accountTypes, drawdowns, firmIds, search]);
 
   // ── Sync table column sorting → filter state ───────────
   const handleSortingChange = useCallback((sorting: SortingState) => {
