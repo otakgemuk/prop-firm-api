@@ -1,13 +1,62 @@
 [
-  { "firm_slug": "apex-trader-funding", "code": "MIGHTYOX", "discount_pct": 90 },
-  { "firm_slug": "take-profit-trader", "code": "MOT", "discount_pct": 40 },
-  { "firm_slug": "legends-trading", "code": "MOT", "discount_pct": 50 },
-  { "firm_slug": "legends-trading", "code": "MOT", "discount_pct": 20 },
-  { "firm_slug": "alpha-futures", "code": "MOT", "discount_pct": 25 },
-  { "firm_slug": "e8-markets", "code": "MOT", "discount_pct": 20 },
-  { "firm_slug": "e8-markets", "code": "MOT", "discount_pct": 10 },
-  { "firm_slug": "phidias-propfirm", "code": "MOT", "discount_pct": 50 },
-  { "firm_slug": "phidias-propfirm", "code": "MOT", "discount_pct": 60 },
-  { "firm_slug": "phidias-propfirm", "code": "MOT", "discount_pct": 80 },
-  { "firm_slug": "myfundedfutures", "code": "MOT", "discount_pct": 10 }
+  {
+    "firm_slug": "apex-trader-funding",
+    "code": "MIGHTYOX",
+    "discount_pct": 90
+  },
+  {
+    "firm_slug": "take-profit-trader",
+    "code": "MOT",
+    "discount_pct": 40
+  },
+  {
+    "firm_slug": "legends-trading",
+    "code": "MOT",
+    "discount_pct": 50
+  },
+  {
+    "firm_slug": "legends-trading",
+    "code": "MOT",
+    "discount_pct": 20
+  },
+  {
+    "firm_slug": "alpha-futures",
+    "code": "MOT",
+    "discount_pct": 25
+  },
+  {
+    "firm_slug": "e8-markets",
+    "code": "MOT",
+    "discount_pct": 20
+  },
+  {
+    "firm_slug": "e8-markets",
+    "code": "MOT",
+    "discount_pct": 10
+  },
+  {
+    "firm_slug": "phidias-propfirm",
+    "code": "MOT",
+    "discount_pct": 50
+  },
+  {
+    "firm_slug": "phidias-propfirm",
+    "code": "MOT",
+    "discount_pct": 60
+  },
+  {
+    "firm_slug": "phidias-propfirm",
+    "code": "MOT",
+    "discount_pct": 80
+  },
+  {
+    "firm_slug": "myfundedfutures",
+    "code": "MOT",
+    "discount_pct": 10
+  },
+  {
+    "firm_slug": "blusky-pro",
+    "code": "MOT",
+    "discount_pct": 30
+  }
 ]

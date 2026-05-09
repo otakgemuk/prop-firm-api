@@ -6573,7 +6573,7 @@
     "daily_loss_limit": null,
     "profit_target": 1500,
     "profit_split": null,
-    "eval_fee": 150,
+    "eval_fee": 105,
     "activation_fee": 0,
     "is_one_time": 0,
     "min_trading_days": null,
@@ -6591,11 +6591,11 @@
     "price_verified": 1,
     "price_status": "ok",
     "max_funded_status": "specified",
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "active_discount_pct": 30,
+    "has_discount": 1,
     "retail_eval_fee": 150,
-    "base_cost_to_funded": 150,
-    "total_cost_to_funded": 150
+    "base_cost_to_funded": 105,
+    "total_cost_to_funded": 105
   },
   {
     "plan_id": "blusky-pro-50k-propel",
@@ -6607,7 +6607,7 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 160,
+    "eval_fee": 112,
     "activation_fee": 0,
     "is_one_time": 0,
     "min_trading_days": null,
@@ -6625,11 +6625,11 @@
     "price_verified": 1,
     "price_status": "ok",
     "max_funded_status": "specified",
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "active_discount_pct": 30,
+    "has_discount": 1,
     "retail_eval_fee": 160,
-    "base_cost_to_funded": 160,
-    "total_cost_to_funded": 160
+    "base_cost_to_funded": 112,
+    "total_cost_to_funded": 112
   },
   {
     "plan_id": "blusky-pro-100k-propel",
@@ -6641,7 +6641,7 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 220,
+    "eval_fee": 154,
     "activation_fee": 0,
     "is_one_time": 0,
     "min_trading_days": null,
@@ -6659,11 +6659,11 @@
     "price_verified": 1,
     "price_status": "ok",
     "max_funded_status": "specified",
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "active_discount_pct": 30,
+    "has_discount": 1,
     "retail_eval_fee": 220,
-    "base_cost_to_funded": 220,
-    "total_cost_to_funded": 220
+    "base_cost_to_funded": 154,
+    "total_cost_to_funded": 154
   },
   {
     "plan_id": "blusky-pro-150k-propel-static",
@@ -6675,7 +6675,7 @@
     "daily_loss_limit": null,
     "profit_target": 3000,
     "profit_split": null,
-    "eval_fee": 170,
+    "eval_fee": 119,
     "activation_fee": 0,
     "is_one_time": 0,
     "min_trading_days": null,
@@ -6693,11 +6693,11 @@
     "price_verified": 1,
     "price_status": "ok",
     "max_funded_status": "specified",
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "active_discount_pct": 30,
+    "has_discount": 1,
     "retail_eval_fee": 170,
-    "base_cost_to_funded": 170,
-    "total_cost_to_funded": 170
+    "base_cost_to_funded": 119,
+    "total_cost_to_funded": 119
   },
   {
     "plan_id": "blusky-pro-200k-propel-static",
@@ -6709,7 +6709,7 @@
     "daily_loss_limit": null,
     "profit_target": 6000,
     "profit_split": null,
-    "eval_fee": 270,
+    "eval_fee": 189,
     "activation_fee": 0,
     "is_one_time": 0,
     "min_trading_days": null,
@@ -6727,11 +6727,11 @@
     "price_verified": 1,
     "price_status": "ok",
     "max_funded_status": "specified",
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "active_discount_pct": 30,
+    "has_discount": 1,
     "retail_eval_fee": 270,
-    "base_cost_to_funded": 270,
-    "total_cost_to_funded": 270
+    "base_cost_to_funded": 189,
+    "total_cost_to_funded": 189
   },
   {
     "plan_id": "blusky-pro-300k-propel-static",
@@ -6743,7 +6743,7 @@
     "daily_loss_limit": null,
     "profit_target": 20000,
     "profit_split": null,
-    "eval_fee": 320,
+    "eval_fee": 224,
     "activation_fee": 0,
     "is_one_time": 0,
     "min_trading_days": null,
@@ -6761,11 +6761,11 @@
     "price_verified": 1,
     "price_status": "ok",
     "max_funded_status": "specified",
-    "active_discount_pct": 0,
-    "has_discount": 0,
+    "active_discount_pct": 30,
+    "has_discount": 1,
     "retail_eval_fee": 320,
-    "base_cost_to_funded": 320,
-    "total_cost_to_funded": 320
+    "base_cost_to_funded": 224,
+    "total_cost_to_funded": 224
   },
   {
     "plan_id": "blusky-pro-50k-orbit",
