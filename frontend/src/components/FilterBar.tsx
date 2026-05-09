@@ -180,6 +180,115 @@ function FirmDropdown({
   );
 }
 
+function TypeDropdown({
+  options,
+  selected,
+  onToggle,
+  onClear,
+}: {
+  options: { value: string; label: string }[];
+  selected: string[];
+  onToggle: (value: string) => void;
+  onClear: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const [search, setSearch] = useState("");
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  const filtered = search
+    ? options.filter((o) => o.label.toLowerCase().includes(search.toLowerCase()))
+    : options;
+
+  const label = selected.length === 0
+    ? "All Types"
+    : selected.length === 1
+      ? options.find((o) => o.value === selected[0])?.label ?? "1 selected"
+      : `${selected.length} types`;
+
+  return (
+    <div className="flex items-center gap-2">
+      <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 shrink-0">
+        Type
+      </span>
+      <div ref={ref} className="relative">
+        <button
+          onClick={() => setOpen(!open)}
+          className={`flex items-center gap-2 rounded-lg border px-3 py-1.5 text-xs font-medium transition
+            ${selected.length > 0
+              ? "border-brand-500/50 bg-brand-500/10 text-brand-300"
+              : "border-white/10 bg-gray-800 text-gray-400 hover:border-white/20 hover:text-gray-200"
+            }`}
+        >
+          {label}
+          <svg className={`h-3 w-3 transition-transform ${open ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        {open && (
+          <div className="absolute left-0 top-full z-50 mt-1 w-56 rounded-xl border border-white/10 bg-gray-900 shadow-2xl">
+            <div className="border-b border-white/10 p-2">
+              <input
+                type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search types…"
+                autoFocus
+                className="w-full rounded-lg bg-gray-800 px-3 py-1.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-brand-400"
+              />
+            </div>
+
+            {selected.length > 0 && (
+              <button
+                onClick={() => { onClear(); setSearch(""); }}
+                className="w-full border-b border-white/10 px-3 py-2 text-left text-xs text-red-400 hover:bg-white/5"
+              >
+                ✕ Clear selection
+              </button>
+            )}
+
+            <div className="max-h-64 overflow-y-auto py-1">
+              {filtered.length === 0 && (
+                <p className="px-3 py-2 text-xs text-gray-500">No types found</p>
+              )}
+              {filtered.map((opt) => {
+                const active = selected.includes(opt.value);
+                return (
+                  <button
+                    key={opt.value}
+                    onClick={() => onToggle(opt.value)}
+                    className={`flex w-full items-center gap-2 px-3 py-2 text-xs transition hover:bg-white/5
+                      ${active ? "text-brand-300" : "text-gray-300"}`}
+                  >
+                    <span className={`flex h-4 w-4 items-center justify-center rounded border
+                      ${active ? "border-brand-500 bg-brand-500" : "border-gray-600 bg-gray-800"}`}
+                    >
+                      {active && (
+                        <svg className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                        </svg>
+                      )}
+                    </span>
+                    {opt.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function FilterBar({
   selectedSize,
   onSizeChange,
@@ -226,40 +335,17 @@ export default function FilterBar({
 
         <div className="h-5 w-px bg-white/10 hidden md:block" />
 
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 shrink-0">
-            Type
-          </span>
-          <div className="relative">
-            <select
-              multiple
-              value={selectedAccountTypes}
-              onChange={(e) => {
-                const selected = Array.from(e.target.selectedOptions, (o) => o.value);
-                onAccountTypeChange(selected);
-              }}
-              className="rounded-lg border border-white/10 bg-gray-800 px-3 py-2 text-xs text-white
-                         focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400
-                         min-w-[140px] max-h-40 overflow-y-auto"
-            >
-              {ACCOUNT_TYPE_OPTIONS.map((opt) => (
-                <option key={opt.value} value={opt.value}>{opt.label}</option>
-              ))}
-            </select>
-            {selectedAccountTypes.length > 0 && (
-              <button
-                onClick={() => onAccountTypeChange([])}
-                className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center
-                           rounded-full bg-red-500 text-[10px] text-white hover:bg-red-400"
-              >
-                ✕
-              </button>
-            )}
-          </div>
-          {selectedAccountTypes.length > 0 && (
-            <span className="text-xs text-brand-300">{selectedAccountTypes.length} selected</span>
-          )}
-        </div>
+        <TypeDropdown
+          options={ACCOUNT_TYPE_OPTIONS}
+          selected={selectedAccountTypes}
+          onToggle={(value) => {
+            const next = selectedAccountTypes.includes(value)
+              ? selectedAccountTypes.filter((t) => t !== value)
+              : [...selectedAccountTypes, value];
+            onAccountTypeChange(next);
+          }}
+          onClear={() => onAccountTypeChange([])}
+        />
 
         <div className="h-5 w-px bg-white/10 hidden md:block" />
 
