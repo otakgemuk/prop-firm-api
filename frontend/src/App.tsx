@@ -58,7 +58,7 @@ export default function App() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
           <div className="flex items-center gap-3">
             {/* Ox logo */}
-            <img src="/MightyOx_Logo_Gold.png" alt="MightyOx" className="h-10 w-10 rounded-lg object-contain" />
+            <img src="/MightyOx_Logo_Gold.webp" alt="MightyOx" className="h-10 w-10 rounded-lg object-contain" />
             <div>
               <h1 className="text-2xl font-bold tracking-tight text-white">
                 Mighty<span className="text-brand-400">Ox</span> Trading
