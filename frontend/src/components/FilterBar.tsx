@@ -7,7 +7,6 @@ import {
   ACCOUNT_SIZES,
   ACCOUNT_TYPE_OPTIONS,
   DRAWDOWN_OPTIONS,
-  PLATFORM_OPTIONS,
   SORT_OPTIONS,
 } from "../lib/utils";
 import { useState, useRef, useEffect } from "react";
