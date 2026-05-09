@@ -71,23 +71,6 @@ There are **3 ways** to update pricing data in Funded Futures Network:
 
 5. **Wait for deployment** (1-2 minutes)
 
----
-
-## Method 3: Via Scraper (Automated)
-
-**Best for:** Keeping data in sync with live website
-
-The scraper automatically runs **daily at 6 AM UTC** and:
-- Fetches latest pricing from firm websites
-- Updates SQLite database
-- Exports to `data/plans.json`
-- Auto-deploys to GitHub Pages
-
-To trigger manually:
-```bash
-# This requires scraper dependencies and database setup
-node scraper/index.js --firm funded_futures_n
-```
 
 ---
 
