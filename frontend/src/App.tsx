@@ -79,6 +79,15 @@ export default function App() {
       );
     }
 
+    // Apply current sort order
+    const [sortField, sortOrder] = sortValue.split(":") as [string, "asc" | "desc"];
+    rows.sort((a, b) => {
+      const aVal = (a as any)[sortField] ?? 0;
+      const bVal = (b as any)[sortField] ?? 0;
+      const cmp = typeof aVal === "string" ? aVal.localeCompare(bVal) : aVal - bVal;
+      return sortOrder === "desc" ? -cmp : cmp;
+    });
+
     const grouped: Record<string, PlanRow[]> = {};
     rows.forEach((p) => {
       const key = p.firm_name;
@@ -90,6 +99,13 @@ export default function App() {
     md += `> Exported ${new Date().toISOString().slice(0, 10)} · ${rows.length} plans\n\n`;
 
     Object.entries(grouped).forEach(([firm, plans]) => {
+      // Sort plans within each firm group
+      plans.sort((a, b) => {
+        const aVal = (a as any)[sortField] ?? 0;
+        const bVal = (b as any)[sortField] ?? 0;
+        const cmp = typeof aVal === "string" ? aVal.localeCompare(bVal) : aVal - bVal;
+        return sortOrder === "desc" ? -cmp : cmp;
+      });
       md += `## ${firm}\n\n`;
       md += `| Plan | Account Size | Drawdown Type | Drawdown | Profit Target | Eval Fee | Activation Fee | Discount | Total Cost |\n`;
       md += `|------|-------------|---------------|----------|--------------|----------|----------------|----------|------------|\n`;
@@ -109,7 +125,7 @@ export default function App() {
     a.download = `prop-firm-plans-${new Date().toISOString().slice(0, 10)}.md`;
     a.click();
     URL.revokeObjectURL(url);
-  }, [accountSize, accountTypes, drawdowns, firmIds, search]);
+  }, [accountSize, accountTypes, drawdowns, firmIds, search, sortValue]);
 
   // ── Sync table column sorting → filter state ───────────
   const handleSortingChange = useCallback((sorting: SortingState) => {
