@@ -6472,7 +6472,7 @@
     "profit_target": 3000,
     "profit_split": null,
     "eval_fee": 59,
-    "activation_fee": 0,
+    "activation_fee": 99,
     "is_one_time": 0,
     "min_trading_days": null,
     "consistency_eval": 55,
@@ -6492,8 +6492,8 @@
     "active_discount_pct": 0,
     "has_discount": 0,
     "retail_eval_fee": 59,
-    "base_cost_to_funded": 59,
-    "total_cost_to_funded": 59
+    "base_cost_to_funded": 158,
+    "total_cost_to_funded": 158
   },
   {
     "plan_id": "blusky-pro-100k-launch",
@@ -6506,7 +6506,7 @@
     "profit_target": 6000,
     "profit_split": null,
     "eval_fee": 69,
-    "activation_fee": 0,
+    "activation_fee": 99,
     "is_one_time": 0,
     "min_trading_days": null,
     "consistency_eval": 55,
@@ -6526,8 +6526,8 @@
     "active_discount_pct": 0,
     "has_discount": 0,
     "retail_eval_fee": 69,
-    "base_cost_to_funded": 69,
-    "total_cost_to_funded": 69
+    "base_cost_to_funded": 168,
+    "total_cost_to_funded": 168
   },
   {
     "plan_id": "blusky-pro-200k-launch-static",
@@ -6540,7 +6540,7 @@
     "profit_target": 6000,
     "profit_split": null,
     "eval_fee": 79,
-    "activation_fee": 0,
+    "activation_fee": 99,
     "is_one_time": 0,
     "min_trading_days": null,
     "consistency_eval": 55,
@@ -6560,8 +6560,8 @@
     "active_discount_pct": 0,
     "has_discount": 0,
     "retail_eval_fee": 79,
-    "base_cost_to_funded": 79,
-    "total_cost_to_funded": 79
+    "base_cost_to_funded": 178,
+    "total_cost_to_funded": 178
   },
   {
     "plan_id": "blusky-pro-25k-propel",
