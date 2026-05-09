@@ -5,8 +5,8 @@
   { "firm_slug": "alpha-futures", "code": "ALPHA25", "discount_pct": 25 },
   { "firm_slug": "e8-markets", "code": "SIG20", "discount_pct": 20 },
   { "firm_slug": "e8-markets", "code": "E8ONE10", "discount_pct": 10 },
-  { "firm_slug": "phidias", "code": "EVAL50", "discount_pct": 50 },
-  { "firm_slug": "phidias", "code": "FUND60", "discount_pct": 60 },
-  { "firm_slug": "phidias", "code": "OTP80", "discount_pct": 80 },
+  { "firm_slug": "phidias-propfirm", "code": "EVAL50", "discount_pct": 50 },
+  { "firm_slug": "phidias-propfirm", "code": "FUND60", "discount_pct": 60 },
+  { "firm_slug": "phidias-propfirm", "code": "OTP80", "discount_pct": 80 },
   { "firm_slug": "myfundedfutures", "code": "MOT", "discount_pct": 10 }
 ]
