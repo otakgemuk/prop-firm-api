@@ -26,9 +26,6 @@ interface FilterBarProps {
   onFirmChange: (firmIds: string[]) => void;
   firms: { id: string; name: string }[];
 
-  selectedPlatform: string;
-  onPlatformChange: (platform: string) => void;
-
   sortValue: string;
   onSortChange: (sort: string) => void;
 }
@@ -194,8 +191,6 @@ export default function FilterBar({
   selectedFirms,
   onFirmChange,
   firms,
-  selectedPlatform,
-  onPlatformChange,
   sortValue,
   onSortChange,
 }: FilterBarProps) {
@@ -326,12 +321,14 @@ export default function FilterBar({
 
         <div className="h-5 w-px bg-white/10 hidden md:block" />
 
+        {/* TODO: Platform filter — no plan data has platform field yet
         <PillGroup
           label="Platform"
           options={[{ value: "", label: "All" }, ...PLATFORM_OPTIONS.map((p) => ({ value: p, label: p }))]}
           value={selectedPlatform}
           onChange={onPlatformChange}
         />
+        */}
 
         <div className="h-5 w-px bg-white/10 hidden md:block" />
 

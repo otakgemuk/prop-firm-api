@@ -14,7 +14,6 @@ export interface PlanFilters {
   accountType?: string[];
   drawdownType?: string[];
   firmIds?: string[];
-  platform?: string;
   search?: string;
   sort?: string;
   order?: "asc" | "desc";
@@ -61,6 +60,7 @@ export interface PlanRow {
   min_trading_days?: number;
   consistency_eval?: number | null;
   consistency_funded?: number | null;
+  first_payout_days?: number | null;
 }
 
 
@@ -187,7 +187,6 @@ export function usePlans(filters: PlanFilters) {
     filters.accountSize,
     accountTypeKey,
     drawdownKey,
-    filters.platform,
     filters.search,
     filters.firmIds?.slice().sort().join(",") ?? "",
     filters.sort,

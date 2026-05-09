@@ -57,9 +57,9 @@ export default function ComparisonCard({ plan }: { plan: PlanRow }) {
       <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
         <Metric label="Eval Fee"       value={formatUSD(plan.eval_fee)} />
         <Metric label="Activation"     value={plan.activation_fee ? formatUSD(plan.activation_fee) : "—"} />
-        <Metric label="Profit Split"   value={`${plan.profit_split}%`} />
+        <Metric label="Profit Split"   value={plan.profit_split != null ? `${plan.profit_split}%` : "—"} />
         <Metric label="Drawdown"       value={formatUSD(plan.drawdown_amount)} />
-        <Metric label="Daily Loss"     value={formatUSD(plan.daily_loss_limit)} />
+        <Metric label="Daily Loss"     value={plan.daily_loss_limit ? formatUSD(plan.daily_loss_limit) : "—"} />
         <Metric label="Target"         value={formatUSD(plan.profit_target)} />
       </div>
 

@@ -110,6 +110,8 @@ const EMPTY_PLAN: PlanRow = {
   payout_frequency: "biweekly", base_cost_to_funded: 0, total_cost_to_funded: 0,
   active_discount_pct: 0, has_discount: 0, max_funded_status: "not_specified",
   max_funded_accounts: 0, min_trading_days: 0, consistency_eval: 0, consistency_funded: 0,
+  retail_eval_fee: 0, price_source: "", price_verified: 0, price_status: "",
+  discount_pct: 0, discount_amount: 0, first_payout_days: null,
 };
 
 const DRAWDOWN_OPTIONS = ["eod", "trailing", "static", "intraday"];
@@ -119,14 +121,13 @@ function slugify(text: string): string {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
-function nextFirmId(plans: PlanRow[]): string {
-  const ids = plans.map((p) => parseInt(p.firm_id.replace(/\D/g, ""), 10)).filter(n => !isNaN(n));
-  const max = ids.length ? Math.max(...ids) : 0;
-  return `f${String(max + 1).padStart(2, "0")}`;
+function nextFirmId(firmName: string): string {
+  return slugify(firmName).replace(/-/g, '_');
 }
 
-function nextPlanId(plans: PlanRow[]): string {
-  return `p${String(plans.length + 1).padStart(2, "0")}`;
+function nextPlanId(firmSlug: string, accountSize: number, accountType: string): string {
+  const typeSlug = slugify(accountType);
+  return `${firmSlug}-${accountSize}-${typeSlug}`;
 }
 
 function calcTotalCost(evalFee: number, activationFee: number, discountPct: number): number {
@@ -145,6 +146,13 @@ function AdminContent() {
   const [filterFirm, setFilterFirm] = useState("");
   const [toast, setToast] = useState("");
 
+  // GitHub push settings
+  const [ghToken, setGhToken] = useState(() => localStorage.getItem("gh_token") || "");
+  const [ghRepo, setGhRepo] = useState(() => localStorage.getItem("gh_repo") || "otakgemuk/prop-firm-api");
+  const [ghBranch, setGhBranch] = useState(() => localStorage.getItem("gh_branch") || "main");
+  const [showSettings, setShowSettings] = useState(false);
+  const [pushing, setPushing] = useState(false);
+
   // Load data
   useEffect(() => {
     const draft = localStorage.getItem("admin_plans_draft");
@@ -154,11 +162,7 @@ function AdminContent() {
     fetch("./plans.json")
       .then(r => r.json())
       .then((data: PlanRow[]) => {
-        const recalculated = data.map(p => ({
-          ...p,
-          total_cost_to_funded: calcTotalCost(p.eval_fee, p.activation_fee, p.active_discount_pct || 0),
-        }));
-        setPlans(recalculated);
+        setPlans(data);
         setLoading(false);
       })
       .catch(() => setLoading(false));
@@ -173,6 +177,53 @@ function AdminContent() {
     setToast(msg);
     setTimeout(() => setToast(""), 3000);
   }, []);
+
+  // Save GitHub settings to localStorage when they change
+  useEffect(() => { localStorage.setItem("gh_token", ghToken); }, [ghToken]);
+  useEffect(() => { localStorage.setItem("gh_repo", ghRepo); }, [ghRepo]);
+  useEffect(() => { localStorage.setItem("gh_branch", ghBranch); }, [ghBranch]);
+
+  const handlePushToGitHub = async () => {
+    if (!ghToken) { showToast("❌ Set a GitHub token in settings first"); return; }
+    setPushing(true);
+    try {
+      const [owner, repo] = ghRepo.split("/");
+      const content = JSON.stringify(plans, null, 2);
+      const encoded = btoa(unescape(encodeURIComponent(content)));
+
+      // Get current file SHA
+      const getRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/data/plans.json?ref=${ghBranch}`, {
+        headers: { Authorization: `Bearer ${ghToken}`, Accept: "application/vnd.github.v3+json" },
+      });
+      if (!getRes.ok) throw new Error(`Failed to get file: ${getRes.status} ${getRes.statusText}`);
+      const fileData = await getRes.json();
+
+      // Update file
+      const putRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/data/plans.json`, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${ghToken}`,
+          Accept: "application/vnd.github.v3+json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: `Update plans.json via admin (${plans.length} plans)`,
+          content: encoded,
+          sha: fileData.sha,
+          branch: ghBranch,
+        }),
+      });
+      if (!putRes.ok) {
+        const err = await putRes.json();
+        throw new Error(err.message || `Push failed: ${putRes.status}`);
+      }
+      showToast("🚀 Pushed to GitHub! Site will update in ~2 minutes.");
+    } catch (err: any) {
+      showToast(`❌ Push failed: ${err.message}`);
+    } finally {
+      setPushing(false);
+    }
+  };
 
   const firms = Array.from(new Map(plans.map((p) => [p.firm_id, { id: p.firm_id, name: p.firm_name }])).values());
   const filtered = filterFirm ? plans.filter((p) => p.firm_id === filterFirm) : plans;
@@ -205,10 +256,14 @@ function AdminContent() {
 
   const handleAdd = () => {
     if (!form.firm_name || !form.eval_fee) { showToast("❌ Firm name and eval fee are required"); return; }
+    const firmId = form.firm_id || nextFirmId(form.firm_name);
+    const firmSlug = form.firm_slug || slugify(form.firm_name);
+    const planId = form.plan_id || nextPlanId(firmSlug, form.account_size, form.account_type);
     const newPlan = {
       ...form,
-      firm_id: form.firm_id || nextFirmId(plans),
-      plan_id: form.plan_id || nextPlanId(plans),
+      firm_id: firmId,
+      firm_slug: firmSlug,
+      plan_id: planId,
       total_cost_to_funded: calcTotalCost(form.eval_fee, form.activation_fee, form.active_discount_pct),
     };
     setPlans((prev) => [...prev, newPlan]);
@@ -287,8 +342,29 @@ function AdminContent() {
               className="rounded-lg border border-orange-500/50 px-4 py-2 text-sm text-orange-300 transition hover:border-orange-400 hover:text-orange-200">
               ⟲ Reset
             </button>
+            <button onClick={() => setShowSettings(!showSettings)}
+              className="rounded-lg border border-white/10 px-3 py-2 text-sm text-gray-400 transition hover:border-brand-400 hover:text-white">
+              ⚙️
+            </button>
+            <button onClick={handlePushToGitHub} disabled={pushing}
+              className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-500 disabled:opacity-50">
+              {pushing ? "⏳ Pushing…" : "🚀 Push to GitHub"}
+            </button>
           </div>
         </div>
+        {showSettings && (
+          <div className="mx-auto max-w-7xl px-4 pb-4">
+            <div className="w-full rounded-lg border border-white/10 bg-gray-900/80 p-4">
+              <h3 className="text-sm font-semibold text-white mb-3">GitHub Push Settings</h3>
+              <div className="grid gap-3 sm:grid-cols-3">
+                <Field label="GitHub Token (PAT)" value={ghToken} onChange={setGhToken} placeholder="ghp_..." type="password" />
+                <Field label="Repository" value={ghRepo} onChange={setGhRepo} placeholder="owner/repo" />
+                <Field label="Branch" value={ghBranch} onChange={setGhBranch} placeholder="main" />
+              </div>
+              <p className="mt-2 text-xs text-gray-500">Token needs `repo` scope. Stored in localStorage only.</p>
+            </div>
+          </div>
+        )}
       </header>
 
       <main className="mx-auto max-w-7xl px-4 py-6 space-y-6">
@@ -298,11 +374,10 @@ function AdminContent() {
           <p className="text-sm text-emerald-300 font-medium mb-2">🚀 How to update the live site</p>
           <ol className="list-inside list-decimal space-y-1 text-sm text-emerald-200/80">
             <li>Edit plans below (add, edit, or delete)</li>
-            <li>Click <strong className="text-emerald-300">⬇ Download plans.json</strong></li>
-            <li>Go to <a href="https://github.com/otakgemuk/prop-firm-api/blob/main/data/plans.json" target="_blank" rel="noopener" className="text-brand-400 underline">data/plans.json on GitHub</a></li>
-            <li>Click the ✏️ pencil icon → select all → paste the downloaded content → commit</li>
-            <li>Site updates in ~2 minutes automatically</li>
+            <li><strong className="text-emerald-300">Option A (fastest):</strong> Click <strong className="text-blue-300">🚀 Push to GitHub</strong> — deploys automatically in ~2 min</li>
+            <li><strong className="text-emerald-300">Option B:</strong> Click ⬇ Download → paste into <a href="https://github.com/otakgemuk/prop-firm-api/blob/main/data/plans.json" target="_blank" rel="noopener" className="text-brand-400 underline">data/plans.json on GitHub</a> → commit</li>
           </ol>
+          <p className="mt-2 text-xs text-emerald-200/60">⚙️ For push: set a GitHub PAT token with <code>repo</code> scope in settings (⚙️ button above)</p>
         </div>
 
         {/* Toolbar */}
@@ -314,7 +389,7 @@ function AdminContent() {
           </select>
           <button onClick={() => {
             setEditingIndex(null);
-            setForm({ ...EMPTY_PLAN, firm_id: nextFirmId(plans), plan_id: nextPlanId(plans) });
+            setForm({ ...EMPTY_PLAN });
             setShowAddForm(true);
           }}
             className="rounded-lg bg-brand-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-400">
@@ -322,7 +397,7 @@ function AdminContent() {
           </button>
           <button onClick={() => {
             setEditingIndex(null);
-            setForm({ ...EMPTY_PLAN, firm_id: "", plan_id: nextPlanId(plans) });
+            setForm({ ...EMPTY_PLAN });
             setShowAddForm(true);
           }}
             className="rounded-lg border border-white/10 px-4 py-2 text-sm text-gray-300 transition hover:border-brand-400 hover:text-white">
@@ -347,7 +422,7 @@ function AdminContent() {
                 <label className="mb-1.5 block text-sm font-medium text-gray-300">Account Type</label>
                 <select value={form.account_type || "Standard"} onChange={(e) => updateField("account_type", e.target.value)}
                   className="w-full rounded-lg border border-white/10 bg-gray-800 px-3 py-2 text-sm text-white">
-                  {["Standard", "No Activation", "No Scaling", "EOD", "EOD Drawdown", "Flex", "Rapid", "Builder", "Pro", "Growth", "Select", "Intraday", "1-Step Monthly", "Fast Track", "Static", "Direct to Funded", "Diamond Hands"].map((t) => <option key={t} value={t}>{t}</option>)}
+                  {["1-Step", "1-Step Monthly", "Advanced", "Apprentice", "Beginner", "Builder", "Classic Growth", "Classic Scale", "Classic Starter", "DH", "DTF", "Diamond Hands", "Direct to Funded", "EOD", "EOD Drawdown", "Elite", "Express MAX", "Express OG", "Fast Track", "Flex", "Gauntlet", "Growth", "Instant", "Intraday", "Lightning", "LucidFlex", "LucidPro", "Merit", "No Activation", "No Scaling", "OneUp", "Option 1", "Option 2", "Pro", "Premium", "Premium (No Act)", "Rapid", "S2F", "S2L 150K Edge", "S2L 300K Ultra", "S2L 50K Core", "Select", "Signature Futures", "Spark Growth", "Spark Starter", "Standard", "Standard MAX", "Standard OG", "Static", "TCP", "Trail", "Zero"].map((t) => <option key={t} value={t}>{t}</option>)}
                 </select>
               </div>
               <div>

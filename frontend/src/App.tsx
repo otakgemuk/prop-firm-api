@@ -19,7 +19,6 @@ export default function App() {
   const [accountTypes, setAccountTypes] = useState<string[]>([]);
   const [drawdowns, setDrawdowns]       = useState<string[]>([]);
   const [firmIds, setFirmIds]           = useState<string[]>([]);
-  const [platform, setPlatform]         = useState("");
   const [search, setSearch]             = useState("");
   const [sortValue, setSortValue]       = useState("total_cost:asc");
   const [page, setPage]                 = useState(1);
@@ -33,7 +32,6 @@ export default function App() {
     accountType:  accountTypes.length ? accountTypes : undefined,
     drawdownType: drawdowns.length ? drawdowns : undefined,
     firmIds:      firmIds.length ? firmIds : undefined,
-    platform:     platform || undefined,
     search:       search || undefined,
     sort,
     order,
@@ -136,8 +134,6 @@ export default function App() {
           selectedFirms={firmIds}
           onFirmChange={(ids) => { setFirmIds(ids); setPage(1); }}
           firms={firms}
-          selectedPlatform={platform}
-          onPlatformChange={(p) => { setPlatform(p); setPage(1); }}
           sortValue={sortValue}
           onSortChange={(sv) => { setSortValue(sv); setPage(1); }}
         />
