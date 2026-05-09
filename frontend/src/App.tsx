@@ -58,14 +58,7 @@ export default function App() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
           <div className="flex items-center gap-3">
             {/* Ox logo */}
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500">
-              <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 text-white">
-                <path d="M4 4c2-2 4-2 6 0s4 2 6 0 4-2 6 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                <circle cx="8" cy="10" r="2" fill="currentColor" />
-                <circle cx="16" cy="10" r="2" fill="currentColor" />
-                <path d="M6 14c0 4 3 6 6 6s6-2 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            </div>
+            <img src="/MightyOx_Logo_Gold.png" alt="MightyOx" className="h-10 w-10 rounded-lg object-contain" />
             <div>
               <h1 className="text-2xl font-bold tracking-tight text-white">
                 Mighty<span className="text-brand-400">Ox</span> Trading
