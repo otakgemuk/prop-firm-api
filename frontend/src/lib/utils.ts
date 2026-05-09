@@ -115,5 +115,5 @@ export const ACCOUNT_SIZES = [
   { value: 50000,   label: "50K" },
   { value: 100000,  label: "100K" },
   { value: 150000,  label: "150K" },
-  { value: 250000,  label: "250K" },
+  { value: 250000,  label: "250K+" },
 ];

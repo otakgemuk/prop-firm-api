@@ -122,9 +122,13 @@ export function usePlans(filters: PlanFilters) {
   const { data, pagination } = useMemo(() => {
     let rows = [...allPlans];
 
-    // ── Filter: account size (exact match when > 0) ────────
+    // ── Filter: account size (exact match, 250K+ uses >=) ──
     if (filters.accountSize && filters.accountSize > 0) {
-      rows = rows.filter((r) => r.account_size === filters.accountSize);
+      if (filters.accountSize === 250000) {
+        rows = rows.filter((r) => r.account_size >= 250000);
+      } else {
+        rows = rows.filter((r) => r.account_size === filters.accountSize);
+      }
     }
 
     // ── Filter: account types ──────────────────────────────
