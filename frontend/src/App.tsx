@@ -9,7 +9,7 @@ import type { SortingState } from "@tanstack/react-table";
 import FilterBar from "./components/FilterBar";
 import PlanTable from "./components/PlanTable";
 import ComparisonCard from "./components/ComparisonCard";
-import { usePlans, type PlanFilters } from "./hooks/usePlans";
+import { usePlans, type PlanFilters, type PlanRow } from "./hooks/usePlans";
 
 type ViewMode = "table" | "cards";
 
@@ -39,20 +39,25 @@ export default function App() {
     limit: 100,
   };
 
-  const { data, allPlans, pagination, isLoading, error, firms } = usePlans(filters);
+  const { data, pagination, isLoading, error, firms } = usePlans(filters);
 
   // ── Export to Markdown ─────────────────────────────────
-  const exportMarkdown = useCallback(() => {
-    // Use allPlans (unfiltered, unpaginated) so export includes everything
-    const grouped: Record<string, typeof allPlans> = {};
-    allPlans.forEach((p) => {
+  // Fetches plans.json directly to guarantee ALL plans are included,
+  // regardless of active filters or pagination.
+  const exportMarkdown = useCallback(async () => {
+    const res = await fetch("./plans.json");
+    if (!res.ok) return alert("Failed to load plans data");
+    const allPlansRaw: PlanRow[] = await res.json();
+
+    const grouped: Record<string, PlanRow[]> = {};
+    allPlansRaw.forEach((p) => {
       const key = p.firm_name;
       if (!grouped[key]) grouped[key] = [];
       grouped[key].push(p);
     });
 
     let md = `# Prop Firm Plans\n\n`;
-    md += `> Exported ${new Date().toISOString().slice(0, 10)} · ${allPlans.length} plans\n\n`;
+    md += `> Exported ${new Date().toISOString().slice(0, 10)} · ${allPlansRaw.length} plans\n\n`;
 
     Object.entries(grouped).forEach(([firm, plans]) => {
       md += `## ${firm}\n\n`;
@@ -74,7 +79,7 @@ export default function App() {
     a.download = `prop-firm-plans-${new Date().toISOString().slice(0, 10)}.md`;
     a.click();
     URL.revokeObjectURL(url);
-  }, [allPlans]);
+  }, []);
 
   // ── Sync table column sorting → filter state ───────────
   const handleSortingChange = useCallback((sorting: SortingState) => {
