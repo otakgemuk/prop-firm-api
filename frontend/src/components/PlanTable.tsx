@@ -146,14 +146,6 @@ const columns: ColumnDef<PlanRow, any>[] = [
     header: "Total",
     cell: (info) => {
       const total = info.getValue();
-      const pct = info.row.original.active_discount_pct;
-      if (pct > 0) {
-        return (
-          <span className="font-bold text-brand-300">
-            {formatUSD(total)} <span className="text-xs text-brand-300/70">(-{pct}%)</span>
-          </span>
-        );
-      }
       return <span className="font-bold text-brand-300">{formatUSD(total)}</span>;
     },
     size: 100,
