@@ -41,7 +41,7 @@ const columns: ColumnDef<PlanRow, any>[] = [
 
   // 2. Account Type
   columnHelper.accessor("account_type", {
-    header: "Account Type",
+    header: "Type",
     cell: (info) => {
       const v = info.getValue() || "Standard";
       const colorMap: Record<string, string> = {
@@ -114,7 +114,7 @@ const columns: ColumnDef<PlanRow, any>[] = [
 
   // 3. Funded Setup Fee (activation_fee)
   columnHelper.accessor("activation_fee", {
-    header: "Funded Setup Fee",
+    header: "Setup Fee",
     cell: (info) => {
       const v = info.getValue();
       return v > 0 ? formatUSD(v) : <span className="text-emerald-400">Free</span>;
@@ -209,7 +209,7 @@ const columns: ColumnDef<PlanRow, any>[] = [
 
   // 10. Consistency Eval (percentage)
   columnHelper.accessor("consistency_eval", {
-    header: "Consistency Eval",
+    header: "ConsEval",
     cell: (info) => {
       const v = info.getValue();
       if (v != null && v > 0) return <span className="text-gray-300">{v}%</span>;
@@ -220,7 +220,7 @@ const columns: ColumnDef<PlanRow, any>[] = [
 
   // 11. Consistency Funded (percentage)
   columnHelper.accessor("consistency_funded", {
-    header: "Consistency Funded",
+    header: "ConsFunded",
     cell: (info) => {
       const v = info.getValue();
       if (v != null && v > 0) return <span className="text-gray-300">{v}%</span>;
@@ -229,24 +229,6 @@ const columns: ColumnDef<PlanRow, any>[] = [
     size: 130,
   }),
 
-  // Buy Now action
-  columnHelper.display({
-    id: "action",
-    header: "",
-    cell: (info) => (
-      <a
-        href={info.row.original.website_url}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={(e) => e.stopPropagation()}
-        className="inline-block rounded-lg bg-brand-500 px-3 py-1.5 text-xs font-semibold
-                   text-white transition hover:bg-brand-400"
-      >
-        Buy Now
-      </a>
-    ),
-    size: 90,
-  }),
 ];
 
 // ── Component ──────────────────────────────────────────────
