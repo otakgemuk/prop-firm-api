@@ -210,5 +210,5 @@ export function usePlans(filters: PlanFilters) {
     );
   }, [allPlans]);
 
-  return { data, pagination, isLoading, error, firms };
+  return { data, allPlans, pagination, isLoading, error, firms };
 }

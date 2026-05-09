@@ -39,20 +39,20 @@ export default function App() {
     limit: 100,
   };
 
-  const { data, pagination, isLoading, error, firms } = usePlans(filters);
+  const { data, allPlans, pagination, isLoading, error, firms } = usePlans(filters);
 
   // ── Export to Markdown ─────────────────────────────────
   const exportMarkdown = useCallback(() => {
-    // Group by firm
-    const grouped: Record<string, typeof data> = {};
-    data.forEach((p) => {
+    // Use allPlans (unfiltered, unpaginated) so export includes everything
+    const grouped: Record<string, typeof allPlans> = {};
+    allPlans.forEach((p) => {
       const key = p.firm_name;
       if (!grouped[key]) grouped[key] = [];
       grouped[key].push(p);
     });
 
     let md = `# Prop Firm Plans\n\n`;
-    md += `> Exported ${new Date().toISOString().slice(0, 10)} · ${data.length} plans\n\n`;
+    md += `> Exported ${new Date().toISOString().slice(0, 10)} · ${allPlans.length} plans\n\n`;
 
     Object.entries(grouped).forEach(([firm, plans]) => {
       md += `## ${firm}\n\n`;
@@ -74,7 +74,7 @@ export default function App() {
     a.download = `prop-firm-plans-${new Date().toISOString().slice(0, 10)}.md`;
     a.click();
     URL.revokeObjectURL(url);
-  }, [data]);
+  }, [allPlans]);
 
   // ── Sync table column sorting → filter state ───────────
   const handleSortingChange = useCallback((sorting: SortingState) => {
