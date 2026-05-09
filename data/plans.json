@@ -5790,7 +5790,7 @@
     "is_one_time": 1,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
-    "total_cost_to_funded": 44,
+    "total_cost_to_funded": 127.0,
     "active_discount_pct": 50
   },
   {
@@ -5814,7 +5814,7 @@
     "is_one_time": 1,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
-    "total_cost_to_funded": 139,
+    "total_cost_to_funded": 288.0,
     "active_discount_pct": 50
   },
   {
@@ -5838,7 +5838,7 @@
     "is_one_time": 1,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
-    "total_cost_to_funded": 159,
+    "total_cost_to_funded": 308.0,
     "active_discount_pct": 50
   },
   {
@@ -5862,7 +5862,7 @@
     "is_one_time": 1,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
-    "total_cost_to_funded": 199,
+    "total_cost_to_funded": 368.0,
     "active_discount_pct": 50
   },
   {
@@ -5982,7 +5982,7 @@
     "is_one_time": 1,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
-    "total_cost_to_funded": 258.2,
+    "total_cost_to_funded": 438.2,
     "active_discount_pct": 60
   },
   {
@@ -6006,7 +6006,7 @@
     "is_one_time": 1,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
-    "total_cost_to_funded": 337,
+    "total_cost_to_funded": 514.2,
     "active_discount_pct": 60
   },
   {
@@ -6150,7 +6150,7 @@
     "is_one_time": 1,
     "payout_frequency": "biweekly",
     "first_payout_days": null,
-    "total_cost_to_funded": 397,
+    "total_cost_to_funded": 397.0,
     "active_discount_pct": 60
   }
 ]
