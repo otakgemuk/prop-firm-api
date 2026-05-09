@@ -122,21 +122,21 @@ const columns: ColumnDef<PlanRow, any>[] = [
     size: 120,
   }),
 
-  // 4. After Discount (eval fee with discount applied)
+  // 4. After Discount (eval fee with discount applied, or full price if no discount)
   columnHelper.accessor("eval_fee", {
     header: "After Discount",
     cell: (info) => {
       const evalFee = info.getValue();
       const pct = info.row.original.active_discount_pct;
       if (pct > 0) {
-        const discounted = evalFee - (evalFee * pct) / 100;
+        const discounted = evalFee * (1 - pct / 100);
         return (
           <span className="text-green-400 font-medium">
             {formatUSD(discounted)} <span className="text-xs text-green-400/70">(-{pct}%)</span>
           </span>
         );
       }
-      return <span className="text-gray-500">—</span>;
+      return <span className="text-gray-300">{formatUSD(evalFee)}</span>;
     },
     size: 120,
   }),
