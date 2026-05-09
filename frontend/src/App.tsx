@@ -41,6 +41,41 @@ export default function App() {
 
   const { data, pagination, isLoading, error, firms } = usePlans(filters);
 
+  // ── Export to Markdown ─────────────────────────────────
+  const exportMarkdown = useCallback(() => {
+    // Group by firm
+    const grouped: Record<string, typeof data> = {};
+    data.forEach((p) => {
+      const key = p.firm_name;
+      if (!grouped[key]) grouped[key] = [];
+      grouped[key].push(p);
+    });
+
+    let md = `# Prop Firm Plans\n\n`;
+    md += `> Exported ${new Date().toISOString().slice(0, 10)} · ${data.length} plans\n\n`;
+
+    Object.entries(grouped).forEach(([firm, plans]) => {
+      md += `## ${firm}\n\n`;
+      md += `| Plan | Account Size | Drawdown Type | Drawdown | Profit Target | Eval Fee | Activation Fee | Discount | Total Cost |\n`;
+      md += `|------|-------------|---------------|----------|--------------|----------|----------------|----------|------------|\n`;
+      plans.forEach((p) => {
+        const dd = p.drawdown_amount ? `$${p.drawdown_amount.toLocaleString()}` : "—";
+        const pt = p.profit_target ? `$${p.profit_target.toLocaleString()}` : "None";
+        const disc = p.active_discount_pct > 0 ? `${p.active_discount_pct}%` : "—";
+        md += `| ${p.account_type || p.plan_label} | ${p.plan_label} | ${p.drawdown_type || "—"} | ${dd} | ${pt} | $${p.eval_fee.toLocaleString()} | $${p.activation_fee.toLocaleString()} | ${disc} | $${p.total_cost_to_funded.toLocaleString()} |\n`;
+      });
+      md += `\n`;
+    });
+
+    const blob = new Blob([md], { type: "text/markdown" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `prop-firm-plans-${new Date().toISOString().slice(0, 10)}.md`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }, [data]);
+
   // ── Sync table column sorting → filter state ───────────
   const handleSortingChange = useCallback((sorting: SortingState) => {
     if (sorting.length > 0) {
@@ -109,6 +144,15 @@ export default function App() {
                 Cards
               </button>
             </div>
+
+            {/* Export MD */}
+            <button
+              onClick={exportMarkdown}
+              className="rounded-full border border-white/10 bg-gray-800/80 px-3 py-1.5 text-xs font-medium text-gray-400 transition hover:border-brand-400 hover:text-white"
+              title="Export as Markdown"
+            >
+              ⬇ Export MD
+            </button>
           </div>
         </div>
       </header>
