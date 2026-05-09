@@ -55,6 +55,8 @@ jobs:
       - name: Build
         working-directory: frontend
         run: npm run build
+        env:
+          VITE_ADMIN_HASH: ${{ secrets.VITE_ADMIN_HASH }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
