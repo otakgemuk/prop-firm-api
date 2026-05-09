@@ -62,20 +62,23 @@ Delete all plan entries with that `firm_id`.
 ## Architecture
 
 ```
-prop-firm-compare/
+prop-firm-api/
 ├── data/
-│   └── plans.json           ← Single source of truth
+│   ├── plans.json           ← Single source of truth
+│   ├── firms.json
+│   └── discounts.json
 ├── frontend/
 │   └── src/
 │       ├── components/
 │       │   ├── ComparisonCard.tsx
+│       │   ├── FilterBar.tsx
 │       │   ├── PlanTable.tsx
-│       │   └── Sidebar.tsx
+│       │   └── ErrorBoundary.tsx
 │       ├── hooks/
 │       │   └── usePlans.ts  ← Loads plans.json, client-side filtering
 │       ├── App.tsx
+│       ├── Admin.tsx
 │       └── main.tsx
-├── backend/                  ← Legacy (not needed for GitHub Pages)
 └── .github/workflows/
     └── deploy.yml            ← Auto-build & deploy on push to main
 ```
