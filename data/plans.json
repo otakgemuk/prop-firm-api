@@ -5696,7 +5696,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 55.4,
     "active_discount_pct": 80,
-    "account_type": "E2L"
+    "account_type": "E2L OTP"
   },
   {
     "firm_id": "phidias",
@@ -5721,7 +5721,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 144.6,
     "active_discount_pct": 80,
-    "account_type": "E2L"
+    "account_type": "E2L OTP"
   },
   {
     "firm_id": "phidias",
@@ -5746,7 +5746,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 180,
     "active_discount_pct": 80,
-    "account_type": "E2L"
+    "account_type": "E2L OTP"
   },
   {
     "firm_id": "phidias",
@@ -5771,7 +5771,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 225,
     "active_discount_pct": 80,
-    "account_type": "E2L"
+    "account_type": "E2L OTP"
   },
   {
     "firm_id": "phidias",
@@ -5796,7 +5796,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 127.0,
     "active_discount_pct": 50,
-    "account_type": "E2L"
+    "account_type": "E2L Eval"
   },
   {
     "firm_id": "phidias",
@@ -5821,7 +5821,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 288.0,
     "active_discount_pct": 50,
-    "account_type": "E2L"
+    "account_type": "E2L Eval"
   },
   {
     "firm_id": "phidias",
@@ -5846,7 +5846,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 308.0,
     "active_discount_pct": 50,
-    "account_type": "E2L"
+    "account_type": "E2L Eval"
   },
   {
     "firm_id": "phidias",
@@ -5871,7 +5871,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 368.0,
     "active_discount_pct": 50,
-    "account_type": "E2L"
+    "account_type": "E2L Eval"
   },
   {
     "firm_id": "phidias",
@@ -5896,7 +5896,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 116,
     "active_discount_pct": 80,
-    "account_type": "Fundamental"
+    "account_type": "Fundamental OTP"
   },
   {
     "firm_id": "phidias",
@@ -5921,7 +5921,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 144.6,
     "active_discount_pct": 80,
-    "account_type": "Fundamental"
+    "account_type": "Fundamental OTP"
   },
   {
     "firm_id": "phidias",
@@ -5946,7 +5946,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 172.6,
     "active_discount_pct": 80,
-    "account_type": "Fundamental"
+    "account_type": "Fundamental OTP"
   },
   {
     "firm_id": "phidias",
@@ -5971,7 +5971,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 214.6,
     "active_discount_pct": 60,
-    "account_type": "Fundamental"
+    "account_type": "Fundamental Eval"
   },
   {
     "firm_id": "phidias",
@@ -5996,7 +5996,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 438.2,
     "active_discount_pct": 60,
-    "account_type": "Fundamental"
+    "account_type": "Fundamental Eval"
   },
   {
     "firm_id": "phidias",
@@ -6021,7 +6021,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 514.2,
     "active_discount_pct": 60,
-    "account_type": "Fundamental"
+    "account_type": "Fundamental Eval"
   },
   {
     "firm_id": "phidias",
@@ -6046,7 +6046,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 144.6,
     "active_discount_pct": 80,
-    "account_type": "Premium"
+    "account_type": "Premium OTP"
   },
   {
     "firm_id": "phidias",
@@ -6071,7 +6071,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 180,
     "active_discount_pct": 80,
-    "account_type": "Premium"
+    "account_type": "Premium OTP"
   },
   {
     "firm_id": "phidias",
@@ -6096,7 +6096,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 224.6,
     "active_discount_pct": 80,
-    "account_type": "Premium"
+    "account_type": "Premium OTP"
   },
   {
     "firm_id": "phidias",
@@ -6121,7 +6121,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 280.6,
     "active_discount_pct": 60,
-    "account_type": "Premium"
+    "account_type": "Premium Eval"
   },
   {
     "firm_id": "phidias",
@@ -6146,7 +6146,7 @@
     "first_payout_days": null,
     "total_cost_to_funded": 313.4,
     "active_discount_pct": 60,
-    "account_type": "Premium"
+    "account_type": "Premium Eval"
   },
   {
     "firm_id": "phidias",
@@ -6171,6 +6171,6 @@
     "first_payout_days": null,
     "total_cost_to_funded": 397.0,
     "active_discount_pct": 60,
-    "account_type": "Premium"
+    "account_type": "Premium Eval"
   }
 ]
