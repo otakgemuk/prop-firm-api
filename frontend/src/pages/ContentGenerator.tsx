@@ -156,7 +156,7 @@ function fmt(date: Date, time: string) {
 }
 
 function buildOneTime(firm:string,_angle:string,platforms:string[],start:Date,time:string):Row[]{
-  const p=post(firm) as any; const a=p[angle]||p.pain
+  const p=post(firm) as any; const a=p[_angle]||p.pain
   return platforms.map((pl,i)=>{const d=new Date(start);d.setDate(d.getDate()+i);return{date:fmt(d,time),message:a[pl]||a.Twitter,network:HN[pl],platform:pl,pillar:'—',week:1,day:i+1}})
 }
 
@@ -206,7 +206,7 @@ const pC:Record<string,string>={Redundancy:'#3b82f6',Economics:'#22c87a',Speed:'
 export default function ContentGenerator(){
   const [mode,setMode]=useState('onetime')
   const [firm,setFirm]=useState('')
-  const [angle,setAngle]=useState('pain')
+  const [_angle,setAngle]=useState('pain')
   const [platforms,setPlatforms]=useState(['Twitter'])
   const [startDate,setStartDate]=useState(()=>new Date().toISOString().split('T')[0])
   const [postTime,setPostTime]=useState('09:00')
@@ -221,9 +221,9 @@ export default function ContentGenerator(){
     if(!firm)return
     const d=new Date(startDate)
     let rows:Row[]
-    if(mode==='onetime')rows=buildOneTime(firm,angle,platforms,d,postTime)
-    else if(mode==='weekly')rows=buildWeekly(firm,angle,platforms,d,postTime)
-    else rows=buildCampaign(firm,angle,platforms,d,postTime)
+    if(mode==='onetime')rows=buildOneTime(firm,_angle,platforms,d,postTime)
+    else if(mode==='weekly')rows=buildWeekly(firm,_angle,platforms,d,postTime)
+    else rows=buildCampaign(firm,_angle,platforms,d,postTime)
     setSchedule(rows);setFw(0);setFp('All');setCopied({})
   }
   const exp=()=>{
@@ -231,7 +231,7 @@ export default function ContentGenerator(){
     const slug=firm.replace(/\s+/g,'_')
     const d=new Date(startDate)
     const ds=`${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}`
-    dlCSV(toCSV(schedule),`MightyOx_${slug}_${mode}_${angle}_${ds}.csv`)
+    dlCSV(toCSV(schedule),`MightyOx_${slug}_${mode}_${_angle}_${ds}.csv`)
   }
   const logout=async()=>{await supabase.auth.signOut();window.location.href='/prop-firm-api/login'}
   const disp=(schedule||[]).filter(r=>(fw===0||r.week===fw)&&(fp==='All'||r.pillar===fp))
@@ -283,7 +283,7 @@ export default function ContentGenerator(){
           </select>
         </div>
         <div><span style={s.lbl}>Campaign Angle</span>
-          <select style={s.sel} value={angle} onChange={e=>{setAngle(e.target.value);setSchedule(null)}}>
+          <select style={s.sel} value={_angle} onChange={e=>{setAngle(e.target.value);setSchedule(null)}}>
             {ANGLES.map(a=><option key={a.id} value={a.id}>{a.label}</option>)}
           </select>
         </div>
@@ -305,7 +305,7 @@ export default function ContentGenerator(){
         <div style={s.div}/>
         <div style={s.sb}>
           <div style={s.row}>
-            <span style={{color:C.gold,fontSize:'11px',letterSpacing:'1px',textTransform:'uppercase'as const}}>{firm} · {ANGLES.find(a=>a.id===angle)?.label}</span>
+            <span style={{color:C.gold,fontSize:'11px',letterSpacing:'1px',textTransform:'uppercase'as const}}>{firm} · {ANGLES.find(a=>a.id===_angle)?.label}</span>
             <button style={s.csvB} onClick={exp}>⬇ Export CSV</button>
           </div>
           <div style={s.sg}>
