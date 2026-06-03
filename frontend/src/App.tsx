@@ -16,7 +16,36 @@ import ContentGenerator from "./pages/ContentGenerator";
 
 type ViewMode = "table" | "cards";
 
+// ── Simple hash-based router (no react-router needed) ──────────────────────
+function useRoute() {
+  const [path, setPath] = useState(() => window.location.pathname);
+  window.onpopstate = () => setPath(window.location.pathname);
+  return path;
+}
+
 export default function App() {
+  const path = useRoute();
+
+  // ── Route: /login ──────────────────────────────────────
+  if (path.endsWith("/login")) {
+    return <LoginPage />;
+  }
+
+  // ── Route: /content-generator ─────────────────────────
+  if (path.endsWith("/content-generator")) {
+    return (
+      <ProtectedRoute>
+        <ContentGenerator />
+      </ProtectedRoute>
+    );
+  }
+
+  // ── Default route: main prop firm compare page ─────────
+  return <MainApp />;
+}
+
+// ── Main app extracted into its own component ──────────────────────────────
+function MainApp() {
   // ── Filter state (source of truth) ─────────────────────
   const [accountSize, setAccountSize]   = useState(0);
   const [accountTypes, setAccountTypes] = useState<string[]>([]);
@@ -45,14 +74,11 @@ export default function App() {
   const { data, pagination, isLoading, error, firms } = usePlans(filters);
 
   // ── Export to Markdown ─────────────────────────────────
-  // Fetches plans.json directly and applies current filters (no pagination).
-  // When no filters are active, exports ALL plans.
   const exportMarkdown = useCallback(async () => {
     const res = await fetch("./plans.json");
     if (!res.ok) return alert("Failed to load plans data");
     let rows: PlanRow[] = await res.json();
 
-    // Apply the same filters as usePlans (but no pagination)
     if (accountSize && accountSize > 0) {
       if (accountSize === 250000) {
         rows = rows.filter((r) => r.account_size >= 250000);
@@ -82,7 +108,6 @@ export default function App() {
       );
     }
 
-    // Apply current sort order
     const [sortField, sortOrder] = sortValue.split(":") as [string, "asc" | "desc"];
     rows.sort((a, b) => {
       const aVal = (a as any)[sortField] ?? 0;
@@ -93,20 +118,18 @@ export default function App() {
 
     let md = `# Prop Firm Plans\n\n`;
     md += `> Exported ${new Date().toISOString().slice(0, 10)} · ${rows.length} plans\n\n`;
-
     md += `| Firm | Plan | Account Size | Drawdown Type | Drawdown | Profit Target | Eval Fee | Activation Fee | Discount | Total Cost |\n`;
     md += `|------|------|-------------|---------------|----------|--------------|----------|----------------|----------|------------|\n`;
     rows.forEach((p) => {
-      const dd = p.drawdown_amount ? `$${p.drawdown_amount.toLocaleString()}` : "—";
-      const pt = p.profit_target ? `$${p.profit_target.toLocaleString()}` : "None";
+      const dd   = p.drawdown_amount ? `$${p.drawdown_amount.toLocaleString()}` : "—";
+      const pt   = p.profit_target ? `$${p.profit_target.toLocaleString()}` : "None";
       const disc = p.active_discount_pct > 0 ? `${p.active_discount_pct}%` : "—";
       md += `| ${p.firm_name} | ${p.account_type || p.plan_label} | ${p.plan_label} | ${p.drawdown_type || "—"} | ${dd} | ${pt} | $${p.eval_fee.toLocaleString()} | $${p.activation_fee.toLocaleString()} | ${disc} | $${p.total_cost_to_funded.toLocaleString()} |\n`;
     });
-    md += `\n`;
 
     const blob = new Blob([md], { type: "text/markdown" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement("a");
     a.href = url;
     a.download = `prop-firm-plans-${new Date().toISOString().slice(0, 10)}.md`;
     a.click();
@@ -129,7 +152,6 @@ export default function App() {
       <header className="border-b border-white/10 bg-gray-950/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
           <div className="flex items-center gap-3">
-            {/* Ox logo */}
             <img src="/MightyOx_Logo_Gold.webp" alt="MightyOx" className="h-10 w-10 rounded-lg object-contain" />
             <div>
               <h1 className="text-2xl font-bold tracking-tight text-white">
@@ -142,6 +164,14 @@ export default function App() {
           </div>
 
           <div className="flex items-center gap-3">
+            {/* Content Generator link */}
+            <a
+              href="/prop-firm-api/content-generator"
+              className="rounded-full border border-white/10 bg-gray-800/80 px-3 py-1.5 text-xs font-medium text-gray-400 transition hover:border-brand-400 hover:text-white"
+            >
+              ✍ Content Generator
+            </a>
+
             {/* Search */}
             <div className="relative hidden sm:block">
               <svg className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -163,9 +193,7 @@ export default function App() {
               <button
                 onClick={() => setViewMode("table")}
                 className={`rounded-full px-3 py-1 text-xs font-medium transition ${
-                  viewMode === "table"
-                    ? "bg-brand-500 text-white"
-                    : "text-gray-400 hover:text-white"
+                  viewMode === "table" ? "bg-brand-500 text-white" : "text-gray-400 hover:text-white"
                 }`}
               >
                 Table
@@ -173,9 +201,7 @@ export default function App() {
               <button
                 onClick={() => setViewMode("cards")}
                 className={`rounded-full px-3 py-1 text-xs font-medium transition ${
-                  viewMode === "cards"
-                    ? "bg-brand-500 text-white"
-                    : "text-gray-400 hover:text-white"
+                  viewMode === "cards" ? "bg-brand-500 text-white" : "text-gray-400 hover:text-white"
                 }`}
               >
                 Cards
@@ -197,7 +223,6 @@ export default function App() {
       {/* ── Main content ────────────────────────────────────── */}
       <main className="mx-auto max-w-7xl px-4 py-6 space-y-4">
 
-        {/* Filter bar */}
         <FilterBar
           selectedSize={accountSize}
           onSizeChange={(s) => { setAccountSize(s); setPage(1); }}
@@ -212,7 +237,6 @@ export default function App() {
           onSortChange={(sv) => { setSortValue(sv); setPage(1); }}
         />
 
-        {/* Status bar */}
         <div className="flex items-center justify-between text-sm text-gray-400">
           {isLoading ? (
             <span>Loading plans…</span>
@@ -226,12 +250,8 @@ export default function App() {
           )}
         </div>
 
-        {/* Table or Card view */}
         {viewMode === "table" ? (
-          <PlanTable
-            data={data}
-            onSortingChange={handleSortingChange}
-          />
+          <PlanTable data={data} onSortingChange={handleSortingChange} />
         ) : (
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {data.map((plan) => (
@@ -245,7 +265,6 @@ export default function App() {
           </div>
         )}
 
-        {/* Pagination */}
         {pagination.pages > 1 && (
           <div className="flex items-center justify-center gap-2">
             <button
