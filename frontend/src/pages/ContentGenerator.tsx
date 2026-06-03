@@ -155,12 +155,12 @@ function fmt(date: Date, time: string) {
   return `${yy}/${mo}/${dd} ${time}`
 }
 
-function buildOneTime(firm:string,angle:string,platforms:string[],start:Date,time:string):Row[]{
+function buildOneTime(firm:string,_angle:string,platforms:string[],start:Date,time:string):Row[]{
   const p=post(firm) as any; const a=p[angle]||p.pain
   return platforms.map((pl,i)=>{const d=new Date(start);d.setDate(d.getDate()+i);return{date:fmt(d,time),message:a[pl]||a.Twitter,network:HN[pl],platform:pl,pillar:'—',week:1,day:i+1}})
 }
 
-function buildWeekly(firm:string,angle:string,platforms:string[],start:Date,time:string):Row[]{
+function buildWeekly(firm:string,_angle:string,platforms:string[],start:Date,time:string):Row[]{
   const l=lib4w(firm) as any; const rows:Row[]=[]
   PILLARS.forEach((pillar,pi)=>{
     platforms.forEach((platform,pli)=>{
@@ -172,7 +172,7 @@ function buildWeekly(firm:string,angle:string,platforms:string[],start:Date,time
   return rows
 }
 
-function buildCampaign(firm:string,angle:string,platforms:string[],start:Date,time:string):Row[]{
+function buildCampaign(firm:string,_angle:string,platforms:string[],start:Date,time:string):Row[]{
   const l=lib4w(firm) as any; const rows:Row[]=[]; let dc=0
   PILLARS.forEach((pillar,pi)=>{
     for(let d=0;d<7;d++){
