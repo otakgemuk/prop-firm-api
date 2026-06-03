@@ -10,6 +10,9 @@ import FilterBar from "./components/FilterBar";
 import PlanTable from "./components/PlanTable";
 import ComparisonCard from "./components/ComparisonCard";
 import { usePlans, type PlanFilters, type PlanRow } from "./hooks/usePlans";
+import ProtectedRoute from "./components/ProtectedRoute";
+import LoginPage from "./pages/LoginPage";
+import ContentGenerator from "./pages/ContentGenerator";
 
 type ViewMode = "table" | "cards";
 
